@@ -13,32 +13,16 @@ var i;
 for (i = 0; i < BD_Exo.length; i++) {
 
     card.innerHTML +=
-        `<div class="col-6 col-lg-4 col-xl-3 tous" id="` + BD_Exo[i][0] + `">
+        `<div class="col-6 col-lg-4 col-xl-3 tous taille3" id="` + BD_Exo[i][0] + `">
                     <div class="card">
+
                     <img class="card-img-top" src="document/exo/` + BD_Exo[i][1] + `.jpg"
                         alt="` + BD_Exo[i][2] + `">
+
                         <div class="card-body">
+                            <h4 class="taille4 depasse m-1">` + BD_Exo[i][1] + ` et de l'amour </h4>
+                            
                             <div class="detail">
-
-                                <button type="button" class="btn btn-dark btn-i" data-bs-toggle="modal"
-                                    data-bs-target="#ModalExo" onclick="modal(` + BD_Exo[i][0] + `)">
-                                    Info +
-                                </button>
-
-                                <div id="` + BD_Exo[i][0] + `_info" hidden>
-                                    <p class="info">` + BD_Exo[i][0] + ` - ` + BD_Exo[i][1] + `</p>
-                                    <p class="info">` + BD_Exo[i][2] + `</p>
-                                    <p class="info">
-                                        Imperio conplures aliis et diluere aurem nec 
-                                        praedoctis reginae stimulis resedit resedit defensi 
-                                        Caesarem Caesarem essent hinc cursim hinc et diluere 
-                                        obiecta quid nec inde per subinde ad cuius nec 
-                                        quaesitum permissi stimulis periere diluere iudex 
-                                        cuius essent inde imaginarius.
-                                    </p>
-                                </div>
-
-                                <h4 class="titre m-1">` + BD_Exo[i][0] + ` - ` + BD_Exo[i][1] + `</h4>
 
                                 <table class="table table-striped">
                                     <thead class="thead-dark">
@@ -52,6 +36,27 @@ for (i = 0; i < BD_Exo.length; i++) {
                                     <tbody id="` + BD_Exo[i][0] + `_stat">
                                     </tbody>
                                 </table>
+
+                                <!-- Info cachés -->
+                                <div id="` + BD_Exo[i][0] + `_info" hidden>
+                                    <p class="info">` + BD_Exo[i][0] + ` - ` + BD_Exo[i][1] + `</p>
+                                    <p class="info">` + BD_Exo[i][2] + `</p>
+                                    <p class="info">
+                                        Imperio conplures aliis et diluere aurem nec 
+                                        praedoctis reginae stimulis resedit resedit defensi 
+                                        Caesarem Caesarem essent hinc cursim hinc et diluere 
+                                        obiecta quid nec inde per subinde ad cuius nec 
+                                        quaesitum permissi stimulis periere diluere iudex 
+                                        cuius essent inde imaginarius.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="button" class="btn btn-dark btn-i" data-bs-toggle="modal"
+                                    data-bs-target="#ModalExo" onclick="modal(` + BD_Exo[i][0] + `)">
+                                    Info +
+                                </button>
                             </div>
 
                         </div>
