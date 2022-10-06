@@ -1,0 +1,119 @@
+/* ----------------------------------------- */
+* {
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: montserrat;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+
+/* -------------------------------------------------*/
+
+.navbar .nav-link {
+    color: rgb(0, 0, 0) !important;
+    margin-left: 20px;
+}
+
+.navbar-toggler,
+.navbar-toggler-icon {
+    color: black !important;
+    border-color: black !important;
+}
+
+.navbar-brand {
+    color: black !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* -------------------------------------------------*/
+header {
+    background-image: url("../document/salle_de_sport.jpg");
+    background-size: cover;
+    width: calc(100%);
+    height: 350px;
+    color: orange;
+}
+
+.grandTitre {
+    vertical-align: middle;
+    line-height: 350px;
+    font-size: 100px;
+}
+
+.titre {
+    font-weight: 900;
+}
+
+/* -------------------------------------------------*/
+
+.type {
+    border: solid;
+    border-width: 1px;
+    border-color: orange;
+    isolation: isolate;
+    color: black;
+}
+
+.nav-link,
+.nav-link:hover {
+    color: black;
+    border-radius: 0px !important;
+    border-color: orange !important;
+}
+
+
+/* -------------------------------------------------*/
+.sec {
+    margin: 2%;
+}
+
+.img-muscle {
+    max-width: 400px;
+    max-height: 400px;
+    float: right;
+    border: solid;
+}
+
+.btn-i {
+    float: right;
+    border-radius: 20px;
+}
+
+.card {
+    height: 600px;
+    border-radius: 50px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
+    background-color: orange;
+}
+
+.card-img-top {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 100%;
+    height: 250px;
+}
+
+.detail {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 900px !important;
+    }
+}
+
+.orange {
+    background-color: orange;
+    color: black;
+}
+
+/* ----------------------------------------- */

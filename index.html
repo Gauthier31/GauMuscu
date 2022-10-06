@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Appli Web Musculation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <script src="https://kit.fontawesome.com/814ded4c7d.js" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <link href="style/Style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark orange">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Appli Muscu</a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="page('accueil')">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="page('programme')">Programme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="page('nutrition')">Nutrition</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tête d'affiche -->
+    <header class="bloc" id="tete">
+        <h1 class="text-center grandTitre">Appli Muscu</h1>
+    </header>
+
+    <!-- Liste -->
+    <section class="bloc " id="liste">
+        <ul class="nav nav-tabs nav-fill justify-content-center">
+            <li class="nav-item type" id="tous">
+                <p class="nav-link type-link" onclick="filtre('tous')">Tous</p>
+            </li>
+            <li class="nav-item type" id="epaule">
+                <p class="nav-link" onclick="filtre('epaule')">Epaule</p>
+            </li>
+            <li class="nav-item type" id="bras">
+                <p class="nav-link" onclick="filtre('bras')">Bras</p>
+            </li>
+        </ul>
+        <ul class="nav nav-tabs nav-fill justify-content-center">
+            <li class="nav-item type" id="pec">
+                <p class="nav-link" onclick="filtre('pec')">Pectauraux</p>
+            </li>
+            <li class="nav-item type" id="dos">
+                <p class="nav-link" onclick="filtre('dos')">Dos</p>
+            </li>
+            <li class="nav-item type" id="abdo">
+                <p class="nav-link" onclick="filtre('abdo')">Abdo</p>
+            </li>
+            <li class="nav-item type" id="jambe">
+                <p class="nav-link" onclick="filtre('jambe')">Jambe</p>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- Liste des Exos -->
+    <section class="sec bloc " id="accueil">
+        <div class="row justify-content-center g-4" id="cards">
+        </div>
+    </section>
+
+    <!-- Modal info exo -->
+    <div class="modal" id="ModalExo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="titre-modal"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-muscle" id="img-modal">
+                    <p class="h3" id="txt-modal">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listes des programmes -->
+    <section class="bloc sec" id="programme">
+        <div class="row justify-content-center g-4" id="prog">
+        </div>
+    </section>
+
+    <!-- Exercice -->
+    <section class="bloc " id="sport">
+        <br /><br /><br />test page lancement
+    </section>
+
+    <!-- Pieds de page -->
+    <section style="height: 1000px;"></section>
+
+    <!-- Liens js -->
+    <script src="js/BD.js"></script>
+    <script src="js/funtion.js"></script>
+
+</body>
+
+</html>
