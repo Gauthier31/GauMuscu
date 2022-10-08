@@ -58,10 +58,12 @@ header {
 
 .taille3 {
     font-size: 1.5em;
+    font-weight: 900;
 }
 
 .taille4 {
     font-size: 1.25em;
+    font-weight: 900;
 }
 
 .card table {
@@ -71,8 +73,7 @@ header {
 }
 
 .depasse {
-    width: 400px;
-    font-weight: 900;
+    white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
@@ -138,10 +139,61 @@ header {
 }
 
 @media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 900px !important;
+    .modalInfo {
+        max-width: 95% !important;
+    }
+
+    .modalExo {
+        max-width: 95% !important;
+        max-height: 95% !important;
     }
 }
+
+/* ----------------------------------------- */
+
+.imgExo {
+    height: 500px;
+    width: 100%;
+}
+
+hr {
+    color: orange;
+    height: 12px !important;
+}
+
+.ligneTabColor {
+    background-color: orange;
+}
+
+.ligneTabNull {
+    background-color: white;
+}
+
+.btn-module {
+    border-radius: 20px;
+    width: 200px;
+    height: 120px;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-module2 {
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.modal-footer {
+    justify-content: space-between;
+}
+
+/* ----------------------------------------- */
 
 .orange {
     background-color: orange;

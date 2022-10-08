@@ -82,7 +82,7 @@ const BD_Type = [
 const BD_Stat = [
     // [n°exo, nbRep1, poid1, nbRep2, poid1, nbRep3, poid3, nbRep4, poid4]
 
-    // Nom
+    // Nom bouchon
     [0, 12, 10],
 
     // Développé couché avec haltères
@@ -131,9 +131,9 @@ const BD_Stat = [
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const BD_Programme = [
     // Push
-    [1, 2, 7, 5, 3],
+    ["Push (Pec, Bras)", 1, 2, 7, 5, 3],
     // Leg
-    [8, 9, 10, 11, 12, 13],
+    ["Leg (Jambe)", 8, 9, 10, 11, 12, 13],
     // Pull
-    [14, 18, 19, 20]
+    ["Pull (Dos, Épaule)", 14, 18, 19, 20]
 ]
