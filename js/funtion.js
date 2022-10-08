@@ -108,7 +108,7 @@ for (i = 0; i < BD_Programme.length; i++) {
             <li class="list-group-item taille3">` + BD_Programme[i][0] + `</li>`
         + txt + `
                 <li class="list-group-item"> 
-                <button type="button" class="btn orange" onclick="programmes(` + i + `)">Let's go</button>
+                <button type="button" class="btn orange " onclick="programmes(` + i + `)">C'est partie</button>
                 </li>
             </ol></div>`;
 }
@@ -181,7 +181,7 @@ function modalInfo(val) {
 
 
 // Declaration variable
-var exo = 1;
+var exo;
 var rep = 1;
 var total = 0;
 var boucle;
@@ -194,10 +194,15 @@ function programmes(val) {
         masque[i].style.display = "none";
     }
 
+    exo = BD_Programme[val][1];
 
     const affiche = document.getElementById('exo');
     affiche.style.display = "block";
-    affiche.innerHTML += `<button class="btn btn-dark position-absolute top-50 start-50 translate-middle" data-bs-toggle="modal" href="#exo` + BD_Programme[val][1] + `" >Lancez le programme</button>`;
+    affiche.innerHTML +=
+        `<button class="btn btn-dark position-absolute top-50 start-50 translate-middle btn-module" data-bs-toggle="modal" 
+        href="#exo` + BD_Programme[val][1] + `" >
+            Lancez le programme
+        </button>`;
 
 
     const body = document.getElementById('body');
@@ -221,15 +226,13 @@ function programmes(val) {
             `<div class="modal fade" id="exo` + BD_Programme[val][i] + `" tabindex="-1" aria-labelledby="exampleExo` + BD_Programme[val][i] + `" aria-modal="true" role="dialog">
 
                 <div class="modal-dialog modal-dialog-centered modalExo">
-                    <div class="modal-content">
+                    <div class="modal-content modalExoIn">
                         <div class="modal-header">
                             <p class="modal-title taille" id="titre-modal">` + BD_Exo[BD_Programme[val][i] - 1][1] + `</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body taille2">
                             <img class="imgExo" src="document/exo/` + BD_Exo[BD_Programme[val][i] - 1][1] + `.jpg" alt="` + BD_Exo[BD_Programme[val][i] - 1][1] + `"/>
-                            
-                            <p class="taille2 depasse m-1">` + BD_Exo[BD_Programme[val][i] - 1][1] + `</p>
                             <hr/>
 
                             <table class="table table-striped">
@@ -281,9 +284,10 @@ function programmes(val) {
                 </div>
             </div>`;
     }
-}
 
-suivant();
+
+    suivant();
+}
 
 function suivant() {
     var ligne = "exo" + exo + "rep" + rep;
@@ -323,3 +327,5 @@ function stop() {
     total = 0;
     clearInterval(boucle);
 }
+
+
