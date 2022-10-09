@@ -58,11 +58,13 @@ header {
 
 .taille3 {
     font-size: 1.5em;
-    font-weight: 900;
 }
 
 .taille4 {
     font-size: 1.25em;
+}
+
+.fw {
     font-weight: 900;
 }
 
@@ -152,6 +154,14 @@ header {
     }
 }
 
+.btn-prog {
+    border-radius: 20px;
+    width: 300px;
+    height: 80px;
+    font-size: 1em;
+    float: right !important;
+}
+
 /* ----------------------------------------- */
 
 .imgExo {
@@ -161,7 +171,9 @@ header {
 
 hr {
     color: orange;
-    height: 12px !important;
+    height: 8px !important;
+    opacity: 1;
+    border-radius: 5px;
 }
 
 .ligneTabColor {
@@ -200,6 +212,20 @@ hr {
 
 .btn-close {
     background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/5em auto no-repeat;
+}
+
+.roundExo {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2em;
+}
+
+.roundExoColor {
+    background-color: orange;
+}
+
+.progBar {
+    width: 100%;
 }
 
 /* ----------------------------------------- */

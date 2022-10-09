@@ -4,6 +4,7 @@ item.style.backgroundColor = "orange";
 // Affichage masquage des blocs de sections
 page("accueil");
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// Affiche les cards //////////////////////////////////////////////////////
 
@@ -13,14 +14,14 @@ var i;
 for (i = 0; i < BD_Exo.length; i++) {
 
     card.innerHTML +=
-        `<div class="col-6 col-lg-4 col-xl-3 tous taille3" id="` + BD_Exo[i][0] + `">
+        `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw" id="` + BD_Exo[i][0] + `">
                     <div class="card">
 
                     <img class="card-img-top" src="document/exo/` + BD_Exo[i][1] + `.jpg"
                         alt="` + BD_Exo[i][2] + `">
 
                         <div class="card-body">
-                            <p class="taille4 depasse m-1">` + BD_Exo[i][1] + `</p>
+                            <p class="taille4 fw depasse m-1">` + BD_Exo[i][1] + `</p>
                             
                             <div class="detail">
 
@@ -98,18 +99,19 @@ for (i = 0; i < BD_Programme.length; i++) {
     txt = "";
     for (j = 1; j < BD_Programme[i].length; j++) {
 
-        txt += `<li class="list-group-item h4">` + (j + 1) + `. ` + BD_Exo[BD_Programme[i][j] - 1][1]
-            + ` (id = ` + BD_Exo[BD_Programme[i][j] - 1][0] + `)</li>`;
-        //<p class="exo"></p>
+        txt +=
+            `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j] - 1][1]
+            //+ ` (id = ` + BD_Exo[BD_Programme[i][j] - 1][0] + `)
+            + `</li>`;
+
     }
 
-    prog.innerHTML += `<div class="col-6 col-lg-4 col-xl-3">
+    prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3">
             <ol class="list-group">
-            <li class="list-group-item taille3">` + BD_Programme[i][0] + `</li>`
-        + txt + `
-                <li class="list-group-item"> 
-                <button type="button" class="btn orange " onclick="programmes(` + i + `)">C'est partie</button>
-                </li>
+            <li class="list-group-item taille">` + BD_Programme[i][0] + `
+                <button type="button" class="btn orange btn-prog taille2" onclick="programmes(` + i + `)">C'est partie</button>
+            </li>`
+        + txt + `   
             </ol></div>`;
 }
 
@@ -156,6 +158,8 @@ function page(val) {
 
     } else if (val == "programme") {
         document.getElementById('programme').style.display = "block";
+    } else if (val == "nutrition") {
+        document.getElementById('nutrition').style.display = "block";
     }
 }
 
@@ -180,13 +184,23 @@ function modalInfo(val) {
 
 
 
+
+
+
+
 // Declaration variable
-var exo;
-var rep = 1;
-var total = 0;
-var boucle;
+var exo;            // num exo 
+var numExo = 1;          // enieme exo
+var rep = 1;        // num rep 
+var total = 0;      // temps en sec
+var boucle;         // boucle 
+var programme;      // num du prog choisi 
+
+var btnExo = "";
+var progresseBar = "";
 
 // Liste des exo
+// val = num exo
 function programmes(val) {
     // Masque
     const masque = document.getElementsByClassName('bloc');
@@ -195,6 +209,10 @@ function programmes(val) {
     }
 
     exo = BD_Programme[val][1];
+    programme = val;
+    btnExo = "";
+    progresseBar = "";
+
 
     const affiche = document.getElementById('exo');
     affiche.style.display = "block";
@@ -205,8 +223,9 @@ function programmes(val) {
         </button>`;
 
 
+
     const body = document.getElementById('body');
-    // Affiche  modal 1 1 par un
+    // Affiche  modal 1 par 1
     for (i = 1; i < BD_Programme[val].length; i++) {
 
         // On prépare tab stat
@@ -222,11 +241,42 @@ function programmes(val) {
                 </tr> `;
         }
 
+        // On prépare la progresse bar
+
+        // Pour chaque exo = btn
+        for (j = 1; j < BD_Programme[val].length; j++) {
+            let classOp = "";
+
+            if (j <= i) {
+                classOp = "roundExoColor";
+            }
+
+
+            btnExo +=
+                `<button type="button"
+                class="roundExo ` + classOp + ` position-absolute top-0 translate-middle btn btn-sm btn-secondary rounded-pill"
+                style="left: ` + (100 * (j - 1) / (BD_Programme[val].length - 2)) + `% ! important">
+                ` + j + ` 
+                </button>`;
+        }
+
+        progresseBar =
+            `<div class="modal-header">
+                <div class="position-relative m-4 progBar">
+                    <div class="progress" style="height: 5px;">
+                        <div id="progBar" class="progress-bar bg-warning" role="progressbar" aria-label="Progress" 
+                        style="width: ` + (100 * (i - 1) / (BD_Programme[val].length - 2)) + `%;"></div>
+                    </div>
+                    ` + btnExo + `
+                </div>
+            </div>`;
+
         body.innerHTML +=
             `<div class="modal fade" id="exo` + BD_Programme[val][i] + `" tabindex="-1" aria-labelledby="exampleExo` + BD_Programme[val][i] + `" aria-modal="true" role="dialog">
 
                 <div class="modal-dialog modal-dialog-centered modalExo">
                     <div class="modal-content modalExoIn">
+                        ` + progresseBar + `
                         <div class="modal-header">
                             <p class="modal-title taille" id="titre-modal">` + BD_Exo[BD_Programme[val][i] - 1][1] + `</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -273,9 +323,9 @@ function programmes(val) {
                         </div>
 
                         <div class="modal-footer">
-                            <button class="btn btn-dark btn-module2" onclick="stop()">Marche<br/>Arret</button>
+                            <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA` + BD_Programme[val][i] + `" value="Marche">Marche</button>
                             <p id="temps` + BD_Programme[val][i] + `" class="taille">0m0s</p>
-                            <button class="btn btn-warning btn-module2" onclick="suivant(); temps(` + BD_Programme[val][i] + `)">Suivant</button>
+                            <button class="btn btn-warning btn-module2" onclick="suivant()">Suivant</button>
                             <button class="btn btn-dark btn-module" data-bs-target="#exo` + BD_Programme[val][i + 1] + `" data-bs-toggle="modal"  onclick="suivant2(` + BD_Programme[val][i + 1] + `)">
                                 Exercice suivant
                             </button>
@@ -286,46 +336,91 @@ function programmes(val) {
     }
 
 
-    suivant();
+
+    document.getElementById("exo" + exo + "rep" + rep).classList.add("ligneTabColor");
+    document.getElementById("progBar" + exo).innerHTML = progresseBar;
+    document.getElementById("roundExo" + BD_Programme[val][1]).classList.add("roundExoColor");
+    rep++;
 }
 
+// Change de série
 function suivant() {
+    document.getElementById("temps" + exo).innerHTML = "0m0s";
     var ligne = "exo" + exo + "rep" + rep;
     var ligne2 = "exo" + exo + "rep" + (rep - 1);
 
-    console.log(ligne);
-
+    // Couleur
     if (rep > 1) {
         document.getElementById(ligne2).classList.add("ligneTabNull");
     }
     document.getElementById(ligne).classList.add("ligneTabColor");
 
+    // Change exo et mets compteur a 0
     rep++;
-    stop();
+    total = 0;
+
+    // clean et lance nouveau chrono
+    clear();
+    temps();
 }
 
+// change d'exo
 function suivant2(val) {
     exo = val;
     rep = 1;
+    total = 0;
 
+    // Couleur roundExo
+    document.getElementById("roundExo" + exo).classList.add("roundExoColor");
+    document.getElementById("progBar").style.width = (100 * (numExo - 1) / (BD_Programme[programme].length - 2)) + "%";
+    numExo++;
+
+    ancien = document.getElementById("progBar" + (exo - 1));
+    //document.getElementById("progBar" + exo).innerHTML = ancien;
+    console.log(ancien);
+    console.log(ancien.textContent);
+    ancien.innerHTML = "";
     suivant();
 }
 
-function temps(exo) {
+function temps() {
     const time = document.getElementById("temps" + exo);
-    total = 0;
 
     boucle = setInterval(function () {
         total++;
-        var min = Math.round(total / 60);
+        var min = Math.floor(total / 60);
         var sec = total % 60;
         time.innerHTML = min + "m" + sec + "s";
     }, 1000);
 }
 
 function stop() {
-    total = 0;
+    var btn = document.getElementById("btn-MA" + exo);
+
+    // Lance chrono
+    if (btn.value == "Marche") {
+        btn.innerHTML = "Arret";
+        btn.value = "Arret";
+
+        temps(exo);
+
+        // Stop chrono
+    } else {
+        btn.innerHTML = "Marche";
+        btn.value = "Marche";
+
+        clearInterval(boucle);
+    }
+
+
+}
+
+// Clean le chrono et initialise le btn marche arret
+function clear() {
     clearInterval(boucle);
+    var btn = document.getElementById("btn-MA" + exo);
+    btn.innerHTML = "Arret";
+    btn.value = "Arret";
 }
 
 
