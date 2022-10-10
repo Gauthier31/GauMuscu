@@ -1,5 +1,5 @@
 const item = document.getElementById('tous');
-item.style.backgroundColor = "orange";
+item.style.backgroundColor = "#ffc107";
 
 // Affichage masquage des blocs de sections
 page("accueil");
@@ -109,7 +109,7 @@ for (i = 0; i < BD_Programme.length; i++) {
     prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3">
             <ol class="list-group">
             <li class="list-group-item taille">` + BD_Programme[i][0] + `
-                <button type="button" class="btn orange btn-prog taille2" onclick="programmes(` + i + `)">C'est partie</button>
+                <button type="button" class="btn orange btn-prog taille2" onclick="programmes(` + i + `)">C'est parti</button>
             </li>`
         + txt + `   
             </ol></div>`;
@@ -137,7 +137,7 @@ function filtre(val) {
     }
 
     const item = document.getElementById(val);
-    item.style.backgroundColor = "orange";
+    item.style.backgroundColor = "#ffc107";
 
 }
 
@@ -281,7 +281,7 @@ function programmes(val) {
                             <p class="modal-title taille" id="titre-modal">` + BD_Exo[BD_Programme[val][i] - 1][1] + `</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body taille2">
+                        <div class="modal-body taille2 detail2">
                             <img class="imgExo" src="document/exo/` + BD_Exo[BD_Programme[val][i] - 1][1] + `.jpg" alt="` + BD_Exo[BD_Programme[val][i] - 1][1] + `"/>
                             <hr/>
 
@@ -299,6 +299,22 @@ function programmes(val) {
                                 </tbody>
                             </table>
 
+                            <br/>
+
+                            <a class="btn btn-warning btn-module3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Info +
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <div class="taille4 p-4">
+                                    Imperio conplures aliis et diluere aurem nec 
+                                    praedoctis reginae stimulis resedit resedit defensi 
+                                    Caesarem Caesarem essent hinc cursim hinc et diluere 
+                                    obiecta quid nec inde per subinde ad cuius nec 
+                                    quaesitum permissi stimulis periere diluere iudex 
+                                    cuius essent inde imaginarius.
+                                </div>
+                            </div>
+
                             <!-- Info cachés -->
                             <div id="` + BD_Exo[BD_Programme[val][i] - 1][0] + `_info" hidden>
                                 <p class="info">` + BD_Exo[BD_Programme[val][i] - 1][0] + ` - ` + BD_Exo[i][1] + `</p>
@@ -312,13 +328,7 @@ function programmes(val) {
                                     cuius essent inde imaginarius.
                                 </p>
                             </div>
-
-                            <!--
-                            <button type="button" class="btn btn-dark btn-i" data-bs-toggle="modal"
-                                data-bs-target="#ModalExo" onclick="modalInfo(` + BD_Exo[BD_Programme[val][i] - 1][0] + `)">
-                                Info +
-                            </button>
-                            -->
+                            
                         
                         </div>
 
