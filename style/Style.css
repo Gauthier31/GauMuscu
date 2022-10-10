@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: montserrat;
+    font-family: HeadingProDouble-Regular;
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
 }
@@ -15,6 +15,10 @@ body {
 
 .navbar .nav-link {
     color: rgb(0, 0, 0) !important;
+    top: 0;
+}
+
+.navbar .nav-item {
     margin-left: 100px;
 }
 
@@ -33,18 +37,24 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+i {
+    margin-right: 20px;
+    height: 40px !important;
+    width: 40px !important;
+}
+
 /* -------------------------------------------------*/
 header {
     background-image: url("../document/salle_de_sport.jpg");
     background-size: cover;
     width: calc(100%);
-    height: 500px;
-    color: orange;
+    height: 700px;
+    color: #ffc107;
 }
 
 .grandTitre {
     vertical-align: middle;
-    line-height: 600px;
+    line-height: 800px;
     font-size: 100px;
 }
 
@@ -84,17 +94,18 @@ header {
 
 .type {
     border: solid;
+    border-radius: 50px;
     border-width: 1px;
-    border-color: orange;
+    border-color: #ffc107;
     isolation: isolate;
     color: black;
+    margin: 10px;
 }
 
 .nav-link,
 .nav-link:hover {
     color: black;
     border-radius: 0px !important;
-    border-color: orange !important;
 }
 
 
@@ -106,7 +117,7 @@ header {
 .card {
     border-radius: 50px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
-    background-color: orange;
+    background-color: #ffc107;
 }
 
 .card-img-top {
@@ -120,6 +131,11 @@ header {
     height: 260px;
     overflow-y: scroll;
     font-size: 1em;
+}
+
+.detail2 {
+    height: 1100px;
+    overflow-y: scroll;
 }
 
 .img-muscle {
@@ -170,14 +186,14 @@ header {
 }
 
 hr {
-    color: orange;
+    color: #ffc107;
     height: 8px !important;
     opacity: 1;
     border-radius: 5px;
 }
 
 .ligneTabColor {
-    background-color: orange;
+    background-color: #ffc107;
 }
 
 .ligneTabNull {
@@ -206,6 +222,17 @@ hr {
     margin-bottom: 5px;
 }
 
+.btn-module3 {
+    border-radius: 40px;
+    width: 220px;
+    height: 90px;
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
 .modal-footer {
     justify-content: space-between;
 }
@@ -221,7 +248,7 @@ hr {
 }
 
 .roundExoColor {
-    background-color: orange;
+    background-color: #ffc107;
 }
 
 .progBar {
@@ -230,9 +257,11 @@ hr {
 
 /* ----------------------------------------- */
 
-.orange {
-    background-color: orange;
-    color: black;
+.orange,
+.btn-warning,
+.bg-warning {
+    background-color: #ffc107 !important;
+    color: black !important;
 }
 
 /* ----------------------------------------- */
