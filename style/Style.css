@@ -7,11 +7,23 @@
 
 body {
     font-family: HeadingProDouble-Regular;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     overflow-x: hidden;
 }
 
 /* -------------------------------------------------*/
+.navbarHaut {
+    height: 20px;
+    width: 100%;
+}
+
+.navbar {
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    min-height: 120px;
+}
 
 .navbar .nav-link {
     color: rgb(0, 0, 0) !important;
@@ -48,14 +60,21 @@ header {
     background-image: url("../document/salle_de_sport.jpg");
     background-size: cover;
     width: calc(100%);
-    height: 700px;
+    height: 600px;
     color: #ffc107;
+    border-radius: 60px;
+
+    z-index: -1;
+    position: fixed;
+
+    top: 120px;
 }
 
 .grandTitre {
     vertical-align: middle;
-    line-height: 800px;
     font-size: 100px;
+    text-align: center !important;
+    line-height: 600px;
 }
 
 .taille {
@@ -110,14 +129,15 @@ header {
 
 
 /* -------------------------------------------------*/
-.sec {
-    margin: 2%;
+section {
+    padding: 6%;
+    background-color: white;
 }
 
 .card {
     border-radius: 50px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
-    background-color: #ffc107;
+    background-color: white;
 }
 
 .card-img-top {
@@ -265,3 +285,70 @@ hr {
 }
 
 /* ----------------------------------------- */
+
+#liste {
+    position: sticky;
+    top: 120px;
+    z-index: 1;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3) !important;
+
+}
+
+#accueil {
+    background-color: #ffc107;
+}
+
+.bouchon1 {
+    height: 620px;
+    z-index: 5;
+}
+
+.bouchon2-1 {
+    height: 60px;
+    width: 60px;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: translate(0, -60px);
+
+    background-color: rgba(0, 0, 0, 0.0);
+    background-image: radial-gradient(circle at 60px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
+}
+
+.bouchon2-2 {
+    height: 60px;
+    width: 60px;
+
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    transform: translate(0, -60px);
+
+    background-color: rgba(0, 0, 0, 0.0);
+    background-image: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
+}
+
+.bouchon2-3 {
+    height: 60px;
+    width: 60px;
+
+    position: absolute !important;
+    left: 0 !important;
+    transform: translate(0, 58px);
+
+    background-color: #ffc107;
+    background-image: radial-gradient(circle at 60px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
+}
+
+.bouchon2-4 {
+    height: 60px;
+    width: 60px;
+
+    position: absolute !important;
+    right: 0 !important;
+    transform: translate(0, 58px);
+
+    background-color: #ffc107;
+    background-image: radial-gradient(circle at 0px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
+}
