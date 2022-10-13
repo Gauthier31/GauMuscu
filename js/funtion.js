@@ -54,7 +54,7 @@ for (i = 0; i < BD_Exo.length; i++) {
                             </div>
 
                             <div>
-                                <button type="button" class="btn btn-dark btn-i" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-warning btn-i" data-bs-toggle="modal"
                                     data-bs-target="#ModalExo" onclick="modalInfo(` + BD_Exo[i][0] + `)">
                                     Info +
                                 </button>
