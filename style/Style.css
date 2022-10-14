@@ -67,7 +67,7 @@ header {
     z-index: -1;
     position: fixed;
 
-    top: 0px;
+    top: 0;
 }
 
 .grandTitre {
@@ -289,7 +289,7 @@ hr {
 #liste {
     position: sticky;
     top: 120px;
-    z-index: 1;
+    z-index: 5;
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3) !important;
 
 }
@@ -304,12 +304,13 @@ hr {
 }
 
 .bouchon2-1 {
-    height: 60px;
+    height: 62px;
     width: 60px;
 
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
+    z-index: -5;
     transform: translate(0, -60px);
 
     background-color: rgba(0, 0, 0, 0.0);
@@ -317,12 +318,13 @@ hr {
 }
 
 .bouchon2-2 {
-    height: 60px;
+    height: 62px;
     width: 60px;
 
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;
+    z-index: -5;
     transform: translate(0, -60px);
 
     background-color: rgba(0, 0, 0, 0.0);
@@ -335,9 +337,10 @@ hr {
 
     position: absolute !important;
     left: 0 !important;
-    transform: translate(0, 59px);
+    z-index: -5;
+    transform: translate(0, 58px);
 
-    background-color: #ffc107;
+    background-color: rgba(0, 0, 0, 0.0);
     background-image: radial-gradient(circle at 60px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
 }
 
@@ -347,8 +350,9 @@ hr {
 
     position: absolute !important;
     right: 0 !important;
-    transform: translate(0, 59px);
+    z-index: -5;
+    transform: translate(0, 58px);
 
-    background-color: #ffc107;
-    background-image: radial-gradient(circle at 0px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
+    background-color: rgba(0, 0, 0, 0.0);
+    background-image: radial-gradient(circle at 0px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 30px);
 }
