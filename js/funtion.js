@@ -1,7 +1,7 @@
 const item = document.getElementById('tous').classList.add("orange");
 
 // Affichage masquage des blocs de sections
-page("programme");
+page("accueil");
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
