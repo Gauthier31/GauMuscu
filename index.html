@@ -64,14 +64,16 @@
 
     <!-- Tête d'affiche -->
     <header class="bloc" id="tete">
-        <h1 class="grandTitre text-center">Gau Musculation</h1>
+        <h1 class="grandTitre text-center">Gau Muscu</h1>
     </header>
 
+    <!--------------------------------------------------------------->
+
     <!-- Liste -->
-    <section class="bloc taille2" id="liste">
+    <section class="bloc sectionTitre taille2" id="liste">
         <ul class="nav nav-tabs nav-fill justify-content-center">
             <li class="nav-item type" id="tous">
-                <p class="nav-link type-link" onclick="filtre('tous')">Tous</p>
+                <p class="nav-link" onclick="filtre('tous')">Tous</p>
             </li>
             <li class="nav-item type" id="epaule">
                 <p class="nav-link" onclick="filtre('epaule')">Épaules</p>
@@ -88,7 +90,7 @@
                 <p class="nav-link" onclick="filtre('dos')">Dos</p>
             </li>
             <li class="nav-item type" id="abdo">
-                <p class="nav-link" onclick="filtre('abdo')">Abdos</p>
+                <p class="nav-link" onclick="filtre('abdo')">Abdominaux</p>
             </li>
             <li class="nav-item type" id="jambes">
                 <p class="nav-link" onclick="filtre('jambes')">Jambes</p>
@@ -102,12 +104,13 @@
         <div class="bouchon2-4"></div>
     </section>
 
-
     <!-- Liste des Exos -->
-    <section class="section bloc " id="accueil">
+    <section class="bloc sectionInfo" id="accueil">
         <div class="row justify-content-center g-4" id="cards">
         </div>
     </section>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
     <!-- Modal info exo -->
     <div class="modal fade" id="ModalExo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
@@ -128,6 +131,50 @@
             </div>
         </div>
     </div>
+
+    <!--------------------------------------------------------------->
+
+    <!-- Listes des programmes -->
+    <section class="bloc sectionTitre" id="programmeTitre">
+
+        <!-- bloc sur les coins -->
+        <div class="bouchon2-1"></div>
+        <div class="bouchon2-2"></div>
+        <div class="bouchon2-3"></div>
+        <div class="bouchon2-4"></div>
+
+        <p class="taille fw titre center-h-v"> Liste des programmes</p>
+    </section>
+
+    <section class="bloc sectionInfo" id="programme">
+        <div class="row justify-content-center g-5" id="prog">
+        </div>
+    </section>
+
+    <!-- Exercice -->
+    <section class="bloc" id="exo">
+    </section>
+
+    <!--------------------------------------------------------------->
+
+    <!-- Nutrition -->
+    <section class="bloc sectionTitre" id="nutritionTitre">
+
+        <!-- bloc sur les coins -->
+        <div class="bouchon2-1"></div>
+        <div class="bouchon2-2"></div>
+        <div class="bouchon2-3"></div>
+        <div class="bouchon2-4"></div>
+
+        <p class="taille fw center-h-v"> Liste des repas</p>
+
+    </section>
+
+    <!-- Nutrition -->
+    <section class="bloc sectionInfo" id="nutrition">
+    </section>
+
+    <!--------------------------------------------------------------->
 
     <!-- Piste audio off canvas -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="musique"
@@ -151,8 +198,8 @@
                 <br /><br />
                 <u>Audio 1 : </u>
                 <br />
-                <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                    <a href="/media/cc0-audio/t-rex-roar.mp3">
+                <audio controls src="">
+                    <a href="">
                         Télécharger
                     </a>
                 </audio>
@@ -161,8 +208,8 @@
 
                 <u>Audio 2 : </u>
                 <br />
-                <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                    <a href="/media/cc0-audio/t-rex-roar.mp3">
+                <audio controls src="">
+                    <a href="">
                         Télécharger
                     </a>
                 </audio>
@@ -171,8 +218,8 @@
 
                 <u>Audio 3 : </u>
                 <br />
-                <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                    <a href="/media/cc0-audio/t-rex-roar.mp3">
+                <audio controls src="">
+                    <a href="">
                         Télécharger
                     </a>
                 </audio>
@@ -180,32 +227,14 @@
         </div>
     </div>
 
-    <!-- Listes des programmes -->
-    <section class="bloc section" id="programme">
-
-        <p class="taille fw text-center"> Liste des programmes</p>
-        <br />
-
-        <div class="row justify-content-center g-5" id="prog">
-        </div>
-    </section>
-
-    <!-- Exercice -->
-    <section class="bloc" id="exo">
-    </section>
-
-    <!-- Nutrition -->
-    <section class="bloc" id="nutrition">
-        <p class="taille fw text-center"> Liste des repas</p>
-        <br />
-    </section>
-
     <!-- Pieds de page -->
     <section style="height: 1000px;"></section>
 
     <!-- Liens js -->
     <script src="js/BD.js"></script>
     <script src="js/funtion.js"></script>
+
+    <!--------------------------------------------------------------->
 
 </body>
 
