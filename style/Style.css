@@ -171,7 +171,7 @@ section {
 }
 
 .detail {
-    height: 260px;
+    height: 280px;
     overflow-y: scroll;
     font-size: 1em;
 }
