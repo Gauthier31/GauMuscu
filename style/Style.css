@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-/* -------------------------------------------------*/
+/* ---------------- NavBar ------------------*/
 .navbarHaut {
     height: 20px;
     width: 100%;
@@ -55,7 +55,7 @@ i {
     width: 40px !important;
 }
 
-/* -------------------------------------------------*/
+/* -------------- Haut-Bas ------------------*/
 header {
     background-image: url("../document/salle_de_sport.jpg");
     background-size: cover;
@@ -74,7 +74,7 @@ header {
     vertical-align: middle;
     font-size: 100px;
     text-align: center !important;
-    line-height: 600px;
+    line-height: 800px;
 }
 
 .taille {
@@ -109,7 +109,14 @@ header {
     text-overflow: ellipsis !important;
 }
 
-/* -------------------------------------------------*/
+.center-h-v {
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* -------------- Liste ---------------------*/
 
 .type {
     border: solid;
@@ -128,11 +135,27 @@ header {
 }
 
 
-/* -------------------------------------------------*/
+/* -------------- Section -------------------*/
 section {
     padding: 6%;
     background-color: white;
 }
+
+.sectionTitre {
+    position: sticky;
+    min-height: 200px;
+    max-height: 300px;
+    top: 120px;
+    z-index: 5;
+    box-shadow: 0 0.5em 3rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.sectionInfo {
+    background-color: #ffc107;
+    min-height: 1000px;
+}
+
+/* -------------- Cards -------------------*/
 
 .card {
     border-radius: 50px;
@@ -186,19 +209,43 @@ section {
     }
 
     .modalExoIn {
-        height: 1500px !important;
+        height: 1600px !important;
     }
 }
 
 .btn-prog {
-    border-radius: 20px;
+    border-top-right-radius: 50px;
     width: 300px;
-    height: 80px;
+    height: 89px;
     font-size: 1em;
-    float: right !important;
+    position: absolute;
+    left: 100% !important;
+    transform: translate(-100%, -10%) !important;
+    border: solid;
 }
 
-/* ----------------------------------------- */
+/* ------------- List Prog ----------------- */
+
+.list-group {
+    border-radius: 50px;
+}
+
+.list-group-item {
+    padding-left: 50px;
+}
+
+/* ------------- Modal Exo ----------------- */
+
+.modal {
+    left: -20px;
+    width: 104%;
+}
+
+.modal-header {
+    padding: 2em 3em;
+}
+
+.tableProgExo {}
 
 .imgExo {
     height: 500px;
@@ -214,10 +261,11 @@ hr {
 
 .ligneTabColor {
     background-color: #ffc107;
+    transition: background-color 0.5s;
 }
 
-.ligneTabNull {
-    background-color: white;
+.th {
+    width: 100px;
 }
 
 .btn-module {
@@ -267,7 +315,8 @@ hr {
     font-size: 2em;
 }
 
-.roundExoColor {
+.roundExoColor,
+.roundExoColor:focus {
     background-color: #ffc107;
 }
 
@@ -275,7 +324,16 @@ hr {
     width: 100%;
 }
 
-/* ----------------------------------------- */
+.temps {
+    width: 100px;
+}
+
+input {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* ------------- Background ---------------- */
 
 .orange,
 .btn-warning,
@@ -284,18 +342,15 @@ hr {
     color: black !important;
 }
 
-/* ----------------------------------------- */
-
-#liste {
-    position: sticky;
-    top: 120px;
-    z-index: 5;
-    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3) !important;
-
+.white {
+    background-color: white;
 }
+
+/* ----------- id: Section ----------------- */
 
 #accueil {
     background-color: #ffc107;
+    min-height: 1000px;
 }
 
 .bouchon1 {
@@ -337,8 +392,9 @@ hr {
 
     position: absolute !important;
     left: 0 !important;
+    top: 100% !important;
     z-index: -5;
-    transform: translate(0, 58px);
+    transform: translate(0, -2px);
 
     background-color: rgba(0, 0, 0, 0.0);
     background-image: radial-gradient(circle at 60px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 60px);
@@ -350,9 +406,16 @@ hr {
 
     position: absolute !important;
     right: 0 !important;
+    top: 100% !important;
     z-index: -5;
-    transform: translate(0, 58px);
+    transform: translate(0, -2px);
 
     background-color: rgba(0, 0, 0, 0.0);
     background-image: radial-gradient(circle at 0px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, white 30px);
+}
+
+/* ------------ Musique ----------------- */
+
+.offcanvas-start {
+    width: 60%;
 }
