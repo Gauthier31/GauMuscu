@@ -209,7 +209,7 @@ section {
     }
 
     .modalExoIn {
-        height: 1700px !important;
+        height: 1650px !important;
     }
 }
 
@@ -239,6 +239,7 @@ section {
 .modal {
     left: -20px;
     width: 104%;
+    top: -20px;
 }
 
 .modal-header {
