@@ -122,22 +122,25 @@ header {
     border: solid;
     border-radius: 50px;
     border-width: 1px;
-    border-color: #ffc107;
+    border-color: rgba(0, 0, 0, 0.0);
     isolation: isolate;
     color: black;
     margin: 10px;
+    box-shadow: -7px -7px 10px 0 rgba(214, 214, 214, 0.7),
+        7px 7px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-link,
 .nav-link:hover {
     color: black;
     border-radius: 0px !important;
+    border-color: rgba(0, 0, 0, 0.0);
 }
 
 
 /* -------------- Section -------------------*/
 section {
-    padding: 6%;
+    padding: 5%;
     background-color: white;
 }
 
@@ -151,7 +154,8 @@ section {
 }
 
 .sectionInfo {
-    background-color: #ffc107;
+    padding-top: 8%;
+    background: rgb(255, 255, 255);
     min-height: 1000px;
 }
 
@@ -159,15 +163,26 @@ section {
 
 .card {
     border-radius: 50px;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
-    background-color: white;
+    background: rgb(255, 255, 255);
+    box-shadow: -20px -20px 20px 0 rgba(214, 214, 214, 0.7),
+        7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.card-img-bloc {
+    padding: 5%;
     height: 250px;
+}
+
+.card-img-bloc2 {
+    padding: 2%;
+    height: 600px;
 }
 
 .detail {
@@ -209,7 +224,7 @@ section {
     }
 
     .modalExoIn {
-        height: 1670px !important;
+        height: 1640px !important;
     }
 }
 
@@ -228,6 +243,8 @@ section {
 
 .list-group {
     border-radius: 50px;
+    box-shadow: -7px -7px 20px 0 rgba(214, 214, 214, 0.7),
+        7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .list-group-item {
@@ -246,11 +263,9 @@ section {
     padding: 2em 3em;
 }
 
-.tableProgExo {}
-
 .imgExo {
-    height: 500px;
-    width: 100%;
+    max-width: 100%;
+    height: 100%;
 }
 
 hr {
@@ -348,11 +363,6 @@ input {
 }
 
 /* ----------- id: Section ----------------- */
-
-#accueil {
-    background-color: #ffc107;
-    min-height: 1000px;
-}
 
 .bouchon1 {
     height: 620px;

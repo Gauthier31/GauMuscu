@@ -1,6 +1,9 @@
 // tableau
 const BD_Exo = [
 
+    // Bouchon
+    [0, "titre", "petiteImage", `description`],
+
     [1, "Développé couché avec haltères", "pectoraux.jpg", "description"],
 
     [2, "Développé incliné avec haltères", "pectoraux.jpg", "description"],
@@ -45,8 +48,23 @@ const BD_Exo = [
 
     [20, "Élévation latéral avec poulie", "deltoide.jpg", `description`],
 
+    /////////////////////////////////////////////////////////////////////////////////
 
-    //[0, "titre", "petiteImage", `description`],
+    [21, "Squat", "quadriceps.jpg", `description`],
+
+    [22, "Soulevé de terre", "quadriceps.jpg", `description`],
+
+    [23, "Fente avec haltère", "quadriceps.jpg", `description`],
+
+    [24, "Fente surelevé avec haltère", "quadriceps.jpg", `description`],
+
+    [25, "Hip Thrust", "ischio.jpg", `description`],
+
+    [26, "Low row", "dorseaux.jpg", `description`],
+
+    [27, "Soulevé de terre roumain", "dorseaux.jpg", `description`],
+
+    /////////////////////////////////////////////////////////////////////////////////
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,6 +94,14 @@ const BD_Type = [
     [18, "epaule", "bras"],
     [19, "dos", "bras"],
     [20, "epaule"],
+
+    [21, "jambes"],
+    [22, "jambes"],
+    [23, "jambes"],
+    [24, "jambes"],
+    [25, "jambes"],
+    [26, "dos", "epaule"],
+    [27, "dos", "epaule"],
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -126,14 +152,32 @@ const BD_Stat = [
     // Élévation latéral avec poulie
     [20, 12, 5, 12, 5, 12, 5, 12, 5],
 
+    // Squat
+    [21, 12, 50, 12, 50, 12, 50, 12, 50],
+    // Soulevé de terre
+    [22, 12, 50, 12, 50, 12, 50, 12, 50],
+    // Fente avec haltère
+    [23, 12, 12, 12, 12, 12, 12, 12, 12],
+    // Fente surelevé avec haltère
+    [24, 12, 10, 12, 10, 12, 10, 12, 10],
+    // Hip Thrust
+    [25, 12, 40, 12, 40, 12, 40, 12, 40],
+    // Low row
+    [26, 12, 60, 12, 60, 12, 60, 12, 60],
+    // Soulevé de terre roumain
+    [27, 12, 30, 12, 30, 12, 30, 12, 30],
+
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const BD_Programme = [
-    // Push
+    // Push Gauthier
     ["Push (Pectauraux, Bras)", 1, 2, 7, 5, 3],
-    // Leg
+    // Leg Gauthier
     ["Leg (Jambes)", 8, 9, 10, 11, 12, 13],
-    // Pull
-    ["Pull (Dos, Épaule)", 14, 18, 19, 20]
+    // Pull Gauthier
+    ["Pull (Dos, Épaule)", 14, 18, 19, 20],
+
+    // Jambe Juliette
+    ["Jambe (Juliette)",],
 ]

@@ -10,14 +10,16 @@ page("accueil");
 let card = document.getElementById("cards");
 var i;
 
-for (i = 0; i < BD_Exo.length; i++) {
+for (i = 1; i < BD_Exo.length; i++) {
 
     card.innerHTML +=
         `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw" id="` + BD_Exo[i][0] + `">
                     <div class="card">
 
-                    <img class="card-img-top" src="document/exo/` + BD_Exo[i][1] + `.jpg"
-                        alt="` + BD_Exo[i][2] + `">
+                    <div class="card-img-bloc">
+                        <img class="card-img-top mx-auto d-block" src="document/exo/` + BD_Exo[i][1] + `.jpg"
+                            alt="` + BD_Exo[i][2] + `">
+                    </div>
 
                         <div class="card-body">
                             <p class="taille4 fw depasse m-1">` + BD_Exo[i][1] + `</p>
@@ -99,8 +101,8 @@ for (i = 0; i < BD_Programme.length; i++) {
     for (j = 1; j < BD_Programme[i].length; j++) {
 
         txt +=
-            `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j] - 1][1]
-            //+ ` (id = ` + BD_Exo[BD_Programme[i][j] - 1][0] + `)
+            `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j]][1]
+            //+ ` (id = ` + BD_Exo[BD_Programme[i][j]][0] + `)
             + `</li>`;
 
     }
@@ -147,13 +149,19 @@ function filtre(val) {
 
 /////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
 function page(val) {
-    // Masque
+
+    // Masques la navbar
+    const nav = document.getElementById("navbarColor01");
+    nav.classList.remove("show");
+
+    // Masque Les sections
     const masque = document.getElementsByClassName('bloc');
     for (i = 0; i < masque.length; i++) {
         masque[i].style.display = "none";
     }
 
     // Affiche
+    document.getElementById('teteBouchon').style.display = "block";
     document.getElementById('tete').style.display = "block";
 
     if (val == "accueil") {
@@ -242,8 +250,8 @@ function programmes(val) {
             tab +=
                 `<tr id="exo` + BD_Programme[val][i] + `rep` + (j + 1) / 2 + `">
                     <th class="th">` + (j + 1) / 2 + `</th>
-                    <td><input type="text" value="` + BD_Stat[BD_Programme[val][i]][j] + `"/></td>
-                    <td><input type="text" value="` + BD_Stat[BD_Programme[val][i]][j + 1] + `"/></td>
+                    <td><input id="E` + BD_Programme[val][i] + `R` + (j + 1) / 2 + `Rep" type="text" value="` + BD_Stat[BD_Programme[val][i]][j] + `"/></td>
+                    <td><input id=id="E` + BD_Programme[val][i] + `R` + (j + 1) / 2 + `Poids" type="text" value="` + BD_Stat[BD_Programme[val][i]][j + 1] + `"/></td>
                 </tr> `;
         }
 
@@ -288,11 +296,13 @@ function programmes(val) {
                         ` + progresseBar + `
 
                         <div class="modal-header">
-                            <p class="modal-title taille fw" id="titre-modal">` + BD_Exo[BD_Programme[val][i] - 1][1] + `</p>
+                            <p class="modal-title taille fw" id="titre-modal">` + BD_Exo[BD_Programme[val][i]][1] + `</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body taille2 detail2">
-                            <img class="imgExo" src="document/exo/` + BD_Exo[BD_Programme[val][i] - 1][1] + `.jpg" alt="` + BD_Exo[BD_Programme[val][i] - 1][1] + `"/>
+                            <div class="card-img-bloc2">
+                                <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[BD_Programme[val][i]][1] + `.jpg" alt="` + BD_Exo[BD_Programme[val][i]][1] + `"/>
+                            </div>
                             <hr/>
 
                             <table class="table">
@@ -304,7 +314,7 @@ function programmes(val) {
                                     </tr>
                                 </thead>
 
-                                <tbody class="tableProgExo" id="` + BD_Exo[BD_Programme[val][i] - 1][0] + `_stat">
+                                <tbody class="tableProgExo" id="` + BD_Exo[BD_Programme[val][i]][0] + `_stat">
                                     ` + tab + `
                                 </tbody>
                             </table>
@@ -324,23 +334,7 @@ function programmes(val) {
                                     quaesitum permissi stimulis periere diluere iudex 
                                     cuius essent inde imaginarius.
                                 </div>
-                            </div>
-
-                            <!-- Info cachés -->
-                            <div id="` + BD_Exo[BD_Programme[val][i] - 1][0] + `_info" hidden>
-                                <p class="info">` + BD_Exo[BD_Programme[val][i] - 1][0] + ` - ` + BD_Exo[i][1] + `</p>
-                                <p class="info">` + BD_Exo[BD_Programme[val][i] - 1][2] + `</p>
-                                <p class="info">
-                                    Imperio conplures aliis et diluere aurem nec 
-                                    praedoctis reginae stimulis resedit resedit defensi 
-                                    Caesarem Caesarem essent hinc cursim hinc et diluere 
-                                    obiecta quid nec inde per subinde ad cuius nec 
-                                    quaesitum permissi stimulis periere diluere iudex 
-                                    cuius essent inde imaginarius.
-                                </p>
-                            </div>
-                            
-                        
+                            </div>                
                         </div>
 
                         <div class="modal-footer">
@@ -349,10 +343,10 @@ function programmes(val) {
                             <button class="btn btn-warning btn-module2" onclick="suivant(` + BD_Programme[val][i + 1] + `)">Suivant</button>
 
                             <button id="btnNextExo` + BD_Programme[val][i] + `" 
-                            class="btn btn-dark btn-module" onclick="suivant2(` + BD_Programme[val][i] + `)" 
-                            data-bs-target="#exo` + BD_Programme[val][i] + `" data-bs-toggle="modal"
-                            style="display: none">
-                                Exercice suivant
+                                class="btn btn-dark btn-module" onclick="suivant2(` + BD_Programme[val][i] + `)" 
+                                data-bs-target="#exo` + BD_Programme[val][i] + `" data-bs-toggle="modal"
+                                style="display: none">
+                                    Exercice suivant
                             </button>
                         </div>
                     </div>
@@ -379,6 +373,10 @@ function suivant(exoNext) {
             document.getElementById(ligne2).classList.remove("ligneTabColor");
         }
         document.getElementById(ligne).classList.add("ligneTabColor");
+
+
+        // On écrit dans la fiche les résultats
+        //const affiche = document.getElementById('exo');
 
         // Change exo et mets compteur a 0
         rep++;
@@ -431,20 +429,19 @@ function stop() {
 
     // Lance chrono
     if (btn.value == "Marche") {
+        temps(exo);
+
         btn.innerHTML = "Arret";
         btn.value = "Arret";
 
-        temps(exo);
-
         // Stop chrono
     } else {
+        clearInterval(boucle);
+
         btn.innerHTML = "Marche";
         btn.value = "Marche";
 
-        clearInterval(boucle);
     }
-
-
 }
 
 // Clean le chrono et initialise le btn marche arret
