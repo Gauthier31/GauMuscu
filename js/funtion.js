@@ -222,7 +222,7 @@ function programmes(val) {
 
     const affiche = document.getElementById('exo');
     affiche.style.display = "block";
-    affiche.innerHTML +=
+    affiche.innerHTML =
         `<button class="btn btn-dark position-absolute top-50 start-50 translate-middle btn-module" data-bs-toggle="modal" 
         href="#exo` + BD_Programme[val][1] + `" >
             Lancez le programme
