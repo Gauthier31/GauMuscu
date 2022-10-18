@@ -1,5 +1,5 @@
 const item = document.getElementById('tous').classList.add("orange");
-
+//const header = document.getElementById('teteImg').classList.add("img-headerAfter");
 // Affichage masquage des blocs de sections
 page("accueil");
 
@@ -143,7 +143,7 @@ function filtre(val) {
     // On colorie le filtre
     const item = document.getElementById(val);
     item.classList.add("orange");
-    item.style.transition = "background-color 0.5s";
+    //item.style.transition = "background-color 0.5s";
 
 }
 
@@ -214,6 +214,8 @@ var programme;      // num du prog choisi
 var btnExo = "";
 var progresseBar = "";
 
+var serieNext = 0; //Numérode la série suivant en fonction de l'exo 
+
 // Liste des exo
 function programmes(val) {
     // Masque
@@ -250,8 +252,8 @@ function programmes(val) {
             tab +=
                 `<tr id="exo` + BD_Programme[val][i] + `rep` + (j + 1) / 2 + `">
                     <th class="th">` + (j + 1) / 2 + `</th>
-                    <td><input id="E` + BD_Programme[val][i] + `R` + (j + 1) / 2 + `Rep" type="text" value="` + BD_Stat[BD_Programme[val][i]][j] + `"/></td>
-                    <td><input id=id="E` + BD_Programme[val][i] + `R` + (j + 1) / 2 + `Poids" type="text" value="` + BD_Stat[BD_Programme[val][i]][j + 1] + `"/></td>
+                    <td><input type="text" value="` + BD_Stat[BD_Programme[val][i]][j] + `"/></td>
+                    <td><input type="text" value="` + BD_Stat[BD_Programme[val][i]][j + 1] + `"/></td>
                 </tr> `;
         }
 
@@ -263,7 +265,7 @@ function programmes(val) {
             let classOp = "";
 
             if (j <= i) {
-                classOp = "roundExoColor";
+                classOp = "roundExoSucced";
             }
 
             btnExo +=
@@ -280,7 +282,7 @@ function programmes(val) {
             `<div class="modal-header">
                 <div class="position-relative m-4 progBar">
                     <div class="progress" style="height: 5px;">
-                        <div id="progBar" class="progress-bar bg-warning" role="progressbar" aria-label="Progress" 
+                        <div id="progBar" class="progress-bar bg-success" role="progressbar" aria-label="Progress" 
                         style="width: ` + (100 * (i - 1) / (BD_Programme[val].length - 2)) + `%;"></div>
                     </div>
                     ` + btnExo + `
@@ -296,7 +298,7 @@ function programmes(val) {
                         ` + progresseBar + `
 
                         <div class="modal-header">
-                            <p class="modal-title taille fw" id="titre-modal">` + BD_Exo[BD_Programme[val][i]][1] + `</p>
+                            <p class="modal-title taille fw depasse" id="titre-modal">` + BD_Exo[BD_Programme[val][i]][1] + `</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body taille2 detail2">
@@ -314,16 +316,12 @@ function programmes(val) {
                                     </tr>
                                 </thead>
 
-                                <tbody class="tableProgExo" id="` + BD_Exo[BD_Programme[val][i]][0] + `_stat">
+                                <tbody class="tableProgExo" id="` + BD_Exo[BD_Programme[val][i]][0] + `_statModule">
                                     ` + tab + `
                                 </tbody>
                             </table>
 
-                            <!--
-                            <a class="btn btn-warning btn-module3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Info +
-                            </a>
-                            -->
+                            <button onclick="addSerie(` + BD_Exo[BD_Programme[val][i]][0] + `)" class="btn btn-module3"> <i class="fa-solid fa-plus"></i> </button>
 
                             <div class="collapse" id="collapseExample">
                                 <div class="taille4 p-4">
@@ -407,6 +405,8 @@ function suivant2(exoNext) {
 
     numExo++;
 
+    serieNext = 0;
+
     ancien = document.getElementById("progBar" + (exo - 1));
 
     suivant(exoNext);
@@ -453,3 +453,20 @@ function clear() {
 }
 
 
+function addSerie(numExo) {
+
+    var tableau = document.getElementById(numExo + "_statModule");
+
+    if (serieNext == 0) {
+        serieNext = (BD_Stat[numExo].length + 1) / 2;
+    } else {
+        serieNext++;
+    }
+
+    tableau.innerHTML +=
+        `<tr id="exo` + numExo + `rep` + serieNext + `">
+            <th class="th">` + serieNext + `</th>
+            <td><input type="text" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></td>
+            <td><input type="text" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></td>
+        </tr>`;
+}
