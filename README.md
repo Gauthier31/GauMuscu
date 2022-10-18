@@ -1,3 +1,3 @@
 # muscu
 Appli Web de musculation
-muscu-app.vercel.app
+https://muscu-app.vercel.app/
