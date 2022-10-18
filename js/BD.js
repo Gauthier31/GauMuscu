@@ -44,7 +44,7 @@ const BD_Exo = [
 
     [18, "Shoulder press", "deltoide.jpg", `description`],
 
-    [19, "Tirage verticale", "dorseaux.jpg", `description`],
+    [19, "Tirage horizontal", "dorseaux.jpg", `description`],
 
     [20, "Élévation latéral avec poulie", "deltoide.jpg", `description`],
 
@@ -63,6 +63,12 @@ const BD_Exo = [
     [26, "Low row", "dorseaux.jpg", `description`],
 
     [27, "Soulevé de terre roumain", "dorseaux.jpg", `description`],
+
+    [28, "Tapis de course", "quadriceps.jpg", `description`],
+
+    [29, "Escalier", "quadriceps.jpg", `description`],
+
+    [30, "Tirage vertical", "dorseaux.jpg", `description`],
 
     /////////////////////////////////////////////////////////////////////////////////
 ];
@@ -102,6 +108,10 @@ const BD_Type = [
     [25, "jambes"],
     [26, "dos", "epaule"],
     [27, "dos", "epaule"],
+
+    [28, "jambes"],
+    [29, "jambes"],
+    [30, "dos", "bras", "epaule"],
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -147,7 +157,7 @@ const BD_Stat = [
     [17, 24, 8, 24, 8, 24, 8, 24, 8],
     // Shoulder press
     [18, 12, 30, 12, 30, 12, 30, 12, 30],
-    // Tirage verticale
+    // Tirage horizontal
     [19, 12, 44, 12, 44, 12, 44, 12, 44],
     // Élévation latéral avec poulie
     [20, 12, 5, 12, 5, 12, 5, 12, 5],
@@ -167,6 +177,34 @@ const BD_Stat = [
     // Soulevé de terre roumain
     [27, 12, 30, 12, 30, 12, 30, 12, 30],
 
+    // Tapis de course
+    [28, 0, 0],
+    // Escalier
+    [29, 0, 0],
+    // Tirage vertical
+    [30, 12, 45, 12, 45, 12, 45, 12, 45],
+
+    /////////////////// ABS /////////////////////
+    // Laying leg flutters
+
+    // Jack knife
+
+    // Boat hold
+
+    // Wind shield wipers
+
+    // Star crunches
+
+    // Seated in and outs
+
+    // Russian twists
+
+    // Bicycles
+
+    // Mountain Climbers
+
+    // Each side plank reach through
+
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -179,5 +217,5 @@ const BD_Programme = [
     ["Pull (Dos, Épaule)", 14, 18, 19, 20],
 
     // Jambe Juliette
-    ["Jambe (Juliette)",],
+    ["Jambe (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],
 ]
