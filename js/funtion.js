@@ -529,6 +529,6 @@ function fiche(exo, rep) {
 
     // On écrit la def de la rep
     colExo.innerHTML +=
-        `<p class="taille3 txtRep fw-600">` + nbRep + ` Rep |` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
+        `<p class="taille3 txtRep fw-600">` + nbRep + ` Rep | ` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
             <hr/>`;
 }
