@@ -136,8 +136,12 @@ header {
     font-size: 1.25em;
 }
 
-.fw {
+.fw-900 {
     font-weight: 900;
+}
+
+.fw-600 {
+    font-weight: 600;
 }
 
 .card table {
@@ -310,12 +314,16 @@ section {
     padding: 2em 3em;
 }
 
+.modal-body {
+    padding: 0 1.5em 1.5em 1.5em;
+}
+
 .imgExo {
     max-width: 100%;
     height: 100%;
 }
 
-hr {
+.hr-orange {
     color: #ffc107;
     height: 8px !important;
     opacity: 1;
@@ -391,7 +399,7 @@ hr {
 .roundExoSucced,
 .roundExoSucced:focus,
 .roundExoSucced:active {
-    background-color: rgb(24, 200, 118);
+    background-color: #ffc107;
 }
 
 
@@ -489,4 +497,20 @@ input {
 
 .offcanvas-start {
     width: 60%;
+}
+
+/* ----------- fiche résultat ----------- */
+
+#blocFicheResultat {
+    margin-top: 100px;
+}
+
+.txtExo {
+    margin-left: 5%;
+    margin-top: 50px;
+}
+
+.txtRep {
+    margin-left: 10%;
+    margin-bottom: 0px;
 }
