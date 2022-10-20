@@ -136,6 +136,11 @@ header {
     font-size: 1.25em;
 }
 
+.taille5 {
+    font-size: 1em;
+    opacity: 0.75;
+}
+
 .fw-900 {
     font-weight: 900;
 }
@@ -177,10 +182,16 @@ header {
         5px 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+/*
 .type:active {
     box-shadow: inset -7px -7px 10px 0 rgba(255, 255, 255, 0.7),
         inset 7px 7px 10px 0 rgba(0, 0, 0, 0.2);
-    background-color: #ffc107;
+    /*background-color: #ffc107;
+}
+*/
+.typeActive {
+    box-shadow: inset -7px -7px 10px 0 rgba(255, 255, 255, 0.7),
+        inset 7px 7px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-link,
@@ -208,29 +219,34 @@ section {
 
 .sectionInfo {
     padding-top: 8%;
-    background: rgb(255, 255, 255);
     min-height: 1000px;
 }
 
 /* -------------- Cards -------------------*/
 
 .card {
-    border-radius: 50px;
-    background: rgb(255, 255, 255);
-    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.3);
-}
-
-.card-img-top {
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    height: 100%;
-    width: auto;
-    max-width: 100%;
+    border-radius: 30px;
+    background: rgb(240, 240, 240);
+    box-shadow: 0.8em 0.8em 0.8em rgba(0, 0, 0, 0.3);
+    padding: 10px;
 }
 
 .card-img-bloc {
-    padding: 5% 5% 0% 5%;
+    margin: 5% 5% 0% 5%;
     height: 250px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+}
+
+.card-img-top {
+    max-height: 100%;
+    min-height: 80%;
+    width: auto;
+    max-width: 100%;
+    padding: 5% 0 5% 0;
 }
 
 .card-img-bloc2 {
@@ -257,14 +273,12 @@ section {
 }
 
 .btn-i {
-    float: right;
-    border-radius: 20px;
-    width: 100px;
+    left: 30%;
+    border-radius: 15px;
+    width: 95%;
     height: 50px;
     font-size: 1em;
-    margin-top: 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: 10px;
 }
 
 @media (min-width: 576px) {
@@ -296,6 +310,7 @@ section {
 .list-group {
     border-radius: 50px;
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
 }
 
 .list-group-item {
@@ -507,7 +522,6 @@ input {
 
 .txtExo {
     margin-left: 5%;
-    margin-top: 50px;
 }
 
 .txtRep {

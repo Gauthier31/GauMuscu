@@ -1,7 +1,7 @@
-const item = document.getElementById('tous').classList.add("orange");
+const item = document.getElementById('tous').classList.add("typeActive");
 //const header = document.getElementById('teteImg').classList.add("img-headerAfter");
 // Affichage masquage des blocs de sections
-page("programme");
+page("accueil");
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,9 +22,29 @@ for (i = 1; i < BD_Exo.length; i++) {
                     </div>
 
                         <div class="card-body">
-                            <p class="taille4 fw-900 depasse m-1">` + BD_Exo[i][1] + `</p>
+                            <p class="taille4 fw-900 depasse m-2">` + BD_Exo[i][1] + `</p>
+
+                            <div class="m-2 taille5">
+                            Imperio conplures aliis et diluere aurem nec 
+                                        praedoctis reginae stimulis resedit resedit defen...
+                            </div>
                             
-                            <div class="detail">
+                            <!-- detail cut -->
+
+                            <div>
+                                <button type="button" class="btn btn-warning btn-i" data-bs-toggle="modal"
+                                    data-bs-target="#ModalExo" onclick="modalInfo(` + BD_Exo[i][0] + `)">
+                                    En savoir plus
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div > `;
+}
+
+/*
+<div class="detail">
 
                                 <table class="table table-striped">
                                     <thead class="thead-dark">
@@ -53,18 +73,7 @@ for (i = 1; i < BD_Exo.length; i++) {
                                     </p>
                                 </div>
                             </div>
-
-                            <div>
-                                <button type="button" class="btn btn-warning btn-i" data-bs-toggle="modal"
-                                    data-bs-target="#ModalExo" onclick="modalInfo(` + BD_Exo[i][0] + `)">
-                                    Info +
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div > `;
-}
+                            */
 
 ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
 
@@ -136,14 +145,14 @@ function filtre(val) {
 
     const all = document.getElementsByClassName('type');
     for (i = 0; i < all.length; i++) {
-        all[i].classList.remove("orange");
+        all[i].classList.remove("typeActive");
 
     }
 
     // On colorie le filtre
     const item = document.getElementById(val);
-    item.classList.add("orange");
-    //item.style.transition = "background-color 0.5s";
+    item.classList.add("typeActive");
+    item.style.transition = "background-color 0.5s";
 
 }
 
@@ -265,26 +274,23 @@ function programmes(numProg) {
         for (j = 1; j < BD_Programme[numProg].length; j++) {
             let classOp = "";
 
-            if (j <= i) {
-                classOp = "roundExoSucced";
-            }
-
             btnExo +=
                 `<button type="button"
                 onclick="exoSuivant(` + BD_Programme[numProg][j] + `)"
-                class="roundExo ` + classOp + ` position-absolute top-0 translate-middle btn btn-sm btn-secondary rounded-pill"
+                class="roundExo roundClass` + BD_Programme[numProg][j] + ` position-absolute top-0 translate-middle btn btn-sm btn-secondary rounded-pill"
                 style="left: ` + (100 * (j - 1) / (BD_Programme[numProg].length - 2)) + `% ! important">
 
                 ` + j + ` 
                 </button>`;
         }
 
+        // + (100 * (i - 1) / (BD_Programme[numProg].length - 2)) +
         progresseBar =
             `<div class="modal-header">
                 <div class="position-relative m-4 progBar">
                     <div class="progress" style="height: 5px;">
                         <div id="progBar" class="progress-bar bg-warning" role="progressbar" aria-label="Progress" 
-                        style="width: ` + (100 * (i - 1) / (BD_Programme[numProg].length - 2)) + `%;"></div>
+                        style="width: 100%;"></div>
                     </div>
                     ` + btnExo + `
                 </div>
@@ -389,6 +395,10 @@ function suivant(exoNext) {
     } catch (err) {
         //console.log(err);
         console.log("Erreur function suivant()");
+
+        // On colorie le round précédent (celui qu'on vient de finir)
+        colorRoundExo(exo);
+
         exoSuivant(exoNext);
     }
 }
@@ -531,4 +541,12 @@ function fiche(exo, rep) {
     colExo.innerHTML +=
         `<p class="taille3 txtRep fw-600">` + nbRep + ` Rep | ` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
             <hr/>`;
+}
+
+function colorRoundExo(exoNumber) {
+    const round = document.getElementsByClassName("roundClass" + exoNumber);
+
+    for (i = 0; i < round.length; i++) {
+        round[i].classList.add("roundExoSucced");
+    }
 }
