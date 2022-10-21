@@ -85,7 +85,7 @@ for (i = 0; i < BD_Type.length; i++) {
 }
 
 ////////////////////////////////// Mets en place les stats ////////////////////////////////////////////////
-
+/*
 let txt = "";
 for (i = 1; i < BD_Stat.length; i++) {
 
@@ -100,7 +100,7 @@ for (i = 1; i < BD_Stat.length; i++) {
             </tr>`;
     }
 }
-
+*/
 ///////////////////////////////// Met en place les programes //////////////////////////////////////////////
 
 let prog = document.getElementById("prog");
