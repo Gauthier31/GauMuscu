@@ -1,30 +1,70 @@
 const item = document.getElementById('tous').classList.add("typeActive");
-//const header = document.getElementById('teteImg').classList.add("img-headerAfter");
+
 // Affichage masquage des blocs de sections
 page("accueil");
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////// Affiche les cards //////////////////////////////////////////////////////
+////////////////////////////////// Affiche la liste des exo //////////////////////////////////////////////////////
 
-let card = document.getElementById("cards");
+let ligneExo = document.getElementById("ligneExo");
 var i;
 
 for (i = 1; i < BD_Exo.length; i++) {
 
-    card.innerHTML +=
-        `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-900" id="` + BD_Exo[i][0] + `">
+    ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
+    const tabStyle = BD_Exo[i][3].split("-");
+
+    let classList = "";
+
+    for (j = 0; j < tabStyle.length - 1; j++) {
+        classList += tabStyle[j] + ", ";
+    }
+    classList += tabStyle[j];
+
+    ligneExo.innerHTML +=
+        `<div class="ligneExo tous ` + classList + `" id="ligneExo` + BD_Exo[i][0] + `">
+            <div class="ligne-img-bloc">
+                <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" alt="` + BD_Exo[i][1] + `"/>
+            </div>
+
+            <div class="ligne-txt">
+                <button class="btnInfoExo">Info</button>
+
+                <p class="taille1 fw-600 ligneTitre depasse">` + BD_Exo[i][1] + `</p>
+                <div class="taille3 opacity-50">
+                    ` + classList + `
+                </div>
+
+                <div class="taille3 ligneDescription">
+                    Imperio conplures aliis et diluere aurem nec 
+                    praedoctis reginae stimulis resedit resedit de aliis et diluere aurem nec 
+                    praedoctis reginae stimulis resedit resedesedit de aliis et diluere aurem nec 
+                    praedoctis reginae stimulis resedit resedit dfen...
+                </div>
+                
+            </div>
+        </div>`
+}
+
+////////////////////////////////// Affiche les cards de Nutrition //////////////////////////////////////////////////////
+
+let nutri = document.getElementById("cardsNutrition");
+var i;
+
+for (i = 1; i < BD_Nutrition.length; i++) {
+
+    nutri.innerHTML +=
+        `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-900" id="Nutrition` + BD_Nutrition[i][0] + `">
                     <div class="card">
 
-                    <div class="card-img-bloc">
-                        <img class="card-img-top mx-auto d-block" src="document/exo/` + BD_Exo[i][1] + `.jpg"
-                            alt="` + BD_Exo[i][2] + `">
-                    </div>
+                        <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + BD_Nutrition[i][1] + `.jpg"
+                            alt="` + BD_Nutrition[i][1] + `">
 
                         <div class="card-body">
-                            <p class="taille4 fw-900 depasse m-2">` + BD_Exo[i][1] + `</p>
+                            <p class="taille4 fw-900 depasse m-2">` + BD_Nutrition[i][1] + `</p>
 
-                            <div class="m-2 taille5">
+                            <div class="cardDescription taille5">
                             Imperio conplures aliis et diluere aurem nec 
                                         praedoctis reginae stimulis resedit resedit defen...
                             </div>
@@ -32,8 +72,7 @@ for (i = 1; i < BD_Exo.length; i++) {
                             <!-- detail cut -->
 
                             <div>
-                                <button type="button" class="btn btn-warning btn-i" data-bs-toggle="modal"
-                                    data-bs-target="#ModalExo" onclick="modalInfo(` + BD_Exo[i][0] + `)">
+                                <button type="button" class="btn btn-warning btnInfoCard">
                                     En savoir plus
                                 </button>
                             </div>
@@ -41,64 +80,6 @@ for (i = 1; i < BD_Exo.length; i++) {
                         </div>
                     </div>
                 </div > `;
-}
-
-/*
-<div class="detail">
-
-                                <table class="table table-striped">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Rep</th>
-                                            <th>Poids</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody id="` + BD_Exo[i][0] + `_stat">
-                                    </tbody>
-                                </table>
-
-                                <!-- Info cachés -->
-                                <div id="` + BD_Exo[i][0] + `_info" hidden>
-                                    <p class="info">` + BD_Exo[i][0] + ` - ` + BD_Exo[i][1] + `</p>
-                                    <p class="info">` + BD_Exo[i][2] + `</p>
-                                    <p class="info">
-                                        Imperio conplures aliis et diluere aurem nec 
-                                        praedoctis reginae stimulis resedit resedit defensi 
-                                        Caesarem Caesarem essent hinc cursim hinc et diluere 
-                                        obiecta quid nec inde per subinde ad cuius nec 
-                                        quaesitum permissi stimulis periere diluere iudex 
-                                        cuius essent inde imaginarius.
-                                    </p>
-                                </div>
-                            </div>
-                            */
-
-////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-
-for (i = 0; i < BD_Type.length; i++) {
-
-    for (j = 1; j < BD_Type[i].length; j++) {
-        document.getElementById(BD_Type[i][0]).classList.add(BD_Type[i][j]);
-    }
-}
-
-////////////////////////////////// Mets en place les stats ////////////////////////////////////////////////
-
-let txt = "";
-for (i = 1; i < BD_Stat.length; i++) {
-
-    txt = BD_Stat[i][0] + "_stat";
-
-    for (j = 1; j < BD_Stat[i].length; j += 2) {
-        document.getElementById(txt).innerHTML +=
-            `<tr>
-                <th>` + (j + 1) / 2 + `</th>
-                <td>` + BD_Stat[i][j] + `</td>
-                <td>` + BD_Stat[i][j + 1] + `</td>
-            </tr>`;
-    }
 }
 
 ///////////////////////////////// Met en place les programes //////////////////////////////////////////////
@@ -123,6 +104,21 @@ for (i = 0; i < BD_Programme.length; i++) {
             </li>`
         + txt + `   
             </ol></div>`;
+}
+
+///////////////////////////////////////// Mets en place les musiques //////////////////////////////////////////////
+
+const listMusique = document.getElementById("listMusique");
+
+for (let i = 0; i < BD_Musique.length; i++) {
+    listMusique.innerHTML +=
+        `<u>` + BD_Musique[i] + `</u>
+        <audio controls src="document/musique/` + BD_Musique[i] + `">
+            <a href="document/musique/` + BD_Musique[i] + `">
+                Télécharger
+            </a>
+        </audio>
+        <br/><br/>`;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -203,8 +199,6 @@ function modalInfo(val) {
     modalImg.src = "document/muscle/" + img.textContent;
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -277,8 +271,9 @@ function programmes(numProg) {
             btnExo +=
                 `<button type="button"
                 onclick="exoSuivant(` + BD_Programme[numProg][j] + `)"
-                class="roundExo roundClass` + BD_Programme[numProg][j] + ` position-absolute top-0 translate-middle btn btn-sm btn-secondary rounded-pill"
-                style="left: ` + (100 * (j - 1) / (BD_Programme[numProg].length - 2)) + `% ! important">
+                class="roundExo roundClass` + BD_Programme[numProg][j] + ` btn btn-sm"
+                style="left: ` + (100 * (j - 1) / (BD_Programme[numProg].length - 2)) + `% ! important"
+                >
 
                 ` + j + ` 
                 </button>`;

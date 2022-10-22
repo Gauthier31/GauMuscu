@@ -1,117 +1,110 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // tableau
+// épaules, bras, pectoraux, abdominaux, jambes, dos
 const BD_Exo = [
 
     // Bouchon
-    [0, "titre", "petiteImage", `description`],
+    [0, "titre", "petiteImage", "", "",
+        "description"],
 
-    [1, "Développé couché avec haltères", "pectoraux.jpg", "description"],
+    [1, "Développé couché avec haltères", "pectoraux.jpg", "pectoraux-dos-bras",
+        "description"],
 
-    [2, "Développé incliné avec haltères", "pectoraux.jpg", "description"],
+    [2, "Développé incliné avec haltères", "pectoraux.jpg", "pectoraux-épaules-bras",
+        "description"],
 
-    [3, "Dips", "pectoraux.jpg", "description"],
+    [3, "Dips", "pectoraux.jpg", "pectoraux-épaules-bras",
+        "description"],
 
-    [4, "Pull over", "pectoraux.jpg", "description"],
+    [4, "Pull over", "pectoraux.jpg", "pectoraux-épaules-bras",
+        "description"],
 
-    [5, "Écartés à la machine", "pectoraux.jpg", "description"],
+    [5, "Écartés à la machine", "pectoraux.jpg", "pectoraux",
+        "description"],
 
-    [6, "Écartés à la poulie haute", "pectoraux.jpg", `description`],
+    [6, "Écartés à la poulie haute", "pectoraux.jpg", "pectoraux",
+        "description"],
 
-    [7, "Développé assis à la machine convergente", "pectoraux.jpg", `description`],
-
-    /////////////////////////////////////////////////////////////////////////////////
-
-    [8, "Leg Press", "quadriceps.jpg", `description`],
-
-    [9, "Leg Extension", "quadriceps.jpg", `description`],
-
-    [10, "Leg Curl", "ischio.jpg", `description`],
-
-    [11, "Adducteurs", "adducteur.jpg", `description`],
-
-    [12, "Abduction", "adducteur.jpg", `description`],
-
-    [13, "Presse à mollets", "mollet.jpg", `description`],
+    [7, "Développé assis à la machine convergente", "pectoraux.jpg", "pectoraux-dos-bras",
+        "description"],
 
     /////////////////////////////////////////////////////////////////////////////////
 
-    [14, "Traction", "dorseaux.jpg", `description`],
+    [8, "Leg Press", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [15, "Traction prise large", "dorseaux.jpg", `description`],
+    [9, "Leg Extension", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [16, "Traction prise serré", "dorseaux.jpg", `description`],
+    [10, "Leg Curl", "ischio.jpg", "jambes",
+        "description"],
 
-    [17, "Élévation latéral avec haltère", "deltoide.jpg", `description`],
+    [11, "Adducteurs", "adducteur.jpg", "jambes",
+        "description"],
 
-    [18, "Shoulder press", "deltoide.jpg", `description`],
+    [12, "Abduction", "adducteur.jpg", "jambes",
+        "description"],
 
-    [19, "Tirage horizontal", "dorseaux.jpg", `description`],
+    [13, "Presse à mollets", "mollet.jpg", "jambes",
+        "description"],
 
-    [20, "Élévation latéral avec poulie", "deltoide.jpg", `description`],
+    /////////////////////////////////////////////////////////////////////////////////
+
+    [14, "Traction", "dorseaux.jpg", "dos-bras-épaules",
+        "description"],
+
+    [15, "Traction prise large", "dorseaux.jpg", "dos-bras-épaules",
+        "description"],
+
+    [16, "Traction prise serré", "dorseaux.jpg", "dos-bras-épaules",
+        "description"],
+
+    [17, "Élévation latéral avec haltère", "deltoide.jpg", "épaules",
+        "description"],
+
+    [18, "Shoulder press", "deltoide.jpg", "épaules-bras",
+        "description"],
+
+    [19, "Tirage horizontal", "dorseaux.jpg", "dos-bras",
+        "description"],
+
+    [20, "Élévation latéral avec poulie", "deltoide.jpg", "épaules",
+        "description"],
 
     /////////////////////////////////////////////////////////////////////////////////
 
-    [21, "Squat", "quadriceps.jpg", `description`],
+    [21, "Squat", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [22, "Soulevé de terre", "quadriceps.jpg", `description`],
+    [22, "Soulevé de terre", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [23, "Fente avec haltère", "quadriceps.jpg", `description`],
+    [23, "Fente avec haltère", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [24, "Fente surelevé avec haltère", "quadriceps.jpg", `description`],
+    [24, "Fente surelevé avec haltère", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [25, "Hip Thrust", "ischio.jpg", `description`],
+    [25, "Hip Thrust", "ischio.jpg", "jambes",
+        "description"],
 
-    [26, "Low row", "dorseaux.jpg", `description`],
+    [26, "Low row", "dorseaux.jpg", "dos-épaules",
+        "description"],
 
-    [27, "Soulevé de terre roumain", "dorseaux.jpg", `description`],
+    [27, "Soulevé de terre roumain", "dorseaux.jpg", "dos-épaules",
+        "description"],
 
-    [28, "Tapis de course", "quadriceps.jpg", `description`],
 
-    [29, "Escalier", "quadriceps.jpg", `description`],
+    [28, "Tapis de course", "quadriceps.jpg", "jambes",
+        "description"],
 
-    [30, "Tirage vertical", "dorseaux.jpg", `description`],
+    [29, "Escalier", "quadriceps.jpg", "jambes",
+        "description"],
+
+    [30, "Tirage vertical", "dorseaux.jpg", "dos-bras-épaules",
+        "description"],
 
     /////////////////////////////////////////////////////////////////////////////////
-];
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// epaule, bras, pec, abdo, jambes, dos
-const BD_Type = [
-    [0],
-
-    [1, "pec", "dos", "bras"],
-    [2, "pec", "epaule", "bras"],
-    [3, "pec", "epaule", "bras"],
-    [4, "pec", "epaule", "bras"],
-    [5, "pec"],
-    [6, "pec"],
-    [7, "pec", "dos", "bras"],
-
-    [8, "jambes"],
-    [9, "jambes"],
-    [10, "jambes"],
-    [11, "jambes"],
-    [12, "jambes"],
-    [13, "jambes"],
-
-    [14, "dos", "bras", "epaule"],
-    [15, "dos", "bras", "epaule"],
-    [16, "dos", "bras", "epaule"],
-    [17, "epaule"],
-    [18, "epaule", "bras"],
-    [19, "dos", "bras"],
-    [20, "epaule"],
-
-    [21, "jambes"],
-    [22, "jambes"],
-    [23, "jambes"],
-    [24, "jambes"],
-    [25, "jambes"],
-    [26, "dos", "epaule"],
-    [27, "dos", "epaule"],
-
-    [28, "jambes"],
-    [29, "jambes"],
-    [30, "dos", "bras", "epaule"],
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -214,8 +207,23 @@ const BD_Programme = [
     // Leg Gauthier
     ["Leg (Jambes)", 8, 9, 10, 11, 12, 13],
     // Pull Gauthier
-    ["Pull (Dos, Épaule)", 14, 18, 19, 20],
+    ["Pull (Dos, Épaules)", 14, 18, 19, 20],
 
     // Jambe Juliette
     ["Jambe (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],
-]
+];
+
+const BD_Nutrition = [
+
+    // Bouchon
+    [0, "", "", ""],
+
+    // Plat 1
+    [1, "Titre", "Ingredient gramme|Ingredient gramme", "description"],
+
+    // Plat 2
+    [2, "Titre2", "Ingredient gramme|Ingredient gramme", "description"]
+];
+
+const BD_Musique = ["Playboi Carti - Neva_2_Much.mp3", "Playboi Carti - On_that_time.mp3", "Yeat - Off_Tha_Lot.mp3"];
+

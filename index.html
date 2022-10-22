@@ -68,30 +68,29 @@
         <h1 class="grandTitre">GauMuscu</h1>
     </header>
 
-    <!--------------------------------------------------------------->
+    <!------------------------------ Listes des exos --------------------------------->
 
-    <!-- Liste -->
     <section class="bloc sectionTitre taille2" id="liste">
         <ul class="nav nav-tabs nav-fill justify-content-center">
             <li class="nav-item type" id="tous">
                 <p class="nav-link" onclick="filtre('tous')">Tous</p>
             </li>
-            <li class="nav-item type" id="epaule">
-                <p class="nav-link" onclick="filtre('epaule')">Épaules</p>
+            <li class="nav-item type" id="épaules">
+                <p class="nav-link" onclick="filtre('épaules')">Épaules</p>
             </li>
             <li class="nav-item type" id="bras">
                 <p class="nav-link" onclick="filtre('bras')">Bras</p>
             </li>
         </ul>
         <ul class="nav nav-tabs nav-fill justify-content-center">
-            <li class="nav-item type" id="pec">
-                <p class="nav-link" onclick="filtre('pec')">Pectoraux</p>
+            <li class="nav-item type" id="pectoraux">
+                <p class="nav-link" onclick="filtre('pectoraux')">Pectoraux</p>
             </li>
             <li class="nav-item type" id="dos">
                 <p class="nav-link" onclick="filtre('dos')">Dos</p>
             </li>
-            <li class="nav-item type" id="abdo">
-                <p class="nav-link" onclick="filtre('abdo')">Abdominaux</p>
+            <li class="nav-item type" id="abdominaux">
+                <p class="nav-link" onclick="filtre('abdominaux')">Abdominaux</p>
             </li>
             <li class="nav-item type" id="jambes">
                 <p class="nav-link" onclick="filtre('jambes')">Jambes</p>
@@ -105,15 +104,15 @@
         <div class="bouchon2-4"></div>
     </section>
 
-    <!-- Liste des Exos -->
     <section class="bloc sectionInfo" id="accueil">
-        <div class="row g-5" id="cards">
+        <div class="row" id="ligneExo">
+            <p class="taille1 fw-600 pageTitre text-center"> Liste des Exercices</p>
         </div>
     </section>
 
-    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--------------------------- Modal info exo ------------------------------>
 
-    <!-- Modal info exo -->
+    <!--  -->
     <div class="modal fade" id="ModalExo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
         role="dialog">
 
@@ -133,7 +132,7 @@
         </div>
     </div>
 
-    <!--------------------------------------------------------------->
+    <!--------------------------- Listes des programmes ------------------------------------>
 
     <!-- Listes des programmes -->
     <section class="bloc sectionTitre" id="programmeTitre">
@@ -152,13 +151,12 @@
         </div>
     </section>
 
-    <!-- Exercice -->
+    <!-- btn Lancement du programmes -->
     <section class="bloc" id="btnProg">
     </section>
 
-    <!--------------------------------------------------------------->
+    <!------------------------------- Fiche résultat -------------------------------->
 
-    <!-- Exercice -->
     <section class="bloc" id="blocFicheResultat">
         <div class="row g-5" id="ficheResultat">
         </div>
@@ -167,9 +165,8 @@
         </div>
     </section>
 
-    <!--------------------------------------------------------------->
+    <!------------------------- Nutrition ------------------------------------->
 
-    <!-- Nutrition -->
     <section class="bloc sectionTitre" id="nutritionTitre">
 
         <!-- bloc sur les coins -->
@@ -184,6 +181,8 @@
 
     <!-- Nutrition -->
     <section class="bloc sectionInfo" id="nutrition">
+        <div class="row g-5" id="cardsNutrition">
+        </div>
     </section>
 
     <!--------------------------------------------------------------->
@@ -197,45 +196,7 @@
             </p>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body taille2 p-4">
-            <div>
-                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
-                lists, etc.
-            </div>
-
-            <br />
-
-            <div>
-                Piste audio
-                <br /><br />
-                <u>Audio 1 : </u>
-                <br />
-                <audio controls src="">
-                    <a href="">
-                        Télécharger
-                    </a>
-                </audio>
-
-                <br /><br />
-
-                <u>Audio 2 : </u>
-                <br />
-                <audio controls src="">
-                    <a href="">
-                        Télécharger
-                    </a>
-                </audio>
-
-                <br /><br />
-
-                <u>Audio 3 : </u>
-                <br />
-                <audio controls src="">
-                    <a href="">
-                        Télécharger
-                    </a>
-                </audio>
-            </div>
+        <div class="offcanvas-body taille2 p-4" id="listMusique">
         </div>
     </div>
 

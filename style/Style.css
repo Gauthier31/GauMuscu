@@ -31,7 +31,8 @@ body {
 }
 
 .navbar .nav-item {
-    margin-left: 100px;
+    margin-left: 10%;
+    line-height: 70px;
 }
 
 .navbar-toggler,
@@ -55,7 +56,7 @@ nav i {
     width: 40px !important;
 }
 
-/* -------------- Haut-Bas ------------------*/
+/* -------------- Header ------------------*/
 header {
     /*background-image: url("../document/salle_de_sport.jpg");*/
     background-color: rgb(233, 233, 233);
@@ -70,14 +71,6 @@ header {
 
     top: 0;
 }
-
-/*
-.grandTitre {
-    vertical-align: middle;
-    font-size: 100px;
-    text-align: center !important;
-    line-height: 800px;
-}*/
 
 .img-header {
     width: 350px;
@@ -119,9 +112,14 @@ header {
     }
 }
 
+/* -------------- Taille texte ------------------*/
 
 .taille {
     font-size: 3em;
+}
+
+.taille1 {
+    font-size: 2.5em;
 }
 
 .taille2 {
@@ -182,13 +180,6 @@ header {
         5px 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-/*
-.type:active {
-    box-shadow: inset -7px -7px 10px 0 rgba(255, 255, 255, 0.7),
-        inset 7px 7px 10px 0 rgba(0, 0, 0, 0.2);
-    /*background-color: #ffc107;
-}
-*/
 .typeActive {
     box-shadow: inset -7px -7px 10px 0 rgba(255, 255, 255, 0.7),
         inset 7px 7px 10px 0 rgba(0, 0, 0, 0.2);
@@ -228,7 +219,6 @@ section {
     border-radius: 30px;
     background: rgb(240, 240, 240);
     box-shadow: 0.8em 0.8em 0.8em rgba(0, 0, 0, 0.3);
-    padding: 10px;
 }
 
 .card-img-bloc {
@@ -236,9 +226,6 @@ section {
     height: 250px;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-
-    display: flex;
-    align-items: center;
 }
 
 .card-img-top {
@@ -252,6 +239,10 @@ section {
 .card-img-bloc2 {
     padding: 2%;
     height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .detail {
@@ -272,7 +263,13 @@ section {
     border: solid;
 }
 
-.btn-i {
+.cardDescription {
+    margin: 1em 0.5em 1em 0.5em;
+}
+
+/* -------------- btn cards -------------------*/
+
+.btnInfoCard {
     left: 30%;
     border-radius: 15px;
     width: 95%;
@@ -305,7 +302,7 @@ section {
     transform: translate(-100%, -10%) !important;
 }
 
-/* ------------- List Prog ----------------- */
+/* ------------- List Programmes ----------------- */
 
 .list-group {
     border-radius: 50px;
@@ -334,8 +331,10 @@ section {
 }
 
 .imgExo {
+    max-height: 100%;
+    min-height: 80%;
     max-width: 100%;
-    height: 100%;
+    width: auto;
 }
 
 .hr-orange {
@@ -353,6 +352,9 @@ section {
 .th {
     width: 100px;
 }
+
+
+/* -------------- btn Modal -------------------*/
 
 .btn-module {
     border-radius: 20px;
@@ -409,6 +411,12 @@ section {
     font-size: 2em;
     color: black;
     background-color: white;
+
+    transform: translate(-50%, -50%) !important;
+    top: 0 !important;
+    position: absolute !important;
+    border-radius: 50rem !important;
+    border-color: #6c757d;
 }
 
 .roundExoSucced,
@@ -514,6 +522,11 @@ input {
     width: 60%;
 }
 
+audio {
+    width: 100%;
+    font-size: 3em;
+}
+
 /* ----------- fiche résultat ----------- */
 
 #blocFicheResultat {
@@ -527,4 +540,76 @@ input {
 .txtRep {
     margin-left: 10%;
     margin-bottom: 0px;
+}
+
+/* -------------- Liste Exo -------------------*/
+
+#accueil {
+    padding: 1%;
+    padding-top: 5%;
+    min-height: 2000px;
+}
+
+.pageTitre {
+    position: sticky;
+    vertical-align: mi ddle;
+    top: 390px;
+
+    line-height: 130px;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: -10px;
+    z-index: 3;
+}
+
+.ligneExo {
+    height: 250px;
+    margin-top: 50px;
+}
+
+.ligne-img-bloc {
+    float: left;
+    height: 250px;
+    width: 350px;
+    background-color: white;
+    margin-right: 3%;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ligne-img-left {
+    max-height: 100%;
+    min-height: 80%;
+    max-width: 100%;
+    width: auto;
+    padding: 5%;
+}
+
+.ligne-txt {
+    padding: 1%;
+}
+
+.ligneTitre {
+    margin-bottom: -5px;
+}
+
+.ligneDescription {
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+
+    height: 110px;
+    margin-top: 30px;
+}
+
+.btnInfoExo {
+    float: right;
+    width: 130px;
+    font-size: 2em;
+    font-weight: 900;
+    background-color: #ffc107;
+    border-radius: 30px;
+    border: none;
+    margin: 1% 0 0 1%;
 }
