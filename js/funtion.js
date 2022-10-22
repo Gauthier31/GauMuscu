@@ -256,8 +256,8 @@ function programmes(numProg) {
             tab +=
                 `<tr id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `">
                     <th class="th">` + (j + 1) / 2 + `</th>
-                    <td><input id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `-Repetition" type="text" value="` + BD_Stat[BD_Programme[numProg][i]][j] + `"/></td>
-                    <td><input id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `-Poids" type="text" value="` + BD_Stat[BD_Programme[numProg][i]][j + 1] + `"/></td>
+                    <td><input id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `-Repetition" type="number" value="` + BD_Stat[BD_Programme[numProg][i]][j] + `"/></td>
+                    <td><input id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `-Poids" type="number" value="` + BD_Stat[BD_Programme[numProg][i]][j + 1] + `"/></td>
                 </tr> `;
         }
 
@@ -273,7 +273,9 @@ function programmes(numProg) {
                 onclick="exoSuivant(` + BD_Programme[numProg][j] + `)"
                 class="roundExo roundClass` + BD_Programme[numProg][j] + ` btn btn-sm"
                 style="left: ` + (100 * (j - 1) / (BD_Programme[numProg].length - 2)) + `% ! important"
-                >
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="` + BD_Exo[BD_Programme[numProg][i]][1] + `">
 
                 ` + j + ` 
                 </button>`;
@@ -365,6 +367,7 @@ function programmes(numProg) {
 // exoNext numéro de l'exo suivant
 function suivant(exoNext) {
     try {
+
         // On écrit dans la fiche les résultats
         if (rep != 0) {
             fiche(exo, rep);
@@ -388,7 +391,6 @@ function suivant(exoNext) {
         clear();
         temps();
     } catch (err) {
-        //console.log(err);
         console.log("Erreur function suivant()");
 
         // On colorie le round précédent (celui qu'on vient de finir)
@@ -483,8 +485,8 @@ function addSerie(numExo) {
     tableau.innerHTML +=
         `<tr id="exo` + numExo + `rep` + serieNext + `">
             <th class="th">` + serieNext + `</th>
-            <td><input type="text" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></td>
-            <td><input type="text" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></td>
+            <td><input id="exo` + numExo + `rep` + serieNext + `-Repetition" type="number" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></td>
+            <td><input id="exo` + numExo + `rep` + serieNext + `-Poids" type="number" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 1] + `"/></td>
         </tr>`;
 }
 
@@ -510,10 +512,11 @@ function ficheInitialisation(numProg) {
 }
 
 // On écrit dans la fiche les résultats
-// @exo numéro de l'éxercice
+// @exo numéro de l'exercice
 // @rep numéro de la répétition
 function fiche(exo, rep) {
     let ficheResultat = document.getElementById("ficheResultat");
+
     // On écrit le titre de l'exo
     if (rep == 1) {
         ficheResultat.innerHTML +=
@@ -530,9 +533,9 @@ function fiche(exo, rep) {
     // on prends le temps
     let tempsRep = document.getElementById("temps" + exo).textContent;
 
+    // On écrit la def de la rep
     let colExo = document.getElementById("colExo" + exo);
 
-    // On écrit la def de la rep
     colExo.innerHTML +=
         `<p class="taille3 txtRep fw-600">` + nbRep + ` Rep | ` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
             <hr/>`;
