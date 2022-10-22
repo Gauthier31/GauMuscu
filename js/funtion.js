@@ -537,7 +537,7 @@ function fiche(exo, rep) {
     let colExo = document.getElementById("colExo" + exo);
 
     colExo.innerHTML +=
-        `<p class="taille3 txtRep fw-600">` + nbRep + ` Rep | ` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
+        `<p class="taille3 txtRep">` + nbRep + ` Rep | ` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
             <hr/>`;
 }
 
