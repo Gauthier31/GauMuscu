@@ -211,6 +211,9 @@ const BD_Programme = [
 
     // Jambe Juliette
     ["Jambe (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],
+
+    //test
+    //["Test", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
 ];
 
 const BD_Nutrition = [

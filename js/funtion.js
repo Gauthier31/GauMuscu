@@ -55,14 +55,14 @@ var i;
 for (i = 1; i < BD_Nutrition.length; i++) {
 
     nutri.innerHTML +=
-        `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-900" id="Nutrition` + BD_Nutrition[i][0] + `">
+        `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-9" id="Nutrition` + BD_Nutrition[i][0] + `">
                     <div class="card">
 
                         <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + BD_Nutrition[i][1] + `.jpg"
                             alt="` + BD_Nutrition[i][1] + `">
 
                         <div class="card-body">
-                            <p class="taille4 fw-900 depasse m-2">` + BD_Nutrition[i][1] + `</p>
+                            <p class="taille4 fw-9 depasse m-2">` + BD_Nutrition[i][1] + `</p>
 
                             <div class="cardDescription taille5">
                             Imperio conplures aliis et diluere aurem nec 
@@ -249,16 +249,26 @@ function programmes(numProg) {
     for (i = 1; i < BD_Programme[numProg].length; i++) {
 
         // On prépare tab stat
-        txt = BD_Stat[i][0] + "_stat";
+        //txt = BD_Stat[i][0] + "_stat";
         let tab = "";
+        let exoTab;
+        let serieTab
 
         for (j = 1; j < BD_Stat[i].length; j += 2) {
+
+            exoTab = BD_Programme[numProg][i];
+            serieTab = (j + 1) / 2;
+
             tab +=
-                `<tr id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `">
-                    <th class="th">` + (j + 1) / 2 + `</th>
-                    <td><input id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `-Repetition" type="number" value="` + BD_Stat[BD_Programme[numProg][i]][j] + `"/></td>
-                    <td><input id="exo` + BD_Programme[numProg][i] + `rep` + (j + 1) / 2 + `-Poids" type="number" value="` + BD_Stat[BD_Programme[numProg][i]][j + 1] + `"/></td>
-                </tr> `;
+                `<div class="lineTab" id="exo` + exoTab + `rep` + serieTab + `">
+                    <div class="caseTab_4 fw-9">` + serieTab + `</div>
+                    <div class="caseTab_4"><input id="exo` + exoTab + `rep` + serieTab + `-Repetition" type="number" value="` + BD_Stat[exoTab][j] + `"/></div>
+                    <div class="caseTab_4"><input id="exo` + exoTab + `rep` + serieTab + `-Poids" type="number" value="` + BD_Stat[exoTab][j + 1] + `"/></div>
+                    <div class="caseTab_4"><button class="btn-module4" id="exo` + exoTab + `rep` + serieTab + `-Avis" 
+                        onclick="avis(` + exoTab + `, ` + serieTab + `)" value="=">
+                        <i class="fa-solid fa-equals"></i></button>
+                    </div>
+                </div> `;
         }
 
         // On prépare la progresse bar
@@ -266,100 +276,106 @@ function programmes(numProg) {
         // Pour chaque exo = btn
         btnExo = "";
         for (j = 1; j < BD_Programme[numProg].length; j++) {
-            let classOp = "";
 
             btnExo +=
-                `<button type="button"
-                onclick="exoSuivant(` + BD_Programme[numProg][j] + `)"
-                class="roundExo roundClass` + BD_Programme[numProg][j] + ` btn btn-sm"
-                style="left: ` + (100 * (j - 1) / (BD_Programme[numProg].length - 2)) + `% ! important"
-                data-bs-toggle="tooltip"
-                data-bs-placement="bottom"
-                data-bs-title="` + BD_Exo[BD_Programme[numProg][i]][1] + `">
+                `<button type = "button"
+                    onclick = "exoSuivant(` + BD_Programme[numProg][j] + `)"
+                    class="roundExo roundClass` + BD_Programme[numProg][j] + ` btn btn-sm"
+                    style = "left: ` + (100 * (j - 1) / (BD_Programme[numProg].length - 2)) + `% ! important"
+                    data - bs - toggle="tooltip"
+                    data - bs - placement="bottom"
+                    data - bs - title="` + BD_Exo[BD_Programme[numProg][i]][1] + `" >
 
-                ` + j + ` 
-                </button>`;
+                        ` + j + ` 
+                </button> `;
         }
 
         // + (100 * (i - 1) / (BD_Programme[numProg].length - 2)) +
         progresseBar =
-            `<div class="modal-header">
+            `<div class="modal-header" >
                 <div class="position-relative m-4 progBar">
                     <div class="progress" style="height: 5px;">
-                        <div id="progBar" class="progress-bar bg-warning" role="progressbar" aria-label="Progress" 
-                        style="width: 100%;"></div>
+                        <div id="progBar" class="progress-bar bg-warning" role="progressbar" aria-label="Progress"
+                            style="width: 100%;">
+                        </div>
                     </div>
                     ` + btnExo + `
                 </div>
-            </div>`;
+            </div> `;
 
         body.innerHTML +=
-            `<div class="modal fade" id="exo` + BD_Programme[numProg][i] + `" tabindex="-1" aria-labelledby="exampleExo` + BD_Programme[numProg][i] + `" aria-modal="true" role="dialog">
+            `<div class="modal fade" id = "exo` + BD_Programme[numProg][i] + `" tabindex = "-1" aria - labelledby="exampleExo` + BD_Programme[numProg][i] + `" aria - modal="true" role = "dialog" >
 
                 <div class="modal-dialog modal-dialog-centered modalExo">
                     <div class="modal-content modalExoIn">
-                    
+
                         ` + progresseBar + `
 
                         <div class="modal-header">
-                            <p class="modal-title taille fw-900 depasse" id="titre-modal">` + BD_Exo[BD_Programme[numProg][i]][1] + `</p>
+                            <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[BD_Programme[numProg][i]][1] + `</p>
                             <button type="button" id="btnClose` + BD_Programme[numProg][i] + `" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body taille2 detail2">
                             <div class="card-img-bloc2">
-                                <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.jpg" alt="` + BD_Exo[BD_Programme[numProg][i]][1] + `"/>
+                                <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.jpg" alt="` + BD_Exo[BD_Programme[numProg][i]][1] + `" />
                             </div>
-                            <hr class="hr-orange"/>
+                            <hr class="hr-orange" />
 
-                            <table class="table">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Rep</th>
-                                        <th>Poids</th>
-                                    </tr>
-                                </thead>
+                            <div class="tableStat" id="` + BD_Exo[BD_Programme[numProg][i]][0] + `_statModule">
+                                <div class="lineTabHead">
+                                    <div class="caseTab_4 fw-9">Serie</div>
+                                    <div class="caseTab_4 fw-9">Rep</div>
+                                    <div class="caseTab_4 fw-9">Kilos</div>
+                                    <div class="caseTab_4 fw-9"></div>
+                                </div>
+                                ` + tab + `
+                            </div>
 
-                                <tbody class="tableProgExo" id="` + BD_Exo[BD_Programme[numProg][i]][0] + `_statModule">
-                                    ` + tab + `
-                                </tbody>
-                            </table>
+
+
 
                             <button onclick="addSerie(` + BD_Exo[BD_Programme[numProg][i]][0] + `)" class="btn btn-module3"> <i class="fa-solid fa-plus"></i> </button>
 
                             <div class="collapse" id="collapseExample">
                                 <div class="taille4 p-4">
-                                    Imperio conplures aliis et diluere aurem nec 
-                                    praedoctis reginae stimulis resedit resedit defensi 
-                                    Caesarem Caesarem essent hinc cursim hinc et diluere 
-                                    obiecta quid nec inde per subinde ad cuius nec 
-                                    quaesitum permissi stimulis periere diluere iudex 
+                                    Imperio conplures aliis et diluere aurem nec
+                                    praedoctis reginae stimulis resedit resedit defensi
+                                    Caesarem Caesarem essent hinc cursim hinc et diluere
+                                    obiecta quid nec inde per subinde ad cuius nec
+                                    quaesitum permissi stimulis periere diluere iudex
                                     cuius essent inde imaginarius.
                                 </div>
-                            </div>                
+                            </div>
                         </div>
 
                         <div class="modal-footer">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA` + BD_Programme[numProg][i] + `" value="Marche">Marche</button>
-                            <p id="temps` + BD_Programme[numProg][i] + `" class="temps taille fw-900">0:0,0</p>
+                            
+                            <div class="temps">
+                                <p id="temps` + BD_Programme[numProg][i] + `" class="taille fw-9">00:00,00</p>
+                                <p id="temps` + BD_Programme[numProg][i] + `.1" class="temps1">00:00,00</p>
+                                <p id="temps` + BD_Programme[numProg][i] + `.2" class="temps1">00:00,00</p>
+                            </div>
+
                             <button class="btn btn-warning btn-module2" onclick="suivant(` + BD_Programme[numProg][i + 1] + `)">Suivant</button>
 
-                            <button id="btnNextExo` + BD_Programme[numProg][i] + `" 
-                                class="btn btn-dark btn-module" onclick="suivant2(` + BD_Programme[numProg][i] + `)" 
+                            <button id="btnNextExo` + BD_Programme[numProg][i] + `"
+                                class="btn btn-dark btn-module" onclick="suivant2(` + BD_Programme[numProg][i] + `)"
                                 data-bs-target="#exo` + BD_Programme[numProg][i] + `" data-bs-toggle="modal"
                                 style="display: none">
-                                    Exercice suivant
+                                Exercice suivant
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>`;
+            </div > `;
     }
 
 
     // Colore la première ligne
     exo = BD_Programme[numProg][1];
     rep = 1;
+    console.log("exo" + exo + "rep" + rep);
     document.getElementById("exo" + exo + "rep" + rep).classList.add("ligneTabColor");
 }
 
@@ -378,7 +394,7 @@ function suivant(exoNext) {
         total = 0;
 
         // Couleur
-        document.getElementById("temps" + exo).innerHTML = "0:0,0";
+        document.getElementById("temps" + exo).innerHTML = "00:00,00";
         var ligne = "exo" + exo + "rep" + rep;
         var ligne2 = "exo" + exo + "rep" + (rep - 1);
 
@@ -390,6 +406,7 @@ function suivant(exoNext) {
         // clean et lance nouveau chrono
         clear();
         temps();
+        document.getElementById("temps" + exo + ".1").innerHTML = dateActu();
     } catch (err) {
         console.log("Erreur function suivant()");
 
@@ -438,6 +455,11 @@ function temps() {
         var min = Math.floor(total / 600);
         var sec = Math.floor(total / 10 % 60);
         var micro = total % 10;
+
+        min = (min < 10) ? "0" + min : min;
+        sec = (sec < 10) ? "0" + sec : sec;
+        micro = (micro < 10) ? "0" + micro : micro;
+
         time.innerHTML = min + ":" + sec + "," + micro;
     }, 100);
 }
@@ -456,11 +478,24 @@ function stop() {
         // Stop chrono
     } else {
         clearInterval(boucle);
+        document.getElementById("temps" + exo + ".2").innerHTML = dateActu();
 
         btn.innerHTML = "Marche";
         btn.value = "Marche";
 
     }
+}
+
+// Renvoie le temps du jour
+function dateActu() {
+
+    const d = new Date();
+
+    let nowH = (d.getHours() < 10) ? "0" + d.getHours() : d.getHours();
+    let nowM = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
+    let nowS = (d.getSeconds() < 10) ? "0" + d.getSeconds() : d.getSeconds();
+
+    return nowH + ":" + nowM + ":" + nowS;
 }
 
 // Clean le chrono et initialise le btn marche arret
@@ -483,11 +518,16 @@ function addSerie(numExo) {
     }
 
     tableau.innerHTML +=
-        `<tr id="exo` + numExo + `rep` + serieNext + `">
-            <th class="th">` + serieNext + `</th>
-            <td><input id="exo` + numExo + `rep` + serieNext + `-Repetition" type="number" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></td>
-            <td><input id="exo` + numExo + `rep` + serieNext + `-Poids" type="number" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 1] + `"/></td>
-        </tr>`;
+        `<div class="lineTab" id="exo` + numExo + `rep` + serieNext + `">
+            <div class="caseTab_4 fw-9">` + serieNext + `</div>
+            <div class="caseTab_4"><input id="exo` + numExo + `rep` + serieNext + `-Repetition" type="number" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 2] + `"/></div>
+            <div class="caseTab_4"><input id="exo` + numExo + `rep` + serieNext + `-Poids" type="number" value="` + BD_Stat[numExo][BD_Stat[numExo].length - 1] + `"/></div>
+            <div class="caseTab_4">
+                <button class="btn-module4" id="exo` + numExo + `rep` + serieNext + `-Avis" onclick="avis(` + numExo + `, ` + serieNext + `)" value="=">
+                    <i class="fa-solid fa-equals"></i>
+                </button>
+            </div>
+        </div> `;
 }
 
 // Masque tout les blocs pour afficher que la fiche de resultat
@@ -506,8 +546,15 @@ function ficheAffiche() {
 // @numProg numéro du programme
 function ficheInitialisation(numProg) {
     let ficheResultat = document.getElementById("ficheResultat");
+
+    // Date de créa
+    var today = new Date();
+
     ficheResultat.innerHTML =
-        `<p class="text-center taille fw-900">` + BD_Programme[numProg][0] + `</p>
+        `<p class="text-center taille fw-9" > `
+        + BD_Programme[numProg][0] + ` : `
+        + today.toLocaleDateString("en-US") +
+        `</p >
         <div class="col-6" style="display: none">`;
 }
 
@@ -523,12 +570,25 @@ function fiche(exo, rep) {
             `</div>
             <div class="col-6" id="colExo` + exo + `">
             <p class="taille2 txtExo fw-600 depasse">` + BD_Exo[exo][1] + `</p>
-        <hr class="hr-orange"/>`;
+        <hr class="hr-orange"/>
+        
+        <div class="lineMiniTabHead">
+            <p class="caseMiniTab_3 fw-9">Rep</p>
+            <p class="caseMiniTab_3 fw-9">Kilos</p>
+            <p class="caseMiniTab_3 fw-9">Durée</p>
+        </div>`;
     }
 
     // prends les valeurs de la ligne du tableau
     let nbRep = document.getElementById("exo" + exo + "rep" + rep + "-Repetition").value;
     let nbPoids = document.getElementById("exo" + exo + "rep" + rep + "-Poids").value;
+    let avis = document.getElementById("exo" + exo + "rep" + rep + "-Avis"); let couleur = "";
+    if (avis.value == "+") {
+        couleur = "fd-vert";
+
+    } else if (avis.value == "-") {
+        couleur = "fd-orange";
+    }
 
     // on prends le temps
     let tempsRep = document.getElementById("temps" + exo).textContent;
@@ -536,9 +596,14 @@ function fiche(exo, rep) {
     // On écrit la def de la rep
     let colExo = document.getElementById("colExo" + exo);
 
+
+
     colExo.innerHTML +=
-        `<p class="taille3 txtRep fw-600">` + nbRep + ` Rep | ` + nbPoids + ` kilos | ` + tempsRep + `minutes</p>
-            <hr/>`;
+        `<div class="lineMiniTab ` + couleur + `">
+            <p class="caseMiniTab_3">` + nbRep + `</p>
+            <p class="caseMiniTab_3">` + nbPoids + `</p>
+            <p class="caseMiniTab_3">` + tempsRep + `</p>
+        </div>`;
 }
 
 function colorRoundExo(exoNumber) {
@@ -546,5 +611,24 @@ function colorRoundExo(exoNumber) {
 
     for (i = 0; i < round.length; i++) {
         round[i].classList.add("roundExoSucced");
+    }
+}
+
+function avis(exoActu, serieActu) {
+
+    let avis = document.getElementById("exo" + exoActu + "rep" + serieActu + "-Avis");
+    console.log("exo" + exoActu + "rep" + serieActu + "-Avis")
+
+    if (avis.value == "=") {
+        avis.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+        avis.value = "+";
+
+    } else if (avis.value == "+") {
+        avis.innerHTML = `<i class="fa-solid fa-minus"></i>`;
+        avis.value = "-";
+
+    } else if (avis.value == "-") {
+        avis.innerHTML = `<i class="fa-solid fa-equals"></i>`;
+        avis.value = "=";
     }
 }

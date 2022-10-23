@@ -139,11 +139,11 @@ header {
     opacity: 0.75;
 }
 
-.fw-900 {
+.fw-9 {
     font-weight: 900;
 }
 
-.fw-600 {
+.fw-6 {
     font-weight: 600;
 }
 
@@ -339,20 +339,11 @@ section {
 
 .hr-orange {
     color: #ffc107;
-    height: 8px !important;
+    height: 10px !important;
     opacity: 1;
     border-radius: 5px;
+    margin: -20px 0 20px 0;
 }
-
-.ligneTabColor {
-    background-color: #ffc107;
-    transition: background-color 0.5s;
-}
-
-.th {
-    width: 100px;
-}
-
 
 /* -------------- btn Modal -------------------*/
 
@@ -395,6 +386,19 @@ section {
         inset 7px 7px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+.btn-module4 {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: rgb(240, 240, 240);
+}
+
+.btn-module4 i {
+    width: 25px !important;
+    height: 25px !important;
+    font-size: 1em !important;
+}
+
 .modal-footer {
     justify-content: space-between;
 }
@@ -432,12 +436,17 @@ section {
 }
 
 .temps {
-    width: 100px;
+    width: 300px;
+    text-align: center;
 }
 
-input {
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
+.temps1,
+.temps2 {
+    width: 140px;
+    display: inline-block;
+    font-size: 2em;
+    opacity: 0.8;
+    margin: 1%;
 }
 
 /* ------------- Background ---------------- */
@@ -552,7 +561,7 @@ audio {
 
 .pageTitre {
     position: sticky;
-    vertical-align: mi ddle;
+    vertical-align: middle;
     top: 390px;
 
     line-height: 130px;
@@ -612,4 +621,100 @@ audio {
     border-radius: 30px;
     border: none;
     margin: 1% 0 0 1%;
+    color: black;
+}
+
+/* ----------- Page résultat ---------------*/
+#blocFicheResultat {
+    height: 5000px;
+}
+
+#ficheResultat {
+    margin-top: 100px;
+}
+
+/* ---- Mini tab ------ */
+.lineMiniTab,
+.lineMiniTabHead {
+    width: 100%;
+    margin: -5px 0 -5px 0;
+
+    border-collapse: collapse;
+}
+
+.lineMiniTabHead {
+    line-height: 30px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.lineMiniTab {
+    line-height: 45px;
+    margin-top: 1%;
+    border-bottom: 1px solid rgb(0 0 0 / 20%);
+}
+
+.caseMiniTab_3 {
+    display: inline-block;
+    width: 30%;
+    margin: 0%;
+    padding-left: 10%;
+}
+
+/* ------- tab ------ */
+
+.tableStat {
+    margin-bottom: 3%;
+}
+
+.lineTab,
+.lineTabHead {
+    width: 100%;
+    line-height: 40px;
+
+    border-collapse: collapse;
+}
+
+.lineTabHead {
+    padding: 2% 5%;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.lineTab {
+    padding: 2% 5%;
+    border-bottom: 1px solid rgb(0 0 0 / 20%);
+    border-radius: 50px;
+}
+
+.caseTab_4 {
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+    text-align: center !important;
+}
+
+.ligneTabColor {
+    background-color: #ffc107;
+    transition: background-color 0.5s;
+    line-height: 50px !important;
+    font-size: 1.5em;
+}
+
+input {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    width: 80%;
+    padding-left: 20%;
+}
+
+.form-check-input {
+    margin-top: 0 !important;
+    padding-left: 10% !important;
+}
+
+.fd-vert {
+    background-color: rgb(25, 135, 84, 50%);
+}
+
+.fd-orange {
+    background-color: rgb(255, 193, 7, 50%);
 }
