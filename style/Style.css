@@ -399,6 +399,7 @@ section {
     width: 25px !important;
     height: 25px !important;
     font-size: 1em !important;
+    color: black !important;
 }
 
 .modal-footer {
@@ -718,7 +719,6 @@ input {
 
 .ligneTabColor button i {
     margin-left: -25%;
-    color: black !important;
 }
 
 .form-check-input {
