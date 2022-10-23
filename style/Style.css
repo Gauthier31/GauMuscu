@@ -391,6 +391,8 @@ section {
     height: 60px;
     border-radius: 20px;
     background-color: rgb(240, 240, 240);
+    box-shadow: -5px -5px 10px 0 rgb(255 255 255),
+        5px 5px 10px 0 rgb(0 0 0 / 20%);
 }
 
 .btn-module4 i {
@@ -704,6 +706,19 @@ input {
     background-color: rgba(0, 0, 0, 0);
     width: 80%;
     padding-left: 20%;
+}
+
+.ligneTabColor input {
+    padding-left: 10% !important;
+}
+
+.ligneTabColor button {
+    margin-left: -15% !important;
+}
+
+.ligneTabColor button i {
+    margin-left: -25%;
+    color: black !important;
 }
 
 .form-check-input {
