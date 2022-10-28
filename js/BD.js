@@ -105,6 +105,15 @@ const BD_Exo = [
         "description"],
 
     /////////////////////////////////////////////////////////////////////////////////
+
+    [31, "Curl haltere", "bicep.jpg", "bras",
+        "description"],
+
+    [32, "Curl haltere marteau", "bicep.jpg", "bras",
+        "description"],
+
+
+    /////////////////////////////////////////////////////////////////////////////////
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -177,6 +186,12 @@ const BD_Stat = [
     // Tirage vertical
     [30, 12, 45, 12, 45, 12, 45, 12, 45],
 
+    // Curl haltere
+    [31, 12, 12.5, 12, 12.5, 12, 12.5, 12, 12.5],
+
+    // Curl haltere
+    [32, 12, 10, 12, 10, 12, 10, 12, 10],
+
     /////////////////// ABS /////////////////////
     // Laying leg flutters
 
@@ -203,7 +218,7 @@ const BD_Stat = [
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const BD_Programme = [
     // Push Gauthier
-    ["Push (Pectauraux, Bras)", 1, 2, 7, 5, 3],
+    ["Push (Pectauraux, Bras)", 1, 2, 7, 5, 3, 31, 32],
     // Leg Gauthier
     ["Leg (Jambes)", 8, 9, 10, 11, 12, 13],
     // Pull Gauthier
@@ -228,5 +243,8 @@ const BD_Nutrition = [
     [2, "Titre2", "Ingredient gramme|Ingredient gramme", "description"]
 ];
 
-const BD_Musique = ["Playboi Carti - Neva_2_Much.mp3", "Playboi Carti - On_that_time.mp3", "Yeat - Off_Tha_Lot.mp3"];
+const BD_Musique = [
+    "Playboi Carti - Neva_2_Much.mp3",
+    "Playboi Carti - On_that_time.mp3",
+    "Yeat - Off_Tha_Lot.mp3"];
 
