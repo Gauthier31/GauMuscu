@@ -63,6 +63,10 @@ nav i {
     width: 40px !important;
 }
 
+.navBarHaut {
+    margin-top: -40px;
+}
+
 /* -------------- Header ------------------*/
 header {
     /*background-image: url("../document/salle_de_sport.jpg");*/
