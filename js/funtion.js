@@ -145,6 +145,10 @@ function getMusique() {
     }
 }
 
+function setMusique() {
+
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
 function filtre(val) {
@@ -178,9 +182,7 @@ function filtre(val) {
 /////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
 function page(val) {
 
-    // Masques la navbar
-    const nav = document.getElementById("navbarColor01");
-    nav.classList.remove("show");
+    closeNavBar();
 
     // Masque Les sections
     const masque = document.getElementsByClassName('bloc');
@@ -240,4 +242,11 @@ function modalInfo(val) {
     modalTitre.innerHTML = titre.textContent;
     modalTxt.innerHTML = txt.textContent;
     modalImg.src = "document/muscle/" + img.textContent;
+}
+
+
+function closeNavBar() {
+    // Masques la navbar
+    const nav = document.getElementById("navbarColor01");
+    nav.classList.remove("show");
 }

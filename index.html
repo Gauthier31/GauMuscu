@@ -54,8 +54,9 @@
                         <i class="fa-solid fa-utensils"></i>Nutrition</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="offcanvas" href="#musique" aria-controls="musique">
-                        <i class="fa-solid fa-music"></i>Musique</a>
+                    <a class="nav-link" data-bs-toggle="offcanvas" href="#musique" aria-controls="musique"
+                        onclick="closeNavBar()">
+                        <i class=" fa-solid fa-music"></i>Musique</a>
                 </li>
             </ul>
         </div>
@@ -221,7 +222,7 @@
     <!-------------------------------------------------------------------------------------------->
     <!--------------------------------- Musique --------------------------------------->
     <!-- Piste audio off canvas -->
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="musique"
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="musique"
         aria-labelledby="musiqueLabel">
         <div class="offcanvas-header">
             <p class="offcanvas-title taille" id="musiqueLabel">
@@ -242,7 +243,9 @@
             <p class="musicTitre taille3">Titre</p>
 
             <div class="musicPlayeurBloc">
-                <audio class="musicPlayeur" controls src="document/musique/Yeat - Off_Tha_Lot.mp3">
+                <audio class="musicPlayeur" controls>
+                    <source src="document/musique/Yeat - Off_Tha_Lot.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
                 </audio>
             </div>
         </div>

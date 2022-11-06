@@ -28,7 +28,7 @@ body {
     border-bottom-left-radius: 130px;
     border-bottom-right-radius: 130px;
     padding-left: 60px;
-    padding-right: 60px;
+    padding-right: 85px;
     min-height: 120px;
 }
 
@@ -64,18 +64,15 @@ nav i {
 }
 
 .navBarHaut {
-    margin-top: -40px;
+    margin-top: -25px;
 }
 
 /* -------------- Header ------------------*/
 header {
-    /*background-image: url("../document/salle_de_sport.jpg");*/
-    background-color: rgb(233, 233, 233);
     background-size: cover;
     width: calc(100%);
     height: 800px;
     color: #ffc107;
-    border-radius: 60px;
 
     z-index: -1;
     position: fixed;
@@ -480,59 +477,59 @@ select {
 }
 
 .bouchon2-1 {
-    height: 62px;
-    width: 60px;
+    height: 130px;
+    width: 130px;
 
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     z-index: -5;
-    transform: translate(0, -60px);
+    transform: translate(0, -129px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 60px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 130px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 60px);
 }
 
 .bouchon2-2 {
-    height: 62px;
-    width: 60px;
+    height: 130px;
+    width: 130px;
 
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;
     z-index: -5;
-    transform: translate(0, -60px);
+    transform: translate(0, -129px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 60px);
 }
 
 .bouchon2-3 {
-    height: 60px;
-    width: 60px;
+    height: 130px;
+    width: 130px;
 
     position: absolute !important;
     left: 0 !important;
     top: 100% !important;
     z-index: -5;
-    transform: translate(0, -2px);
+    transform: translate(0, -1px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 60px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 130px 130px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 60px);
 }
 
 .bouchon2-4 {
-    height: 60px;
-    width: 60px;
+    height: 130px;
+    width: 130px;
 
     position: absolute !important;
     right: 0 !important;
     top: 100% !important;
     z-index: -5;
-    transform: translate(0, -2px);
+    transform: translate(0, -1px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 0px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, rgb(240, 240, 240) 30px);
+    background-image: radial-gradient(circle at 0px 130px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 30px);
 }
 
 .bouchon3 {
