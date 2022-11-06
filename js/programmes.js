@@ -33,6 +33,9 @@ function programmes(numProgramme) {
     let listExoInfo = "";
     let listExo = "";
 
+    let exoTab;
+    let serieTab;
+
     for (i = 1; i < BD_Programme[numProg].length; i++) {
 
         let tab = "";
@@ -80,7 +83,7 @@ function programmes(numProgramme) {
                     </div>
                     <hr class="hr-orange" />
 
-                    <div class="tableStat" id="` + BD_Exo[BD_Programme[numProg][i]][0] + `_statModule">
+                    <div class="tableStat">
                         <div class="lineTabHead taille1">
                             <div class="caseTab_4_SE fw-9">Serie</div>
                             <div class="caseTab_4_Mid fw-9">Rep</div>
@@ -91,7 +94,9 @@ function programmes(numProgramme) {
                                 </button>
                             </div>
                         </div>
+                        <div class="detail6" id="` + BD_Exo[BD_Programme[numProg][i]][0] + `_statModule">
                         ` + tab + `
+                        </div>
                     </div>
 
                     <button onclick="addSerie()" class="btn btn-module3">
@@ -305,11 +310,11 @@ function addSerie() {
             <div class="caseTab_4_SE fw-9">` + newSerieNum + `</div>
 
             <div class="caseTab_4_Mid">
-                <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + BD_Stat[exoTab][j] + `">
+                <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + BD_Stat[exo][BD_Stat[exo].length - 2] + `">
             </div>
 
             <div class="caseTab_4_Mid">
-               <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + BD_Stat[exoTab][j] + `">
+               <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + BD_Stat[exo][BD_Stat[exo].length - 1] + `">
             </div>
 
             <div class="caseTab_4_SE">

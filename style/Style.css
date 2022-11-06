@@ -288,6 +288,11 @@ section {
     margin-bottom: 10%;
 }
 
+.detail6 {
+    height: 400px;
+    overflow-y: scroll;
+}
+
 
 .img-muscle {
     max-width: 400px;
