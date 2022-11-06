@@ -6,7 +6,7 @@
 }
 
 body {
-    width: 100%;
+    /*width: 100%;*/
     font-family: HeadingProDouble-Regular;
     background-color: rgb(240, 240, 240);
     overflow-x: hidden;
@@ -632,6 +632,7 @@ select {
 #ficheResultat {
     padding: 10% 3%;
     width: 100%;
+    height: 2020px;
     position: fixed;
     z-index: 1;
 }

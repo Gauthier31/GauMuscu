@@ -10,6 +10,8 @@ var total, t1, t2;
 
 var progLancer = false; // par defaut
 
+var boucle;
+
 // Liste des exo
 // @numProg numéro du programme
 function programmes(numProgramme) {
