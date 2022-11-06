@@ -183,6 +183,7 @@ function programmes(numProgramme) {
 
     // On affiche et color
     document.getElementById("Info_Exo" + BD_Programme[numProg][1]).classList.remove("none");
+    document.getElementById("Info_Exo" + BD_Programme[numProg][1]).classList.add("block");
     document.getElementById("Lancement_Exo" + BD_Programme[numProg][1]).classList.add("exoActu");
 
     exo = BD_Programme[numProg][1];
