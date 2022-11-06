@@ -12,10 +12,6 @@ body {
 }
 
 /* ---------------- NavBar ------------------*/
-.navbarHaut {
-    height: 20px;
-    width: 100%;
-}
 
 .navbar {
     border-bottom-left-radius: 60px;
@@ -237,8 +233,7 @@ section {
 }
 
 .card-img-bloc2 {
-    padding: 2%;
-    height: 600px;
+    height: 550px;
 
     display: flex;
     align-items: center;
@@ -255,6 +250,33 @@ section {
     height: 1100px;
     overflow-y: scroll;
 }
+
+.detail3 {
+    overflow-y: scroll;
+    padding-top: 0px;
+    height: 1900px;
+}
+
+.detail4_Up,
+.detail4_Down {
+    overflow-y: scroll;
+    padding: 0% 2%;
+}
+
+.detail4_Up {
+    height: 1080px;
+}
+
+.detail4_Down {
+    height: 0px;
+}
+
+.detail5 {
+    height: 1200px;
+    overflow-y: scroll;
+    margin-bottom: 10%;
+}
+
 
 .img-muscle {
     max-width: 400px;
@@ -276,20 +298,6 @@ section {
     height: 50px;
     font-size: 1em;
     margin: 10px;
-}
-
-@media (min-width: 576px) {
-    .modalInfo {
-        max-width: 95% !important;
-    }
-
-    .modalExo {
-        max-width: 95% !important;
-    }
-
-    .modalExoIn {
-        height: 1640px !important;
-    }
 }
 
 .btn-prog {
@@ -316,23 +324,9 @@ section {
 
 /* ------------- Modal Exo ----------------- */
 
-.modal {
-    left: -20px;
-    width: 104%;
-    top: -20px;
-}
-
-.modal-header {
-    padding: 2em 3em;
-}
-
-.modal-body {
-    padding: 0 1.5em 1.5em 1.5em;
-}
-
 .imgExo {
     max-height: 100%;
-    min-height: 70%;
+    min-height: 75%;
     max-width: 100%;
     width: auto;
 }
@@ -342,21 +336,32 @@ section {
     height: 10px !important;
     opacity: 1;
     border-radius: 5px;
-    margin: -20px 0 20px 0;
+    /*margin: -20px 0 20px 0;*/
+}
+
+select {
+    border: none;
+    height: 140px;
+    background-image: linear-gradient(white, grey, white);
+    width: 50px;
+    text-align: center;
+}
+
+.modal-dialog {
+    max-width: 900px;
+}
+
+.modal-footer {
+    justify-content: center;
+    font-size: 2.5em;
+    height: 300px;
+}
+
+.espace {
+    width: 50px;
 }
 
 /* -------------- btn Modal -------------------*/
-
-.btn-module {
-    border-radius: 20px;
-    width: 200px;
-    height: 120px;
-    font-size: 2em;
-    font-weight: 900;
-    margin-top: 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
 
 .btn-module2 {
     border-radius: 150px;
@@ -370,15 +375,16 @@ section {
 }
 
 .btn-module3 {
+    width: 600px;
+    line-height: 40px;
     border-radius: 20px;
-    width: 80px;
-    height: 80px;
-    margin: 10px 0px 0px 10px;
-    font-size: 1.5em;
+    font-size: 2.5em;
     font-weight: 900;
     background-color: rgb(240, 240, 240);
     box-shadow: -7px -7px 10px 0 rgb(255 255 255),
         5px 5px 10px 0 rgb(0 0 0 / 20%);
+
+    transform: translate(25%, 100%);
 }
 
 .btn-module3:active {
@@ -390,53 +396,25 @@ section {
     width: 60px;
     height: 60px;
     border-radius: 20px;
+    font-size: 2rem !important;
     background-color: rgb(240, 240, 240);
     box-shadow: -5px -5px 10px 0 rgb(255 255 255),
         5px 5px 10px 0 rgb(0 0 0 / 20%);
 }
 
 .btn-module4 i {
-    width: 25px !important;
-    height: 25px !important;
-    font-size: 1em !important;
     color: black !important;
 }
 
-.modal-footer {
-    justify-content: space-between;
+.btn-i {
+    font-size: 2em;
 }
 
 .btn-close {
     background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/5em auto no-repeat;
 }
 
-.roundExo,
-.roundExo:focus,
-.roundExo:active {
-    width: 4rem;
-    height: 4rem;
-    font-size: 2em;
-    color: black;
-    background-color: white;
-
-    transform: translate(-50%, -50%) !important;
-    top: 0 !important;
-    position: absolute !important;
-    border-radius: 50rem !important;
-    border-color: #6c757d;
-}
-
-.roundExoSucced,
-.roundExoSucced:focus,
-.roundExoSucced:active {
-    background-color: #ffc107;
-}
-
-
-
-.progBar {
-    width: 100%;
-}
+/* ------------- Temps ---------------- */
 
 .temps {
     width: 300px;
@@ -464,6 +442,15 @@ section {
 .white {
     background-color: white;
 }
+
+.fd-vert {
+    background-color: rgb(25, 135, 84, 50%);
+}
+
+.fd-orange {
+    background-color: rgb(255, 193, 7, 50%);
+}
+
 
 /* ----------- id: Section ----------------- */
 
@@ -528,22 +515,18 @@ section {
     background-image: radial-gradient(circle at 0px 60px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 60px, rgb(240, 240, 240) 30px);
 }
 
-/* ------------ Musique ----------------- */
-
-.offcanvas-start {
-    width: 60%;
+.bouchon3 {
+    height: 1880px;
+    z-index: 5;
 }
 
-audio {
-    width: 100%;
-    font-size: 3em;
+.bouchon4 {
+    height: 1775px;
+    z-index: 5;
+    padding: 5%;
 }
 
 /* ----------- fiche résultat ----------- */
-
-#blocFicheResultat {
-    margin-top: 100px;
-}
 
 .txtExo {
     margin-left: 5%;
@@ -569,8 +552,9 @@ audio {
 
     line-height: 130px;
     background-color: rgb(240, 240, 240);
-    margin-bottom: -10px;
     z-index: 3;
+
+    box-shadow: 0 1em 2rem rgb(240 240 240) !important;
 }
 
 .ligneExo {
@@ -605,14 +589,15 @@ audio {
 
 .ligneTitre {
     margin-bottom: -5px;
+    margin-top: 20px;
 }
 
 .ligneDescription {
     overflow: hidden;
     text-overflow: ellipsis !important;
 
-    height: 110px;
-    margin-top: 30px;
+    height: 75px;
+    margin-top: 20px;
 }
 
 .btnInfoExo {
@@ -627,14 +612,170 @@ audio {
     color: black;
 }
 
-/* ----------- Page résultat ---------------*/
+
+/* ----------- Page Exo du prog ---------------*/
 #blocFicheResultat {
-    height: 5000px;
+    padding: 0;
 }
 
 #ficheResultat {
-    margin-top: 100px;
+    padding: 10% 3%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
 }
+
+.ticket0 {
+    width: 100%;
+
+    height: 2000px;
+    overflow-y: scroll;
+
+    z-index: 1000;
+
+    margin-top: 120px;
+}
+
+.ticket1,
+.ticket2 {
+    border-radius: 150px 150px 0 0;
+}
+
+
+.ticket1 {
+    background-color: rgb(255, 255, 255);
+    z-index: 1005;
+    position: sticky;
+    top: 0;
+}
+
+.ticket2 {
+    background-color: rgb(220, 220, 220);
+    z-index: 1010;
+    position: relative;
+    bottom: 0;
+    margin-top: -100px;
+}
+
+.bloc-tiret {
+    height: 100px;
+}
+
+.tiret {
+    height: 5px;
+    width: 400px;
+    background-color: black;
+
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.exoBody {
+    height: 1440px;
+    overflow-y: scroll;
+}
+
+.exoFooter {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+
+    position: absolute;
+    width: 90%;
+    bottom: 175px;
+}
+
+
+/* --------------- ticket 2 ---------------- */
+
+.ligne-list-exo {
+    height: 250px;
+    padding: 2% 5%;
+    display: flex;
+    align-items: center;
+    border-radius: 5em;
+}
+
+.ligne-img-bloc2 {
+    float: left;
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    margin-right: 3%;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ligne-img-left2 {
+    max-height: 100%;
+    min-height: 80%;
+    max-width: 100%;
+    width: auto;
+    padding: 5%;
+}
+
+.txt-center {
+    width: 450px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.triangle1 {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 80px solid #ffc107;
+
+    display: inline-block;
+    transform: translate(30%, 0%);
+}
+
+.triangle2 {
+    float: right;
+    margin-right: 20px;
+    margin-top: 25px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 50px solid #ffc107;
+
+    display: inline-block;
+    transform: translate(30%, 0%);
+}
+
+.exoActu {
+    background-color: rgb(200, 200, 200);
+    transition: background-color 0.75s;
+}
+
+.serieActu {
+    background-color: rgb(255, 193, 7, 0.75);
+    font-size: 3em !important;
+    transition: background-color 0.5s;
+}
+
+.div-btn {
+    width: 100%;
+    margin: 2em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-ticket2 {
+    width: 600px;
+    border-radius: 20px;
+    background-color: #ffc107;
+}
+
+/* ----------- Page résultat ---------------*/
 
 /* ---- Mini tab ------ */
 .lineMiniTab,
@@ -688,48 +829,131 @@ audio {
     border-radius: 50px;
 }
 
-.caseTab_4 {
+/* SE = start, end */
+.caseTab_4_SE,
+.caseTab_4_Mid {
     display: inline-block;
-    width: 20%;
     margin: 0;
     text-align: center !important;
 }
 
-.ligneTabColor {
-    background-color: #ffc107;
-    transition: background-color 0.5s;
-    line-height: 50px !important;
-    font-size: 1.5em;
+.caseTab_4_Mid {
+    width: 35%;
+}
+
+.caseTab_4_SE {
+    width: 12%;
 }
 
 input {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100px;
+}
+
+.input2 {
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    width: 80%;
-    padding-left: 20%;
+    width: 100%;
+    text-align: center;
 }
 
-.ligneTabColor input {
-    padding-left: 10% !important;
+.valeurTab {
+    text-align: center;
+    margin: 0;
 }
 
-.ligneTabColor button {
-    margin-left: -15% !important;
+/* -------------------------------------------------- */
+
+.none {
+    display: none;
 }
 
-.ligneTabColor button i {
-    margin-left: -25%;
+.block {
+    display: block;
+    transition: display 0.5s;
 }
 
-.form-check-input {
-    margin-top: 0 !important;
-    padding-left: 10% !important;
+/* ------------ Musique ----------------- */
+
+.offcanvas-start {
+    width: 60%;
 }
 
-.fd-vert {
-    background-color: rgb(25, 135, 84, 50%);
+audio {
+    width: 100%;
+    font-size: 3em;
 }
 
-.fd-orange {
-    background-color: rgb(255, 193, 7, 50%);
+.musicImg {
+    width: 450px;
+    height: 400px;
+    background-color: rgb(60, 60, 60);
+}
+
+.musicPlayeurBloc,
+.musicImgBloc {
+    width: 100%;
+    padding: 2% 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.musicPlayeur {
+    width: 100%;
+    height: 75px;
+    padding: 2%;
+    border-radius: 50px;
+    background-color: rgb(60, 60, 60);
+}
+
+.musicTitre {
+    width: 100%;
+    text-align: center;
+}
+
+.ligne-list-music {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ligne-img-bloc-music {
+    float: left;
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    margin-right: -5%;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ligne-img-music {
+    max-height: 100%;
+    min-height: 80%;
+    max-width: 100%;
+    width: auto;
+    padding: 5%;
+}
+
+.musicBlocTxt {
+    width: 250px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.triangle3 {
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 50px solid #ffc107;
+
+    display: inline-block;
+    transform: translate(-15%, 0%);
 }
