@@ -211,9 +211,9 @@ section {
     position: sticky;
     min-height: 200px;
     max-height: 300px;
-    top: 120px;
+    top: 119px;
     z-index: 5;
-    box-shadow: 0 0.5em 3rem rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 0.1em 3rem rgba(0, 0, 0, 0.3) !important;
 }
 
 .sectionInfo {
@@ -284,7 +284,7 @@ section {
 }
 
 .detail5 {
-    height: 1200px;
+    height: 1000px;
     overflow-y: scroll;
     margin-bottom: 10%;
 }
@@ -422,6 +422,7 @@ select {
 .btn-module4 i {
     color: black !important;
 }
+
 
 .btn-i {
     font-size: 2em;
@@ -895,6 +896,19 @@ input {
 
 .offcanvas-start {
     width: 60%;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: rgb(240, 240, 240);
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+}
+
+.btn-canvas {
+    position: absolute;
+    right: 10%;
+    top: 50px;
 }
 
 audio {
@@ -914,6 +928,10 @@ audio {
     padding: 2% 5%;
     display: flex;
     justify-content: center;
+}
+
+.p-null {
+    margin: 0;
 }
 
 .musicPlayeur {
@@ -941,7 +959,6 @@ audio {
     float: left;
     height: 200px;
     width: 200px;
-    background-color: white;
     margin-right: -5%;
     border-radius: 30px;
 
@@ -951,11 +968,11 @@ audio {
 }
 
 .ligne-img-music {
-    max-height: 100%;
-    min-height: 80%;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
     width: auto;
     padding: 5%;
+    border-radius: 50px;
 }
 
 .musicBlocTxt {

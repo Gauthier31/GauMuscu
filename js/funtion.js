@@ -128,8 +128,8 @@ function getMusique() {
                 </div>
 
                 <div class="musicBlocTxt">
-                    <p class="taille4 fw-9">` + BD_Musique[i][1] + `</p>
-                    <p class="taille5 fw-6">` + BD_Musique[i][0] + `</p>
+                    <p class="taille4 fw-9 p-null">` + BD_Musique[i][1] + `</p>
+                    <p class="taille5 fw-6 p-null">` + BD_Musique[i][0] + `</p>
                 </div>
 
                 <div class="triangle3" onclick="lancementMusique(` + i + `)"></div>
