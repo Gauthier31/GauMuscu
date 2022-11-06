@@ -6,10 +6,21 @@
 }
 
 body {
+    width: 100%;
     font-family: HeadingProDouble-Regular;
     background-color: rgb(240, 240, 240);
     overflow-x: hidden;
 }
+
+/*
+@media only screen and (min-width: 700px) {
+    body {
+        background-color: red;
+        width: 700px;
+    }
+}
+*/
+
 
 /* ---------------- NavBar ------------------*/
 
