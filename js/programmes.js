@@ -72,7 +72,7 @@ function programmes(numProgramme) {
 
 
         listExoInfo +=
-            `<div class="none top" id="Info_Exo` + BD_Programme[numProg][i] + `">
+            `<div class="none" id="Info_Exo` + BD_Programme[numProg][i] + `">
                 <div class="exoHead">
                     <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[BD_Programme[numProg][i]][1] + `</p>
                 </div>
@@ -143,10 +143,10 @@ function programmes(numProgramme) {
 
                 <div class="detail3">
 
-                    <div id="bouchon4" class="bouchon4">
-                        
-                        ` + listExoInfo + `
-                    
+                    <div class="bouchon4">
+                        <div id="bouchon4">
+                            ` + listExoInfo + `
+                        </div>
                         <div id="exoFooter" class="exoFooter">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
                             
@@ -171,11 +171,14 @@ function programmes(numProgramme) {
                     <div class="tiret"></div>
                 </div>
 
-                <div id="detail4" class="detail4_Up">
+                <div class="detail4_Up">
+                    <div id="detail4">
+                        ` + listExo + `
+                    </div>
+
                     <div class="div-btn bottom">
                             <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                     </div>
-                    ` + listExo + `
                 </div>
                 
             </div>
@@ -227,9 +230,6 @@ function ticket1Up_Down() {
         ficheResultat.style.zIndex = "-1";
         ficheResultat.style.transition = "z-index 1s";
 
-        exoFooter.classList.add(absolute);
-        exoFooter.classList.remove(none);
-
     } else {
         ticket1.classList.remove("ticket1_Up");
         ticket1.classList.add("ticket1_Down");
@@ -238,8 +238,6 @@ function ticket1Up_Down() {
         ficheResultat.style.zIndex = "1";
         ficheResultat.style.transition = "z-index 1s";
 
-        exoFooter.classList.add(none);
-        exoFooter.classList.remove(absolute);
     }
 }
 
@@ -278,7 +276,7 @@ function exoSuivant(numExoNext) {
     document.getElementById("Info_Exo" + exoNext).classList.add("block");
 
     // On enleve et affiche l'exo actuel dans ticket2
-    colorExo(exoNext)
+    colorExo(exoNext);
 }
 
 
@@ -615,9 +613,8 @@ function addExo(numExo) {
                     <img class="ligne-img-left2" src="document/exo/` + BD_Exo[numExo][1] + `.jpg"/>
                 </div>
 
-            <div class="taille1 fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
-
-                <div class="triangle1" onclick = "exoSuivant(` + idExo + `)"></div>
+                <div class="taille1 fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
+                <div class="triangle1" onclick="exoSuivant(` + (BD_Programme[numProg].length - 1) + `)"></div>
             </div>`;
 
         exoSuivant(BD_Programme[numProg].length - 1);
