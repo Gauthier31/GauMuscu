@@ -22,7 +22,7 @@ function getExercice() {
         let classList = "";
 
         for (j = 0; j < tabStyle.length - 1; j++) {
-            classList += tabStyle[j] + ", ";
+            classList += tabStyle[j] + " ";
         }
         classList += tabStyle[j];
 

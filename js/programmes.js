@@ -47,9 +47,9 @@ function programmes(numProgramme) {
             serieTab = (j + 1) / 2;
 
             tab +=
-                `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `" onclick="colorSerie(` + serieTab + `)">
+                `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `">
                 
-                    <div class="caseTab_4_SE fw-9">` + serieTab + `</div>
+                    <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
                         <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + BD_Stat[exoTab][j] + `</p> -->
