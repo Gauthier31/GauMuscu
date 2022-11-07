@@ -133,8 +133,6 @@ function programmes(numProgramme) {
                 </div>
 
             </div>
-
-            <!-- <div class="bouchon3"></div> -->
                 
             <div id="ticket1" class="ticket1 ticket1_Down">
                 <div class="bloc-tiret" onclick="ticket1Up_Down()">
@@ -218,8 +216,6 @@ function ficheInitialisation(numProg) {
 function ticket1Up_Down() {
 
     const ticket1 = document.getElementById("ticket1");
-    const ficheResultat = document.getElementById("ficheResultat");
-    const exoFooter = document.getElementById("exoFooter");
 
     if (ticket1.className == "ticket1 ticket1_Down") {
 
@@ -227,17 +223,11 @@ function ticket1Up_Down() {
         ticket1.classList.add("ticket1_Up");
         ticket1.style.transition = "margin-top 1s";
 
-        ficheResultat.style.zIndex = "-1";
-        ficheResultat.style.transition = "z-index 1s";
 
     } else {
         ticket1.classList.remove("ticket1_Up");
         ticket1.classList.add("ticket1_Down");
         ticket1.style.transition = "margin-top 1s";
-
-        ficheResultat.style.zIndex = "1";
-        ficheResultat.style.transition = "z-index 1s";
-
     }
 }
 
