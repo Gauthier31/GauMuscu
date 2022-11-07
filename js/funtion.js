@@ -134,14 +134,6 @@ function getMusique() {
 
                 <div class="triangle3" onclick="lancementMusique(` + i + `)"></div>
             </div>`;
-
-        /*
-        <audio controls src="document/musique/` + BD_Musique[i] + `">
-                <a href="document/musique/` + BD_Musique[i] + `">
-                    Télécharger
-                </a>
-            </audio>
-         */
     }
 }
 

@@ -72,7 +72,7 @@ function programmes(numProgramme) {
 
 
         listExoInfo +=
-            `<div class="none" id="Info_Exo` + BD_Programme[numProg][i] + `">
+            `<div class="none top" id="Info_Exo` + BD_Programme[numProg][i] + `">
                 <div class="exoHead">
                     <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[BD_Programme[numProg][i]][1] + `</p>
                 </div>
@@ -134,10 +134,10 @@ function programmes(numProgramme) {
 
             </div>
 
-            <div class="bouchon3"></div>
+            <!-- <div class="bouchon3"></div> -->
                 
-            <div class="ticket1">
-                <div class="bloc-tiret">
+            <div id="ticket1" class="ticket1 ticket1_Down">
+                <div class="bloc-tiret" onclick="ticket1Up_Down()">
                     <div class="tiret"></div>
                 </div>
 
@@ -147,7 +147,7 @@ function programmes(numProgramme) {
                         
                         ` + listExoInfo + `
                     
-                        <div class="exoFooter">
+                        <div id="exoFooter" class="exoFooter">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
                             
                             <div class="temps">
@@ -166,13 +166,13 @@ function programmes(numProgramme) {
             </div>
 
         
-            <div id="ticket2" class="ticket2">
+            <div id="ticket2" class="ticket2 ticket2_Down">
                 <div class="bloc-tiret" onclick="ticket2Up_Down()">
                     <div class="tiret"></div>
                 </div>
 
-                <div id="detail4" class="detail4_Down">
-                    <div class="div-btn">
+                <div id="detail4" class="detail4_Up">
+                    <div class="div-btn bottom">
                             <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                     </div>
                     ` + listExo + `
@@ -212,23 +212,54 @@ function ficheInitialisation(numProg) {
         <div class="col-6" style="display: none">`;
 }
 
+function ticket1Up_Down() {
+
+    const ticket1 = document.getElementById("ticket1");
+    const ficheResultat = document.getElementById("ficheResultat");
+    const exoFooter = document.getElementById("exoFooter");
+
+    if (ticket1.className == "ticket1 ticket1_Down") {
+
+        ticket1.classList.remove("ticket1_Down");
+        ticket1.classList.add("ticket1_Up");
+        ticket1.style.transition = "margin-top 1s";
+
+        ficheResultat.style.zIndex = "-1";
+        ficheResultat.style.transition = "z-index 1s";
+
+        exoFooter.classList.add(absolute);
+        exoFooter.classList.remove(none);
+
+    } else {
+        ticket1.classList.remove("ticket1_Up");
+        ticket1.classList.add("ticket1_Down");
+        ticket1.style.transition = "margin-top 1s";
+
+        ficheResultat.style.zIndex = "1";
+        ficheResultat.style.transition = "z-index 1s";
+
+        exoFooter.classList.add(none);
+        exoFooter.classList.remove(absolute);
+    }
+}
+
 function ticket2Up_Down() {
 
-    const detail4 = document.getElementById("detail4");
+    const ticket2 = document.getElementById("ticket2");
 
-    if (detail4.className == "detail4_Down") {
+    if (ticket2.className == "ticket2 ticket2_Down") {
 
-        detail4.classList.remove("detail4_Down");
-        detail4.classList.add("detail4_Up");
-        detail4.style.transition = "height 0.75s";
+        ticket2.classList.remove("ticket2_Down");
+        ticket2.classList.add("ticket2_Up");
+        ticket2.style.transition = "margin-top 0.75s";
     } else {
 
-        detail4.classList.remove("detail4_Up");
-        detail4.classList.add("detail4_Down");
-        detail4.style.transition = "height 0.75s";
+        ticket2.classList.remove("ticket2_Up");
+        ticket2.classList.add("ticket2_Down");
+        ticket2.style.transition = "margin-top 0.75s";
     }
-
 }
+
 
 // Appuie sur le bouton pour changer de module et appelle la fonction suivant2(exoNext)
 // numExoNext numéro de l'exo suivant dans la table programme
@@ -559,7 +590,10 @@ function addExo(numExo) {
                                 </button>
                             </div>
                         </div>
+
+                        <div class="detail6" id="` + BD_Exo[numExo][0] + `_statModule">
                         ` + tab + `
+                        </div>
                     </div>
 
                     <button onclick="addSerie()" class="btn btn-module3">
