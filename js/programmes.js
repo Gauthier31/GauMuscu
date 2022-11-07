@@ -145,6 +145,7 @@ function programmes(numProgramme) {
                         <div id="bouchon4">
                             ` + listExoInfo + `
                         </div>
+
                         <div id="exoFooter" class="exoFooter">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
                             
@@ -155,8 +156,9 @@ function programmes(numProgramme) {
                             </div>
 
                             <button class="btn btn-warning btn-module2" onclick="serieSuivant()">Suivant</button>
-
                         </div>
+
+                        <div class="bouchon3"></div>
                     
                     </div> 
                 

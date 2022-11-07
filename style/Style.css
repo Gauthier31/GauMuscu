@@ -275,7 +275,7 @@ section {
 }
 
 .detail4_Up {
-    height: 55vh;
+    height: 37vh;
 }
 
 .detail4_Down {
@@ -533,7 +533,7 @@ select {
 }
 
 .bouchon3 {
-    height: 1655px;
+    height: 170px;
     z-index: 5;
 }
 
@@ -642,7 +642,7 @@ select {
 
 .ticket0 {
     width: 100vw;
-    height: 100vh;
+    height: 88vh;
     overflow-y: hidden;
 
     z-index: 1050;
@@ -658,15 +658,14 @@ select {
 .ticket1 {
     background-color: rgb(255, 255, 255);
     z-index: 1055;
-    height: 100vh;
 }
 
 .ticket1_Up {
-    margin-top: 0vh;
+    margin-top: 120px;
 }
 
 .ticket1_Down {
-    margin-top: 93vh;
+    margin-top: 81vh;
 }
 
 .ticket2 {
@@ -674,15 +673,14 @@ select {
     z-index: 1060;
     position: relative;
     bottom: 0;
-    margin-top: -100px;
 }
 
 .ticket2_Up {
-    margin-top: -62vh;
+    margin-top: -44vh;
 }
 
 .ticket2_Down {
-    margin-top: -7vh;
+    margin-top: -150px;
 }
 
 .bloc-tiret {
@@ -701,7 +699,7 @@ select {
 }
 
 .exoBody {
-    height: 72vh;
+    height: 56vh;
     overflow-y: scroll;
 }
 
