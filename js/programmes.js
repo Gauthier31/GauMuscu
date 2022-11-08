@@ -361,6 +361,8 @@ function colorSerie(numSerie) {
         serie = numSerie;
     } catch (err) {
         console.log(err);
+
+        document.getElementById("Lancement_Exo" + exo).classList.add("exoFini");
         exoSuivant(numExo + 1);
     }
 }

@@ -789,6 +789,10 @@ select {
     transition: background-color 0.75s;
 }
 
+.exoFini {
+    background-color: rgb(200, 200, 200, 0.5);
+}
+
 .serieActu {
     background-color: rgb(255, 193, 7, 0.75);
     font-size: 2em !important;
