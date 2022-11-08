@@ -636,9 +636,11 @@ function addExo(numExo) {
                             </div>
                         </div>
 
-                        <button onclick="addSerie()" class="btn btn-module3">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
+                        <div class="div-btn">
+                            <button onclick="addSerie()" class="btn btn-module3">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>`;
 
