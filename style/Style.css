@@ -642,13 +642,15 @@ select {
     position: fixed;
 }
 
+#listExo {
+    height: 1500px;
+    overflow-y: scroll;
+}
+
 .ticket0 {
     width: 100vw;
     height: 89vh;
     overflow-y: hidden;
-
-    position: fixed;
-    z-index: 1050;
 }
 
 .ticket1,
