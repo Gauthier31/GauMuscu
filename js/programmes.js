@@ -573,7 +573,7 @@ function addExo(numExo) {
         let tab = "";
 
         // On mets en place les lignes du tableau
-        for (j = 1; j < BD_Stat[numProg].length; j += 2) {
+        for (j = 1; j < BD_Stat[numExo].length; j += 2) {
 
             exoTab = numExo;
             serieTab = (j + 1) / 2;
