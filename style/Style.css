@@ -643,6 +643,7 @@ select {
 }
 
 #listExo {
+    padding-bottom: 30%;
     height: 1500px;
     overflow-y: scroll;
 }
@@ -903,6 +904,10 @@ input {
 .block {
     display: block;
     transition: display 0.5s;
+}
+
+.visibility_none {
+    visibility: hidden;
 }
 
 .top {

@@ -145,8 +145,43 @@ function programmes(numProgramme) {
 
                     <div class="bouchon4">
                         <div id="bouchon4">
+                        
+                            <div class="none" id="Info_Exo0" >
+                                <div class="exoHead">
+                                    <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
+                                </div>
+                
+                                <div class="exoBody">
+                                    <div class="card-img-bloc2">
+                                        <img class="imgExo mx-auto d-block" src="document/exo/NULL.jpg" alt="NULL" />
+                                    </div>
+                                    <hr class="hr-orange" />
+                
+                                    <div class="tableStat" id="0_statModule">
+                                        <div class="lineTabHead taille1">
+                                            <div class="caseTab_4_SE fw-9">Serie</div>
+                                            <div class="caseTab_4_Mid fw-9">Rep</div>
+                                            <div class="caseTab_4_Mid fw-9">Kilos</div>
+                                            <div class="caseTab_4_SE fw-9">
+                                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                    <i class="fa-solid fa-pen btn-i"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                
+                                        <div class="detail6" id="0_statModule">
+                                        </div>
+                                    </div>
+                
+                                    <button onclick="addSerie()" class="btn btn-module3">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div >
+
                             ` + listExoInfo + `
-                        </div>
+
+                        </div >
 
                         <div id="exoFooter" class="exoFooter">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
@@ -162,29 +197,29 @@ function programmes(numProgramme) {
 
                         <div class="bouchon3"></div>
                     
-                    </div> 
+                    </div > 
                 
+                </div >
+            </div >
+
+
+        <div id="ticket2" class="ticket2 ticket2_Down">
+            <div class="bloc-tiret" onclick="ticket2Up_Down()">
+                <div class="tiret"></div>
+            </div>
+
+            <div class="detail4_Up">
+                <div id="detail4">
+                    ` + listExo + `
+                </div>
+
+                <div class="div-btn">
+                    <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                 </div>
             </div>
 
-        
-            <div id="ticket2" class="ticket2 ticket2_Down">
-                <div class="bloc-tiret" onclick="ticket2Up_Down()">
-                    <div class="tiret"></div>
-                </div>
-
-                <div class="detail4_Up">
-                    <div id="detail4">
-                        ` + listExo + `
-                    </div>
-
-                    <div class="div-btn bottom">
-                            <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
-                    </div>
-                </div>
-                
-            </div>
-        </div>`;
+        </div>
+        </div > `;
 
     // On affiche et color
     document.getElementById("Info_Exo" + BD_Programme[numProg][1]).classList.remove("none");
@@ -257,20 +292,33 @@ function ticket2Up_Down() {
 // numExoNext numéro de l'exo suivant dans la table programme
 function exoSuivant(numExoNext) {
 
-    numExo = numExoNext;                            // Numéro de la case dans la tableau stat
-    exoNext = BD_Programme[numProg][numExoNext];    // Numéro de l'exercice
+    try {
 
-    // On décolore le la ligne
-    document.getElementById("exo" + exo + "serie" + serie).classList.remove("serieActu");
-    // On enleve et affiche les infos des exos
-    document.getElementById("Info_Exo" + exo).classList.add("none");
-    document.getElementById("Info_Exo" + exo).classList.remove("block");
+        numExo = numExoNext;                            // Numéro de la case dans la tableau stat
+        exoNext = BD_Programme[numProg][numExoNext];    // Numéro de l'exercice
 
-    document.getElementById("Info_Exo" + exoNext).classList.remove("none");
-    document.getElementById("Info_Exo" + exoNext).classList.add("block");
+        // On est jamais sur de rien
+        document.getElementById('Info_Exo0').classList.remove("visibility_none");
+        document.getElementById('Info_Exo0').classList.add("none");
 
-    // On enleve et affiche l'exo actuel dans ticket2
-    colorExo(exoNext);
+        // On décolore le la ligne
+        document.getElementById("exo" + exo + "serie" + serie).classList.remove("serieActu");
+        // On enleve et affiche les infos des exos
+        document.getElementById("Info_Exo" + exo).classList.add("none");
+        document.getElementById("Info_Exo" + exo).classList.remove("block");
+
+        document.getElementById("Info_Exo" + exoNext).classList.remove("none");
+        document.getElementById("Info_Exo" + exoNext).classList.add("block");
+
+        // On enleve et affiche l'exo actuel dans ticket2
+        colorExo(exoNext);
+
+    } catch (err) {
+        console.log(err);
+        document.getElementById('Info_Exo0').classList.remove("none");
+        document.getElementById('Info_Exo0').classList.add("visibility_none");
+    }
+
 }
 
 
@@ -330,24 +378,24 @@ function addSerie() {
 
     tab.innerHTML +=
         `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `" onclick="colorSerie(` + newSerieNum + `)">
-                
-            <div class="caseTab_4_SE fw-9">` + newSerieNum + `</div>
 
-            <div class="caseTab_4_Mid">
-                <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + BD_Stat[exo][BD_Stat[exo].length - 2] + `">
-            </div>
+                <div class="caseTab_4_SE fw-9">` + newSerieNum + `</div>
 
-            <div class="caseTab_4_Mid">
-               <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + BD_Stat[exo][BD_Stat[exo].length - 1] + `">
-            </div>
+                <div class="caseTab_4_Mid">
+                    <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + BD_Stat[exo][BD_Stat[exo].length - 2] + `">
+                </div>
 
-            <div class="caseTab_4_SE">
-                <button class="btn-module4" id="exo` + exo + `serie` + newSerieNum + `-Avis" 
-                    onclick="avis(` + exo + `, ` + newSerieNum + `)" value="+">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-        </div>`;
+                <div class="caseTab_4_Mid">
+                    <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + BD_Stat[exo][BD_Stat[exo].length - 1] + `">
+                </div>
+
+                <div class="caseTab_4_SE">
+                    <button class="btn-module4" id="exo` + exo + `serie` + newSerieNum + `-Avis"
+                        onclick="avis(` + exo + `, ` + newSerieNum + `)" value="+">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>`;
 }
 
 function avis(exoActu, serieActu) {
@@ -464,14 +512,14 @@ function fiche(exoActu, serieActu) {
 
         listExo.innerHTML +=
             `<div class="col-6" id="colExo` + exoActu + `">
-            <p class="taille2 txtExo fw-600 depasse">` + BD_Exo[exoActu][1] + `</p>
-            <hr class="hr-orange"/>
-        
-            <div class="lineMiniTabHead">
-                <p class="caseMiniTab_3 fw-9">Rep</p>
-                <p class="caseMiniTab_3 fw-9">Kilos</p>
-                <p class="caseMiniTab_3 fw-9">Durée</p>
-            </div>`;
+                <p class="taille2 txtExo fw-600 depasse">` + BD_Exo[exoActu][1] + `</p>
+                <hr class="hr-orange" />
+
+                <div class="lineMiniTabHead">
+                    <p class="caseMiniTab_3 fw-9">Rep</p>
+                    <p class="caseMiniTab_3 fw-9">Kilos</p>
+                    <p class="caseMiniTab_3 fw-9">Durée</p>
+                </div>`;
     }
 
     // prends les valeurs de la ligne du tableau
@@ -495,10 +543,10 @@ function fiche(exoActu, serieActu) {
 
     colExo.innerHTML +=
         `<div class="lineMiniTab ` + couleur + `">
-            <p class="caseMiniTab_3">` + nbRep + `</p>
-            <p class="caseMiniTab_3">` + nbPoids + `</p>
-            <p class="caseMiniTab_3">` + tempsSerie + `</p>
-        </div>`;
+                    <p class="caseMiniTab_3">` + nbRep + `</p>
+                    <p class="caseMiniTab_3">` + nbPoids + `</p>
+                    <p class="caseMiniTab_3">` + tempsSerie + `</p>
+                </div>`;
 }
 
 
@@ -532,28 +580,28 @@ function addExo(numExo) {
 
             tab +=
                 `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `" onclick="colorSerie(` + serieTab + `)">
-                
-                <div class="caseTab_4_SE fw-9">` + serieTab + `</div>
 
-                <div class="caseTab_4_Mid">
-                    <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + BD_Stat[exoTab][j] + `">
-                </div>
+                    <div class="caseTab_4_SE fw-9">` + serieTab + `</div>
 
-                <div class="caseTab_4_Mid">
-                    <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + BD_Stat[exoTab][j + 1] + `">
-                </div>
+                    <div class="caseTab_4_Mid">
+                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + BD_Stat[exoTab][j] + `">
+                    </div>
 
-                <div class="caseTab_4_SE">
-                    <button class="btn-module4" id="exo` + exoTab + `serie` + serieTab + `-Avis" 
-                        onclick="avis(` + exoTab + `, ` + serieTab + `)" value="+">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </div>
-            </div>`;
+                    <div class="caseTab_4_Mid">
+                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + BD_Stat[exoTab][j + 1] + `">
+                    </div>
+
+                    <div class="caseTab_4_SE">
+                        <button class="btn-module4" id="exo` + exoTab + `serie` + serieTab + `-Avis"
+                            onclick="avis(` + exoTab + `, ` + serieTab + `)" value="+">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>`;
         }
 
-        //<p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + BD_Stat[exoTab][j] + `</p> 
-        //<p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + BD_Stat[exoTab][j + 1] + `</p> 
+        //<p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + BD_Stat[exoTab][j] + `</p>
+        //<p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + BD_Stat[exoTab][j + 1] + `</p>
 
         let idExo = BD_Programme[numProg][BD_Programme[numProg].length - 1];
 
@@ -561,38 +609,38 @@ function addExo(numExo) {
         const bouchon4 = document.getElementById("bouchon4");
         bouchon4.innerHTML +=
             `<div class="none" id="Info_Exo` + idExo + `">
-                <div class="exoHead">
-                    <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[idExo][1] + `</p>
-                </div>
-
-                <div class="exoBody">
-                    <div class="card-img-bloc2">
-                        <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[idExo][1] + `.jpg" alt="` + BD_Exo[idExo][1] + `" />
+                    <div class="exoHead">
+                        <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[idExo][1] + `</p>
                     </div>
-                    <hr class="hr-orange" />
 
-                    <div class="tableStat" id="` + BD_Exo[idExo][0] + `_statModule">
-                        <div class="lineTabHead taille1">
-                            <div class="caseTab_4_SE fw-9">Serie</div>
-                            <div class="caseTab_4_Mid fw-9">Rep</div>
-                            <div class="caseTab_4_Mid fw-9">Kilos</div>
-                            <div class="caseTab_4_SE fw-9">
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    <i class="fa-solid fa-pen btn-i"></i>
-                                </button>
+                    <div class="exoBody">
+                        <div class="card-img-bloc2">
+                            <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[idExo][1] + `.jpg" alt="` + BD_Exo[idExo][1] + `" />
+                        </div>
+                        <hr class="hr-orange" />
+
+                        <div class="tableStat" id="` + BD_Exo[idExo][0] + `_statModule">
+                            <div class="lineTabHead taille1">
+                                <div class="caseTab_4_SE fw-9">Serie</div>
+                                <div class="caseTab_4_Mid fw-9">Rep</div>
+                                <div class="caseTab_4_Mid fw-9">Kilos</div>
+                                <div class="caseTab_4_SE fw-9">
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <i class="fa-solid fa-pen btn-i"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="detail6" id="` + BD_Exo[numExo][0] + `_statModule">
+                                ` + tab + `
                             </div>
                         </div>
 
-                        <div class="detail6" id="` + BD_Exo[numExo][0] + `_statModule">
-                        ` + tab + `
-                        </div>
+                        <button onclick="addSerie()" class="btn btn-module3">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
-
-                    <button onclick="addSerie()" class="btn btn-module3">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </div>
-            </div>`;
+                </div>`;
 
 
 
@@ -603,13 +651,13 @@ function addExo(numExo) {
         detail4.innerHTML +=
             `<div class="ligne-list-exo" id="Lancement_Exo` + idExo + `">
 
-                <div class="ligne-img-bloc2">
-                    <img class="ligne-img-left2" src="document/exo/` + BD_Exo[numExo][1] + `.jpg"/>
-                </div>
+                    <div class="ligne-img-bloc2">
+                        <img class="ligne-img-left2" src="document/exo/` + BD_Exo[numExo][1] + `.jpg" />
+                    </div>
 
-                <div class="taille1 fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
-                <div class="triangle1" onclick="exoSuivant(` + (BD_Programme[numProg].length - 1) + `)"></div>
-            </div>`;
+                    <div class="taille1 fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
+                    <div class="triangle1" onclick="exoSuivant(` + (BD_Programme[numProg].length - 1) + `)"></div>
+                </div>`;
 
         exoSuivant(BD_Programme[numProg].length - 1);
     } else {
