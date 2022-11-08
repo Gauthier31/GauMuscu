@@ -279,7 +279,7 @@ section {
 }
 
 .detail4_Up {
-    height: 43vh;
+    height: 48vh;
 }
 
 .detail4_Down {
@@ -534,7 +534,7 @@ select {
 }
 
 .bouchon3 {
-    height: 170px;
+    height: 220px;
     z-index: 5;
 }
 
@@ -678,11 +678,11 @@ select {
 }
 
 .ticket2_Up {
-    margin-top: -50vh;
+    margin-top: -54vh;
 }
 
 .ticket2_Down {
-    margin-top: -150px;
+    margin-top: -200px;
 }
 
 .bloc-tiret {
