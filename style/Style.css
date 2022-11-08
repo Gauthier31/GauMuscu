@@ -267,6 +267,11 @@ section {
     padding-top: 0px;
 }
 
+#detail4 {
+    border-radius: 5em;
+    border: 3px solid black;
+}
+
 .detail4_Up,
 .detail4_Down {
     overflow-y: scroll;
@@ -398,8 +403,6 @@ select {
     background-color: rgb(240, 240, 240);
     box-shadow: -7px -7px 10px 0 rgb(255 255 255),
         5px 5px 10px 0 rgb(0 0 0 / 20%);
-
-    transform: translate(25%, 0%);
 }
 
 .btn-module3:active {
@@ -532,7 +535,7 @@ select {
 }
 
 .bouchon3 {
-    height: 190px;
+    height: 170px;
     z-index: 5;
 }
 
@@ -641,9 +644,10 @@ select {
 
 .ticket0 {
     width: 100vw;
-    height: 88vh;
+    height: 89vh;
     overflow-y: hidden;
 
+    position: fixed;
     z-index: 1050;
 }
 
@@ -698,7 +702,7 @@ select {
 }
 
 .exoBody {
-    height: 61vh;
+    height: 62vh;
     overflow-y: scroll;
 }
 
