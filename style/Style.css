@@ -293,7 +293,7 @@ section {
 }
 
 .detail6 {
-    height: 400px;
+    height: 430px;
     overflow-y: scroll;
 }
 
@@ -702,7 +702,7 @@ select {
 }
 
 .exoBody {
-    height: 62vh;
+    height: 1300px;
     overflow-y: scroll;
 }
 
