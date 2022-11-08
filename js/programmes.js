@@ -47,7 +47,7 @@ function programmes(numProgramme) {
             serieTab = (j + 1) / 2;
 
             tab +=
-                `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `">
+                `<div class="lineTab taille3" id="exo` + exoTab + `serie` + serieTab + `">
                 
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
@@ -84,7 +84,7 @@ function programmes(numProgramme) {
                     <hr class="hr-orange" />
 
                     <div class="tableStat">
-                        <div class="lineTabHead taille1">
+                        <div class="lineTabHead taille2">
                             <div class="caseTab_4_SE fw-9">Serie</div>
                             <div class="caseTab_4_Mid fw-9">Rep</div>
                             <div class="caseTab_4_Mid fw-9">Kilos</div>

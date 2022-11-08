@@ -244,7 +244,7 @@ section {
 }
 
 .card-img-bloc2 {
-    height: 550px;
+    height: 450px;
 
     display: flex;
     align-items: center;
@@ -293,7 +293,6 @@ section {
 }
 
 .detail6 {
-    height: 430px;
     overflow-y: scroll;
 }
 
@@ -701,6 +700,10 @@ select {
     transform: translate(-50%, 0%);
 }
 
+.exoHead {
+    border-bottom: 2px solid black;
+}
+
 .exoBody {
     height: 1300px;
     overflow-y: scroll;
@@ -784,7 +787,7 @@ select {
 
 .serieActu {
     background-color: rgb(255, 193, 7, 0.75);
-    font-size: 3em !important;
+    font-size: 2em !important;
     transition: background-color 0.5s;
 }
 
