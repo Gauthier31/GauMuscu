@@ -274,7 +274,7 @@ section {
 }
 
 .detail4_Up {
-    height: 37vh;
+    height: 43vh;
 }
 
 .detail4_Down {
@@ -532,7 +532,7 @@ select {
 }
 
 .bouchon3 {
-    height: 170px;
+    height: 190px;
     z-index: 5;
 }
 
@@ -660,7 +660,7 @@ select {
 }
 
 .ticket1_Up {
-    margin-top: 120px;
+    margin-top: 0px;
 }
 
 .ticket1_Down {
@@ -675,7 +675,7 @@ select {
 }
 
 .ticket2_Up {
-    margin-top: -44vh;
+    margin-top: -50vh;
 }
 
 .ticket2_Down {
@@ -698,7 +698,7 @@ select {
 }
 
 .exoBody {
-    height: 56vh;
+    height: 61vh;
     overflow-y: scroll;
 }
 
