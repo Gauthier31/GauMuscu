@@ -333,8 +333,8 @@ section {
     height: 89px;
     font-size: 1em;
     position: absolute;
-    left: 100% !important;
-    transform: translate(-100%, -10%) !important;
+    right: 0;
+    transform: translate(0%, -10%);
 }
 
 /* ------------- List Programmes ----------------- */
@@ -348,7 +348,15 @@ section {
 .list-group-item {
     padding-left: 50px;
     background-color: rgb(245, 245, 245);
+    display: inherit;
 }
+
+
+.list-titre {
+    width: 525px;
+    margin: 0;
+}
+
 
 /* ------------- Modal Exo ----------------- */
 

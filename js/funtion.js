@@ -71,7 +71,8 @@ function getProgramme() {
 
         prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3">
                 <ol class="list-group">
-                <li class="list-group-item taille depasse">` + BD_Programme[i][0] + `
+                <li class="list-group-item taille list-titre-bloc">
+                    <p class="list-titre depasse">` + BD_Programme[i][0] + `</p>
                     <button type="button" class="btn orange btn-prog" onclick="programmes(` + i + `)">C'est parti</button>
                 </li>`
             + txt + `   
