@@ -112,6 +112,9 @@ const BD_Exo = [
     [32, "Curl haltere marteau", "bicep.jpg", "bras",
         "description"],
 
+    [33, "Triceps", "tricep.jpg", "bras",
+        "description"],
+
 
     /////////////////////////////////////////////////////////////////////////////////
 ];
@@ -187,10 +190,11 @@ const BD_Stat = [
     [30, 12, 45, 12, 45, 12, 45, 12, 45],
 
     // Curl haltere
-    [31, 12, 12.5, 12, 12.5, 12, 12.5, 12, 12.5],
-
+    [31, 9, 12.5, 9, 12.5, 9, 12.5, 9, 12.5],
     // Curl haltere
     [32, 12, 10, 12, 10, 12, 10, 12, 10],
+    // Triceps
+    [33, 12, 12.5, 12, 12.5, 12, 12.5, 12, 12.5],
 
     /////////////////// ABS /////////////////////
     // Laying leg flutters
@@ -222,11 +226,18 @@ const BD_Programme = [
     ["Programme par defaut"],
 
     // Push Gauthier
-    ["Push (Pectauraux, Bras)", 1, 2, 7, 5, 3, 31, 32],
+    ["Push V2", 1, 2, 6, 3, 33],
     // Leg Gauthier
-    ["Leg (Jambes)", 8, 9, 10, 11, 12, 13],
+    ["Leg V2", 8, 9, 10, 24, 13],
     // Pull Gauthier
-    ["Pull (Dos, Épaules)", 14, 18, 19, 20],
+    ["Pull V2", 30, 18, 26, 31, 32, 19],
+
+    // Push Gauthier
+    ["Push V1 (Pectauraux, Bras)", 1, 2, 7, 5, 3, 31, 32],
+    // Leg Gauthier
+    ["Leg V1 (Jambes)", 8, 9, 10, 11, 12, 13],
+    // Pull Gauthier
+    ["Pull V1 (Dos, Épaules)", 14, 18, 19, 20],
 
     // Jambe Juliette
     ["Jambe (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],

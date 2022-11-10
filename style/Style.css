@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+@media print {
+
+    #listExo {
+        z-index: 2000;
+    }
+}
+
 body {
     /*width: 100%;*/
     font-family: HeadingProDouble-Regular;
@@ -340,6 +347,7 @@ section {
 
 .list-group-item {
     padding-left: 50px;
+    background-color: rgb(245, 245, 245);
 }
 
 /* ------------- Modal Exo ----------------- */
@@ -595,7 +603,7 @@ select {
 
 .ligne-img-left {
     max-height: 100%;
-    min-height: 80%;
+    min-height: 75%;
     max-width: 100%;
     width: auto;
     padding: 5%;
@@ -615,6 +623,8 @@ select {
     text-overflow: ellipsis !important;
 
     height: 75px;
+    width: 560px;
+    text-align: justify;
     margin-top: 20px;
 }
 
