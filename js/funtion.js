@@ -44,7 +44,8 @@ if (window.screen.width >= 500) {
             ligneExo.innerHTML +=
                 `<div class="ligneExo tous ` + classList + `" id="ligneExo` + BD_Exo[i][0] + `">
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" />
+                        <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" 
+                            onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[i][1] + `.gif'"/>
                     </div>
         
                     <div class="ligne-txt">

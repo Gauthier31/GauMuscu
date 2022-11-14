@@ -488,36 +488,36 @@ select {
 }
 
 .bouchon2-1 {
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
 
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     z-index: -5;
-    transform: translate(0, -129px);
+    transform: translate(0, -99px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 130px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 100px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100px, rgb(240, 240, 240) 60px);
 }
 
 .bouchon2-2 {
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
 
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;
     z-index: -5;
-    transform: translate(0, -129px);
+    transform: translate(0, -99px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100px, rgb(240, 240, 240) 60px);
 }
 
 .bouchon2-3 {
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
 
     position: absolute !important;
     left: 0 !important;
@@ -526,12 +526,12 @@ select {
     transform: translate(0, -1px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 130px 130px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 100px 100px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100px, rgb(240, 240, 240) 60px);
 }
 
 .bouchon2-4 {
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
 
     position: absolute !important;
     right: 0 !important;
@@ -540,7 +540,7 @@ select {
     transform: translate(0, -1px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 0px 130px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 130px, rgb(240, 240, 240) 30px);
+    background-image: radial-gradient(circle at 0px 100px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100px, rgb(240, 240, 240) 30px);
 }
 
 .bouchon3 {
