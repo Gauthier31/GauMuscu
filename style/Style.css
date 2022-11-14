@@ -10,17 +10,17 @@ body {
     font-family: HeadingProDouble-Regular;
     background-color: rgb(240, 240, 240);
     overflow-x: hidden;
+
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/*
-@media only screen and (min-width: 700px) {
-    body {
-        background-color: red;
-        width: 700px;
-    }
-}
-*/
+.noPhone {
+    display: flex;
+    justify-content: center;
 
+    line-height: 500px;
+}
 
 /* ---------------- NavBar ------------------*/
 
@@ -147,7 +147,7 @@ header {
 }
 
 .fw-9 {
-    font-weight: 900;
+    font-weight: 900 !important;
 }
 
 .fw-6 {
@@ -655,7 +655,7 @@ select {
 
 #listExo {
     padding-bottom: 30%;
-    height: 1500px;
+    max-height: 1500px;
     overflow-y: scroll;
 }
 
@@ -845,11 +845,12 @@ select {
     border-bottom: 1px solid rgb(0 0 0 / 20%);
 }
 
-.caseMiniTab_3 {
+.caseMiniTab_4 {
     display: inline-block;
-    width: 30%;
+    width: 24%;
     margin: 0%;
     padding-left: 10%;
+    font-weight: 500;
 }
 
 /* ------- tab ------ */
@@ -1014,7 +1015,7 @@ audio {
 
 .ligne-img-music {
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     width: auto;
     padding: 5%;
     border-radius: 50px;

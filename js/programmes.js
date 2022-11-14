@@ -79,7 +79,9 @@ function programmes(numProgramme) {
 
                 <div class="exoBody">
                     <div class="card-img-bloc2">
-                        <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.jpg" alt="` + BD_Exo[BD_Programme[numProg][i]][1] + `" />
+                        <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.jpg"
+                                alt="` + BD_Exo[BD_Programme[numProg][i]][1] + `" 
+                                onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.gif'"/>
                     </div>
                     <hr class="hr-orange" />
 
@@ -114,7 +116,8 @@ function programmes(numProgramme) {
             `<div class="ligne-list-exo" id="Lancement_Exo` + BD_Programme[numProg][i] + `">
 
                 <div class="ligne-img-bloc2">
-                    <img class="ligne-img-left2" src="document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.jpg"/>
+                    <img class="ligne-img-left2" src="document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.jpg"
+                    onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[BD_Programme[numProg][i]][1] + `.gif'"/>
                 </div>
 
                 <div class="taille1 fw-9 txt-center">` + BD_Exo[BD_Programme[numProg][i]][1] + `</div>
@@ -153,7 +156,7 @@ function programmes(numProgramme) {
                 
                                 <div class="exoBody">
                                     <div class="card-img-bloc2">
-                                        <img class="imgExo mx-auto d-block" src="document/exo/NULL.jpg" alt="NULL" />
+                                        <img class="imgExo mx-auto d-block" />
                                     </div>
                                     <hr class="hr-orange" />
                 
@@ -233,7 +236,6 @@ function programmes(numProgramme) {
     document.getElementById("exo" + exo + "serie" + serie).classList.add("serieActu");
 
     ficheInitialisation(numProg);
-
 }
 
 // Initialise la page des résultats
@@ -518,9 +520,10 @@ function fiche(exoActu, serieActu) {
                 <hr class="hr-orange" />
 
                 <div class="lineMiniTabHead">
-                    <p class="caseMiniTab_3 fw-9">Rep</p>
-                    <p class="caseMiniTab_3 fw-9">Kilos</p>
-                    <p class="caseMiniTab_3 fw-9">Durée</p>
+                    <p class="caseMiniTab_4 fw-9">Rep</p>
+                    <p class="caseMiniTab_4 fw-9">Kilos</p>
+                    <p class="caseMiniTab_4 fw-9">Durée</p>
+                    <p class="caseMiniTab_4 fw-9"></p>
                 </div>`;
     }
 
@@ -544,11 +547,14 @@ function fiche(exoActu, serieActu) {
     let colExo = document.getElementById("colExo" + exoActu);
 
     colExo.innerHTML +=
-        `<div class="lineMiniTab ` + couleur + `">
-                    <p class="caseMiniTab_3">` + nbRep + `</p>
-                    <p class="caseMiniTab_3">` + nbPoids + `</p>
-                    <p class="caseMiniTab_3">` + tempsSerie + `</p>
-                </div>`;
+        `<div class="lineMiniTab ` + couleur + `" id="exo` + exoActu + `serie` + serieActu + `-Resultat">
+                    <p class="caseMiniTab_4">` + nbRep + `</p>
+                    <p class="caseMiniTab_4">` + nbPoids + `</p>
+                    <p class="caseMiniTab_4">` + tempsSerie + `</p>
+                    <p class="caseMiniTab_4" onClick="deleteSerie(` + exoActu + `, ` + serieActu + `)">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </p>
+                </div > `;
 }
 
 
@@ -581,7 +587,7 @@ function addExo(numExo) {
             serieTab = (j + 1) / 2;
 
             tab +=
-                `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `" onclick="colorSerie(` + serieTab + `)">
+                `< div class="lineTab taille2" id = "exo` + exoTab + `serie` + serieTab + `" onclick = "colorSerie(` + serieTab + `)" >
 
                     <div class="caseTab_4_SE fw-9">` + serieTab + `</div>
 
@@ -599,7 +605,7 @@ function addExo(numExo) {
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                </div>`;
+                </div > `;
         }
 
         //<p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + BD_Stat[exoTab][j] + `</p>
@@ -610,14 +616,16 @@ function addExo(numExo) {
         // On l'ajoute dans le body du ticket1
         const bouchon4 = document.getElementById("bouchon4");
         bouchon4.innerHTML +=
-            `<div class="none" id="Info_Exo` + idExo + `">
+            `< div class="none" id = "Info_Exo` + idExo + `" >
                     <div class="exoHead">
                         <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[idExo][1] + `</p>
                     </div>
 
                     <div class="exoBody">
                         <div class="card-img-bloc2">
-                            <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[idExo][1] + `.jpg" alt="` + BD_Exo[idExo][1] + `" />
+                            <img class="imgExo mx-auto d-block" src="document/exo/` + BD_Exo[idExo][1] + `.jpg"
+                                        alt="` + BD_Exo[idExo][1] + `"
+                                        onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[idExo][1] + `.gif'" />
                         </div>
                         <hr class="hr-orange" />
 
@@ -644,7 +652,7 @@ function addExo(numExo) {
                             </button>
                         </div>
                     </div>
-                </div>`;
+                </div > `;
 
 
 
@@ -653,19 +661,24 @@ function addExo(numExo) {
         // On l'ajoute dans le detail4
         const detail4 = document.getElementById("detail4");
         detail4.innerHTML +=
-            `<div class="ligne-list-exo" id="Lancement_Exo` + idExo + `">
+            `< div class="ligne-list-exo" id = "Lancement_Exo` + idExo + `" >
 
                     <div class="ligne-img-bloc2">
-                        <img class="ligne-img-left2" src="document/exo/` + BD_Exo[numExo][1] + `.jpg" />
+                        <img class="ligne-img-left2" src="document/exo/` + BD_Exo[numExo][1] + `.jpg"
+                        onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[numExo][1] + `.gif'" />
                     </div>
 
                     <div class="taille1 fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
                     <div class="triangle1" onclick="exoSuivant(` + (BD_Programme[numProg].length - 1) + `)"></div>
-                </div>`;
+                </div > `;
 
         exoSuivant(BD_Programme[numProg].length - 1);
     } else {
         const count = BD_Programme[0].push(numExo);
         programmes(numProg);
     }
+}
+
+function deleteSerie(exoActu, serieActu) {
+    document.getElementById("exo" + exoActu + "serie" + serieActu + "-Resultat").remove();
 }

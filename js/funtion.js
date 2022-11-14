@@ -1,98 +1,114 @@
-const item = document.getElementById('tous').classList.add("typeActive");
+console.log(window.screen.width);
 
-getExercice();
-getProgramme();
-getNutrition();
-getMusique()
+screen.addEventListener("orientationchange", function () {
+    console.log("The orientation of the screen is: " + screen.orientation);
+});
 
-// Affichage masquage des blocs de sections
-page("accueil");
+if (window.screen.width >= 500) {
+    document.getElementById("body").innerHTML =
+        `<div class="noPhone">
+            <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
+        </div>`;
+} else {
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////// Affiche la liste des exo //////////////////////////////////////////////////////
-function getExercice() {
-    let ligneExo = document.getElementById("ligneExo");
-    var i;
+    const item = document.getElementById('tous').classList.add("typeActive");
 
-    for (i = 1; i < BD_Exo.length; i++) {
+    getExercice();
+    getProgramme();
+    getNutrition();
+    getMusique()
 
-        ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-        const tabStyle = BD_Exo[i][3].split("-");
+    // Affichage masquage des blocs de sections
+    page("accueil");
 
-        let classList = "";
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////// Affiche la liste des exo //////////////////////////////////////////////////////
+    function getExercice() {
+        let ligneExo = document.getElementById("ligneExo");
+        var i;
 
-        for (j = 0; j < tabStyle.length - 1; j++) {
-            classList += tabStyle[j] + " ";
+        for (i = 1; i < BD_Exo.length; i++) {
+
+            ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
+            const tabStyle = BD_Exo[i][3].split("-");
+
+            let classList = "";
+
+            for (j = 0; j < tabStyle.length - 1; j++) {
+                classList += tabStyle[j] + " ";
+            }
+            classList += tabStyle[j];
+
+            // alt="` + BD_Exo[i][1] + `"
+
+            ligneExo.innerHTML +=
+                `<div class="ligneExo tous ` + classList + `" id="ligneExo` + BD_Exo[i][0] + `">
+                    <div class="ligne-img-bloc">
+                        <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" 
+                            onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[i][1] + `.gif'"/>
+                    </div>
+        
+                    <div class="ligne-txt">
+                        <!-- <button class="btnInfoExo">Info</button> -->
+                        <div class="triangle2" onclick="addExo(` + i + `)"></div>
+        
+                        <p class="taille1 fw-600 ligneTitre depasse">` + BD_Exo[i][1] + `</p>
+                        <div class="taille3 opacity-50">
+                            ` + classList + `
+                        </div>
+        
+                        <div class="taille3 ligneDescription">
+                            Imperio conplures aliis et diluere aurem nec 
+                            praedoctis reginae stimulis resedit resedit de aliis et diluere aurem nec 
+                            praedoctis reginae stimulis resedit resedesedit de aliis et diluere aurem nec 
+                            praedoctis reginae stimulis resedit resedit dfen...
+                        </div>
+                        
+                    </div>
+                </div>`
         }
-        classList += tabStyle[j];
-
-        ligneExo.innerHTML +=
-            `<div class="ligneExo tous ` + classList + `" id="ligneExo` + BD_Exo[i][0] + `">
-                <div class="ligne-img-bloc">
-                    <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" alt="` + BD_Exo[i][1] + `"/>
-                </div>
-    
-                <div class="ligne-txt">
-                    <!-- <button class="btnInfoExo">Info</button> -->
-                    <div class="triangle2" onclick="addExo(` + i + `)"></div>
-    
-                    <p class="taille1 fw-600 ligneTitre depasse">` + BD_Exo[i][1] + `</p>
-                    <div class="taille3 opacity-50">
-                        ` + classList + `
-                    </div>
-    
-                    <div class="taille3 ligneDescription">
-                        Imperio conplures aliis et diluere aurem nec 
-                        praedoctis reginae stimulis resedit resedit de aliis et diluere aurem nec 
-                        praedoctis reginae stimulis resedit resedesedit de aliis et diluere aurem nec 
-                        praedoctis reginae stimulis resedit resedit dfen...
-                    </div>
-                    
-                </div>
-            </div>`
     }
-}
 
-///////////////////////////////// Met en place les programmes //////////////////////////////////////////////
-function getProgramme() {
+    ///////////////////////////////// Met en place les programmes //////////////////////////////////////////////
+    function getProgramme() {
 
-    let prog = document.getElementById("prog");
+        let prog = document.getElementById("prog");
 
-    for (i = 1; i < BD_Programme.length; i++) {
-        txt = "";
-        for (j = 1; j < BD_Programme[i].length; j++) {
+        for (i = 1; i < BD_Programme.length; i++) {
+            txt = "";
+            for (j = 1; j < BD_Programme[i].length; j++) {
 
-            txt +=
-                `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j]][1]
-                //+ ` (id = ` + BD_Exo[BD_Programme[i][j]][0] + `)
-                + `</li>`;
+                txt +=
+                    `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j]][1]
+                    //+ ` (id = ` + BD_Exo[BD_Programme[i][j]][0] + `)
+                    + `</li>`;
 
-        }
+            }
 
-        prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3">
+            prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3">
                 <ol class="list-group">
                 <li class="list-group-item taille list-titre-bloc">
                     <p class="list-titre depasse">` + BD_Programme[i][0] + `</p>
                     <button type="button" class="btn orange btn-prog" onclick="programmes(` + i + `)">C'est parti</button>
                 </li>`
-            + txt + `   
+                + txt + `   
                 </ol></div>`;
+        }
     }
-}
 
-////////////////////////////////// Affiche les cards de Nutrition //////////////////////////////////////////////////////
-function getNutrition() {
-    let nutri = document.getElementById("cardsNutrition");
-    var i;
+    ////////////////////////////////// Affiche les cards de Nutrition //////////////////////////////////////////////////////
+    function getNutrition() {
+        let nutri = document.getElementById("cardsNutrition");
+        var i;
 
-    for (i = 1; i < BD_Nutrition.length; i++) {
+        for (i = 1; i < BD_Nutrition.length; i++) {
 
-        nutri.innerHTML +=
-            `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-9" id="Nutrition` + BD_Nutrition[i][0] + `">
+            nutri.innerHTML +=
+                `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-9" id="Nutrition` + BD_Nutrition[i][0] + `">
                     <div class="card">
 
                         <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + BD_Nutrition[i][1] + `.jpg"
-                            alt="` + BD_Nutrition[i][1] + `">
+                                onerror="this.onerror=null; this.src='document/exo/` + BD_Nutrition[i][1] + `.gif'">
 
                         <div class="card-body">
                             <p class="taille4 fw-9 depasse m-2">` + BD_Nutrition[i][1] + `</p>
@@ -113,133 +129,135 @@ function getNutrition() {
                         </div>
                     </div>
                 </div > `;
-    }
-}
-
-///////////////////////////////////////// Mets en place les musiques //////////////////////////////////////////////
-function getMusique() {
-    const listMusique = document.getElementById("listMusique");
-
-    for (let i = 0; i < BD_Musique.length; i++) {
-
-        listMusique.innerHTML +=
-            `<div class="ligne-list-music" id="musique` + i + `">
-                <div class="ligne-img-bloc-music">
-                    <img class="ligne-img-music" src="document/musique/cover/` + BD_Musique[i][0] + `.jpg" />
-                </div>
-
-                <div class="musicBlocTxt">
-                    <p class="taille4 fw-9 p-null">` + BD_Musique[i][1] + `</p>
-                    <p class="taille5 fw-6 p-null">` + BD_Musique[i][0] + `</p>
-                </div>
-
-                <div class="triangle3" onclick="lancementMusique(` + i + `)"></div>
-            </div>`;
-    }
-}
-
-function setMusique() {
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
-function filtre(val) {
-    let i;
-
-    // On cache toute les cards
-    const cache = document.getElementsByClassName('tous');
-    for (i = 0; i < cache.length; i++) {
-        cache[i].style.display = "none";
+        }
     }
 
-    // On affiche celle qui correspondent au filtre
-    const affiche = document.getElementsByClassName(val);
-    for (i = 0; i < affiche.length; i++) {
-        affiche[i].style.display = "block";
+    ///////////////////////////////////////// Mets en place les musiques //////////////////////////////////////////////
+    function getMusique() {
+        const listMusique = document.getElementById("listMusique");
+
+        for (let i = 0; i < BD_Musique.length; i++) {
+
+            listMusique.innerHTML +=
+                `<div class="ligne-list-music" id="musique` + i + `">
+                    <div class="ligne-img-bloc-music">
+                        <img class="ligne-img-music" src="document/musique/cover/` + BD_Musique[i][0] + `.jpg"/>
+                    </div>
+
+                    <div class="musicBlocTxt">
+                        <p class="taille4 fw-9 p-null">` + BD_Musique[i][1] + `</p>
+                        <p class="taille5 fw-6 p-null">` + BD_Musique[i][0] + `</p>
+                    </div>
+
+                    <div class="triangle3" onclick="lancementMusique(` + i + `)"></div>
+                </div>`;
+        }
     }
 
-    const all = document.getElementsByClassName('type');
-    for (i = 0; i < all.length; i++) {
-        all[i].classList.remove("typeActive");
+    function setMusique() {
 
     }
 
-    // On colorie le filtre
-    const item = document.getElementById(val);
-    item.classList.add("typeActive");
-    item.style.transition = "background-color 0.5s";
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
+    function filtre(val) {
+        let i;
 
-}
+        // On cache toute les cards
+        const cache = document.getElementsByClassName('tous');
+        for (i = 0; i < cache.length; i++) {
+            cache[i].style.display = "none";
+        }
 
-/////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
-function page(val) {
+        // On affiche celle qui correspondent au filtre
+        const affiche = document.getElementsByClassName(val);
+        for (i = 0; i < affiche.length; i++) {
+            affiche[i].style.display = "block";
+        }
 
-    closeNavBar();
+        const all = document.getElementsByClassName('type');
+        for (i = 0; i < all.length; i++) {
+            all[i].classList.remove("typeActive");
 
-    // Masque Les sections
-    const masque = document.getElementsByClassName('bloc');
-    for (i = 0; i < masque.length; i++) {
-        masque[i].style.display = "none";
+        }
+
+        // On colorie le filtre
+        const item = document.getElementById(val);
+        item.classList.add("typeActive");
+        item.style.transition = "background-color 0.5s";
+
     }
 
-    // Affiche
-    switch (val) {
-        case 'programme':
-            document.getElementById('teteBouchon').style.display = "block";
-            document.getElementById('tete').style.display = "block";
+    /////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
+    function page(val) {
 
-            document.getElementById('programmeTitre').style.display = "block";
-            document.getElementById('programme').style.display = "block";
-            break;
+        closeNavBar();
 
-        case 'programmeLancer':
-            document.getElementById('blocFicheResultat').style.display = "block";
-            break;
+        // Masque Les sections
+        const masque = document.getElementsByClassName('bloc');
+        for (i = 0; i < masque.length; i++) {
+            masque[i].style.display = "none";
+        }
 
-        case 'ajoutExo':
-            document.getElementById('liste').style.display = "block";
-            document.getElementById('accueil').style.display = "block";
-            break;
+        // Affiche
+        switch (val) {
+            case 'programme':
+                document.getElementById('teteBouchon').style.display = "block";
+                document.getElementById('tete').style.display = "block";
 
-        case 'nutrition':
-            document.getElementById('teteBouchon').style.display = "block";
-            document.getElementById('tete').style.display = "block";
+                document.getElementById('programmeTitre').style.display = "block";
+                document.getElementById('programme').style.display = "block";
+                break;
 
-            document.getElementById('nutritionTitre').style.display = "block";
-            document.getElementById('nutrition').style.display = "block";
-            break;
+            case 'programmeLancer':
+                document.getElementById('blocFicheResultat').style.display = "block";
+                break;
 
-        //par defaut l'accueil
-        default:
-            document.getElementById('teteBouchon').style.display = "block";
-            document.getElementById('tete').style.display = "block";
+            case 'ajoutExo':
+                document.getElementById('liste').style.display = "block";
+                document.getElementById('accueil').style.display = "block";
+                break;
 
-            document.getElementById('liste').style.display = "block";
-            document.getElementById('accueil').style.display = "block";
-            break;
+            case 'nutrition':
+                document.getElementById('teteBouchon').style.display = "block";
+                document.getElementById('tete').style.display = "block";
+
+                document.getElementById('nutritionTitre').style.display = "block";
+                document.getElementById('nutrition').style.display = "block";
+                break;
+
+            //par defaut l'accueil
+            default:
+                document.getElementById('teteBouchon').style.display = "block";
+                document.getElementById('tete').style.display = "block";
+
+                document.getElementById('liste').style.display = "block";
+                document.getElementById('accueil').style.display = "block";
+                break;
+        }
     }
-}
 
-////////////////////////////////////// Insere dans le modal les infos /////////////////////////////////////
-function modalInfo(val) {
-    let titre = document.getElementById(val).getElementsByClassName("info")[0];
-    let img = document.getElementById(val).getElementsByClassName("info")[1];
-    let txt = document.getElementById(val).getElementsByClassName("info")[2];
+    ////////////////////////////////////// Insere dans le modal les infos /////////////////////////////////////
+    function modalInfo(val) {
+        let titre = document.getElementById(val).getElementsByClassName("info")[0];
+        let img = document.getElementById(val).getElementsByClassName("info")[1];
+        let txt = document.getElementById(val).getElementsByClassName("info")[2];
 
-    let modalTitre = document.getElementById("titre-modal");
-    let modalImg = document.getElementById("img-modal");
-    let modalTxt = document.getElementById("txt-modal");
-
-
-    modalTitre.innerHTML = titre.textContent;
-    modalTxt.innerHTML = txt.textContent;
-    modalImg.src = "document/muscle/" + img.textContent;
-}
+        let modalTitre = document.getElementById("titre-modal");
+        let modalImg = document.getElementById("img-modal");
+        let modalTxt = document.getElementById("txt-modal");
 
 
-function closeNavBar() {
-    // Masques la navbar
-    const nav = document.getElementById("navbarColor01");
-    nav.classList.remove("show");
+        modalTitre.innerHTML = titre.textContent;
+        modalTxt.innerHTML = txt.textContent;
+        modalImg.src = "document/muscle/" + img.textContent;
+    }
+
+
+    function closeNavBar() {
+        // Masques la navbar
+        const nav = document.getElementById("navbarColor01");
+        nav.classList.remove("show");
+    }
+
 }
