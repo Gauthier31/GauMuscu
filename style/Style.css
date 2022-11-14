@@ -945,6 +945,7 @@ input {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
     background-color: rgb(240, 240, 240);
+    z-index: 1100;
 }
 
 .offcanvas-header {
