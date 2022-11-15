@@ -1,7 +1,6 @@
 console.log(window.screen.width);
 
 try {
-    screen.orientation.lock();   // webkit only
     screen.lockOrientation("orientation");
     screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 } catch (err) {
