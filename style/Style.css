@@ -6,7 +6,6 @@
 }
 
 body {
-    /*width: 100%;*/
     font-family: HeadingProDouble-Regular;
     background-color: rgb(240, 240, 240);
     overflow-x: hidden;
@@ -20,6 +19,13 @@ body {
     justify-content: center;
 
     line-height: 500px;
+}
+
+@media screen and (orientation: landscape) {
+
+    * {
+        transform: rotate(-90deg);
+    }
 }
 
 /* ---------------- NavBar ------------------*/
