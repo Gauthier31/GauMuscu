@@ -21,6 +21,7 @@ body {
     line-height: 500px;
 }
 
+/*
 @media screen and (orientation: landscape) {
 
     body {
@@ -28,6 +29,7 @@ body {
         width: calc(150%);
     }
 }
+*/
 
 /* ---------------- NavBar ------------------*/
 
