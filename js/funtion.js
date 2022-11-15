@@ -2,7 +2,7 @@ console.log(window.screen.width);
 
 screen.orientation.lock();   // webkit only
 screen.lockOrientation("orientation");
-screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+//screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 
 if (window.screen.width >= 500) {
     document.getElementById("body").innerHTML =
