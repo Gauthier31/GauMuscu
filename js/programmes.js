@@ -19,12 +19,9 @@ function programmes(numProgramme) {
     progLancer = true;
     numProg = numProgramme;
 
-    // Masque
-    const masque = document.getElementsByClassName('bloc');
-    for (i = 0; i < masque.length; i++) {
-        masque[i].style.display = "none";
-    }
+    setTimeout(masqueAll, 2000);
 
+    //document.getElementById('blocFicheResultat');
     const f1 = document.getElementById('blocFicheResultat');
     page("programmeLancer");
 
@@ -587,7 +584,7 @@ function addExo(numExo) {
             serieTab = (j + 1) / 2;
 
             tab +=
-                `< div class="lineTab taille2" id = "exo` + exoTab + `serie` + serieTab + `" onclick = "colorSerie(` + serieTab + `)" >
+                `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `" onclick = "colorSerie(` + serieTab + `)" >
 
                     <div class="caseTab_4_SE fw-9">` + serieTab + `</div>
 
@@ -616,7 +613,7 @@ function addExo(numExo) {
         // On l'ajoute dans le body du ticket1
         const bouchon4 = document.getElementById("bouchon4");
         bouchon4.innerHTML +=
-            `< div class="none" id = "Info_Exo` + idExo + `" >
+            `<div class="none" id="Info_Exo` + idExo + `" >
                     <div class="exoHead">
                         <p class="modal-title taille fw-9 depasse" id="titre-modal">` + BD_Exo[idExo][1] + `</p>
                     </div>
@@ -661,7 +658,7 @@ function addExo(numExo) {
         // On l'ajoute dans le detail4
         const detail4 = document.getElementById("detail4");
         detail4.innerHTML +=
-            `< div class="ligne-list-exo" id = "Lancement_Exo` + idExo + `" >
+            `<div class="ligne-list-exo" id="Lancement_Exo` + idExo + `" >
 
                     <div class="ligne-img-bloc2">
                         <img class="ligne-img-left2" src="document/exo/` + BD_Exo[numExo][1] + `.jpg"
@@ -681,4 +678,13 @@ function addExo(numExo) {
 
 function deleteSerie(exoActu, serieActu) {
     document.getElementById("exo" + exoActu + "serie" + serieActu + "-Resultat").remove();
+}
+
+function masqueAll() {
+
+    // Masque
+    const masque = document.getElementsByClassName('bloc');
+    for (i = 0; i < masque.length; i++) {
+        masque[i].classList.add("none");
+    }
 }

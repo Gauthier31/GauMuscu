@@ -654,6 +654,9 @@ select {
 /* ----------- Page Exo du prog ---------------*/
 #blocFicheResultat {
     padding: 0;
+    overflow: hidden;
+    background-color: rgb(240, 240, 240);
+    height: 2120px;
 }
 
 #ficheResultat {
@@ -928,8 +931,41 @@ input {
 
 .block {
     display: block;
-    transition: display 0.5s;
 }
+
+/* ------------------------ */
+.gauche {
+    position: relative;
+    animation: gaucheBefore 1s;
+}
+
+@keyframes gaucheBefore {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 0%;
+    }
+}
+
+/* ------------------------ */
+.droite {
+    position: relative;
+    animation: droiteBefore 1s;
+}
+
+@keyframes droiteBefore {
+    from {
+        bottom: -100%;
+    }
+
+    to {
+        bottom: 0%;
+    }
+}
+
+/* ------------------------ */
 
 .visibility_none {
     visibility: hidden;

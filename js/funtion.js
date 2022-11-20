@@ -1,8 +1,8 @@
 console.log(window.screen.width);
 
 try {
-    screen.lockOrientation("orientation");
-    screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+    //screen.lockOrientation("orientation");
+    //screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 } catch (err) {
     console.log(err);
 }
@@ -169,13 +169,13 @@ if (window.screen.width >= 500) {
         // On cache toute les cards
         const cache = document.getElementsByClassName('tous');
         for (i = 0; i < cache.length; i++) {
-            cache[i].style.display = "none";
+            cache[i].classList.add("none");
         }
 
         // On affiche celle qui correspondent au filtre
         const affiche = document.getElementsByClassName(val);
         for (i = 0; i < affiche.length; i++) {
-            affiche[i].style.display = "block";
+            affiche[i].classList.remove("none");
         }
 
         const all = document.getElementsByClassName('type');
@@ -196,46 +196,71 @@ if (window.screen.width >= 500) {
 
         closeNavBar();
 
+
+        /*
+        // Masque Les anciennes sections
+        const noneAncien = document.getElementsByClassName('block');
+        for (i = 0; i < noneAncien.length; i++) {
+            noneAncien[i].classList.add("noneLatence");
+        }
+
+        setTimeout(masqueAll, 2000);
+        */
+
         // Masque Les sections
         const masque = document.getElementsByClassName('bloc');
         for (i = 0; i < masque.length; i++) {
-            masque[i].style.display = "none";
+            masque[i].classList.add("none");
+            masque[i].classList.remove("block");
         }
 
         // Affiche
         switch (val) {
             case 'programme':
-                document.getElementById('teteBouchon').style.display = "block";
-                document.getElementById('tete').style.display = "block";
+                document.getElementById('teteBouchon').classList.remove("none");
+                document.getElementById('tete').classList.remove("none");
+                document.getElementById('teteBouchon').classList.add("block");
+                document.getElementById('tete').classList.add("block");
 
-                document.getElementById('programmeTitre').style.display = "block";
-                document.getElementById('programme').style.display = "block";
+                document.getElementById('programmeTitre').classList.remove("none");
+                document.getElementById('programme').classList.remove("none");
+                document.getElementById('programmeTitre').classList.add("block");
+                document.getElementById('programme').classList.add("block");
                 break;
 
             case 'programmeLancer':
-                document.getElementById('blocFicheResultat').style.display = "block";
+                document.getElementById('blocFicheResultat').classList.remove("none");
+                document.getElementById('blocFicheResultat').classList.add("block");
                 break;
 
             case 'ajoutExo':
-                document.getElementById('liste').style.display = "block";
-                document.getElementById('accueil').style.display = "block";
+                document.getElementById('liste').classList.remove("none");
+                document.getElementById('accueil').classList.remove("none");
+                document.getElementById('liste').classList.add("block");
+                document.getElementById('accueil').classList.add("block");
                 break;
 
             case 'nutrition':
-                document.getElementById('teteBouchon').style.display = "block";
-                document.getElementById('tete').style.display = "block";
+                document.getElementById('teteBouchon').classList.remove("none");
+                document.getElementById('tete').classList.remove("none");
+                document.getElementById('teteBouchon').classList.add("block");
+                document.getElementById('tete').classList.add("block");
 
-                document.getElementById('nutritionTitre').style.display = "block";
-                document.getElementById('nutrition').style.display = "block";
+                document.getElementById('nutritionTitre').classList.remove("none");
+                document.getElementById('nutrition').classList.remove("none");
+                document.getElementById('nutritionTitre').classList.add("block");
+                document.getElementById('nutrition').classList.add("block");
                 break;
 
             //par defaut l'accueil
             default:
-                document.getElementById('teteBouchon').style.display = "block";
-                document.getElementById('tete').style.display = "block";
+                document.getElementById('teteBouchon').classList.remove("none");
+                document.getElementById('tete').classList.remove("none");
 
-                document.getElementById('liste').style.display = "block";
-                document.getElementById('accueil').style.display = "block";
+                document.getElementById('liste').classList.remove("none");
+                document.getElementById('accueil').classList.remove("none");
+                document.getElementById('liste').classList.add("block");
+                document.getElementById('accueil').classList.add("block");
                 break;
         }
     }
@@ -262,5 +287,5 @@ if (window.screen.width >= 500) {
         const nav = document.getElementById("navbarColor01");
         nav.classList.remove("show");
     }
-
 }
+
