@@ -12,6 +12,9 @@ body {
 
     padding: 0 !important;
     margin: 0 !important;
+
+    width: 100vw;
+    height: 100vh;
 }
 
 .noPhone {
@@ -82,9 +85,7 @@ header {
     height: 800px;
     color: #ffc107;
 
-    z-index: -1;
     position: fixed;
-
     top: 0;
 }
 
@@ -220,7 +221,7 @@ section {
     min-height: 200px;
     max-height: 300px;
     top: 119px;
-    z-index: 5;
+    z-index: 15;
     box-shadow: 0 0.1em 3rem rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -493,7 +494,7 @@ select {
 
 .bouchon1 {
     height: 800px;
-    z-index: 5;
+    z-index: -2;
 }
 
 .bouchon2-1 {
@@ -554,11 +555,11 @@ select {
 
 .bouchon3 {
     height: 220px;
-    z-index: 5;
+    z-index: -5;
 }
 
 .bouchon4 {
-    z-index: 5;
+    z-index: -5;
     padding: 0 5%;
 }
 
@@ -588,7 +589,7 @@ select {
 
     line-height: 130px;
     background-color: rgb(240, 240, 240);
-    z-index: 3;
+    z-index: 13;
 
     box-shadow: 0 1em 2rem rgb(240 240 240) !important;
 }
@@ -934,12 +935,12 @@ input {
 }
 
 /* ------------------------ */
-.gauche {
+.gaucheInClass {
     position: relative;
-    animation: gaucheBefore 1s;
+    animation: gaucheIn 1s;
 }
 
-@keyframes gaucheBefore {
+@keyframes gaucheIn {
     from {
         right: -100%;
     }
@@ -949,9 +950,24 @@ input {
     }
 }
 
+.gaucheOutClass {
+    position: relative;
+    animation: gaucheOut 1s;
+}
+
+@keyframes gaucheOut {
+    from {
+        right: 0%;
+    }
+
+    to {
+        right: -100%;
+    }
+}
+
 /* ------------------------ */
 .droite {
-    position: relative;
+    position: absolute;
     animation: droiteBefore 1s;
 }
 
@@ -982,6 +998,12 @@ input {
 .absolute {
     position: absolute;
 }
+
+.relative {
+    position: relative;
+}
+
+
 
 /* ------------ Musique ----------------- */
 
@@ -1084,3 +1106,17 @@ audio {
     display: inline-block;
     transform: translate(-15%, 0%);
 }
+
+/* ----------- Page ----------- */
+.page1 {
+    background-color: rgb(240 240 240);
+    position: absolute;
+}
+
+.page2 {
+    background-color: rgb(240 240 240);
+    position: fixed;
+    z-index: 1000;
+}
+
+/* ---------------------------- */

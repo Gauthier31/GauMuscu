@@ -19,11 +19,9 @@ function programmes(numProgramme) {
     progLancer = true;
     numProg = numProgramme;
 
-    setTimeout(masqueAll, 2000);
+    gestionPage(2);
 
-    //document.getElementById('blocFicheResultat');
     const f1 = document.getElementById('blocFicheResultat');
-    page("programmeLancer");
 
     f1.innerHTML = "";
 
@@ -562,16 +560,7 @@ function addExo(numExo) {
     if (progLancer) {
         const count = BD_Programme[numProg].push(numExo);
 
-        // Masque
-        const masque = document.getElementsByClassName('bloc');
-        for (i = 0; i < masque.length; i++) {
-            masque[i].style.display = "none";
-        }
-
-        const f1 = document.getElementById('blocFicheResultat');
-        f1.style.display = "block";
-
-
+        gestionPage(2);
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -678,13 +667,4 @@ function addExo(numExo) {
 
 function deleteSerie(exoActu, serieActu) {
     document.getElementById("exo" + exoActu + "serie" + serieActu + "-Resultat").remove();
-}
-
-function masqueAll() {
-
-    // Masque
-    const masque = document.getElementsByClassName('bloc');
-    for (i = 0; i < masque.length; i++) {
-        masque[i].classList.add("none");
-    }
 }

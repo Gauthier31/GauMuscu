@@ -196,16 +196,7 @@ if (window.screen.width >= 500) {
 
         closeNavBar();
 
-
-        /*
-        // Masque Les anciennes sections
-        const noneAncien = document.getElementsByClassName('block');
-        for (i = 0; i < noneAncien.length; i++) {
-            noneAncien[i].classList.add("noneLatence");
-        }
-
-        setTimeout(masqueAll, 2000);
-        */
+        gestionPage(1);
 
         // Masque Les sections
         const masque = document.getElementsByClassName('bloc');
@@ -256,6 +247,8 @@ if (window.screen.width >= 500) {
             default:
                 document.getElementById('teteBouchon').classList.remove("none");
                 document.getElementById('tete').classList.remove("none");
+                document.getElementById('teteBouchon').classList.add("block");
+                document.getElementById('tete').classList.add("block");
 
                 document.getElementById('liste').classList.remove("none");
                 document.getElementById('accueil').classList.remove("none");
@@ -289,3 +282,39 @@ if (window.screen.width >= 500) {
     }
 }
 
+function gestionPage(numPage) {
+
+    const p1 = document.getElementsByClassName('page1');
+    const p2 = document.getElementsByClassName('page2');
+
+    switch (numPage) {
+        case 1:
+
+            p1[0].classList.remove("none");
+            p2[0].classList.add("gaucheOutClass");
+            setTimeout(masquePage2, 1000);
+            break;
+
+        case 2:
+
+            p2[0].classList.add("gaucheInClass");
+            p2[0].classList.remove("none");
+            setTimeout(masquePage1, 1000);
+            break;
+    }
+
+}
+
+function masquePage1() {
+    const p1 = document.getElementsByClassName('page1');
+    p1[0].classList.add("none");
+
+    const p2 = document.getElementsByClassName('page2');
+    p2[0].classList.remove("gaucheInClass");
+}
+
+function masquePage2() {
+    const p2 = document.getElementsByClassName('page2');
+    p2[0].classList.add("none");
+    p2[0].classList.remove("gaucheOutClass");
+}
