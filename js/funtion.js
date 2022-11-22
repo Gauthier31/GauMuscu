@@ -45,7 +45,7 @@ if (window.screen.width >= 500) {
             // alt="` + BD_Exo[i][1] + `"
 
             ligneExo.innerHTML +=
-                `<div class="ligneExo tous ` + classList + `" id="ligneExo` + BD_Exo[i][0] + `">
+                `<div class="ligneExo tous ` + classList + ` ` + BD_Exo[i][1] + `" id="ligneExo` + BD_Exo[i][0] + `">
                     <div class="ligne-img-bloc">
                         <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[i][1] + `.gif'"/>
@@ -317,4 +317,26 @@ function masquePage2() {
     const p2 = document.getElementsByClassName('page2');
     p2[0].classList.add("none");
     p2[0].classList.remove("gaucheOutClass");
+}
+
+function filtreExercice() {
+
+    let i;
+    let val = document.getElementById('inputExercice').value;
+    let classTxt;
+
+    // On cache toute les cards
+    const cache = document.getElementsByClassName('tous');
+    for (i = 0; i < cache.length; i++) {
+
+        classTxt = cache[i].className;
+        if (!classTxt.includes(val)) {
+            cache[i].classList.add("none");
+        } else {
+            console.log(classTxt);
+        }
+    }
+    console.log("--");
+
+
 }

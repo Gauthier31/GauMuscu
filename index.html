@@ -79,6 +79,9 @@
         <!------------------------------------ Listes des exos --------------------------------------->
 
         <section class="bloc sectionTitre taille2" id="liste">
+
+            <p class="taille3 fw-900 text-center espaceB">Liste des Exercices</p>
+
             <ul class="nav nav-tabs nav-fill justify-content-center">
                 <li class="nav-item type" id="tous">
                     <p class="nav-link" onclick="filtre('tous')">Tous</p>
@@ -105,6 +108,12 @@
                 </li>
             </ul>
 
+            <div class="input-group input-group-lg espaceH taile4">
+                <input type="text" class="form-control border-left" placeholder="Nom exercice"
+                    onkeypress="filtreExercice()" id="inputExercice">
+                <button class="btn btn-outline-warning border-right taille4" type="button">Search</button>
+            </div>
+
             <!-- bloc sur les coins -->
             <div class="bouchon2-1"></div>
             <div class="bouchon2-2"></div>
@@ -114,69 +123,14 @@
 
         <section class="bloc sectionInfo" id="accueil">
             <div class="row" id="ligneExo">
-                <p class="taille fw-900 pageTitre text-center">Liste des Exercices</p>
             </div>
         </section>
-
-        <!-------------------------------------------------------------------------------------------->
-        <!------------------------------------ Modal Poids exo --------------------------------------->
-
-        <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdrop" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="taille" id="staticBackdrop">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-footer">
-
-                        <p>n° serie</p>
-                        <input />
-                        <select name="serie" multiple>
-                            <option value="all"></option>
-                            <option value="all">All</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="all"></option>
-                        </select>
-
-                        <div class="espace"></div>
-
-                        <select name="rep" multiple>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-
-                        <input />
-                        <p>Rep</p>
-
-
-                        <div class="espace"></div>
-
-                        <select name="poids" multiple>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-
-                        <input />
-                        <p>Kg</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-------------------------------------------------------------------------------------------->
         <!--------------------------------- Listes des programmes ------------------------------------>
 
         <!-- Listes des programmes -->
-        <section class="bloc sectionTitre" id="programmeTitre">
+        <section class="bloc sectionTitre taille2" id="programmeTitre">
 
             <!-- bloc sur les coins -->
             <div class="bouchon2-1"></div>
@@ -184,7 +138,13 @@
             <div class="bouchon2-3"></div>
             <div class="bouchon2-4"></div>
 
-            <p class="taille fw titre center-h-v"> Liste des programmes</p>
+            <p class="taille3 fw-900 text-center espaceB">Liste des programmes</p>
+
+            <div class="input-group input-group-lg espaceH taile4">
+                <input type="text" class="form-control border-left" placeholder="Nom programme"
+                    onkeypress="filtreRepas()" id="inputProgramme">
+                <button class="btn btn-outline-warning border-right taille4" type="button">Search</button>
+            </div>
         </section>
 
         <section class="bloc sectionInfo" id="programme">
@@ -199,7 +159,7 @@
         <!-------------------------------------------------------------------------------------------->
         <!------------------------------------- Nutrition -------------------------------------------->
 
-        <section class="bloc sectionTitre" id="nutritionTitre">
+        <section class="bloc sectionTitre taille2" id="nutritionTitre">
 
             <!-- bloc sur les coins -->
             <div class="bouchon2-1"></div>
@@ -207,7 +167,13 @@
             <div class="bouchon2-3"></div>
             <div class="bouchon2-4"></div>
 
-            <p class="taille fw center-h-v"> Liste des repas</p>
+            <p class="taille3 fw-900 text-center espaceB">Liste des repas</p>
+
+            <div class="input-group input-group-lg espaceH taile4">
+                <input type="text" class="form-control border-left" placeholder="Nom repas" onkeypress="filtreRepas()"
+                    id="inputRepas">
+                <button class="btn btn-outline-warning border-right taille4" type="button">Search</button>
+            </div>
 
         </section>
 

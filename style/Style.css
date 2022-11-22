@@ -214,12 +214,12 @@ header {
 section {
     padding: 5%;
     background-color: rgb(240, 240, 240);
+    width: 100vw;
 }
 
 .sectionTitre {
     position: sticky;
     min-height: 200px;
-    max-height: 300px;
     top: 119px;
     z-index: 15;
     box-shadow: 0 0.1em 3rem rgba(0, 0, 0, 0.3) !important;
@@ -321,7 +321,7 @@ section {
 
 /* -------------- btn cards -------------------*/
 
-.btnInfoCard {
+margin-bottom.btnInfoCard {
     left: 30%;
     border-radius: 15px;
     width: 95%;
@@ -396,8 +396,12 @@ select {
     height: 300px;
 }
 
-.espace {
-    width: 50px;
+.espaceB {
+    margin-bottom: 1em;
+}
+
+.espaceH {
+    margin-top: 1em;
 }
 
 /* -------------- btn Modal -------------------*/
@@ -922,6 +926,25 @@ input {
 .valeurTab {
     text-align: center;
     margin: 0;
+}
+
+/* -------------------------------------------------- */
+
+.input-group-lg>.btn,
+.input-group-lg>.form-control,
+.input-group-lg>.form-select,
+.input-group-lg>.input-group-text {
+    font-size: 1.25em;
+}
+
+
+.border-left {
+    border-radius: 50px 0 0 50px !important;
+    padding-left: 50px !important;
+}
+
+.border-right {
+    border-radius: 0 50px 50px 0 !important;
 }
 
 /* -------------------------------------------------- */

@@ -252,6 +252,7 @@ function ficheInitialisation(numProg) {
 function ticket1Up_Down() {
 
     const ticket1 = document.getElementById("ticket1");
+    const page2 = document.getElementsByClassName("page2");
 
     if (ticket1.className == "ticket1 ticket1_Down") {
 
@@ -259,11 +260,14 @@ function ticket1Up_Down() {
         ticket1.classList.add("ticket1_Up");
         ticket1.style.transition = "margin-top 1s";
 
+        page2[0].style.zIndex = "1050";
 
     } else {
         ticket1.classList.remove("ticket1_Up");
         ticket1.classList.add("ticket1_Down");
         ticket1.style.transition = "margin-top 1s";
+
+        page2[0].style.zIndex = "1000";
     }
 }
 
