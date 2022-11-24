@@ -14,7 +14,7 @@ if (window.screen.width >= 500) {
         </div>`;
 } else {
 
-    const item = document.getElementById('tous').classList.add("typeActive");
+    const item = document.getElementById('tousExo').classList.add("typeActive");
 
     getExercice();
     getProgramme();
@@ -25,7 +25,7 @@ if (window.screen.width >= 500) {
     page("accueil");
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////// Affiche la liste des exo //////////////////////////////////////////////////////
+    ////////////////////////////////// Affiche la liste des exo ///////////////////////////////////////////////
     function getExercice() {
         let ligneExo = document.getElementById("ligneExo");
         var i;
@@ -45,7 +45,7 @@ if (window.screen.width >= 500) {
             // alt="` + BD_Exo[i][1] + `"
 
             ligneExo.innerHTML +=
-                `<div class="ligneExo tous ` + classList + ` ` + BD_Exo[i][1] + `" id="ligneExo` + BD_Exo[i][0] + `">
+                `<div class="ligneExo tousExo ` + classList + ` '` + BD_Exo[i][1].toLowerCase() + `'" id="ligneExo` + BD_Exo[i][0] + `">
                     <div class="ligne-img-bloc">
                         <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[i][1] + `.gif'"/>
@@ -72,7 +72,7 @@ if (window.screen.width >= 500) {
         }
     }
 
-    ///////////////////////////////// Met en place les programmes //////////////////////////////////////////////
+    ///////////////////////////////// Met en place les programmes /////////////////////////////////////////////
     function getProgramme() {
 
         let prog = document.getElementById("prog");
@@ -88,7 +88,7 @@ if (window.screen.width >= 500) {
 
             }
 
-            prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3">
+            prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + BD_Programme[i][0].toLowerCase() + `'">
                 <ol class="list-group">
                 <li class="list-group-item taille list-titre-bloc">
                     <p class="list-titre depasse">` + BD_Programme[i][0] + `</p>
@@ -99,7 +99,7 @@ if (window.screen.width >= 500) {
         }
     }
 
-    ////////////////////////////////// Affiche les cards de Nutrition //////////////////////////////////////////////////////
+    ////////////////////////////////// Affiche les cards de Nutrition /////////////////////////////////////////
     function getNutrition() {
         let nutri = document.getElementById("cardsNutrition");
         var i;
@@ -107,7 +107,7 @@ if (window.screen.width >= 500) {
         for (i = 1; i < BD_Nutrition.length; i++) {
 
             nutri.innerHTML +=
-                `<div class="col-6 col-lg-4 col-xl-3 tous taille3 fw-9" id="Nutrition` + BD_Nutrition[i][0] + `">
+                `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + BD_Nutrition[i][1].toLowerCase() + `'" id="Nutrition` + BD_Nutrition[i][0] + `">
                     <div class="card">
 
                         <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + BD_Nutrition[i][1] + `.jpg"
@@ -135,7 +135,7 @@ if (window.screen.width >= 500) {
         }
     }
 
-    ///////////////////////////////////////// Mets en place les musiques //////////////////////////////////////////////
+    ///////////////////////////////////////// Mets en place les musiques //////////////////////////////////////
     function getMusique() {
         const listMusique = document.getElementById("listMusique");
 
@@ -167,7 +167,7 @@ if (window.screen.width >= 500) {
         let i;
 
         // On cache toute les cards
-        const cache = document.getElementsByClassName('tous');
+        const cache = document.getElementsByClassName('tousExo');
         for (i = 0; i < cache.length; i++) {
             cache[i].classList.add("none");
         }
@@ -280,63 +280,96 @@ if (window.screen.width >= 500) {
         const nav = document.getElementById("navbarColor01");
         nav.classList.remove("show");
     }
-}
 
-function gestionPage(numPage) {
+    function gestionPage(numPage) {
 
-    const p1 = document.getElementsByClassName('page1');
-    const p2 = document.getElementsByClassName('page2');
+        const p1 = document.getElementsByClassName('page1');
+        const p2 = document.getElementsByClassName('page2');
 
-    switch (numPage) {
-        case 1:
+        switch (numPage) {
+            case 1:
 
-            p1[0].classList.remove("none");
-            p2[0].classList.add("gaucheOutClass");
-            setTimeout(masquePage2, 1000);
-            break;
+                p1[0].classList.remove("none");
+                p2[0].classList.add("gaucheOutClass");
+                setTimeout(masquePage2, 1000);
+                break;
 
-        case 2:
+            case 2:
 
-            p2[0].classList.add("gaucheInClass");
-            p2[0].classList.remove("none");
-            setTimeout(masquePage1, 1000);
-            break;
+                p2[0].classList.add("gaucheInClass");
+                p2[0].classList.remove("none");
+                setTimeout(masquePage1, 1000);
+                break;
+        }
+
     }
 
-}
+    function masquePage1() {
+        const p1 = document.getElementsByClassName('page1');
+        p1[0].classList.add("none");
 
-function masquePage1() {
-    const p1 = document.getElementsByClassName('page1');
-    p1[0].classList.add("none");
+        const p2 = document.getElementsByClassName('page2');
+        p2[0].classList.remove("gaucheInClass");
+    }
 
-    const p2 = document.getElementsByClassName('page2');
-    p2[0].classList.remove("gaucheInClass");
-}
+    function masquePage2() {
+        const p2 = document.getElementsByClassName('page2');
+        p2[0].classList.add("none");
+        p2[0].classList.remove("gaucheOutClass");
+    }
 
-function masquePage2() {
-    const p2 = document.getElementsByClassName('page2');
-    p2[0].classList.add("none");
-    p2[0].classList.remove("gaucheOutClass");
-}
+    function filtreExo(val) {
 
-function filtreExercice() {
+        // On cache toute les cards
+        const cache = document.getElementsByClassName('tousExo');
+        for (i = 0; i < cache.length; i++) {
+            cache[i].classList.remove("none");
+        }
 
-    let i;
-    let val = document.getElementById('inputExercice').value;
-    let classTxt;
+        filtre2Etape(val, "Exo");
+    }
 
-    // On cache toute les cards
-    const cache = document.getElementsByClassName('tous');
-    for (i = 0; i < cache.length; i++) {
+    function filtreProg(val) {
 
-        classTxt = cache[i].className;
-        if (!classTxt.includes(val)) {
-            cache[i].classList.add("none");
-        } else {
-            console.log(classTxt);
+        // On cache toute les cards
+        const cache = document.getElementsByClassName('tousProg');
+        for (i = 0; i < cache.length; i++) {
+            cache[i].classList.remove("none");
+        }
+
+        filtre2Etape(val, "Prog");
+        console.log(val);
+    }
+
+    function filtreNutri(val) {
+
+        // On cache toute les cards
+        const cache = document.getElementsByClassName('tousNutri');
+        for (i = 0; i < cache.length; i++) {
+            cache[i].classList.remove("none");
+        }
+
+        filtre2Etape(val, "Nutri");
+    }
+
+    function filtre2Etape(val, obj) {
+
+        val = val.toLowerCase();
+
+        let i;
+        let classTxt;
+        const cache = document.getElementsByClassName('tous' + obj);
+
+        for (i = 0; i < cache.length; i++) {
+
+            classTxt = cache[i].className;
+
+            if (!classTxt.includes(val)) {
+                cache[i].classList.add("none");
+            } else {
+                console.log(classTxt);
+            }
         }
     }
-    console.log("--");
-
 
 }

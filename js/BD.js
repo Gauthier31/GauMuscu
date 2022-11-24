@@ -252,10 +252,10 @@ const BD_Nutrition = [
     [0, "", "", ""],
 
     // Plat 1
-    [1, "Titre", "Ingredient gramme|Ingredient gramme", "description"],
+    [1, "Oeuf au plat", "Ingredient gramme|Ingredient gramme", "description"],
 
     // Plat 2
-    [2, "Titre2", "Ingredient gramme|Ingredient gramme", "description"]
+    [2, "Poisson", "Ingredient gramme|Ingredient gramme", "description"]
 ];
 
 const BD_Musique = [

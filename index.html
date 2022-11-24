@@ -83,8 +83,8 @@
             <p class="taille3 fw-900 text-center espaceB">Liste des Exercices</p>
 
             <ul class="nav nav-tabs nav-fill justify-content-center">
-                <li class="nav-item type" id="tous">
-                    <p class="nav-link" onclick="filtre('tous')">Tous</p>
+                <li class="nav-item type" id="tousExo">
+                    <p class="nav-link" onclick="filtre('tousExo')">Tous</p>
                 </li>
                 <li class="nav-item type" id="épaules">
                     <p class="nav-link" onclick="filtre('épaules')">Épaules</p>
@@ -110,8 +110,8 @@
 
             <div class="input-group input-group-lg espaceH taile4">
                 <input type="text" class="form-control border-left" placeholder="Nom exercice"
-                    onkeypress="filtreExercice()" id="inputExercice">
-                <button class="btn btn-outline-warning border-right taille4" type="button">Search</button>
+                    onKeyUp="filtreExo(this.value)">
+                <button class="btn btn-search border-right taille4" type="button">Search</button>
             </div>
 
             <!-- bloc sur les coins -->
@@ -142,8 +142,8 @@
 
             <div class="input-group input-group-lg espaceH taile4">
                 <input type="text" class="form-control border-left" placeholder="Nom programme"
-                    onkeypress="filtreRepas()" id="inputProgramme">
-                <button class="btn btn-outline-warning border-right taille4" type="button">Search</button>
+                    onKeyUp="filtreProg(this.value)">
+                <button class="btn btn-search border-right taille4" type="button">Search</button>
             </div>
         </section>
 
@@ -170,9 +170,9 @@
             <p class="taille3 fw-900 text-center espaceB">Liste des repas</p>
 
             <div class="input-group input-group-lg espaceH taile4">
-                <input type="text" class="form-control border-left" placeholder="Nom repas" onkeypress="filtreRepas()"
-                    id="inputRepas">
-                <button class="btn btn-outline-warning border-right taille4" type="button">Search</button>
+                <input type="text" class="form-control border-left" placeholder="Nom repas"
+                    onKeyUp="filtreNutri(this.value)">
+                <button class="btn btn-search border-right taille4" type="button">Search</button>
             </div>
 
         </section>

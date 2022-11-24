@@ -937,7 +937,6 @@ input {
     font-size: 1.25em;
 }
 
-
 .border-left {
     border-radius: 50px 0 0 50px !important;
     padding-left: 50px !important;
@@ -945,6 +944,12 @@ input {
 
 .border-right {
     border-radius: 0 50px 50px 0 !important;
+}
+
+.btn-search {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
 }
 
 /* -------------------------------------------------- */
