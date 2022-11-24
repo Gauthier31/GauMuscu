@@ -127,6 +127,8 @@ function programmes(numProgramme) {
 
     f1.innerHTML +=
         `<div class="ticket0">
+            <div class="bouchonNav orange"></div>
+
             <div class="container-fluid" id="ficheResultat">
 
                 <div class="row g-5" id="listExo">

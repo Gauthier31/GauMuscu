@@ -87,6 +87,7 @@ header {
 
     position: fixed;
     top: 0;
+    z-index: -1;
 }
 
 .img-header {
@@ -565,6 +566,13 @@ select {
 .bouchon4 {
     z-index: -5;
     padding: 0 5%;
+}
+
+.bouchonNav {
+    width: 100vw;
+    height: 120px;
+    border-radius: 0 0 100px 100px;
+    position: absolute;
 }
 
 /* ----------- fiche résultat ----------- */
@@ -1139,6 +1147,7 @@ audio {
 .page1 {
     background-color: rgb(240 240 240);
     position: absolute;
+    z-index: 0;
 }
 
 .page2 {
