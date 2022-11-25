@@ -227,8 +227,8 @@ section {
 }
 
 .sectionInfo {
-    padding-top: 8%;
-    min-height: 1000px;
+    padding-top: 5%;
+    min-height: 2000px;
 }
 
 /* -------------- Cards -------------------*/
@@ -332,8 +332,8 @@ margin-bottom.btnInfoCard {
 }
 
 .btn-prog {
-    border-top-right-radius: 50px;
-    width: 300px;
+    border-top-right-radius: 45px;
+    width: 250px;
     height: 89px;
     font-size: 1em;
     position: absolute;
@@ -355,12 +355,25 @@ margin-bottom.btnInfoCard {
     display: inherit;
 }
 
+.list-titre-bloc {
+    border-radius: 0 0 50px 50px;
+}
 
 .list-titre {
-    width: 525px;
+    width: 500px;
     margin: 0;
 }
 
+.list-exo {
+    border-radius: 0 0 50px 50px;
+}
+
+.bloc-i {
+    width: 80px;
+    height: 70px;
+    text-align: center;
+    border: none;
+}
 
 /* ------------- Modal Exo ----------------- */
 
@@ -589,7 +602,7 @@ select {
 /* -------------- Liste Exo -------------------*/
 
 #accueil {
-    padding: 1%;
+    padding: 3%;
     padding-top: 5%;
     min-height: 2000px;
 }
@@ -646,7 +659,7 @@ select {
     text-overflow: ellipsis !important;
 
     height: 75px;
-    width: 560px;
+    width: 520px;
     text-align: justify;
     margin-top: 20px;
 }
@@ -942,7 +955,7 @@ input {
 .input-group-lg>.form-control,
 .input-group-lg>.form-select,
 .input-group-lg>.input-group-text {
-    font-size: 1.25em;
+    font-size: 1.5em;
 }
 
 .border-left {
@@ -958,6 +971,7 @@ input {
     color: #000;
     background-color: #ffc107;
     border-color: #ffc107;
+    font-size: 1.25em !important;
 }
 
 /* -------------------------------------------------- */

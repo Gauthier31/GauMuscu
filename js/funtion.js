@@ -83,19 +83,28 @@ if (window.screen.width >= 500) {
 
                 txt +=
                     `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j]][1]
-                    //+ ` (id = ` + BD_Exo[BD_Programme[i][j]][0] + `)
                     + `</li>`;
 
             }
 
-            prog.innerHTML += `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + BD_Programme[i][0].toLowerCase() + `'">
-                <ol class="list-group">
-                <li class="list-group-item taille list-titre-bloc">
-                    <p class="list-titre depasse">` + BD_Programme[i][0] + `</p>
-                    <button type="button" class="btn orange btn-prog" onclick="programmes(` + i + `)">C'est parti</button>
-                </li>`
-                + txt + `   
-                </ol></div>`;
+            prog.innerHTML +=
+                `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + BD_Programme[i][0].toLowerCase() + `'">
+                    <ol class="list-group" id="prog` + i + `">
+                    <li class="list-group-item taille list-titre-bloc">
+                        <p class="list-titre depasse">` + BD_Programme[i][0] + `</p>
+                        <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(` + i + `)"
+                        
+                        type="button" data-bs-toggle="collapse" data-bs-target="#progList` + i + `"
+                        aria-controls="progList` + i + `" aria-expanded="false" aria-label="Toggle progList` + i + `">
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <i class="fa-solid fa-chevron-up none"></i>
+                        </button>
+                        <button type="button" class="btn orange btn-prog" onclick="programmes(` + i + `)">C'est parti</button>
+                    </li>
+                    <div class="list-exo collapse" id="progList` + i + `">` + txt + `</div>   
+                    </ol>
+                </div>`;
         }
     }
 
@@ -277,7 +286,7 @@ if (window.screen.width >= 500) {
 
     function closeNavBar() {
         // Masques la navbar
-        const nav = document.getElementById("navbarColor01");
+        const nav = document.getElementById("nav1");
         nav.classList.remove("show");
     }
 
@@ -372,4 +381,25 @@ if (window.screen.width >= 500) {
         }
     }
 
+    function progCollapse(id) {
+
+        const bloc = document.getElementById("prog" + id);
+        const btn = document.getElementById("progBtn" + id);
+
+        if (btn.value == "up") {
+            btn.getElementsByClassName("fa-chevron-up")[0].classList.add("none");
+            btn.getElementsByClassName("fa-chevron-down")[0].classList.remove("none");
+            btn.value = "down";
+
+            bloc.getElementsByClassName("list-group-item")[0].classList.add("list-titre-bloc");
+        } else {
+            btn.getElementsByClassName("fa-chevron-down")[0].classList.add("none");
+            btn.getElementsByClassName("fa-chevron-up")[0].classList.remove("none");
+            btn.value = "up";
+
+            bloc.getElementsByClassName("list-group-item")[0].classList.remove("list-titre-bloc");
+        }
+
+
+    }
 }
