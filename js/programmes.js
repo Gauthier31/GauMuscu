@@ -6,7 +6,8 @@ var numProg = 0         // Numéro du programme
 var newSerieNum = 0;    // Numéro de la série suivant en fonction de l'exo
 
 var totalTemps = 0;     // temps en sec
-var total, t1, t2;
+var total = 0
+var t1, t2;
 
 var progLancer = false; // par defaut
 
@@ -460,7 +461,7 @@ function stop() {
 
     // Lance chrono
     if (btn.value == "Marche") {
-        temps(exo);
+        temps();
 
         btn.innerHTML = "Arret";
         btn.value = "Arret";

@@ -373,6 +373,8 @@ margin-bottom.btnInfoCard {
     height: 70px;
     text-align: center;
     border: none;
+    color: black;
+    background-color: rgb(0, 0, 0, 0);
 }
 
 /* ------------- Modal Exo ----------------- */
