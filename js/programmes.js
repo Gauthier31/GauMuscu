@@ -87,9 +87,11 @@ function programmes(numProgramme) {
                             <div class="caseTab_4_Mid fw-9">Rep</div>
                             <div class="caseTab_4_Mid fw-9">Kilos</div>
                             <div class="caseTab_4_SE fw-9">
+                                <!--
                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     <i class="fa-solid fa-pen btn-i"></i>
                                 </button>
+                                -->
                             </div>
                         </div>
                         <div class="detail6" id="` + BD_Exo[BD_Programme[numProg][i]][0] + `_statModule">
@@ -383,9 +385,9 @@ function addSerie() {
     }
 
     tab.innerHTML +=
-        `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `" onclick="colorSerie(` + newSerieNum + `)">
+        `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `">
 
-                <div class="caseTab_4_SE fw-9">` + newSerieNum + `</div>
+                <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + newSerieNum + `)">` + newSerieNum + `</div>
 
                 <div class="caseTab_4_Mid">
                     <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + BD_Stat[exo][BD_Stat[exo].length - 2] + `">
@@ -539,7 +541,9 @@ function fiche(exoActu, serieActu) {
         couleur = "fd-vert";
 
     } else if (avis.value == "-") {
-        couleur = "fd-orange";
+        couleur = "fd-rouge";
+    } else {
+        couleur = "fd-gris";
     }
 
     // on prends le temps

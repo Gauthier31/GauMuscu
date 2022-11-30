@@ -500,12 +500,16 @@ select {
     background-color: white;
 }
 
-.fd-vert {
-    background-color: rgb(25, 135, 84, 50%);
+.fd-rouge {
+    background-color: rgb(230 80 80 / 50%);
 }
 
-.fd-orange {
-    background-color: rgb(255, 193, 7, 50%);
+.fd-vert {
+    background-color: rgb(180 230 200);
+}
+
+.fd-gris {
+    background-color: rgba(226, 227, 229);
 }
 
 
@@ -761,6 +765,7 @@ select {
 .exoBody {
     height: 1100px;
     overflow-y: scroll;
+    margin-top: 5px;
 }
 
 .exoFooter {
@@ -876,12 +881,14 @@ select {
 .lineMiniTabHead {
     line-height: 30px;
     border-bottom: 2px solid rgb(0, 0, 0);
+    font-size: 1.4rem;
 }
 
 .lineMiniTab {
     line-height: 45px;
     margin-top: 1%;
     border-bottom: 1px solid rgb(0 0 0 / 20%);
+    font-size: 1.4rem;
 }
 
 .caseMiniTab_4 {

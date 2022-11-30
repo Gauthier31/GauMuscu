@@ -1,12 +1,17 @@
 console.log(window.screen.width);
 
-try {
-    //screen.lockOrientation("orientation");
-    //screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
-} catch (err) {
-    console.log(err);
-}
+/*
+setInterval(function () {
+    if (window.screen.width >= 500) {
+        document.getElementById("body").innerHTML =
+            `<div class="noPhone">
+                <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
+            </div>`;
+    } else {
 
+    }
+}, 5000)
+*/
 if (window.screen.width >= 500) {
     document.getElementById("body").innerHTML =
         `<div class="noPhone">
