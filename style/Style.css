@@ -191,7 +191,6 @@ header {
     border-radius: 50px;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.0);
-    isolation: isolate;
     color: black;
     margin: 10px;
     box-shadow: -7px -7px 10px 0 rgba(255, 255, 255),
@@ -957,7 +956,7 @@ input {
 .input-group-lg>.form-control,
 .input-group-lg>.form-select,
 .input-group-lg>.input-group-text {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .border-left {
@@ -973,7 +972,6 @@ input {
     color: #000;
     background-color: #ffc107;
     border-color: #ffc107;
-    font-size: 1.25em !important;
 }
 
 /* -------------------------------------------------- */
