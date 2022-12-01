@@ -277,16 +277,15 @@ section {
     padding-top: 0px;
 }
 
-#detail4 {
-    border-radius: 5em;
-    border: 3px solid black;
-}
 
 .detail4_Up,
 .detail4_Down {
     overflow-y: scroll;
-    padding: 0% 2%;
+    margin: 0% 2%;
     padding-bottom: 100px;
+
+    border-radius: 5em;
+    border: 3px solid black;
 }
 
 .detail4_Up {
@@ -593,6 +592,16 @@ select {
     position: absolute;
 }
 
+.nav2 {
+    height: 120px;
+    margin: -5px 95px 0 75px;
+
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+}
+
 /* ----------- fiche résultat ----------- */
 
 .txtExo {
@@ -627,15 +636,16 @@ select {
 .ligneExo {
     height: 250px;
     margin-top: 50px;
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .ligne-img-bloc {
-    float: left;
     height: 250px;
     width: 350px;
     background-color: white;
-    margin-right: 3%;
-    border-radius: 30px;
+    border-radius: 3rem;
 
     display: flex;
     align-items: center;
@@ -656,7 +666,8 @@ select {
 
 .ligneTitre {
     margin-bottom: -5px;
-    margin-top: 20px;
+    width: 500px;
+    padding: 0% 4%;
 }
 
 .ligneDescription {
@@ -669,17 +680,6 @@ select {
     margin-top: 20px;
 }
 
-.btnInfoExo {
-    float: right;
-    width: 130px;
-    font-size: 2em;
-    font-weight: 900;
-    background-color: #ffc107;
-    border-radius: 30px;
-    border: none;
-    margin: 1% 0 0 1%;
-    color: black;
-}
 
 
 /* ----------- Page Exo du prog ---------------*/
@@ -780,19 +780,17 @@ select {
 
 .ligne-list-exo {
     height: 250px;
-    padding: 2% 5%;
+    padding: 2% 3%;
     display: flex;
     align-items: center;
     border-radius: 5em;
 }
 
 .ligne-img-bloc2 {
-    float: left;
     height: 200px;
     width: 300px;
     background-color: white;
-    margin-right: 3%;
-    border-radius: 30px;
+    border-radius: 3em;
 
     display: flex;
     align-items: center;
@@ -808,9 +806,10 @@ select {
 }
 
 .txt-center {
-    width: 450px;
+    width: 500px;
     display: inline-block;
     text-align: center;
+    padding: 0 4%;
 }
 
 
@@ -822,22 +821,8 @@ select {
     border-left: 80px solid #ffc107;
 
     display: inline-block;
-    transform: translate(30%, 0%);
 }
 
-.triangle2 {
-    float: right;
-    margin-right: 20px;
-    margin-top: 25px;
-    width: 0;
-    height: 0;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-left: 50px solid #ffc107;
-
-    display: inline-block;
-    transform: translate(30%, 0%);
-}
 
 .exoActu {
     background-color: rgb(200, 200, 200);

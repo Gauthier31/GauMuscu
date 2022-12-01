@@ -50,29 +50,20 @@ if (window.screen.width >= 500) {
             // alt="` + BD_Exo[i][1] + `"
 
             ligneExo.innerHTML +=
-                `<div class="ligneExo tousExo ` + classList + ` '` + BD_Exo[i][1].toLowerCase() + `'" id="ligneExo` + BD_Exo[i][0] + `">
+                `<div class="ligneExo tousExo ' ` + classList + ` ` + BD_Exo[i][1].toLowerCase() + ` ' " id="ligneExo` + BD_Exo[i][0] + `">
                     <div class="ligne-img-bloc">
                         <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[i][1] + `.gif'"/>
                     </div>
         
-                    <div class="ligne-txt">
-                        <!-- <button class="btnInfoExo">Info</button> -->
-                        <div class="triangle2" onclick="addExo(` + i + `)"></div>
-        
-                        <p class="taille1 fw-600 ligneTitre depasse">` + BD_Exo[i][1] + `</p>
+                    <div>
+                        <p class="taille1 fw-600 ligneTitre">` + BD_Exo[i][1] + `</p>
                         <div class="taille3 opacity-50">
                             ` + classList + `
                         </div>
-        
-                        <div class="taille3 ligneDescription">
-                            Imperio conplures aliis et diluere aurem nec 
-                            praedoctis reginae stimulis resedit resedit de aliis et diluere aurem nec 
-                            praedoctis reginae stimulis resedit resedesedit de aliis et diluere aurem nec 
-                            praedoctis reginae stimulis resedit resedit dfen...
-                        </div>
-                        
                     </div>
+                    
+                    <div class="triangle1" onclick="addExo(` + i + `)"></div>
                 </div>`
         }
     }

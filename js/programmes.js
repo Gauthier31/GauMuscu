@@ -120,7 +120,7 @@ function programmes(numProgramme) {
 
                 <div class="taille1 fw-9 txt-center">` + BD_Exo[BD_Programme[numProg][i]][1] + `</div>
 
-                <div class="triangle1" onclick = "exoSuivant(` + i + `)"></div>
+                <div class="triangle1" onclick="exoSuivant(` + i + `)"></div>
             </div>`;
 
 
@@ -130,7 +130,12 @@ function programmes(numProgramme) {
 
     f1.innerHTML +=
         `<div class="ticket0">
-            <div class="bouchonNav orange"></div>
+            <div class="bouchonNav orange">
+                <div class="nav2">
+                    <p class="taille">GauMuscu</p>
+                    <i class="fa-solid fa-bars taille"></i>
+                </div>
+            </div>
 
             <div class="container-fluid" id="ficheResultat">
 
@@ -665,7 +670,7 @@ function addExo(numExo) {
                         onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[numExo][1] + `.gif'" />
                     </div>
 
-                    <div class="taille1 fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
+                    <div class="taille fw-9 txt-center">` + BD_Exo[numExo][1] + `</div>
                     <div class="triangle1" onclick="exoSuivant(` + (BD_Programme[numProg].length - 1) + `)"></div>
                 </div > `;
 
