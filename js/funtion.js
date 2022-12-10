@@ -19,45 +19,48 @@ if (window.screen.width >= 500) {
         </div>`;
 } else {
 
-    const item = document.getElementById('tousExo').classList.add("typeActive");
+    var limitExo = 0;
+    var nbExo = 0;
+
+
+    document.getElementById('tousExo').classList.add("typeActive");
 
     getExercice();
     getProgramme();
     getNutrition();
-    getMusique()
+    getMusique();
+    addLimit();
 
     // Affichage masquage des blocs de sections
     page("accueil");
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////// Affiche la liste des exo ///////////////////////////////////////////////
     function getExercice() {
         let ligneExo = document.getElementById("ligneExo");
-        var i;
 
-        for (i = 1; i < BD_Exo.length; i++) {
+        for (i = 1; i < EXO.length; i++) {
 
             ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-            const tabStyle = BD_Exo[i][3].split("-");
+            const tabStyle = EXO[i][3].split("-");
 
+            // catégorie
             let classList = "";
-
             for (j = 0; j < tabStyle.length - 1; j++) {
                 classList += tabStyle[j] + " ";
             }
             classList += tabStyle[j];
 
-            // alt="` + BD_Exo[i][1] + `"
-
             ligneExo.innerHTML +=
-                `<div class="ligneExo tousExo ' ` + classList + ` ` + BD_Exo[i][1].toLowerCase() + ` ' " id="ligneExo` + BD_Exo[i][0] + `">
+                `<div class="ligneExo tousExo none ' ` + classList.toUpperCase() + ` ` + EXO[i][1].toUpperCase() + ` ''" id="ligneExo` + EXO[i][0] + `">
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + BD_Exo[i][1] + `.jpg" 
-                            onerror="this.onerror=null; this.src='document/exo/` + BD_Exo[i][1] + `.gif'"/>
+                        <img class="ligne-img-left" src="document/exo/` + EXO[i][1] + `.jpg" 
+                            onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
                     <div>
-                        <p class="taille1 fw-600 ligneTitre">` + BD_Exo[i][1] + `</p>
+                        <p class="taille1 fw-6 ligneTitre">` + EXO[i][1] + `</p>
                         <div class="taille3 opacity-50">
                             ` + classList + `
                         </div>
@@ -73,21 +76,21 @@ if (window.screen.width >= 500) {
 
         let prog = document.getElementById("prog");
 
-        for (i = 1; i < BD_Programme.length; i++) {
+        for (i = 1; i < PROGRAMME.length; i++) {
             txt = "";
-            for (j = 1; j < BD_Programme[i].length; j++) {
+            for (j = 1; j < PROGRAMME[i].length; j++) {
 
                 txt +=
-                    `<li class="list-group-item taille2">` + j + `. ` + BD_Exo[BD_Programme[i][j]][1]
+                    `<li class="list-group-item taille2">` + j + `. ` + EXO[PROGRAMME[i][j]][1]
                     + `</li>`;
 
             }
 
             prog.innerHTML +=
-                `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + BD_Programme[i][0].toLowerCase() + `'">
+                `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + PROGRAMME[i][0].toUpperCase() + `'">
                     <ol class="list-group" id="prog` + i + `">
                     <li class="list-group-item taille list-titre-bloc">
-                        <p class="list-titre depasse">` + BD_Programme[i][0] + `</p>
+                        <p class="list-titre depasse">` + PROGRAMME[i][0] + `</p>
                         <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(` + i + `)"
                         
                         type="button" data-bs-toggle="collapse" data-bs-target="#progList` + i + `"
@@ -112,7 +115,7 @@ if (window.screen.width >= 500) {
         for (i = 1; i < BD_Nutrition.length; i++) {
 
             nutri.innerHTML +=
-                `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + BD_Nutrition[i][1].toLowerCase() + `'" id="Nutrition` + BD_Nutrition[i][0] + `">
+                `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + BD_Nutrition[i][1].toUpperCase() + `'" id="Nutrition` + BD_Nutrition[i][0] + `">
                     <div class="card">
 
                         <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + BD_Nutrition[i][1] + `.jpg"
@@ -279,7 +282,6 @@ if (window.screen.width >= 500) {
         modalImg.src = "document/muscle/" + img.textContent;
     }
 
-
     function closeNavBar() {
         // Masques la navbar
         const nav = document.getElementById("nav1");
@@ -311,7 +313,7 @@ if (window.screen.width >= 500) {
 
     function masquePage1() {
         const p1 = document.getElementsByClassName('page1');
-        p1[0].classList.add("none");
+        //p1[0].classList.add("none");
 
         const p2 = document.getElementsByClassName('page2');
         p2[0].classList.remove("gaucheInClass");
@@ -328,7 +330,7 @@ if (window.screen.width >= 500) {
         // On cache toute les cards
         const cache = document.getElementsByClassName('tousExo');
         for (i = 0; i < cache.length; i++) {
-            cache[i].classList.remove("none");
+            cache[i].classList.add("none");
         }
 
         filtre2Etape(val, "Exo");
@@ -339,11 +341,10 @@ if (window.screen.width >= 500) {
         // On cache toute les cards
         const cache = document.getElementsByClassName('tousProg');
         for (i = 0; i < cache.length; i++) {
-            cache[i].classList.remove("none");
+            cache[i].classList.add("none");
         }
 
         filtre2Etape(val, "Prog");
-        console.log(val);
     }
 
     function filtreNutri(val) {
@@ -351,7 +352,7 @@ if (window.screen.width >= 500) {
         // On cache toute les cards
         const cache = document.getElementsByClassName('tousNutri');
         for (i = 0; i < cache.length; i++) {
-            cache[i].classList.remove("none");
+            cache[i].classList.add("none");
         }
 
         filtre2Etape(val, "Nutri");
@@ -359,22 +360,27 @@ if (window.screen.width >= 500) {
 
     function filtre2Etape(val, obj) {
 
-        val = val.toLowerCase();
+        val = val.toUpperCase();
+        nbExo = -999;
+        if (obj == "Exo") {
+            nbExo = 0;
+        }
 
-        let i;
         let classTxt;
         const cache = document.getElementsByClassName('tous' + obj);
 
-        for (i = 0; i < cache.length; i++) {
+        for (i = 0; i < cache.length && nbExo < limitExo; i++) {
 
-            classTxt = cache[i].className;
+            filtreclass = cache[i].className.split("'");
+            classTxt = filtreclass[1];
 
-            if (!classTxt.includes(val)) {
-                cache[i].classList.add("none");
-            } else {
-                console.log(classTxt);
+            if (classTxt.includes(val)) {
+                cache[i].classList.remove("none");
+                nbExo++;
             }
         }
+
+        document.getElementById("nbExo").innerHTML = nbExo + " sur " + (EXO.length - 1);
     }
 
     function progCollapse(id) {
@@ -397,5 +403,12 @@ if (window.screen.width >= 500) {
         }
 
 
+    }
+
+    function addLimit() {
+        limitExo += 20;
+
+        let inputExo = document.getElementById("inputExo").value;
+        filtre2Etape(inputExo, "Exo")
     }
 }

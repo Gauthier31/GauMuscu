@@ -99,24 +99,36 @@
                 <li class="nav-item type" id="bras">
                     <p class="nav-link" onclick="filtre('bras')">Bras</p>
                 </li>
-            </ul>
-            <ul class="nav nav-tabs nav-fill justify-content-center">
                 <li class="nav-item type" id="pectoraux">
                     <p class="nav-link" onclick="filtre('pectoraux')">Pectoraux</p>
                 </li>
+            </ul>
+            <ul class="nav nav-tabs nav-fill justify-content-center">
                 <li class="nav-item type" id="dos">
                     <p class="nav-link" onclick="filtre('dos')">Dos</p>
-                </li>
-                <li class="nav-item type" id="abdominaux">
-                    <p class="nav-link" onclick="filtre('abdominaux')">Abdominaux</p>
                 </li>
                 <li class="nav-item type" id="jambes">
                     <p class="nav-link" onclick="filtre('jambes')">Jambes</p>
                 </li>
+                <li class="nav-item type" id="fessiers">
+                    <p class="nav-link" onclick="filtre('fessiers')">Fessiers</p>
+                </li>
+            </ul>
+
+            <ul class="nav nav-tabs nav-fill justify-content-center">
+                <li class="nav-item type" id="abdominaux">
+                    <p class="nav-link" onclick="filtre('abdominaux')">Abdominaux</p>
+                </li>
+                <li class="nav-item type" id="cardio">
+                    <p class="nav-link" onclick="filtre('cardio')">Cardio</p>
+                </li>
+                <li class="nav-item type" id="échauffement">
+                    <p class="nav-link" onclick="filtre('échauffement')">Échauffement</p>
+                </li>
             </ul>
 
             <div class="input-group input-group-lg espaceH">
-                <input type="text" class="form-control border-left" placeholder="Nom exercice"
+                <input type="text" id="inputExo" class="form-control border-left" placeholder="Nom exercice"
                     onKeyUp="filtreExo(this.value)">
                 <button class="btn btn-search border-right" type="button">Search</button>
             </div>
@@ -130,6 +142,15 @@
 
         <section class="bloc sectionInfo" id="accueil">
             <div class="row" id="ligneExo">
+            </div>
+
+            <div class="div-info-btn">
+                <p class="taille2 opacity-50" id="nbExo"></p>
+            </div>
+            <div class="div-btn">
+                <button onClick="addLimit(this.value)" class="btn btn-ticket2 taille1">
+                    Ajouter 20 exercices
+                </button>
             </div>
         </section>
 

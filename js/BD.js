@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // tableau
 // épaules, bras, pectoraux, abdominaux, jambes, dos
-const BD_Exo = [
+const EXO = [
 
     // Bouchon
     [0, "titre", "petiteImage", "", "",
@@ -115,12 +115,229 @@ const BD_Exo = [
     [33, "Triceps", "tricep.jpg", "bras",
         "description"],
 
+    /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+
+    [34, "Abdominal rollout on knees", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [35, "Abdominal crunch", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [36, "Abduction leg lying, split (gauche / droite)", "defautExo.jpg", "jambes",
+        "description"],
+
+    [37, "Abdominal knees up, low handle", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [38, "Abdominal straight jambes", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [39, "Lunge, alternated", "defautExo.jpg", "jambes",
+        "description"],
+
+    [40, "Squat", "defautExo.jpg", "jambes",
+        "description"],
+
+    [41, "Squat, sumo", "defautExo.jpg", "jambes",
+        "description"],
+
+    [42, "Air plane", "defautExo.jpg", "dos",
+        "description"],
+
+    [43, "Arch chop", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [44, "Arm extension", "defautExo.jpg", "bras",
+        "description"],
+
+    [45, "Arnold press seated", "defautExo.jpg", "épaules",
+        "description"],
+
+    [46, "Back extension, machine / ground", "defautExo.jpg", "dos",
+        "description"],
+
+    [47, "Balance, standing", "defautExo.jpg", "abdominaux-jambes",
+        "description"],
+
+    [48, "Balance, V+sit", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [49, "Bench press, assited", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [50, "Bench press, inclined assited", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [51, "Bench arl pullover", "defautExo.jpg", "pectoraux-bras",
+        "description"],
+
+    [52, "Bent over row", "defautExo.jpg", "dos",
+        "description"],
+
+    [53, "Bent over row, split (gauche / droite)", "defautExo.jpg", "dos",
+        "description"],
+
+    [54, "Bent over row, standing", "defautExo.jpg", "dos",
+        "description"],
+
+    [55, "Bicep curl, machine", "defautExo.jpg", "bras",
+        "description"],
+
+    [56, "Bicep curl, poulie basse", "defautExo.jpg", "bras",
+        "description"],
+
+    [57, "Bicep curl, poulie haute", "defautExo.jpg", "bras",
+        "description"],
+
+    [58, "Bicep curl, suplinated (poulie)", "defautExo.jpg", "bras",
+        "description"],
+
+    [59, "Bird dog", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [60, "Bird dog, standing (gauche / droite)", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [61, "Bottom up press", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [62, "Box jumps", "defautExo.jpg", "jambes",
+        "description"],
+
+    [63, "Bulgarian split squat (gauche / droite)", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [64, "Burpees", "defautExo.jpg", "cardio-abdominaux-jambes",
+        "description"],
+
+    [65, "Burpees, jump up", "defautExo.jpg", "cardio-abdominaux-jambes",
+        "description"],
+
+    [66, "Burpees, jump up push up", "defautExo.jpg", "cardio-abdominaux-jambes-pectoraux",
+        "description"],
+
+    [67, "Butterfly", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [68, "Calf raise", "defautExo.jpg", "jambes",
+        "description"],
+
+    [68, "Calves", "defautExo.jpg", "jambes",
+        "description"],
+
+    [69, "Chest press, suspension", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [70, "Chest press, lower grip 2 mains", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [71, "Chest press, lower grip split (gauche / droite)", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [72, "Chest press, upper grip 2 mains", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [73, "Chest press, upper grip split (gauche / droite)", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [74, "Chest press, wide grip", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [75, "Chest press, small grip", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [76, "Child's pose", "defautExo.jpg", "dos",
+        "description"],
+
+    [77, "Chin up, narrow grip", "defautExo.jpg", "dos",
+        "description"],
+
+    [78, "Chin up", "defautExo.jpg", "bras-dos",
+        "description"],
+
+    [79, "Crunch, machine", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [80, "Crunch, sol", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [81, "Crunch, bras extended", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [82, "Crunch, diagonal alterned", "defautExo.jpg", "bras",
+        "description"],
+
+    [83, "Crunch, toe touch", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [84, "Deadlift", "defautExo.jpg", "dos",
+        "description"],
+
+    [85, "Deadlift, sumo stance", "defautExo.jpg", "dos-fessiers",
+        "description"],
+
+    [86, "Dips, machine", "defautExo.jpg", "bras-pectoraux",
+        "description"],
+
+    [87, "Dips, chaise", "defautExo.jpg", "bras-pectoraux",
+        "description"],
+
+    [88, "Diverging lat pull down, 2 mains", "defautExo.jpg", "bras",
+        "description"],
+
+    [89, "Elbow, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [90, "Donkey kick, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [91, "Glute kickback, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [92, "Glutes", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [93, "Glutes raise, alternated", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [94, "Goblet squat, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [95, "Goblet squat", "defautExo.jpg", "jambes",
+        "description"],
+
+    [96, "Goodmorning", "defautExo.jpg", "dos-jambes",
+        "description"],
+
+    [97, "Hip trust, (haltère / machine)", "defautExo.jpg", "fessiers-jambes",
+        "description"],
+
+    [98, "Reverse crunch", "defautExo.jpg", "abdominaux",
+        "description"],
+
+    [99, "Reverse curl", "defautExo.jpg", "bras",
+        "description"],
+
+    [100, "Reverse fly", "defautExo.jpg", "pectoraux",
+        "description"],
+
+    [101, "Reverse fly, horizontal grip", "defautExo.jpg", "dos",
+        "description"],
+
+    [102, "Russian twist", "defautExo.jpg", "abdominaux",
+        "description"],
+
+
+
+
+
 
     /////////////////////////////////////////////////////////////////////////////////
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const BD_Stat = [
+const STAT = [
     // [n°exo, nbRep1, poid1, nbRep2, poid1, nbRep3, poid3, nbRep4, poid4]
 
     // Nom bouchon
@@ -220,7 +437,7 @@ const BD_Stat = [
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const BD_Programme = [
+const PROGRAMME = [
 
     // Prog par defaut
     ["Programme par defaut"],

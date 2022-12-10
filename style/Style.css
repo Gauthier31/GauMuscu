@@ -3,10 +3,10 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
+    font-family: Noto Sans, sans-serif;
 }
 
 body {
-    font-family: HeadingProDouble-Regular;
     background-color: rgb(240, 240, 240);
     overflow-x: hidden;
 
@@ -297,7 +297,7 @@ section {
 }
 
 .detail5 {
-    height: 1000px;
+    height: 40vh;
     overflow-y: scroll;
     margin-bottom: 10%;
 }
@@ -422,8 +422,8 @@ select {
 
 .btn-module2 {
     border-radius: 150px;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     font-size: 2em;
     font-weight: 900;
     margin-top: 10px;
@@ -763,7 +763,7 @@ select {
 }
 
 .exoBody {
-    height: 1100px;
+    height: 1070px;
     overflow-y: scroll;
     margin-top: 5px;
 }
@@ -806,12 +806,16 @@ select {
 }
 
 .txt-center {
-    width: 500px;
+    width: 450px;
     display: inline-block;
     text-align: center;
     padding: 0 4%;
 }
 
+.crossX {
+    font-size: 3em;
+    margin: 0 2rem 0 0;
+}
 
 .triangle1 {
     width: 0;
@@ -839,12 +843,20 @@ select {
     transition: background-color 0.5s;
 }
 
+.div-info-btn {
+    width: 100%;
+    margin: 2em 0 -2em 0;
+    display: flex;
+    justify-content: center;
+}
+
 .div-btn {
     width: 100%;
     margin: 2em 0;
     display: flex;
     justify-content: center;
 }
+
 
 .btn-ticket2 {
     width: 600px;
@@ -878,11 +890,20 @@ select {
 
 .caseMiniTab_4 {
     display: inline-block;
-    width: 24%;
+    width: 25%;
     margin: 0%;
     padding-left: 10%;
     font-weight: 500;
 }
+
+.caseMiniTab_4End {
+    display: inline-block;
+    width: 15%;
+    margin: 0%;
+    padding-left: 10%;
+    font-weight: 500;
+}
+
 
 /* ------- tab ------ */
 
