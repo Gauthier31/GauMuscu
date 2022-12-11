@@ -132,6 +132,10 @@ header {
 
 /* -------------- Taille texte ------------------*/
 
+.taille0 {
+    font-size: 8rem;
+}
+
 .taille {
     font-size: 3em;
 }
@@ -155,6 +159,10 @@ header {
 .taille5 {
     font-size: 1em;
     opacity: 0.75;
+}
+
+.taille6 {
+    font-size: 1em;
 }
 
 .fw-9 {
@@ -222,7 +230,7 @@ section {
     min-height: 200px;
     top: 119px;
     z-index: 15;
-    box-shadow: 0 0.1em 3rem rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 0.1em 5rem rgba(0, 0, 0, 0.5) !important;
 }
 
 .sectionInfo {
@@ -316,18 +324,14 @@ section {
 
 .cardDescription {
     margin: 1em 0.5em 1em 0.5em;
+    height: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+
+
 
 /* -------------- btn cards -------------------*/
-
-margin-bottom.btnInfoCard {
-    left: 30%;
-    border-radius: 15px;
-    width: 95%;
-    height: 50px;
-    font-size: 1em;
-    margin: 10px;
-}
 
 .btn-prog {
     border-top-right-radius: 45px;
@@ -337,6 +341,17 @@ margin-bottom.btnInfoCard {
     position: absolute;
     right: 0;
     transform: translate(0%, -10%);
+}
+
+.div-btnInfoCard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnInfoCard {
+    width: 250px;
+    border-radius: 1rem;
 }
 
 /* ------------- List Programmes ----------------- */
@@ -585,6 +600,20 @@ select {
     padding: 0 5%;
 }
 
+.bouchon5 {
+    height: 120px;
+    width: 120px;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: translate(0, -119px);
+
+    background-color: rgba(0, 0, 0, 0.0);
+    background-image: radial-gradient(circle at 120px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 120px, rgb(240, 240, 240) 60px);
+
+}
+
 .bouchonNav {
     width: 100vw;
     height: 120px;
@@ -618,7 +647,6 @@ select {
 #accueil {
     padding: 3%;
     padding-top: 5%;
-    min-height: 2000px;
 }
 
 .pageTitre {
@@ -1170,17 +1198,92 @@ audio {
     transform: translate(-15%, 0%);
 }
 
+/* ----------- Page Nutrition ----------- */
+#infoNutrition {
+    padding: 0;
+}
+
+.imgNutri {
+    width: 100vw;
+    height: 35vh;
+}
+
+.infoNutri {
+    width: 100vw;
+    border-radius: 0 7rem 0 0;
+    background-color: rgb(240, 240, 240);
+
+    padding: 2% 5%;
+    margin: -8rem 0 0 0;
+
+    position: fixed;
+    z-index: 1010;
+}
+
+.titreNutri {
+    margin: 2rem 0 4rem 0;
+    text-decoration: underline;
+    line-height: 1;
+}
+
+.bodyNutri {
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.descriptionNutri {
+    margin: 0 0 3rem 0;
+    opacity: 0.8;
+}
+
+.listIngredient {
+    opacity: 0.8;
+}
+
 /* ----------- Page ----------- */
-.page1 {
+#page1 {
     background-color: rgb(240 240 240);
     position: absolute;
     z-index: 0;
 }
 
-.page2 {
+#page2 {
     background-color: rgb(240 240 240);
     position: fixed;
     z-index: 1000;
+}
+
+#page3 {
+    background-color: rgb(240 240 240);
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+}
+
+#pagination {
+    width: 390px;
+    overflow-x: scroll;
+    border-radius: 3rem;
+}
+
+.pagi-li {
+    height: 120px;
+    border: solid 0.3rem rgb(240 240 240);
+    background-color: #fff;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.pagi-liActive {
+    background-color: #ffc107;
+}
+
+.pagi-a {
+    width: 120px;
+    text-decoration: none;
+    color: rgb(0, 0, 0) !important;
 }
 
 /* ---------------------------- */

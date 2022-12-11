@@ -72,7 +72,7 @@
 
 
     <!--------------------------------------------------- Page 1 ------------------------------------------------>
-    <div class="page1 none">
+    <div class="none" id="page1">
         <!-- Tête d'affiche -->
 
         <div class="bloc bouchon1" id="teteBouchon"></div>
@@ -129,7 +129,7 @@
 
             <div class="input-group input-group-lg espaceH">
                 <input type="text" id="inputExo" class="form-control border-left" placeholder="Nom exercice"
-                    onKeyUp="filtreExo(this.value)">
+                    onKeyUp="filtreExo()">
                 <button class="btn btn-search border-right" type="button">Search</button>
             </div>
 
@@ -147,10 +147,10 @@
             <div class="div-info-btn">
                 <p class="taille2 opacity-50" id="nbExo"></p>
             </div>
+
             <div class="div-btn">
-                <button onClick="addLimit(this.value)" class="btn btn-ticket2 taille1">
-                    Ajouter 20 exercices
-                </button>
+                <ul class="pagination taille" id="pagination">
+                </ul>
             </div>
         </section>
 
@@ -215,10 +215,19 @@
 
     <!------------------------------------------------- Fin Page 1 ---------------------------------------------->
     <!--------------------------------------------------- Page 2 ------------------------------------------------>
-    <div class="page2 none">
+    <div class="none" id="page2">
         <!-------------------------------------------------------------------------------------------->
         <!---------------------------------------- Fiche résultat ------------------------------------>
         <section id="blocFicheResultat">
+        </section>
+    </div>
+
+    <!------------------------------------------------- Fin Page 2 ---------------------------------------------->
+    <!--------------------------------------------------- Page 2 ------------------------------------------------>
+    <div class="none" id="page3">
+        <!-------------------------------------------------------------------------------------------->
+        <!---------------------------------------- Fiche résultat ------------------------------------>
+        <section id="infoNutrition">
         </section>
     </div>
 
@@ -259,6 +268,7 @@
     <script src="js/BD.js"></script>
     <script src="js/funtion.js"></script>
     <script src="js/programmes.js"></script>
+    <script src="js/nutrition.js"></script>
 
     <!-------------------------------------------------------------------------------------------->
 </body>

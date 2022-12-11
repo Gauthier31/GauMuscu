@@ -18,26 +18,30 @@ if (window.screen.width >= 500) {
             <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
         </div>`;
 } else {
+    const LIMIT_EXO = 20;
+    var TableauFiltre = [];
+    var typeExo;
 
-    var limitExo = 0;
-    var nbExo = 0;
-
+    // Ajoute tous les id dans tableau
+    for (let i = 0; i < EXO.length; i++) {
+        TableauFiltre.push(EXO[i][0]);
+    }
 
     document.getElementById('tousExo').classList.add("typeActive");
 
-    getExercice();
+    getPagination();
+    pagination(1);
+
     getProgramme();
     getNutrition();
     getMusique();
-    addLimit();
 
     // Affichage masquage des blocs de sections
     page("accueil");
 
-
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////// Affiche la liste des exo ///////////////////////////////////////////////
-    function getExercice() {
+    function getListExercice() {
         let ligneExo = document.getElementById("ligneExo");
 
         for (i = 1; i < EXO.length; i++) {
@@ -69,6 +73,40 @@ if (window.screen.width >= 500) {
                     <div class="triangle1" onclick="addExo(` + i + `)"></div>
                 </div>`
         }
+    }
+
+    function getExercice(idExo) {
+        let ligneExo = document.getElementById("ligneExo");
+
+
+        ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
+        const tabStyle = EXO[idExo][3].split("-");
+
+        // catégorie
+        let classList = "";
+        for (j = 0; j < tabStyle.length - 1; j++) {
+            classList += tabStyle[j] + " ";
+        }
+        classList += tabStyle[j];
+
+        ligneExo.innerHTML +=
+            `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo][1].toUpperCase()
+            + ` ''" id="ligneExo` + EXO[idExo][0] + `">
+            
+                    <div class="ligne-img-bloc">
+                        <img class="ligne-img-left" src="document/exo/` + EXO[idExo][1] + `.jpg" 
+                            onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
+                    </div>
+        
+                    <div>
+                        <p class="taille1 fw-6 ligneTitre">` + EXO[idExo][1] + `</p>
+                        <div class="taille3 opacity-50">
+                            ` + classList + `
+                        </div>
+                    </div>
+                    
+                    <div class="triangle1" onclick="addExo(` + idExo + `)"></div>
+                </div>`
     }
 
     ///////////////////////////////// Met en place les programmes /////////////////////////////////////////////
@@ -112,27 +150,22 @@ if (window.screen.width >= 500) {
         let nutri = document.getElementById("cardsNutrition");
         var i;
 
-        for (i = 1; i < BD_Nutrition.length; i++) {
+        for (i = 1; i < NUTRITION.length; i++) {
 
             nutri.innerHTML +=
-                `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + BD_Nutrition[i][1].toUpperCase() + `'" id="Nutrition` + BD_Nutrition[i][0] + `">
+                `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i][1].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
                     <div class="card">
 
-                        <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + BD_Nutrition[i][1] + `.jpg"
-                                onerror="this.onerror=null; this.src='document/exo/` + BD_Nutrition[i][1] + `.gif'">
+                        <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + NUTRITION[i][1] + `.jpg"
+                                onerror="this.onerror=null; this.src='document/exo/` + NUTRITION[i][1] + `.gif'">
 
                         <div class="card-body">
-                            <p class="taille4 fw-9 depasse m-2">` + BD_Nutrition[i][1] + `</p>
+                            <p class="taille4 fw-9 depasse m-2">` + NUTRITION[i][1] + `</p>
 
-                            <div class="cardDescription taille5">
-                            Imperio conplures aliis et diluere aurem nec 
-                                        praedoctis reginae stimulis resedit resedit defen...
-                            </div>
-                            
-                            <!-- detail cut -->
+                            <p class="cardDescription taille5">` + NUTRITION[i][2] + `</p>
 
-                            <div>
-                                <button type="button" class="btn btn-warning btnInfoCard">
+                            <div class="div-btnInfoCard">
+                                <button type="button" class="btn btn-warning taille6 btnInfoCard" onClick="nutrition(` + i + `)">
                                     En savoir plus
                                 </button>
                             </div>
@@ -172,31 +205,74 @@ if (window.screen.width >= 500) {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
     function filtre(val) {
-        let i;
+        typeExo = val;
 
-        // On cache toute les cards
-        const cache = document.getElementsByClassName('tousExo');
-        for (i = 0; i < cache.length; i++) {
-            cache[i].classList.add("none");
-        }
-
-        // On affiche celle qui correspondent au filtre
-        const affiche = document.getElementsByClassName(val);
-        for (i = 0; i < affiche.length; i++) {
-            affiche[i].classList.remove("none");
-        }
-
-        const all = document.getElementsByClassName('type');
-        for (i = 0; i < all.length; i++) {
-            all[i].classList.remove("typeActive");
-
-        }
+        document.getElementsByClassName('typeActive')[0].classList.remove("typeActive");
 
         // On colorie le filtre
         const item = document.getElementById(val);
         item.classList.add("typeActive");
         item.style.transition = "background-color 0.5s";
 
+        filtreExo();
+    }
+
+    function filtreExo() {
+
+        let recherche = document.getElementById("inputExo").value;
+
+        TableauFiltre = []
+
+        for (let i = 1; i < EXO.length; i++) {
+            if (EXO[i][1].toLowerCase().includes(recherche.toLowerCase())
+                && EXO[i][3].includes(typeExo)) {
+                TableauFiltre.push(i);
+            }
+        }
+        getPagination();
+        pagination(1);
+    }
+
+    // Cache tout les programmes
+    function filtreProg(val) {
+
+        // On cache toute les cards
+        const cache = document.getElementsByClassName('tousProg');
+        for (i = 0; i < cache.length; i++) {
+            cache[i].classList.add("none");
+        }
+
+        filtre2Etape(val, "Prog");
+    }
+
+    // Cache tout les plats
+    function filtreNutri(val) {
+
+        // On cache toute les cards
+        const cache = document.getElementsByClassName('tousNutri');
+        for (i = 0; i < cache.length; i++) {
+            cache[i].classList.add("none");
+        }
+
+        filtre2Etape(val, "Nutri");
+    }
+
+    function filtre2Etape(val, obj) {
+
+        val = val.toUpperCase();
+
+        let classTxt;
+        const cache = document.getElementsByClassName('tous' + obj);
+
+        for (i = 0; i < cache.length; i++) {
+
+            filtreclass = cache[i].className.split("'");
+            classTxt = filtreclass[1];
+
+            if (classTxt.includes(val)) {
+                cache[i].classList.remove("none");
+            }
+        }
     }
 
     /////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
@@ -290,97 +366,67 @@ if (window.screen.width >= 500) {
 
     function gestionPage(numPage) {
 
-        const p1 = document.getElementsByClassName('page1');
-        const p2 = document.getElementsByClassName('page2');
+        const p1 = document.getElementById('page1');
+        const p2 = document.getElementById('page2');
+        const p3 = document.getElementById('page3');
 
         switch (numPage) {
             case 1:
 
-                p1[0].classList.remove("none");
-                p2[0].classList.add("gaucheOutClass");
-                setTimeout(masquePage2, 1000);
+                p1.classList.remove("none");
+                p2.classList.add("gaucheOutClass");
+                setTimeout(function () {
+                    masquePage(2);
+                }, 1000);
+
+                p3.classList.add("gaucheOutClass");
+                setTimeout(function () {
+                    masquePage(3);
+                }, 1000);
                 break;
 
             case 2:
 
-                p2[0].classList.add("gaucheInClass");
-                p2[0].classList.remove("none");
-                setTimeout(masquePage1, 1000);
+                p2.classList.add("gaucheInClass");
+                p2.classList.remove("none");
+                setTimeout(function () {
+                    masquePage(1);
+                }, 1000);
+                break;
+
+            case 3:
+
+                p3.classList.add("gaucheInClass");
+                p3.classList.remove("none");
+                setTimeout(function () {
+                    masquePage(1);
+                }, 1000);
                 break;
         }
 
     }
 
-    function masquePage1() {
-        const p1 = document.getElementsByClassName('page1');
-        //p1[0].classList.add("none");
+    function masquePage(numPage) {
 
-        const p2 = document.getElementsByClassName('page2');
-        p2[0].classList.remove("gaucheInClass");
-    }
+        const p1 = document.getElementById('page1');
+        const p2 = document.getElementById('page2');
+        const p3 = document.getElementById('page3');
 
-    function masquePage2() {
-        const p2 = document.getElementsByClassName('page2');
-        p2[0].classList.add("none");
-        p2[0].classList.remove("gaucheOutClass");
-    }
+        switch (numPage) {
+            case 1:
+                p2.classList.remove("gaucheInClass");
+                break;
 
-    function filtreExo(val) {
+            case 2:
+                p2.classList.add("none");
+                p2.classList.remove("gaucheOutClass");
+                break;
 
-        // On cache toute les cards
-        const cache = document.getElementsByClassName('tousExo');
-        for (i = 0; i < cache.length; i++) {
-            cache[i].classList.add("none");
+            case 3:
+                p3.classList.add("none");
+                p3.classList.remove("gaucheOutClass");
+                break;
         }
-
-        filtre2Etape(val, "Exo");
-    }
-
-    function filtreProg(val) {
-
-        // On cache toute les cards
-        const cache = document.getElementsByClassName('tousProg');
-        for (i = 0; i < cache.length; i++) {
-            cache[i].classList.add("none");
-        }
-
-        filtre2Etape(val, "Prog");
-    }
-
-    function filtreNutri(val) {
-
-        // On cache toute les cards
-        const cache = document.getElementsByClassName('tousNutri');
-        for (i = 0; i < cache.length; i++) {
-            cache[i].classList.add("none");
-        }
-
-        filtre2Etape(val, "Nutri");
-    }
-
-    function filtre2Etape(val, obj) {
-
-        val = val.toUpperCase();
-        nbExo = -999;
-        if (obj == "Exo") {
-            nbExo = 0;
-        }
-
-        let classTxt;
-        const cache = document.getElementsByClassName('tous' + obj);
-
-        for (i = 0; i < cache.length && nbExo < limitExo; i++) {
-
-            filtreclass = cache[i].className.split("'");
-            classTxt = filtreclass[1];
-
-            if (classTxt.includes(val)) {
-                cache[i].classList.remove("none");
-                nbExo++;
-            }
-        }
-
-        document.getElementById("nbExo").innerHTML = nbExo + " sur " + (EXO.length - 1);
     }
 
     function progCollapse(id) {
@@ -405,10 +451,46 @@ if (window.screen.width >= 500) {
 
     }
 
-    function addLimit() {
-        limitExo += 20;
+    // NB de page par rapport au tableau
+    function getPagination() {
 
-        let inputExo = document.getElementById("inputExo").value;
-        filtre2Etape(inputExo, "Exo")
+        const pagination = document.getElementById("pagination");
+
+        pagination.innerHTML =
+            `<li class="pagi-li" onClick="pagination(1)" id="pagi1">
+                    <a class="pagi-a" href=#teteBouchon>1</a>
+                </li>`;
+
+        for (let i = 2; (i - 1) * LIMIT_EXO < TableauFiltre.length; i++) {
+            pagination.innerHTML +=
+                `<li class="pagi-li" onClick="pagination(` + i + `)" id="pagi` + i + `">
+                    <a class="pagi-a" href=#teteBouchon>` + i + `</a>
+                </li>`;
+        }
+
+        document.getElementById('pagi1').classList.add("pagi-liActive");
     }
+
+    // Affiche par rapport a la page
+    function pagination(numPage) {
+        // On supprime les exos
+        document.getElementById("ligneExo").innerHTML = "";
+
+        let end = numPage * LIMIT_EXO;
+        let start = end - LIMIT_EXO + 1;
+        let i = start;
+
+        // Affiche l'exo compris dans le tableau
+        for (i; i < TableauFiltre.length && i < end; i++) {
+            getExercice(TableauFiltre[i]);
+        }
+
+        i = (i == TableauFiltre.length) ? i - 1 : i;
+
+        document.getElementById("nbExo").innerHTML = "de " + start + " à " + i;
+
+        document.getElementsByClassName("pagi-liActive")[0].classList.remove("pagi-liActive");
+        document.getElementById("pagi" + numPage).classList.add("pagi-liActive");
+    }
+
 }

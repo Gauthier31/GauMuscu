@@ -2,7 +2,7 @@
 var exo;                // num exo 
 var numExo = 1;         // enieme exo du programme
 var serie = 1;          // num serie 
-var numProg = 0         // Numéro du programme
+var numProg = -1         // Numéro du programme
 var newSerieNum = 0;    // Numéro de la série suivant en fonction de l'exo
 
 var totalTemps = 0;     // temps en sec
@@ -15,10 +15,13 @@ var boucle;
 // @numProg numéro du programme
 function programmes(numProgramme) {
 
-    numProg = numProgramme;
-
     gestionPage(2);
+    // si prog déja lancé
+    if (numProg == numProgramme) {
+        return;
+    }
 
+    numProg = numProgramme;
     const f1 = document.getElementById('blocFicheResultat');
 
     f1.innerHTML = "";
@@ -263,7 +266,7 @@ function ficheInitialisation(numProg) {
 function ticket1Up_Down() {
 
     const ticket1 = document.getElementById("ticket1");
-    const page2 = document.getElementsByClassName("page2");
+    const page2 = document.getElementById("page2");
 
     if (ticket1.className == "ticket1 ticket1_Down") {
 
@@ -271,14 +274,14 @@ function ticket1Up_Down() {
         ticket1.classList.add("ticket1_Up");
         ticket1.style.transition = "margin-top 1s";
 
-        page2[0].style.zIndex = "1050";
+        page2.style.zIndex = "1050";
 
     } else {
         ticket1.classList.remove("ticket1_Up");
         ticket1.classList.add("ticket1_Down");
         ticket1.style.transition = "margin-top 1s";
 
-        page2[0].style.zIndex = "1000";
+        page2.style.zIndex = "1000";
     }
 }
 
@@ -575,7 +578,7 @@ function fiche(exoActu, serieActu) {
 function addExo(numExo) {
 
     // si prog lancer alors on l'ajoute sinon on let mets au prog par defaut
-    if (numProg != 0) {
+    if (numProg != -1) {
 
         gestionPage(2);
         // Si exo déja pas comprise dans le tableau alors on l'ajoute
@@ -683,7 +686,7 @@ function addExo(numExo) {
 
     } else {
         const count = PROGRAMME[0].push(numExo);
-        programmes(numProg);
+        programmes(0);
     }
 }
 
