@@ -87,7 +87,6 @@ if (window.screen.width >= 500) {
         for (j = 0; j < tabStyle.length - 1; j++) {
             classList += tabStyle[j] + " ";
         }
-        classList += tabStyle[j];
 
         ligneExo.innerHTML +=
             `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo][1].toUpperCase()
