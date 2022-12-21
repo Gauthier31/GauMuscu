@@ -88,12 +88,13 @@ if (window.screen.width >= 500) {
             classList += tabStyle[j] + " ";
         }
 
+        // ` + EXO[idExo][1] + `
         ligneExo.innerHTML +=
             `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo][1].toUpperCase()
             + ` ''" id="ligneExo` + EXO[idExo][0] + `">
             
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + EXO[idExo][1] + `.jpg" 
+                        <img class="ligne-img-left" src="document/exo/defautExo.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
@@ -481,9 +482,11 @@ if (window.screen.width >= 500) {
 
         // Affiche l'exo compris dans le tableau
         for (i; i < TableauFiltre.length && i < end; i++) {
+            console.log(i);
             getExercice(TableauFiltre[i]);
         }
 
+        // si fin du tableau  -1 sur la longeur
         i = (i == TableauFiltre.length) ? i - 1 : i;
 
         document.getElementById("nbExo").innerHTML = "de " + start + " à " + i;
