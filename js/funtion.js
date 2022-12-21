@@ -18,6 +18,7 @@ if (window.screen.width >= 500) {
             <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
         </div>`;
 } else {
+
     const LIMIT_EXO = 20;
     var TableauFiltre = [];
     var typeExo;
@@ -277,6 +278,13 @@ if (window.screen.width >= 500) {
 
     /////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
     function page(val) {
+
+        if (window.screen.width >= 500) {
+            document.getElementById("body").innerHTML =
+                `<div class="noPhone">
+                    <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
+                </div>`;
+        }
 
         closeNavBar();
 
