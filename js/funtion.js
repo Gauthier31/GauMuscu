@@ -284,7 +284,9 @@ if (window.screen.width >= 500) {
                 `<div class="noPhone">
                     <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
                 </div>`;
+            document.getElementById("test").innerHTML += "1";
         }
+        document.getElementById("test").innerHTML += "2";
 
         closeNavBar();
 
