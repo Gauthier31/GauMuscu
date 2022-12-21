@@ -89,13 +89,13 @@ function getExercice(idExo) {
         classList += tabStyle[j] + " ";
     }
 
-    // ` + EXO[idExo][1] + `
+    // 
     ligneExo.innerHTML +=
         `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo][1].toUpperCase()
         + ` ''" id="ligneExo` + EXO[idExo][0] + `">
             
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/defautExo.jpg" 
+                        <img class="ligne-img-left" src="document/exo/` + EXO[idExo][1] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
