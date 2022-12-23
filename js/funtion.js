@@ -157,8 +157,10 @@ function getNutrition() {
             `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i][1].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
                     <div class="card">
 
-                        <img class="card-img-bloc" mx-auto d-block" src="document/nutrition/` + NUTRITION[i][1] + `.jpg"
-                                onerror="this.onerror=null; this.src='document/exo/` + NUTRITION[i][1] + `.gif'">
+                        <div class="card-img-bloc">
+                            <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITION[i][1] + `.jpg"
+                                        onerror="this.onerror=null; this.src='document/exo/` + NUTRITION[i][1] + `.gif'">
+                        </div>
 
                         <div class="card-body">
                             <p class="taille4 fw-9 depasse m-2">` + NUTRITION[i][1] + `</p>
@@ -483,7 +485,6 @@ function pagination(numPage) {
 
     // Affiche l'exo compris dans le tableau
     for (i; i < TableauFiltre.length && i < end; i++) {
-        console.log(i);
         getExercice(TableauFiltre[i]);
     }
 

@@ -36,10 +36,13 @@ function programmes(numProgramme) {
 
         let tab = "";
 
-        // On mets en place les lignes du tableau de l'exo
-        for (j = 1; j < STAT[PROGRAMME[numProg][i]].length; j += 2) {
 
-            exoTab = PROGRAMME[numProg][i];
+        idExo = (PROGRAMME[numProg][i] < STAT.length) ? PROGRAMME[numProg][i] : 0;
+
+        // On mets en place les lignes du tableau de l'exo
+        for (j = 1; j < STAT[idExo].length; j += 2) {
+
+            exoTab = idExo;
             serieTab = (j + 1) / 2;
 
             tab +=
@@ -591,10 +594,12 @@ function addExo(numExo) {
 
             let tab = "";
 
-            // On mets en place les lignes du tableau
-            for (j = 1; j < STAT[numExo].length; j += 2) {
+            numExoStat = (numExo < STAT.length) ? numExo : 0;
 
-                exoTab = numExo;
+            // On mets en place les lignes du tableau
+            for (j = 1; j < STAT[numExoStat].length; j += 2) {
+
+                exoTab = numExoStat;
                 serieTab = (j + 1) / 2;
 
                 tab +=

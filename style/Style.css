@@ -235,7 +235,7 @@ section {
 
 .sectionInfo {
     padding-top: 5%;
-    min-height: 2000px;
+    /*min-height: 2000px;*/
 }
 
 /* -------------- Cards -------------------*/
@@ -247,10 +247,22 @@ section {
 }
 
 .card-img-bloc {
-    margin: 5% 5% 0% 5%;
+    position: relative;
     height: 250px;
-    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    margin: 5% 5% 0% 5%;
     border-radius: 15px;
+}
+
+.card-img {
+    background-color: rgb(255, 255, 255);
+
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    right: -9999px;
+    bottom: -9999px;
+    margin: auto;
 }
 
 .card-img-top {
@@ -1205,7 +1217,6 @@ audio {
 
 .imgNutri {
     width: 100vw;
-    height: 35vh;
 }
 
 .infoNutri {
@@ -1218,6 +1229,8 @@ audio {
 
     position: fixed;
     z-index: 1010;
+    height: 60vh;
+    overflow-y: scroll;
 }
 
 .titreNutri {
@@ -1237,7 +1250,7 @@ audio {
 }
 
 .listIngredient {
-    opacity: 0.8;
+    padding: 0 0 0 3rem;
 }
 
 /* ----------- Page ----------- */

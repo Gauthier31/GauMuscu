@@ -124,16 +124,16 @@ const EXO = [
     [35, "Abdominal crunch", "defautExo.jpg", "abdominaux-tousExo",
         "description"],
 
-    [36, "Abduction leg lying, split (gauche / droite)", "defautExo.jpg", "jambes-tousExo",
+    [36, "Abduction leg lying, split (gauche - droite)", "defautExo.jpg", "jambes-tousExo",
         "description"],
 
     [37, "Abdominal knees up, low handle", "defautExo.jpg", "abdominaux-tousExo",
         "description"],
 
-    [38, "Abdominal straight jambes", "defautExo.jpg", "abdominaux-tousExo",
+    [38, "Abdominal straight legs", "defautExo.jpg", "abdominaux-tousExo",
         "description"],
 
-    [39, "Lunge, alternated", "defautExo.jpg", "jambes-tousExo",
+    [39, "Fente, alterné", "defautExo.jpg", "jambes-tousExo",
         "description"],
 
     [40, "Squat", "defautExo.jpg", "jambes-tousExo",
@@ -154,7 +154,7 @@ const EXO = [
     [45, "Arnold press seated", "defautExo.jpg", "épaules-tousExo",
         "description"],
 
-    [46, "Back extension, machine / ground", "defautExo.jpg", "dos-tousExo",
+    [46, "Back extension, machine - ground", "defautExo.jpg", "dos-tousExo",
         "description"],
 
     [47, "Balance, standing", "defautExo.jpg", "abdominaux-jambes-tousExo",
@@ -175,7 +175,7 @@ const EXO = [
     [52, "Bent over row", "defautExo.jpg", "dos-tousExo",
         "description"],
 
-    [53, "Bent over row, split (gauche / droite)", "defautExo.jpg", "dos-tousExo",
+    [53, "Bent over row, split (gauche - droite)", "defautExo.jpg", "dos-tousExo",
         "description"],
 
     [54, "Bent over row, standing", "defautExo.jpg", "dos-tousExo",
@@ -196,7 +196,7 @@ const EXO = [
     [59, "Bird dog", "defautExo.jpg", "abdominaux-tousExo",
         "description"],
 
-    [60, "Bird dog, standing (gauche / droite)", "defautExo.jpg", "abdominaux-tousExo",
+    [60, "Bird dog, standing (gauche - droite)", "defautExo.jpg", "abdominaux-tousExo",
         "description"],
 
     [61, "Bottom up press", "defautExo.jpg", "abdominaux-tousExo",
@@ -205,7 +205,7 @@ const EXO = [
     [62, "Box jumps", "defautExo.jpg", "jambes-tousExo",
         "description"],
 
-    [63, "Bulgarian split squat (gauche / droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [63, "Bulgarian split squat (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
     [64, "Burpees", "defautExo.jpg", "cardio-abdominaux-jambes-tousExo",
@@ -232,13 +232,13 @@ const EXO = [
     [71, "Chest press, lower grip 2 mains", "defautExo.jpg", "pectoraux-tousExo",
         "description"],
 
-    [72, "Chest press, lower grip split (gauche / droite)", "defautExo.jpg", "pectoraux-tousExo",
+    [72, "Chest press, lower grip split (gauche - droite)", "defautExo.jpg", "pectoraux-tousExo",
         "description"],
 
     [73, "Chest press, upper grip 2 mains", "defautExo.jpg", "pectoraux-tousExo",
         "description"],
 
-    [74, "Chest press, upper grip split (gauche / droite)", "defautExo.jpg", "pectoraux-tousExo",
+    [74, "Chest press, upper grip split (gauche - droite)", "defautExo.jpg", "pectoraux-tousExo",
         "description"],
 
     [75, "Chest press, wide grip", "defautExo.jpg", "pectoraux-tousExo",
@@ -286,22 +286,22 @@ const EXO = [
     [89, "Diverging lat pull down, 2 mains", "defautExo.jpg", "bras-tousExo",
         "description"],
 
-    [90, "Elbow, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [90, "Elbow, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
-    [91, "Donkey kick, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [91, "Donkey kick, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
-    [92, "Glute kickback, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [92, "Glute kickback, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
     [93, "Glutes", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
-    [94, "Glutes raise, alternated", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [94, "Glutes raise, alterné", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
-    [95, "Goblet squat, split (gauche / droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [95, "Goblet squat, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
     [96, "Goblet squat", "defautExo.jpg", "jambes-tousExo",
@@ -310,7 +310,7 @@ const EXO = [
     [97, "Goodmorning", "defautExo.jpg", "dos-jambes-tousExo",
         "description"],
 
-    [98, "Hip trust, (haltère / machine)", "defautExo.jpg", "fessiers-jambes-tousExo",
+    [98, "Hip trust, (haltère - machine)", "defautExo.jpg", "fessiers-jambes-tousExo",
         "description"],
 
     [99, "Reverse crunch", "defautExo.jpg", "abdominaux-tousExo",
@@ -336,7 +336,7 @@ const STAT = [
     // [n°exo, nbRep1, poid1, nbRep2, poid1, nbRep3, poid3, nbRep4, poid4]
 
     // Nom bouchon
-    [0, 12, 10],
+    [0, 0, 0],
 
     // Développé couché avec haltères
     [1, 12, 20, 12, 20, 12, 20, 12, 20],
@@ -408,27 +408,7 @@ const STAT = [
     // Triceps
     [33, 12, 15, 12, 15, 12, 15, 12, 15],
 
-    /////////////////// ABS /////////////////////
-    // Laying leg flutters
-
-    // Jack knife
-
-    // Boat hold
-
-    // Wind shield wipers
-
-    // Star crunches
-
-    // Seated in and outs
-
-    // Russian twists
-
-    // Bicycles
-
-    // Mountain Climbers
-
-    // Each side plank reach through
-
+    [34, 12, 15],
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -454,8 +434,6 @@ const PROGRAMME = [
     // Jambe Juliette
     ["Jambe (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],
 
-    //test
-    //["Test", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
 ];
 
 const NUTRITION = [
@@ -464,8 +442,8 @@ const NUTRITION = [
     [0, "titre", "description", "ingredient"],
 
     // Plat 1
-    [1, "Shaker", "Petit shaker qui contient ~~ de protéines et ~~ de glucides, à prendre tout les matins",
-        "Une banane |200ml de lait |80g de flocon d'avoine |Une grande cuillère de beurre de cacacuète |300ml d'eau |Une petite cuillère de sirop d'agave |Une portion de protéines"],
+    [1, "Shaker", "Shaker à prendre tout les matins <br/>1,312 de <b>Kcal</b> <br/>60g de <b>protéines</b> <br/>150g de <b>glucides</b> <br/>50g de <b>lipides</b>",
+        "Une banane |200ml de lait |80g de flocon d'avoine |Une grande cuillère de beurre de cacacuète |300ml d'eau |Une petite cuillère de sirop d'agave |Une portion de protéines | Mixer le tout pendant 1 minutes"],
 
 ];
 
