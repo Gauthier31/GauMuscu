@@ -227,7 +227,6 @@ section {
 
 .sectionTitre {
     position: sticky;
-    min-height: 200px;
     top: 119px;
     z-index: 15;
     box-shadow: 0 0.1em 5rem rgba(0, 0, 0, 0.5) !important;
@@ -235,7 +234,10 @@ section {
 
 .sectionInfo {
     padding-top: 5%;
-    /*min-height: 2000px;*/
+}
+
+.text-center {
+    margin: 0;
 }
 
 /* -------------- Cards -------------------*/
@@ -252,6 +254,14 @@ section {
     overflow: hidden;
     margin: 5% 5% 0% 5%;
     border-radius: 15px;
+}
+
+.card-img-bloc2 {
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-img {
@@ -273,13 +283,13 @@ section {
     padding: 5% 0 5% 0;
 }
 
-.card-img-bloc2 {
-    height: 450px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cardDescription {
+    margin: 1em 0.5em 1em 0.5em;
+    height: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+
 
 .detail {
     height: 280px;
@@ -326,22 +336,12 @@ section {
     overflow-y: scroll;
 }
 
-
 .img-muscle {
     max-width: 400px;
     max-height: 400px;
     float: right;
     border: solid;
 }
-
-.cardDescription {
-    margin: 1em 0.5em 1em 0.5em;
-    height: 150px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-
 
 /* -------------- btn cards -------------------*/
 
@@ -443,6 +443,10 @@ select {
 
 .espaceH {
     margin-top: 1em;
+}
+
+.espace {
+    margin: 2rem 0;
 }
 
 /* -------------- btn Modal -------------------*/
@@ -623,7 +627,11 @@ select {
 
     background-color: rgba(0, 0, 0, 0.0);
     background-image: radial-gradient(circle at 120px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 120px, rgb(240, 240, 240) 60px);
+}
 
+/* img page 3 */
+.bouchon6 {
+    height: 980px;
 }
 
 .bouchonNav {
@@ -1040,7 +1048,7 @@ input {
 /* ------------------------ */
 .gaucheInClass {
     position: relative;
-    animation: gaucheIn 1s;
+    animation: gaucheIn 0.7s;
 }
 
 @keyframes gaucheIn {
@@ -1055,7 +1063,7 @@ input {
 
 .gaucheOutClass {
     position: relative;
-    animation: gaucheOut 1s;
+    animation: gaucheOut 0.7s;
 }
 
 @keyframes gaucheOut {
@@ -1217,26 +1225,36 @@ audio {
 
 .imgNutri {
     width: 100vw;
+    position: sticky;
+    top: 0px;
 }
 
 .infoNutri {
-    width: 100vw;
-    border-radius: 0 7rem 0 0;
-    background-color: rgb(240, 240, 240);
+    margin-top: -8rem;
+    position: relative;
 
-    padding: 2% 5%;
-    margin: -8rem 0 0 0;
-
-    position: fixed;
     z-index: 1010;
-    height: 60vh;
-    overflow-y: scroll;
+}
+
+.nutriBlocTitre {
+    border-top-right-radius: 7rem;
+    background-color: rgb(240, 240, 240);
+    padding: 2% 5%;
+
+    position: sticky;
+    top: 120px;
+    z-index: 1020;
+}
+
+.nutriBlocText {
+    min-height: 83vh;
+    background-color: rgb(240, 240, 240);
+    padding: 5%;
 }
 
 .titreNutri {
-    margin: 2rem 0 4rem 0;
+    margin: 2rem 0 0 0;
     text-decoration: underline;
-    line-height: 1;
 }
 
 .bodyNutri {
@@ -1254,21 +1272,20 @@ audio {
 }
 
 /* ----------- Page ----------- */
-#page1 {
+.page {
     background-color: rgb(240 240 240);
     position: absolute;
+}
+
+#page1 {
     z-index: 0;
 }
 
 #page2 {
-    background-color: rgb(240 240 240);
-    position: fixed;
     z-index: 1000;
 }
 
 #page3 {
-    background-color: rgb(240 240 240);
-    position: fixed;
     z-index: 1000;
     height: 100vh;
 }

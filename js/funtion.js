@@ -133,7 +133,7 @@ function getProgramme() {
                         <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(` + i + `)"
                         
                         type="button" data-bs-toggle="collapse" data-bs-target="#progList` + i + `"
-                        aria-controls="progList` + i + `" aria-expanded="false" aria-label="Toggle progList` + i + `">
+                        aria-controls="progList` + i + `" aria-expanded="false">
 
                             <i class="fa-solid fa-chevron-down"></i>
                             <i class="fa-solid fa-chevron-up none"></i>
@@ -380,12 +380,12 @@ function gestionPage(numPage) {
             p2.classList.add("gaucheOutClass");
             setTimeout(function () {
                 masquePage(2);
-            }, 1000);
+            }, 700);
 
             p3.classList.add("gaucheOutClass");
             setTimeout(function () {
                 masquePage(3);
-            }, 1000);
+            }, 700);
             break;
 
         case 2:
@@ -394,7 +394,7 @@ function gestionPage(numPage) {
             p2.classList.remove("none");
             setTimeout(function () {
                 masquePage(1);
-            }, 1000);
+            }, 700);
             break;
 
         case 3:
@@ -403,7 +403,7 @@ function gestionPage(numPage) {
             p3.classList.remove("none");
             setTimeout(function () {
                 masquePage(1);
-            }, 1000);
+            }, 700);
             break;
     }
 
@@ -450,8 +450,22 @@ function progCollapse(id) {
 
         bloc.getElementsByClassName("list-group-item")[0].classList.remove("list-titre-bloc");
     }
+}
 
+function filtreCollapse(obj) {
 
+    let icon = obj.getElementsByClassName("fa-solid")[0].classList;
+
+    if (obj.value == "up") {
+        obj.value = "down";
+        icon.remove("fa-chevron-up");
+        icon.add("fa-chevron-down");
+
+    } else {
+        obj.value = "up";
+        icon.remove("fa-chevron-down");
+        icon.add("fa-chevron-up");
+    }
 }
 
 // NB de page par rapport au tableau
