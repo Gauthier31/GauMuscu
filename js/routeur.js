@@ -110,7 +110,7 @@ function gestionPage(numPage) {
         case 2:
 
             p2.classList.add("gaucheInClass");
-            p2.classList.remove("none");
+            p2.classList.remove("hidden");
             setTimeout(function () {
                 masquePage(1);
             }, 700);
@@ -119,7 +119,7 @@ function gestionPage(numPage) {
         case 3:
 
             p3.classList.add("gaucheInClass");
-            p3.classList.remove("none");
+            p3.classList.remove("hidden");
             setTimeout(function () {
                 masquePage(1);
             }, 700);
@@ -142,12 +142,12 @@ function masquePage(numPage) {
             break;
 
         case 2:
-            p2.classList.add("none");
+            p2.classList.add("hidden");
             p2.classList.remove("gaucheOutClass");
             break;
 
         case 3:
-            p3.classList.add("none");
+            p3.classList.add("hidden");
             p3.classList.remove("gaucheOutClass");
             break;
     }

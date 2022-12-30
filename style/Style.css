@@ -1046,6 +1046,10 @@ input {
     display: none;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .block {
     display: block;
 }
