@@ -37,10 +37,8 @@ function programmes(numProgramme) {
         let tab = "";
 
 
-        idExoStat = (PROGRAMME[numProg][i] < STAT.length) ? PROGRAMME[numProg][i] : 0;
-
         // On mets en place les lignes du tableau de l'exo
-        for (j = 1; j < STAT[idExoStat].length; j += 2) {
+        for (j = 1; j < STAT[PROGRAMME[numProg][i]].length; j += 2) {
 
             exoTab = PROGRAMME[numProg][i];
             serieTab = (j + 1) / 2;
@@ -51,13 +49,13 @@ function programmes(numProgramme) {
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
-                        <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + STAT[idExoStat][j] + `</p> -->
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[idExoStat][j] + `">
+                        <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + STAT[exoTab][j] + `</p> -->
+                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
-                        <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + STAT[idExoStat][j + 1] + `</p> -->
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[idExoStat][j + 1] + `">
+                        <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + STAT[exoTab][j + 1] + `</p> -->
+                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
@@ -137,7 +135,7 @@ function programmes(numProgramme) {
 
     f1.innerHTML +=
         `<div class="ticket0">
-            <div class="bouchonNav orange">
+            <div class="bouchonNavProg orange">
                 <div class="nav2">
                     <p class="taille">GauMuscu</p>
                     <i class="fa-solid fa-bars taille"></i>
@@ -391,11 +389,9 @@ function addSerie() {
 
     var tab = document.getElementById(exo + "_statModule");
 
-    if (newSerieNum == 0) {
-        newSerieNum = (STAT[exo].length + 1) / 2;
-    } else {
-        newSerieNum++;
-    }
+    // calcul du num de la nouvelle série
+    newSerieNum = (STAT[exo].length + 1) / 2;
+    STAT[exo].push(0, 0);
 
     tab.innerHTML +=
         `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `">
@@ -594,10 +590,8 @@ function addExo(numExo) {
 
             let tab = "";
 
-            numExoStat = (numExo < STAT.length) ? numExo : 0;
-
             // On mets en place les lignes du tableau
-            for (j = 1; j < STAT[numExoStat].length; j += 2) {
+            for (j = 1; j < STAT[numExo].length; j += 2) {
 
                 exoTab = numExo;
                 serieTab = (j + 1) / 2;
@@ -608,11 +602,11 @@ function addExo(numExo) {
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[numExoStat][j] + `">
+                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[numExoStat][j + 1] + `">
+                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">

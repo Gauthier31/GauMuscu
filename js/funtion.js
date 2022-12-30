@@ -21,7 +21,7 @@ if (window.screen.width >= 500) {
 */
 const LIMIT_EXO = 20;
 var TableauFiltre = [];
-var typeExo;
+var typeExo = "tousExo";
 
 // Ajoute tous les id dans tableau
 for (let i = 0; i < EXO.length; i++) {
@@ -36,6 +36,7 @@ pagination(1);
 getProgramme();
 getNutrition();
 getMusique();
+putStat();
 
 // Affichage masquage des blocs de sections
 page("accueil");
@@ -129,16 +130,14 @@ function getProgramme() {
             `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + PROGRAMME[i][0].toUpperCase() + `'">
                     <ol class="list-group" id="prog` + i + `">
                     <li class="list-group-item taille list-titre-bloc">
-                        <p class="list-titre depasse">` + PROGRAMME[i][0] + `</p>
-                        <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(` + i + `)"
-                        
+                        <p class="list-titre depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + `</p>
+
+                        <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(this)"
                         type="button" data-bs-toggle="collapse" data-bs-target="#progList` + i + `"
                         aria-controls="progList` + i + `" aria-expanded="false">
 
                             <i class="fa-solid fa-chevron-down"></i>
-                            <i class="fa-solid fa-chevron-up none"></i>
                         </button>
-                        <button type="button" class="btn orange btn-prog" onclick="programmes(` + i + `)">C'est parti</button>
                     </li>
                     <div class="list-exo collapse" id="progList` + i + `">` + txt + `</div>   
                     </ol>
@@ -206,6 +205,13 @@ function setMusique() {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function putStat() {
+    for (let i = STAT.length; i < EXO.length; i++) {
+        STAT.push([i, 0, 0]);
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
 function filtre(val) {
     typeExo = val;
@@ -224,7 +230,7 @@ function filtreExo() {
 
     let recherche = document.getElementById("inputExo").value;
 
-    TableauFiltre = []
+    TableauFiltre = [0];
 
     for (let i = 1; i < EXO.length; i++) {
         if (EXO[i][1].toLowerCase().includes(recherche.toLowerCase())
@@ -232,6 +238,7 @@ function filtreExo() {
             TableauFiltre.push(i);
         }
     }
+
     getPagination();
     pagination(1);
 }
@@ -279,21 +286,22 @@ function filtre2Etape(val, obj) {
 }
 
 ////////////////////////////////////// Collapse /////////////////////////////////////
-function progCollapse(id) {
+function progCollapse(obj) {
 
-    const bloc = document.getElementById("prog" + id);
-    const btn = document.getElementById("progBtn" + id);
+    const bloc = document.getElementById("prog" + obj.id.substring(7));
+    let icon = obj.getElementsByClassName("fa-solid")[0].classList;
 
-    if (btn.value == "up") {
-        btn.getElementsByClassName("fa-chevron-up")[0].classList.add("none");
-        btn.getElementsByClassName("fa-chevron-down")[0].classList.remove("none");
-        btn.value = "down";
+    if (obj.value == "up") {
+        obj.value = "down";
+        icon.remove("fa-chevron-up");
+        icon.add("fa-chevron-down");
 
         bloc.getElementsByClassName("list-group-item")[0].classList.add("list-titre-bloc");
+
     } else {
-        btn.getElementsByClassName("fa-chevron-down")[0].classList.add("none");
-        btn.getElementsByClassName("fa-chevron-up")[0].classList.remove("none");
-        btn.value = "up";
+        obj.value = "up";
+        icon.remove("fa-chevron-down");
+        icon.add("fa-chevron-up");
 
         bloc.getElementsByClassName("list-group-item")[0].classList.remove("list-titre-bloc");
     }

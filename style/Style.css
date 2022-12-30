@@ -384,8 +384,9 @@ section {
     border-radius: 0 0 50px 50px;
 }
 
+
 .list-titre {
-    width: 500px;
+    width: 100%;
     margin: 0;
 }
 
@@ -546,7 +547,7 @@ select {
 /* ----------- id: Section ----------------- */
 
 .bouchon1 {
-    height: 800px;
+    height: 680px;
     z-index: -2;
 }
 
@@ -634,11 +635,15 @@ select {
     height: 980px;
 }
 
-.bouchonNav {
+.bouchonNavProg {
     width: 100vw;
     height: 120px;
     border-radius: 0 0 100px 100px;
     position: absolute;
+}
+
+.bouchonNav {
+    height: 120px;
 }
 
 .nav2 {
@@ -705,7 +710,7 @@ select {
     min-height: 75%;
     max-width: 100%;
     width: auto;
-    padding: 5%;
+    padding: 3%;
 }
 
 .ligne-txt {
@@ -1275,6 +1280,7 @@ audio {
 .page {
     background-color: rgb(240 240 240);
     position: absolute;
+    top: 0;
 }
 
 #page1 {
@@ -1293,7 +1299,6 @@ audio {
 #pagination {
     width: 390px;
     overflow-x: scroll;
-    border-radius: 3rem;
 }
 
 .pagi-li {
@@ -1304,6 +1309,7 @@ audio {
     display: flex;
     text-align: center;
     align-items: center;
+    border-radius: 2rem;
 }
 
 .pagi-liActive {
