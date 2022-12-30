@@ -154,7 +154,7 @@ function getNutrition() {
 
         nutri.innerHTML +=
             `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i][1].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
-                    <div class="card">
+                    <div class="card" onClick="nutrition(` + i + `)">
 
                         <div class="card-img-bloc">
                             <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITION[i][1] + `.jpg"
@@ -166,11 +166,13 @@ function getNutrition() {
 
                             <p class="cardDescription taille5">` + NUTRITION[i][2] + `</p>
 
+                            <!--
                             <div class="div-btnInfoCard">
                                 <button type="button" class="btn btn-warning taille6 btnInfoCard" onClick="nutrition(` + i + `)">
                                     En savoir plus
                                 </button>
                             </div>
+                            -->
 
                         </div>
                     </div>

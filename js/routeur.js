@@ -36,7 +36,14 @@ function page(rout) {
 function page(val) {
 
     closeNavBar();
-    gestionPage(1);
+    // on devine de quelle page on vient
+    let page = document.getElementsByClassName("page");
+
+    // Si on est pas sur la page 1
+    if (page[0].className == "page none") {
+        console.log("go page 1");
+        gestionPage(1);
+    }
 
     // Masque Les sections
     const masque = document.getElementsByClassName('bloc');

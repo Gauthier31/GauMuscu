@@ -1249,6 +1249,10 @@ audio {
     position: sticky;
     top: 120px;
     z-index: 1020;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nutriBlocText {
@@ -1258,7 +1262,7 @@ audio {
 }
 
 .titreNutri {
-    margin: 2rem 0 0 0;
+    margin: 0;
     text-decoration: underline;
 }
 
@@ -1322,4 +1326,4 @@ audio {
     color: rgb(0, 0, 0) !important;
 }
 
-/* ---------------------------- */
+/* --------------- position ------------- */

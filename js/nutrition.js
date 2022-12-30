@@ -21,8 +21,9 @@ function nutrition(identifiantNutri) {
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
 
                 <div class="infoNutri">
-                    <div class="nutriBlocTitre">
-                        <p class="titreNutri taille0"> ` + NUTRITION[idNutri][1] + ` </p>
+                    <div class="nutriBlocTitre taille0">
+                        <p class="titreNutri"> ` + NUTRITION[idNutri][1] + ` </p>
+                        <i class="fa-solid fa-angle-left" onClick="gestionPage(1)"></i>
                         <div class="bouchon5"></div>
                     </div>
 
