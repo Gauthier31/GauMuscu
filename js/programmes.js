@@ -134,7 +134,7 @@ function programmes(numProgramme) {
 
 
     f1.innerHTML +=
-        `<div class="ticket0">
+        `<div class="ticket0">   
             <div class="bouchonNavProg orange">
                 <div class="nav2">
                     <p class="taille">GauMuscu</p>
@@ -194,7 +194,7 @@ function programmes(numProgramme) {
 
                             ` + listExoInfo + `
 
-                        </div >
+                        </div>
 
                         <div id="exoFooter" class="exoFooter">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
@@ -210,29 +210,29 @@ function programmes(numProgramme) {
 
                         <div class="bouchon3"></div>
                     
-                    </div > 
+                    </div> 
                 
-                </div >
-            </div >
-
-
-        <div id="ticket2" class="ticket2 ticket2_Down">
-            <div class="bloc-tiret" onclick="ticket2Up_Down()">
-                <div class="tiret"></div>
-            </div>
-
-            <div class="detail4_Up">
-                <div id="detail4">
-                    ` + listExo + `
-                </div>
-
-                <div class="div-btn">
-                    <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                 </div>
             </div>
 
-        </div>
-        </div > `;
+
+            <div id="ticket2" class="ticket2 ticket2_Down">
+                <div class="bloc-tiret" onclick="ticket2Up_Down()">
+                    <div class="tiret"></div>
+                </div>
+
+                <div class="detail4_Up">
+                    <div id="detail4">
+                        ` + listExo + `
+                    </div>
+
+                    <div class="div-btn">
+                        <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
+                    </div>
+                </div>
+
+            </div>
+        </div> `;
 
     // On affiche et color
     document.getElementById("Info_Exo" + PROGRAMME[numProg][1]).classList.remove("none");

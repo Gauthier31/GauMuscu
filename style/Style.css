@@ -12,9 +12,6 @@ body {
 
     padding: 0 !important;
     margin: 0 !important;
-
-    width: 100vw;
-    height: 100vh;
 }
 
 .noPhone {
@@ -738,8 +735,6 @@ select {
 /* ----------- Page Exo du prog ---------------*/
 #blocFicheResultat {
     padding: 0;
-    overflow: hidden;
-    background-color: rgb(240, 240, 240);
     height: 2120px;
 }
 
@@ -759,6 +754,9 @@ select {
     width: 100vw;
     height: 89vh;
     overflow-y: hidden;
+
+    position: fixed;
+    background-color: rgb(240, 240, 240);
 }
 
 .ticket1,
@@ -1056,8 +1054,9 @@ input {
 
 /* ------------------------ */
 .gaucheInClass {
-    position: relative;
+    /*position: relative;*/
     animation: gaucheIn 0.7s;
+    top: 0;
 }
 
 @keyframes gaucheIn {
@@ -1071,7 +1070,7 @@ input {
 }
 
 .gaucheOutClass {
-    position: relative;
+    /*position: relative;*/
     animation: gaucheOut 0.7s;
 }
 
