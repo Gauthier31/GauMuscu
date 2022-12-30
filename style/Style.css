@@ -736,6 +736,7 @@ select {
 #blocFicheResultat {
     padding: 0;
     height: 2120px;
+    overflow: hidden;
 }
 
 #ficheResultat {
