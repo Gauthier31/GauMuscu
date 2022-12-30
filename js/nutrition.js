@@ -23,7 +23,7 @@ function nutrition(identifiantNutri) {
                 <div class="infoNutri">
                     <div class="nutriBlocTitre taille0">
                         <p class="titreNutri"> ` + NUTRITION[idNutri][1] + ` </p>
-                        <i class="fa-solid fa-angle-left" onClick="gestionPage(1)"></i>
+                        <i class="fa-solid fa-angle-left " onClick="gestionPage(1)"></i>
                         <div class="bouchon5"></div>
                     </div>
 

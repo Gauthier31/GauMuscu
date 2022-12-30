@@ -19,7 +19,7 @@ function page(rout) {
     // Masque Les sections
     const masque = document.getElementsByClassName('bloc');
     for (k = 0; k < masque.length; k++) {
-        masque[k].classList.add("none");
+        masque[k].classList.add("hidden");
     }
 
     // On affiche la page;
@@ -27,7 +27,7 @@ function page(rout) {
 
     for (let j = 2; j < ROUTEUR[i].length; j++) {
         console.log(ROUTEUR[i][j]);
-        document.getElementById(ROUTEUR[i][j]).classList.remove("none");
+        document.getElementById(ROUTEUR[i][j]).classList.remove("hidden");
     }
 }
 */
@@ -40,7 +40,7 @@ function page(val) {
     let page = document.getElementsByClassName("page");
 
     // Si on est pas sur la page 1
-    if (page[0].className == "page none") {
+    if (page[0].className == "page hidden") {
         console.log("go page 1");
         gestionPage(1);
     }
@@ -96,7 +96,7 @@ function gestionPage(numPage) {
     switch (numPage) {
         case 1:
 
-            p1.classList.remove("none");
+            p1.classList.remove("hidden");
 
             p2.classList.add("gaucheOutClass");
             p3.classList.add("gaucheOutClass");
@@ -110,7 +110,7 @@ function gestionPage(numPage) {
         case 2:
 
             p2.classList.add("gaucheInClass");
-            p2.classList.remove("none");
+            p2.classList.remove("hidden");
             setTimeout(function () {
                 masquePage(1);
             }, 700);
@@ -119,7 +119,7 @@ function gestionPage(numPage) {
         case 3:
 
             p3.classList.add("gaucheInClass");
-            p3.classList.remove("none");
+            p3.classList.remove("hidden");
             setTimeout(function () {
                 masquePage(1);
             }, 700);
@@ -136,18 +136,18 @@ function masquePage(numPage) {
 
     switch (numPage) {
         case 1:
-            p1.classList.add("none");
+            p1.classList.add("hidden");
             p2.classList.remove("gaucheInClass");
             p3.classList.remove("gaucheInClass");
             break;
 
         case 2:
-            p2.classList.add("none");
+            p2.classList.add("hidden");
             p2.classList.remove("gaucheOutClass");
             break;
 
         case 3:
-            p3.classList.add("none");
+            p3.classList.add("hidden");
             p3.classList.remove("gaucheOutClass");
             break;
     }
