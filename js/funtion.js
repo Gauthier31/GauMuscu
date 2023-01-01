@@ -454,6 +454,9 @@ function progCollapse(id) {
 
 }
 
+
+
+
 // NB de page par rapport au tableau
 function getPagination() {
 
