@@ -21,7 +21,7 @@ if (window.screen.width >= 500) {
 */
 const LIMIT_EXO = 20;
 var TableauFiltre = [];
-var typeExo;
+var typeExo = "tousExo";
 
 // Ajoute tous les id dans tableau
 for (let i = 0; i < EXO.length; i++) {
@@ -36,6 +36,7 @@ pagination(1);
 getProgramme();
 getNutrition();
 getMusique();
+putStat();
 
 // Affichage masquage des blocs de sections
 page("accueil");
@@ -129,16 +130,14 @@ function getProgramme() {
             `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + PROGRAMME[i][0].toUpperCase() + `'">
                     <ol class="list-group" id="prog` + i + `">
                     <li class="list-group-item taille list-titre-bloc">
-                        <p class="list-titre depasse">` + PROGRAMME[i][0] + `</p>
-                        <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(` + i + `)"
-                        
+                        <p class="list-titre depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + `</p>
+
+                        <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(this)"
                         type="button" data-bs-toggle="collapse" data-bs-target="#progList` + i + `"
-                        aria-controls="progList` + i + `" aria-expanded="false" aria-label="Toggle progList` + i + `">
+                        aria-controls="progList` + i + `" aria-expanded="false">
 
                             <i class="fa-solid fa-chevron-down"></i>
-                            <i class="fa-solid fa-chevron-up none"></i>
                         </button>
-                        <button type="button" class="btn orange btn-prog" onclick="programmes(` + i + `)">C'est parti</button>
                     </li>
                     <div class="list-exo collapse" id="progList` + i + `">` + txt + `</div>   
                     </ol>
@@ -155,7 +154,7 @@ function getNutrition() {
 
         nutri.innerHTML +=
             `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i][1].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
-                    <div class="card">
+                    <div class="card" onClick="nutrition(` + i + `)">
 
                         <div class="card-img-bloc">
                             <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITION[i][1] + `.jpg"
@@ -167,11 +166,13 @@ function getNutrition() {
 
                             <p class="cardDescription taille5">` + NUTRITION[i][2] + `</p>
 
+                            <!--
                             <div class="div-btnInfoCard">
                                 <button type="button" class="btn btn-warning taille6 btnInfoCard" onClick="nutrition(` + i + `)">
                                     En savoir plus
                                 </button>
                             </div>
+                            -->
 
                         </div>
                     </div>
@@ -206,6 +207,13 @@ function setMusique() {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function putStat() {
+    for (let i = STAT.length; i < EXO.length; i++) {
+        STAT.push([i, 0, 0]);
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
 function filtre(val) {
     typeExo = val;
@@ -224,7 +232,7 @@ function filtreExo() {
 
     let recherche = document.getElementById("inputExo").value;
 
-    TableauFiltre = []
+    TableauFiltre = [0];
 
     for (let i = 1; i < EXO.length; i++) {
         if (EXO[i][1].toLowerCase().includes(recherche.toLowerCase())
@@ -232,6 +240,7 @@ function filtreExo() {
             TableauFiltre.push(i);
         }
     }
+
     getPagination();
     pagination(1);
 }
@@ -278,185 +287,45 @@ function filtre2Etape(val, obj) {
     }
 }
 
-/////////////////////////////////////////////// Filtre les pages //////////////////////////////////////////
-function page(val) {
+////////////////////////////////////// Collapse /////////////////////////////////////
+function progCollapse(obj) {
 
-    closeNavBar();
+    const bloc = document.getElementById("prog" + obj.id.substring(7));
+    let icon = obj.getElementsByClassName("fa-solid")[0].classList;
 
-    gestionPage(1);
-
-    // Masque Les sections
-    const masque = document.getElementsByClassName('bloc');
-    for (i = 0; i < masque.length; i++) {
-        masque[i].classList.add("none");
-        masque[i].classList.remove("block");
-    }
-
-    // Affiche
-    switch (val) {
-        case 'programme':
-            document.getElementById('teteBouchon').classList.remove("none");
-            document.getElementById('tete').classList.remove("none");
-            document.getElementById('teteBouchon').classList.add("block");
-            document.getElementById('tete').classList.add("block");
-
-            document.getElementById('programmeTitre').classList.remove("none");
-            document.getElementById('programme').classList.remove("none");
-            document.getElementById('programmeTitre').classList.add("block");
-            document.getElementById('programme').classList.add("block");
-            break;
-
-        case 'programmeLancer':
-            document.getElementById('blocFicheResultat').classList.remove("none");
-            document.getElementById('blocFicheResultat').classList.add("block");
-            break;
-
-        case 'ajoutExo':
-            document.getElementById('liste').classList.remove("none");
-            document.getElementById('accueil').classList.remove("none");
-            document.getElementById('liste').classList.add("block");
-            document.getElementById('accueil').classList.add("block");
-            break;
-
-        case 'nutrition':
-            document.getElementById('teteBouchon').classList.remove("none");
-            document.getElementById('tete').classList.remove("none");
-            document.getElementById('teteBouchon').classList.add("block");
-            document.getElementById('tete').classList.add("block");
-
-            document.getElementById('nutritionTitre').classList.remove("none");
-            document.getElementById('nutrition').classList.remove("none");
-            document.getElementById('nutritionTitre').classList.add("block");
-            document.getElementById('nutrition').classList.add("block");
-            break;
-
-        //par defaut l'accueil
-        default:
-            document.getElementById('teteBouchon').classList.remove("none");
-            document.getElementById('tete').classList.remove("none");
-            document.getElementById('teteBouchon').classList.add("block");
-            document.getElementById('tete').classList.add("block");
-
-            document.getElementById('liste').classList.remove("none");
-            document.getElementById('accueil').classList.remove("none");
-            document.getElementById('liste').classList.add("block");
-            document.getElementById('accueil').classList.add("block");
-            break;
-    }
-}
-
-////////////////////////////////////// Insere dans le modal les infos /////////////////////////////////////
-function modalInfo(val) {
-    let titre = document.getElementById(val).getElementsByClassName("info")[0];
-    let img = document.getElementById(val).getElementsByClassName("info")[1];
-    let txt = document.getElementById(val).getElementsByClassName("info")[2];
-
-    let modalTitre = document.getElementById("titre-modal");
-    let modalImg = document.getElementById("img-modal");
-    let modalTxt = document.getElementById("txt-modal");
-
-
-    modalTitre.innerHTML = titre.textContent;
-    modalTxt.innerHTML = txt.textContent;
-    modalImg.src = "document/muscle/" + img.textContent;
-}
-
-function closeNavBar() {
-    // Masques la navbar
-    const nav = document.getElementById("nav1");
-    nav.classList.remove("show");
-}
-
-function gestionPage(numPage) {
-
-    const p1 = document.getElementById('page1');
-    const p2 = document.getElementById('page2');
-    const p3 = document.getElementById('page3');
-
-    switch (numPage) {
-        case 1:
-
-            p1.classList.remove("none");
-            p2.classList.add("gaucheOutClass");
-            setTimeout(function () {
-                masquePage(2);
-            }, 1000);
-
-            p3.classList.add("gaucheOutClass");
-            setTimeout(function () {
-                masquePage(3);
-            }, 1000);
-            break;
-
-        case 2:
-
-            p2.classList.add("gaucheInClass");
-            p2.classList.remove("none");
-            setTimeout(function () {
-                masquePage(1);
-            }, 1000);
-            break;
-
-        case 3:
-
-            p3.classList.add("gaucheInClass");
-            p3.classList.remove("none");
-            setTimeout(function () {
-                masquePage(1);
-            }, 1000);
-            break;
-    }
-
-}
-
-function masquePage(numPage) {
-
-    const p1 = document.getElementById('page1');
-    const p2 = document.getElementById('page2');
-    const p3 = document.getElementById('page3');
-
-    switch (numPage) {
-        case 1:
-            p2.classList.remove("gaucheInClass");
-            break;
-
-        case 2:
-            p2.classList.add("none");
-            p2.classList.remove("gaucheOutClass");
-            break;
-
-        case 3:
-            p3.classList.add("none");
-            p3.classList.remove("gaucheOutClass");
-            break;
-    }
-}
-
-function progCollapse(id) {
-
-    const bloc = document.getElementById("prog" + id);
-    const btn = document.getElementById("progBtn" + id);
-
-    if (btn.value == "up") {
-        btn.getElementsByClassName("fa-chevron-up")[0].classList.add("none");
-        btn.getElementsByClassName("fa-chevron-down")[0].classList.remove("none");
-        btn.value = "down";
+    if (obj.value == "up") {
+        obj.value = "down";
+        icon.remove("fa-chevron-up");
+        icon.add("fa-chevron-down");
 
         bloc.getElementsByClassName("list-group-item")[0].classList.add("list-titre-bloc");
+
     } else {
-        btn.getElementsByClassName("fa-chevron-down")[0].classList.add("none");
-        btn.getElementsByClassName("fa-chevron-up")[0].classList.remove("none");
-        btn.value = "up";
+        obj.value = "up";
+        icon.remove("fa-chevron-down");
+        icon.add("fa-chevron-up");
 
         bloc.getElementsByClassName("list-group-item")[0].classList.remove("list-titre-bloc");
     }
-
-
 }
 
+function filtreCollapse(obj) {
 
+    let icon = obj.getElementsByClassName("fa-solid")[0].classList;
 
+    if (obj.value == "up") {
+        obj.value = "down";
+        icon.remove("fa-chevron-up");
+        icon.add("fa-chevron-down");
 
+    } else {
+        obj.value = "up";
+        icon.remove("fa-chevron-down");
+        icon.add("fa-chevron-up");
+    }
+}
+
+////////////////////////////////////// Pagination /////////////////////////////////////
 // NB de page par rapport au tableau
 function getPagination() {
 

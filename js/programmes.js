@@ -37,10 +37,8 @@ function programmes(numProgramme) {
         let tab = "";
 
 
-        idExo = (PROGRAMME[numProg][i] < STAT.length) ? PROGRAMME[numProg][i] : 0;
-
         // On mets en place les lignes du tableau de l'exo
-        for (j = 1; j < STAT[idExo].length; j += 2) {
+        for (j = 1; j < STAT[PROGRAMME[numProg][i]].length; j += 2) {
 
             exoTab = PROGRAMME[numProg][i];
             serieTab = (j + 1) / 2;
@@ -136,8 +134,8 @@ function programmes(numProgramme) {
 
 
     f1.innerHTML +=
-        `<div class="ticket0">
-            <div class="bouchonNav orange">
+        `<div class="ticket0">   
+            <div class="bouchonNavProg orange">
                 <div class="nav2">
                     <p class="taille">GauMuscu</p>
                     <i class="fa-solid fa-bars taille"></i>
@@ -196,7 +194,7 @@ function programmes(numProgramme) {
 
                             ` + listExoInfo + `
 
-                        </div >
+                        </div>
 
                         <div id="exoFooter" class="exoFooter">
                             <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
@@ -212,29 +210,29 @@ function programmes(numProgramme) {
 
                         <div class="bouchon3"></div>
                     
-                    </div > 
+                    </div> 
                 
-                </div >
-            </div >
-
-
-        <div id="ticket2" class="ticket2 ticket2_Down">
-            <div class="bloc-tiret" onclick="ticket2Up_Down()">
-                <div class="tiret"></div>
-            </div>
-
-            <div class="detail4_Up">
-                <div id="detail4">
-                    ` + listExo + `
-                </div>
-
-                <div class="div-btn">
-                    <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                 </div>
             </div>
 
-        </div>
-        </div > `;
+
+            <div id="ticket2" class="ticket2 ticket2_Down">
+                <div class="bloc-tiret" onclick="ticket2Up_Down()">
+                    <div class="tiret"></div>
+                </div>
+
+                <div class="detail4_Up">
+                    <div id="detail4">
+                        ` + listExo + `
+                    </div>
+
+                    <div class="div-btn">
+                        <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
+                    </div>
+                </div>
+
+            </div>
+        </div> `;
 
     // On affiche et color
     document.getElementById("Info_Exo" + PROGRAMME[numProg][1]).classList.remove("none");
@@ -391,13 +389,9 @@ function addSerie() {
 
     var tab = document.getElementById(exo + "_statModule");
 
-    let idExo = (exo < STAT.length) ? exo : 0;
-
-    if (newSerieNum == 0) {
-        newSerieNum = (STAT[idExo].length + 1) / 2;
-    } else {
-        newSerieNum++;
-    }
+    // calcul du num de la nouvelle série
+    newSerieNum = (STAT[exo].length + 1) / 2;
+    STAT[exo].push(0, 0);
 
     tab.innerHTML +=
         `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `">
@@ -596,10 +590,8 @@ function addExo(numExo) {
 
             let tab = "";
 
-            numExoStat = (numExo < STAT.length) ? numExo : 0;
-
             // On mets en place les lignes du tableau
-            for (j = 1; j < STAT[numExoStat].length; j += 2) {
+            for (j = 1; j < STAT[numExo].length; j += 2) {
 
                 exoTab = numExo;
                 serieTab = (j + 1) / 2;

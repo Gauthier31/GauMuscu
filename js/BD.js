@@ -442,8 +442,7 @@ const NUTRITION = [
     [0, "titre", "description", "ingredient"],
 
     // Plat 1
-    [1, "Shaker",
-        "Shaker à prendre tout les matins, contient : <br/>1,312 de <b>Kcal</b> <br/>60g de <b>protéines</b> <br/>150g de <b>glucides</b> <br/>50g de <b>lipides</b>",
+    [1, "Shaker", "Shaker à prendre tout les matins, contient : <br/> - 1,312 de <b>Kcal</b> <br/> - 60g de <b>protéines</b> <br/> - 150g de <b>glucides</b> <br/> - 50g de <b>lipides</b>",
         "Une banane |200ml de lait |80g de flocon d'avoine |Une grande cuillère de beurre de cacacuète |300ml d'eau |Une petite cuillère de sirop d'agave |Une portion de protéines | Mixer le tout pendant 1 minutes"],
 ];
 
