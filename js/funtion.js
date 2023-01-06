@@ -25,7 +25,7 @@ var typeExo = "tousExo";
 
 // Ajoute tous les id dans tableau
 for (let i = 0; i < EXO.length; i++) {
-    TableauFiltre.push(EXO[i][0]);
+    TableauFiltre.push(EXO[i]['id']);
 }
 
 document.getElementById('tousExo').classList.add("typeActive");
@@ -49,7 +49,7 @@ function getListExercice() {
     for (i = 1; i < EXO.length; i++) {
 
         ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-        const tabStyle = EXO[i][3].split("-");
+        const tabStyle = EXO[i]['listMuscle'].split("-");
 
         // catégorie
         let classList = "";
@@ -59,15 +59,15 @@ function getListExercice() {
         classList += tabStyle[j];
 
         ligneExo.innerHTML +=
-            `<div class="ligneExo tousExo none ' ` + classList.toUpperCase() + ` ` + EXO[i][1].toUpperCase() + ` ''" id="ligneExo` + EXO[i][0] + `">
+            `<div class="ligneExo tousExo none ' ` + classList.toUpperCase() + ` ` + EXO[i]['nom'].toUpperCase() + ` ''" id="ligneExo` + EXO[i][0] + `">
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + EXO[i][1] + `.jpg" 
+                        <img class="ligne-img-left" src="document/exo/` + EXO[i]['nom'] + EXO[i]['formatImg'] + `" 
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
                     <div>
-                        <p class="taille1 fw-6 ligneTitre">` + EXO[i][1] + `</p>
-                        <div class="taille3 opacity-50">
+                        <p class="taille1 fw-9 ligneTitre">` + EXO[i]["nom"] + `</p>
+                        <div class="taille3 fw-6 opacity-50">
                             ` + classList + `
                         </div>
                     </div>
@@ -82,7 +82,7 @@ function getExercice(idExo) {
 
 
     ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-    const tabStyle = EXO[idExo][3].split("-");
+    const tabStyle = EXO[idExo]['listMuscle'].split("-");
 
     // catégorie
     let classList = "";
@@ -92,17 +92,17 @@ function getExercice(idExo) {
 
     // 
     ligneExo.innerHTML +=
-        `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo][1].toUpperCase()
-        + ` ''" id="ligneExo` + EXO[idExo][0] + `">
+        `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo]['nom'].toUpperCase()
+        + ` ''" id="ligneExo` + EXO[idExo]['id'] + `">
             
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + EXO[idExo][1] + `.jpg" 
+                        <img class="ligne-img-left" src="document/exo/` + EXO[idExo]['nom'] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
                     <div>
-                        <p class="taille1 fw-6 ligneTitre">` + EXO[idExo][1] + `</p>
-                        <div class="taille3 opacity-50">
+                        <p class="taille1 fw-9 ligneTitre">` + EXO[idExo]['nom'] + `</p>
+                        <div class="taille3 fw-6 opacity-50">
                             ` + classList + `
                         </div>
                     </div>
@@ -121,7 +121,7 @@ function getProgramme() {
         for (j = 1; j < PROGRAMME[i].length; j++) {
 
             txt +=
-                `<li class="list-group-item taille2">` + j + `. ` + EXO[PROGRAMME[i][j]][1]
+                `<li class="list-group-item taille2">` + j + `. ` + EXO[PROGRAMME[i][j]]['nom']
                 + `</li>`;
 
         }
@@ -235,8 +235,8 @@ function filtreExo() {
     TableauFiltre = [0];
 
     for (let i = 1; i < EXO.length; i++) {
-        if (EXO[i][1].toLowerCase().includes(recherche.toLowerCase())
-            && EXO[i][3].includes(typeExo)) {
+        if (EXO[i]['nom'].toLowerCase().includes(recherche.toLowerCase())
+            && EXO[i]['listMuscle'].includes(typeExo)) {
             TableauFiltre.push(i);
         }
     }

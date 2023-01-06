@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // tableau
 // épaules, bras, pectoraux, abdominaux, jambes, dos
-const EXO = [
+const EXO2 = [
 
     // Bouchon
     [0, "titre", "petiteImage", "", "-tousExo",
@@ -322,7 +322,7 @@ const EXO = [
     [101, "Reverse fly", "defautExo.jpg", "pectoraux-tousExo",
         "description"],
 
-    [102, "Reverse fly, horizontal grip", "defautExo.jpg", "dos-tousExo",
+    "jpg", [102, "Reverse fly, horizontal grip", "defautExo.jpg", "dos-tousExo",
         "description"],
 
     [103, "Russian twist", "defautExo.jpg", "abdominaux-tousExo",
@@ -331,34 +331,19 @@ const EXO = [
     /////////////////////////////////////////////////////////////////////////////////
 ];
 
-const exercises = [
-    {
-        name: "Pompes",
-        muscle: "Pectoraux"
-    },
-    {
-        name: "Tractions",
-        muscle: "Dorsaux"
-    },
-    {
-        name: "Squats",
-        muscle: "Quadriceps"
-    }
-    // Ajouter d'autres exercices ici...
-];
-const test = [
+const EXO = [
     {
         id: "0",
-        nom: "titre",
-        formatImg: "jpg",
-        muscleImg: "petiteImage",
-        listMuscle: "-tousExo",
-        description: "description"
+        nom: "1",
+        formatImg: "-",
+        muscleImg: "2",
+        listMuscle: "3",
+        description: "4"
     },
     {
         id: "1",
         nom: "Développé couché avec haltères",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-dos-bras-tousExo",
         description: "description"
@@ -366,7 +351,7 @@ const test = [
     {
         id: "2",
         nom: "Développé incliné avec haltères",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-épaules-bras-tousExo",
         description: "description"
@@ -374,7 +359,7 @@ const test = [
     {
         id: "3",
         nom: "Dips",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-épaules-bras-tousExo",
         description: "description"
@@ -382,7 +367,7 @@ const test = [
     {
         id: "4",
         nom: "Pull over",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-épaules-bras-tousExo",
         description: "description"
@@ -390,7 +375,7 @@ const test = [
     {
         id: "5",
         nom: "Écartés à la machine",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -398,7 +383,7 @@ const test = [
     {
         id: "6",
         nom: "Écartés à la poulie haute",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -406,7 +391,7 @@ const test = [
     {
         id: "7",
         nom: "Développé assis à la machine convergente",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
         listMuscle: "pectoraux-dos-bras-tousExo",
         description: "description"
@@ -414,7 +399,7 @@ const test = [
     {
         id: "8",
         nom: "Leg Press",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -422,7 +407,7 @@ const test = [
     {
         id: "9",
         nom: "Leg Extension",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -430,7 +415,7 @@ const test = [
     {
         id: "10",
         nom: "Leg Curl",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "ischio.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -438,7 +423,7 @@ const test = [
     {
         id: "11",
         nom: "Adducteurs",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "adducteur.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -446,7 +431,7 @@ const test = [
     {
         id: "12",
         nom: "Abduction",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "adducteur.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -454,7 +439,7 @@ const test = [
     {
         id: "13",
         nom: "Presse à mollets",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "mollet.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -462,7 +447,7 @@ const test = [
     {
         id: "14",
         nom: "Traction",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-bras-épaules-tousExo",
         description: "description"
@@ -470,7 +455,7 @@ const test = [
     {
         id: "15",
         nom: "Traction prise large",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-bras-épaules-tousExo",
         description: "description"
@@ -478,7 +463,7 @@ const test = [
     {
         id: "16",
         nom: "Traction prise serré",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-bras-épaules-tousExo",
         description: "description"
@@ -486,7 +471,7 @@ const test = [
     {
         id: "17",
         nom: "Élévation latéral avec haltère",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "deltoide.jpg",
         listMuscle: "épaules-tousExo",
         description: "description"
@@ -494,7 +479,7 @@ const test = [
     {
         id: "18",
         nom: "Shoulder press",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "deltoide.jpg",
         listMuscle: "épaules-bras-tousExo",
         description: "description"
@@ -502,7 +487,7 @@ const test = [
     {
         id: "19",
         nom: "Tirage horizontal",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-bras-tousExo",
         description: "description"
@@ -510,7 +495,7 @@ const test = [
     {
         id: "20",
         nom: "Élévation latéral avec poulie",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "deltoide.jpg",
         listMuscle: "épaules-tousExo",
         description: "description"
@@ -518,7 +503,7 @@ const test = [
     {
         id: "21",
         nom: "Squat",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -526,7 +511,7 @@ const test = [
     {
         id: "22",
         nom: "Soulevé de terre",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -534,7 +519,7 @@ const test = [
     {
         id: "23",
         nom: "Fente avec haltère",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -542,7 +527,7 @@ const test = [
     {
         id: "24",
         nom: "Fente surelevé avec haltère",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -550,7 +535,7 @@ const test = [
     {
         id: "25",
         nom: "Hip Thrust",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "ischio.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -558,7 +543,7 @@ const test = [
     {
         id: "26",
         nom: "Low row",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-épaules-tousExo",
         description: "description"
@@ -566,7 +551,7 @@ const test = [
     {
         id: "27",
         nom: "Soulevé de terre roumain",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-épaules-tousExo",
         description: "description"
@@ -574,7 +559,7 @@ const test = [
     {
         id: "28",
         nom: "Tapis de course",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -582,7 +567,7 @@ const test = [
     {
         id: "29",
         nom: "Escalier",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "quadriceps.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -590,7 +575,7 @@ const test = [
     {
         id: "30",
         nom: "Tirage vertical",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
         listMuscle: "dos-bras-épaules-tousExo",
         description: "description"
@@ -598,7 +583,7 @@ const test = [
     {
         id: "31",
         nom: "Curl haltere",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "bicep.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -606,7 +591,7 @@ const test = [
     {
         id: "32",
         nom: "Curl haltere marteau",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "bicep.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -614,7 +599,7 @@ const test = [
     {
         id: "33",
         nom: "Triceps",
-        formatImg: "jpg",
+        formatImg: ".jpg", //.gif
         muscleImg: "tricep.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -622,7 +607,7 @@ const test = [
     {
         id: "34",
         nom: "Abdominal rollout on knees",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -630,7 +615,7 @@ const test = [
     {
         id: "35",
         nom: "Abdominal crunch",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -638,7 +623,7 @@ const test = [
     {
         id: "36",
         nom: "Abduction leg lying, split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -646,7 +631,7 @@ const test = [
     {
         id: "37",
         nom: "Abdominal knees up, low handle",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -654,7 +639,7 @@ const test = [
     {
         id: "38",
         nom: "Abdominal straight legs",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -662,7 +647,7 @@ const test = [
     {
         id: "39",
         nom: "Fente, alterné",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -670,7 +655,7 @@ const test = [
     {
         id: "40",
         nom: "Squat",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -678,7 +663,7 @@ const test = [
     {
         id: "41",
         nom: "Squat, sumo",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -686,7 +671,7 @@ const test = [
     {
         id: "42",
         nom: "Air plane",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -694,7 +679,7 @@ const test = [
     {
         id: "43",
         nom: "Arch chop",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -702,7 +687,7 @@ const test = [
     {
         id: "44",
         nom: "Arm extension",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -710,7 +695,7 @@ const test = [
     {
         id: "45",
         nom: "Arnold press seated",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "épaules-tousExo",
         description: "description"
@@ -718,7 +703,7 @@ const test = [
     {
         id: "46",
         nom: "Back extension, machine - ground",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -726,7 +711,7 @@ const test = [
     {
         id: "47",
         nom: "Balance, standing",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-jambes-tousExo",
         description: "description"
@@ -734,7 +719,7 @@ const test = [
     {
         id: "48",
         nom: "Balance, V+sit",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -742,7 +727,7 @@ const test = [
     {
         id: "49",
         nom: "Bench press, assited",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -750,7 +735,7 @@ const test = [
     {
         id: "50",
         nom: "Bench press, inclined assited",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -758,7 +743,7 @@ const test = [
     {
         id: "51",
         nom: "Bench arl pullover",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-bras-tousExo",
         description: "description"
@@ -766,7 +751,7 @@ const test = [
     {
         id: "52",
         nom: "Bent over row",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -774,7 +759,7 @@ const test = [
     {
         id: "53",
         nom: "Bent over row, split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -782,7 +767,7 @@ const test = [
     {
         id: "54",
         nom: "Bent over row, standing",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -790,7 +775,7 @@ const test = [
     {
         id: "55",
         nom: "Bicep curl, machine",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -798,7 +783,7 @@ const test = [
     {
         id: "56",
         nom: "Bicep curl, poulie basse",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -806,7 +791,7 @@ const test = [
     {
         id: "57",
         nom: "Bicep curl, poulie haute",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -814,7 +799,7 @@ const test = [
     {
         id: "58",
         nom: "Bicep curl, suplinated (poulie)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -822,7 +807,7 @@ const test = [
     {
         id: "59",
         nom: "Bird dog",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -830,7 +815,7 @@ const test = [
     {
         id: "60",
         nom: "Bird dog, standing (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -838,7 +823,7 @@ const test = [
     {
         id: "61",
         nom: "Bottom up press",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -846,7 +831,7 @@ const test = [
     {
         id: "62",
         nom: "Box jumps",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -854,7 +839,7 @@ const test = [
     {
         id: "63",
         nom: "Bulgarian split squat (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -862,7 +847,7 @@ const test = [
     {
         id: "64",
         nom: "Burpees",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "cardio-abdominaux-jambes-tousExo",
         description: "description"
@@ -870,7 +855,7 @@ const test = [
     {
         id: "65",
         nom: "Burpees, jump up",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "cardio-abdominaux-jambes-tousExo",
         description: "description"
@@ -878,7 +863,7 @@ const test = [
     {
         id: "66",
         nom: "Burpees, jump up push up",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "cardio-abdominaux-jambes-pectoraux-tousExo",
         description: "description"
@@ -886,7 +871,7 @@ const test = [
     {
         id: "67",
         nom: "Butterfly",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -894,7 +879,7 @@ const test = [
     {
         id: "68",
         nom: "Calf raise",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -902,7 +887,7 @@ const test = [
     {
         id: "69",
         nom: "Calves",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -910,7 +895,7 @@ const test = [
     {
         id: "70",
         nom: "Chest press, suspension",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -918,7 +903,7 @@ const test = [
     {
         id: "71",
         nom: "Chest press, lower grip 2 mains",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -926,7 +911,7 @@ const test = [
     {
         id: "72",
         nom: "Chest press, lower grip split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -934,7 +919,7 @@ const test = [
     {
         id: "73",
         nom: "Chest press, upper grip 2 mains",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -942,7 +927,7 @@ const test = [
     {
         id: "74",
         nom: "Chest press, upper grip split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -950,7 +935,7 @@ const test = [
     {
         id: "75",
         nom: "Chest press, wide grip",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -958,7 +943,7 @@ const test = [
     {
         id: "76",
         nom: "Chest press, small grip",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -966,7 +951,7 @@ const test = [
     {
         id: "77",
         nom: "Child's pose",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -974,7 +959,7 @@ const test = [
     {
         id: "78",
         nom: "Chin up, narrow grip",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -982,7 +967,7 @@ const test = [
     {
         id: "79",
         nom: "Chin up",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-dos-tousExo",
         description: "description"
@@ -990,7 +975,7 @@ const test = [
     {
         id: "80",
         nom: "Crunch, machine",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -998,7 +983,7 @@ const test = [
     {
         id: "81",
         nom: "Crunch, sol",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -1006,7 +991,7 @@ const test = [
     {
         id: "82",
         nom: "Crunch, bras extended",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -1014,7 +999,7 @@ const test = [
     {
         id: "83",
         nom: "Crunch, diagonal alterned",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -1022,7 +1007,7 @@ const test = [
     {
         id: "84",
         nom: "Crunch, toe touch",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -1030,7 +1015,7 @@ const test = [
     {
         id: "85",
         nom: "Deadlift",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -1038,7 +1023,7 @@ const test = [
     {
         id: "86",
         nom: "Deadlift, sumo stance",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-fessiers-tousExo",
         description: "description"
@@ -1046,7 +1031,7 @@ const test = [
     {
         id: "87",
         nom: "Dips, machine",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-pectoraux-tousExo",
         description: "description"
@@ -1054,7 +1039,7 @@ const test = [
     {
         id: "88",
         nom: "Dips, chaise",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-pectoraux-tousExo",
         description: "description"
@@ -1062,7 +1047,7 @@ const test = [
     {
         id: "89",
         nom: "Diverging lat pull down, 2 mains",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -1070,7 +1055,7 @@ const test = [
     {
         id: "90",
         nom: "Elbow, split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1078,7 +1063,7 @@ const test = [
     {
         id: "91",
         nom: "Donkey kick, split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1086,7 +1071,7 @@ const test = [
     {
         id: "92",
         nom: "Glute kickback, split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1094,7 +1079,7 @@ const test = [
     {
         id: "93",
         nom: "Glutes",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1102,7 +1087,7 @@ const test = [
     {
         id: "94",
         nom: "Glutes raise, alterné",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1110,7 +1095,7 @@ const test = [
     {
         id: "95",
         nom: "Goblet squat, split (gauche - droite)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1118,7 +1103,7 @@ const test = [
     {
         id: "96",
         nom: "Goblet squat",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
         description: "description"
@@ -1126,7 +1111,7 @@ const test = [
     {
         id: "97",
         nom: "Goodmorning",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-jambes-tousExo",
         description: "description"
@@ -1134,7 +1119,7 @@ const test = [
     {
         id: "98",
         nom: "Hip trust, (haltère - machine)",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "fessiers-jambes-tousExo",
         description: "description"
@@ -1142,7 +1127,7 @@ const test = [
     {
         id: "99",
         nom: "Reverse crunch",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"
@@ -1150,7 +1135,7 @@ const test = [
     {
         id: "100",
         nom: "Reverse curl",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "bras-tousExo",
         description: "description"
@@ -1158,7 +1143,7 @@ const test = [
     {
         id: "101",
         nom: "Reverse fly",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "pectoraux-tousExo",
         description: "description"
@@ -1166,7 +1151,7 @@ const test = [
     {
         id: "102",
         nom: "Reverse fly, horizontal grip",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "dos-tousExo",
         description: "description"
@@ -1174,7 +1159,7 @@ const test = [
     {
         id: "103",
         nom: "Russian twist",
-        formatImg: "jpg",
+        formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description"

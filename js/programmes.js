@@ -71,14 +71,14 @@ function programmes(numProgramme) {
         listExoInfo +=
             `<div class="none" id="Info_Exo` + PROGRAMME[numProg][i] + `">
                 <div class="exoHead">
-                    <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[PROGRAMME[numProg][i]][1] + `</p>
+                    <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[PROGRAMME[numProg][i]]['nom'] + `</p>
                 </div>
 
                 <div class="exoBody">
                     <div class="card-img-bloc2">
-                        <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[PROGRAMME[numProg][i]][1] + `.jpg"
-                                alt="` + EXO[PROGRAMME[numProg][i]][1] + `" 
-                                onerror="this.onerror=null; this.src='document/exo/` + EXO[PROGRAMME[numProg][i]][1] + `.gif'"/>
+                        <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[PROGRAMME[numProg][i]]['nom'] + EXO[PROGRAMME[numProg][i]]['formatImg'] + `"
+                                alt="` + EXO[PROGRAMME[numProg][i]]['nom'] + `" 
+                                onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
                     <hr class="hr-orange" />
 
@@ -95,7 +95,7 @@ function programmes(numProgramme) {
                                 -->
                             </div>
                         </div>
-                        <div class="detail6" id="` + EXO[PROGRAMME[numProg][i]][0] + `_statModule">
+                        <div class="detail6" id="` + EXO[PROGRAMME[numProg][i]]['id'] + `_statModule">
                         ` + tab + `
                         </div>
                     </div>
@@ -119,11 +119,11 @@ function programmes(numProgramme) {
                 </div>
 
                 <div class="ligne-img-bloc2">
-                    <img class="ligne-img-left2" src="document/exo/` + EXO[PROGRAMME[numProg][i]][1] + `.jpg"
-                    onerror="this.onerror=null; this.src='document/exo/` + EXO[PROGRAMME[numProg][i]][1] + `.gif'"/>
+                    <img class="ligne-img-left2" src="document/exo/` + EXO[PROGRAMME[numProg][i]]['nom'] + EXO[PROGRAMME[numProg][i]]['formatImg'] + `"
+                    onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                 </div>
 
-                <div class="taille1 fw-9 txt-center">` + EXO[PROGRAMME[numProg][i]][1] + `</div>
+                <div class="taille1 fw-9 txt-center">` + EXO[PROGRAMME[numProg][i]]['nom'] + `</div>
 
                 <div class="triangle1" onclick="exoSuivant(` + i + `)"></div>
             </div>`;
@@ -137,7 +137,7 @@ function programmes(numProgramme) {
         `<div class="ticket0">   
             <div class="bouchonNav orange">
                 <div class="nav2">
-                    <p class="taille">GauMuscu</p>
+                    <p class="taille fw-9">GauMuscu</p>
                     <i class="fa-solid fa-bars taille"></i>
                 </div>
             </div>
@@ -391,7 +391,7 @@ function addSerie() {
 
     // calcul du num de la nouvelle série
     newSerieNum = (STAT[exo].length + 1) / 2;
-    STAT[exo].push(0, 0);
+    STAT[exo].push(STAT[exo].length - 2, STAT[exo].length - 1);
 
     tab.innerHTML +=
         `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `">
@@ -529,7 +529,7 @@ function fiche(exoActu, serieActu) {
 
         listExo.innerHTML +=
             `<div class="col-6" id="colExo` + exoActu + `">
-                <p class="taille2 txtExo depasse">` + EXO[exoActu][1] + `</p>
+                <p class="taille2 txtExo depasse">` + EXO[exoActu]['nom'] + `</p>
                 <hr class="hr-orange" />
 
                 <div class="lineMiniTabHead">
@@ -625,25 +625,25 @@ function addExo(numExo) {
             bouchon4.innerHTML +=
                 `<div class="none" id="Info_Exo` + idExo + `" >
                     <div class="exoHead">
-                        <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[idExo][1] + `</p>
+                        <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[idExo]['nom'] + `</p>
                     </div>
 
                     <div class="exoBody">
                         <div class="card-img-bloc2">
-                            <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[idExo][1] + `.jpg"
-                                        alt="` + EXO[idExo][1] + `"
-                                        onerror="this.onerror=null; this.src='document/exo/` + EXO[idExo][1] + `.gif'" />
+                            <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[idExo]['nom'] + `.jpg"
+                                        alt="` + EXO[idExo]['nom'] + `"
+                                        onerror="this.onerror=null; this.src='document/exo/` + EXO[idExo]['nom'] + `.gif'" />
                         </div>
                         <hr class="hr-orange" />
 
-                        <div class="tableStat" id="` + EXO[idExo][0] + `_statModule">
+                        <div class="tableStat" id="` + EXO[idExo]['id'] + `_statModule">
                             <div class="lineTabHead taille1">
                                 <div class="caseTab_4_SE fw-9">Serie</div>
                                 <div class="caseTab_4_Mid fw-9">Rep</div>
                                 <div class="caseTab_4_Mid fw-9">Kilos</div>
                             </div>
 
-                            <div class="detail6" id="` + EXO[numExo][0] + `_statModule">
+                            <div class="detail6" id="` + EXO[numExo]['id'] + `_statModule">
                                 ` + tab + `
                             </div>
                         </div>
@@ -670,11 +670,11 @@ function addExo(numExo) {
                     </div>
 
                     <div class="ligne-img-bloc2">
-                        <img class="ligne-img-left2" src="document/exo/` + EXO[numExo][1] + `.jpg"
-                        onerror="this.onerror=null; this.src='document/exo/` + EXO[numExo][1] + `.gif'" />
+                        <img class="ligne-img-left2" src="document/exo/` + EXO[numExo]['nom'] + `.jpg"
+                        onerror="this.onerror=null; this.src='document/exo/` + EXO[numExo]['nom'] + `.gif'" />
                     </div>
 
-                    <div class="taille1 fw-9 txt-center">` + EXO[numExo][1] + `</div>
+                    <div class="taille1 fw-9 txt-center">` + EXO[numExo]['nom'] + `</div>
                     <div class="triangle1" onclick="exoSuivant(` + (PROGRAMME[numProg].length - 1) + `)"></div>
                 </div > `;
 
