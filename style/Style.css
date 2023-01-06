@@ -779,7 +779,6 @@ select {
     background-color: rgb(220, 220, 220);
     z-index: 1060;
     position: relative;
-    bottom: 0;
 }
 
 .ticket2_Up {

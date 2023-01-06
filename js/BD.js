@@ -331,6 +331,856 @@ const EXO = [
     /////////////////////////////////////////////////////////////////////////////////
 ];
 
+const exercises = [
+    {
+        name: "Pompes",
+        muscle: "Pectoraux"
+    },
+    {
+        name: "Tractions",
+        muscle: "Dorsaux"
+    },
+    {
+        name: "Squats",
+        muscle: "Quadriceps"
+    }
+    // Ajouter d'autres exercices ici...
+];
+const test = [
+    {
+        id: "0",
+        nom: "titre",
+        formatImg: "jpg",
+        muscleImg: "petiteImage",
+        listMuscle: "-tousExo",
+        description: "description"
+    },
+    {
+        id: "1",
+        nom: "Développé couché avec haltères",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-dos-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "2",
+        nom: "Développé incliné avec haltères",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-épaules-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "3",
+        nom: "Dips",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-épaules-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "4",
+        nom: "Pull over",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-épaules-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "5",
+        nom: "Écartés à la machine",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "6",
+        nom: "Écartés à la poulie haute",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "7",
+        nom: "Développé assis à la machine convergente",
+        formatImg: "jpg",
+        muscleImg: "pectoraux.jpg",
+        listMuscle: "pectoraux-dos-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "8",
+        nom: "Leg Press",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "9",
+        nom: "Leg Extension",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "10",
+        nom: "Leg Curl",
+        formatImg: "jpg",
+        muscleImg: "ischio.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "11",
+        nom: "Adducteurs",
+        formatImg: "jpg",
+        muscleImg: "adducteur.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "12",
+        nom: "Abduction",
+        formatImg: "jpg",
+        muscleImg: "adducteur.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "13",
+        nom: "Presse à mollets",
+        formatImg: "jpg",
+        muscleImg: "mollet.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "14",
+        nom: "Traction",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-bras-épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "15",
+        nom: "Traction prise large",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-bras-épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "16",
+        nom: "Traction prise serré",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-bras-épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "17",
+        nom: "Élévation latéral avec haltère",
+        formatImg: "jpg",
+        muscleImg: "deltoide.jpg",
+        listMuscle: "épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "18",
+        nom: "Shoulder press",
+        formatImg: "jpg",
+        muscleImg: "deltoide.jpg",
+        listMuscle: "épaules-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "19",
+        nom: "Tirage horizontal",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "20",
+        nom: "Élévation latéral avec poulie",
+        formatImg: "jpg",
+        muscleImg: "deltoide.jpg",
+        listMuscle: "épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "21",
+        nom: "Squat",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "22",
+        nom: "Soulevé de terre",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "23",
+        nom: "Fente avec haltère",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "24",
+        nom: "Fente surelevé avec haltère",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "25",
+        nom: "Hip Thrust",
+        formatImg: "jpg",
+        muscleImg: "ischio.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "26",
+        nom: "Low row",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "27",
+        nom: "Soulevé de terre roumain",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "28",
+        nom: "Tapis de course",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "29",
+        nom: "Escalier",
+        formatImg: "jpg",
+        muscleImg: "quadriceps.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "30",
+        nom: "Tirage vertical",
+        formatImg: "jpg",
+        muscleImg: "dorseaux.jpg",
+        listMuscle: "dos-bras-épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "31",
+        nom: "Curl haltere",
+        formatImg: "jpg",
+        muscleImg: "bicep.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "32",
+        nom: "Curl haltere marteau",
+        formatImg: "jpg",
+        muscleImg: "bicep.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "33",
+        nom: "Triceps",
+        formatImg: "jpg",
+        muscleImg: "tricep.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "34",
+        nom: "Abdominal rollout on knees",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "35",
+        nom: "Abdominal crunch",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "36",
+        nom: "Abduction leg lying, split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "37",
+        nom: "Abdominal knees up, low handle",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "38",
+        nom: "Abdominal straight legs",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "39",
+        nom: "Fente, alterné",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "40",
+        nom: "Squat",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "41",
+        nom: "Squat, sumo",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "42",
+        nom: "Air plane",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "43",
+        nom: "Arch chop",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "44",
+        nom: "Arm extension",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "45",
+        nom: "Arnold press seated",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "épaules-tousExo",
+        description: "description"
+    },
+    {
+        id: "46",
+        nom: "Back extension, machine - ground",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "47",
+        nom: "Balance, standing",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "48",
+        nom: "Balance, V+sit",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "49",
+        nom: "Bench press, assited",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "50",
+        nom: "Bench press, inclined assited",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "51",
+        nom: "Bench arl pullover",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "52",
+        nom: "Bent over row",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "53",
+        nom: "Bent over row, split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "54",
+        nom: "Bent over row, standing",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "55",
+        nom: "Bicep curl, machine",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "56",
+        nom: "Bicep curl, poulie basse",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "57",
+        nom: "Bicep curl, poulie haute",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "58",
+        nom: "Bicep curl, suplinated (poulie)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "59",
+        nom: "Bird dog",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "60",
+        nom: "Bird dog, standing (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "61",
+        nom: "Bottom up press",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "62",
+        nom: "Box jumps",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "63",
+        nom: "Bulgarian split squat (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "64",
+        nom: "Burpees",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "cardio-abdominaux-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "65",
+        nom: "Burpees, jump up",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "cardio-abdominaux-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "66",
+        nom: "Burpees, jump up push up",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "cardio-abdominaux-jambes-pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "67",
+        nom: "Butterfly",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "68",
+        nom: "Calf raise",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "69",
+        nom: "Calves",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "70",
+        nom: "Chest press, suspension",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "71",
+        nom: "Chest press, lower grip 2 mains",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "72",
+        nom: "Chest press, lower grip split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "73",
+        nom: "Chest press, upper grip 2 mains",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "74",
+        nom: "Chest press, upper grip split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "75",
+        nom: "Chest press, wide grip",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "76",
+        nom: "Chest press, small grip",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "77",
+        nom: "Child's pose",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "78",
+        nom: "Chin up, narrow grip",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "79",
+        nom: "Chin up",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "80",
+        nom: "Crunch, machine",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "81",
+        nom: "Crunch, sol",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "82",
+        nom: "Crunch, bras extended",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "83",
+        nom: "Crunch, diagonal alterned",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "84",
+        nom: "Crunch, toe touch",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "85",
+        nom: "Deadlift",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "86",
+        nom: "Deadlift, sumo stance",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-fessiers-tousExo",
+        description: "description"
+    },
+    {
+        id: "87",
+        nom: "Dips, machine",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "88",
+        nom: "Dips, chaise",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "89",
+        nom: "Diverging lat pull down, 2 mains",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "90",
+        nom: "Elbow, split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "91",
+        nom: "Donkey kick, split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "92",
+        nom: "Glute kickback, split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "93",
+        nom: "Glutes",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "94",
+        nom: "Glutes raise, alterné",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "95",
+        nom: "Goblet squat, split (gauche - droite)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "96",
+        nom: "Goblet squat",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "97",
+        nom: "Goodmorning",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "98",
+        nom: "Hip trust, (haltère - machine)",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "fessiers-jambes-tousExo",
+        description: "description"
+    },
+    {
+        id: "99",
+        nom: "Reverse crunch",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    },
+    {
+        id: "100",
+        nom: "Reverse curl",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "bras-tousExo",
+        description: "description"
+    },
+    {
+        id: "101",
+        nom: "Reverse fly",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "pectoraux-tousExo",
+        description: "description"
+    },
+    {
+        id: "102",
+        nom: "Reverse fly, horizontal grip",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "dos-tousExo",
+        description: "description"
+    },
+    {
+        id: "103",
+        nom: "Russian twist",
+        formatImg: "jpg",
+        muscleImg: "defautExo.jpg",
+        listMuscle: "abdominaux-tousExo",
+        description: "description"
+    }
+];
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const STAT = [
     // [n°exo, nbRep1, poid1, nbRep2, poid1, nbRep3, poid3, nbRep4, poid4]
