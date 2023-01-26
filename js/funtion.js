@@ -153,18 +153,18 @@ function getNutrition() {
     for (i = 1; i < NUTRITION.length; i++) {
 
         nutri.innerHTML +=
-            `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i][1].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
+            `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i]["titre"].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
                     <div class="card" onClick="nutrition(` + i + `)">
 
                         <div class="card-img-bloc">
-                            <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITION[i][1] + `.jpg"
-                                        onerror="this.onerror=null; this.src='document/exo/` + NUTRITION[i][1] + `.gif'">
+                            <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITION[i]["titre"] + `.jpg"
+                                        onerror="this.onerror=null; this.src='document/exo/` + NUTRITION[i]["titre"] + `.gif'">
                         </div>
 
                         <div class="card-body">
-                            <p class="taille4 fw-9 depasse m-2">` + NUTRITION[i][1] + `</p>
+                            <p class="taille4 fw-9 depasse m-2">` + NUTRITION[i]["titre"] + `</p>
 
-                            <p class="cardDescription taille5">` + NUTRITION[i][2] + `</p>
+                            <p class="cardDescription taille5">` + NUTRITION[i]["description"] + `</p>
 
                             <!--
                             <div class="div-btnInfoCard">

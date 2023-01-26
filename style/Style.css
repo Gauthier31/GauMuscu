@@ -170,12 +170,6 @@ header {
     font-weight: 600;
 }
 
-.card table {
-    font-size: 1em;
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.7) !important;
-}
-
 .depasse {
     white-space: nowrap;
     overflow: hidden !important;
@@ -615,16 +609,16 @@ select {
 }
 
 .bouchon5 {
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
 
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    transform: translate(0, -119px);
+    transform: translate(0, -99px);
 
     background-color: rgba(0, 0, 0, 0.0);
-    background-image: radial-gradient(circle at 120px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 120px, rgb(240, 240, 240) 60px);
+    background-image: radial-gradient(circle at 100px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100px, rgb(240, 240, 240) 50px);
 }
 
 /* img page 3 */
@@ -1224,6 +1218,7 @@ audio {
 /* ----------- Page Nutrition ----------- */
 #infoNutrition {
     padding: 0;
+    height: 2120px;
 }
 
 .imgNutri {
@@ -1254,14 +1249,9 @@ audio {
 }
 
 .nutriBlocText {
-    min-height: 83vh;
+    min-height: 84vh;
     background-color: rgb(240, 240, 240);
     padding: 5%;
-}
-
-.titreNutri {
-    margin: 0;
-    text-decoration: underline;
 }
 
 .bodyNutri {
@@ -1270,12 +1260,40 @@ audio {
 }
 
 .descriptionNutri {
-    margin: 0 0 3rem 0;
-    opacity: 0.8;
+    margin-bottom: 5rem;
 }
 
-.listIngredient {
-    padding: 0 0 0 3rem;
+.descriptionNutri::first-letter {
+    font-size: 150%;
+    font-weight: 600;
+}
+
+.tableRound {
+    border-radius: 2rem;
+    width: 100%;
+    font-size: 2.3rem;
+    overflow: hidden;
+}
+
+.tableRound,
+th,
+td {
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 5rem;
+}
+
+thead {
+    background-color: rgba(255, 193, 7);
+}
+
+tbody {
+    background-color: #DEDEDE;
+}
+
+.center {
+    text-align: center;
 }
 
 /* ----------- Page ----------- */
