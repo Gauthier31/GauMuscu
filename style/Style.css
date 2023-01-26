@@ -1218,7 +1218,8 @@ audio {
 /* ----------- Page Nutrition ----------- */
 #infoNutrition {
     padding: 0;
-    height: 2120px;
+    height: 89vh;
+    overflow: auto;
 }
 
 .imgNutri {
@@ -1249,7 +1250,7 @@ audio {
 }
 
 .nutriBlocText {
-    min-height: 84vh;
+    min-height: 83vh;
     background-color: rgb(240, 240, 240);
     padding: 5%;
 }
@@ -1311,13 +1312,9 @@ tbody {
     z-index: 0;
 }
 
-#page2 {
-    z-index: 1000;
-}
-
+#page2,
 #page3 {
     z-index: 1000;
-    height: 89vh;
 }
 
 #pagination {
