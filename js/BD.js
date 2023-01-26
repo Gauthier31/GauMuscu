@@ -1302,7 +1302,7 @@ const NUTRITION = [
             ["Petite cuillère de sirop d'agave", "1"],
             ["Eau", "300ml"],
             ["Protéines en poudres", "30g"],
-            ["Mixer", "1minute"],
+            ["Mixer", "1 minute"],
         ]
     },
 ]
