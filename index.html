@@ -39,41 +39,25 @@
 
     <!-------------------------------------------------------------------------------------------->
     <!------------------------------------------- NavBar ----------------------------------------->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark orange">
-        <div class="container-fluid navBarHaut">
-            <a class="navbar-brand taille fw-9" href="#" id="test">GauMuscu</a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nav1"
-                aria-controls="nav1" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse" id="nav1">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 taille2">
-                <li class="nav-item">
-                    <a class="nav-link fw-6" onclick="page('accueil')">
-                        <i class="fa-solid fa-house"></i>Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-6" onclick="page('programme')">
-                        <i class="fa-solid fa-dumbbell"></i>Programme</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-6" onclick="page('nutrition')">
-                        <i class="fa-solid fa-utensils"></i>Nutrition</a>
-                </li>
-                <!--
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="offcanvas" href="#musique" aria-controls="musique"
-                        onclick="closeNavBar()">
-                        <i class=" fa-solid fa-music"></i>Musique</a>
-                </li>-->
-            </ul>
-        </div>
+    <nav class="orange">
+        <ul class="taille1">
+            <li class="" onclick="page('accueil')">
+                <i class="fa-solid fa-house"></i>
+                <br />Accueil
+            </li>
+            <li class="" onclick="page('programme')">
+                <i class="fa-solid fa-dumbbell"></i>
+                <br />Programme
+            </li>
+            <li class="" onclick="page('nutrition')">
+                <i class="fa-solid fa-utensils"></i>
+                <br />Nutrition
+            </li>
+        </ul>
     </nav>
 
     <!--------------------------------------------------- Page 1 ------------------------------------------------>
     <div class="page" id="page1">
-        <div class="bouchonNav"></div>
 
         <!-- Tête d'affiche -->
         <div class="bloc bouchon1" id="teteBouchon"></div>

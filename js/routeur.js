@@ -35,7 +35,6 @@ function page(rout) {
 
 function page(val) {
 
-    closeNavBar();
     // on devine de quelle page on vient
     let page = document.getElementsByClassName("page");
 
@@ -151,10 +150,4 @@ function masquePage(numPage) {
             p3.classList.remove("gaucheOutClass");
             break;
     }
-}
-
-function closeNavBar() {
-    // Masques la navbar
-    const nav = document.getElementById("nav1");
-    nav.classList.remove("show");
 }

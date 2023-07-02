@@ -50,12 +50,12 @@ function programmes(numProgramme) {
 
                     <div class="caseTab_4_Mid">
                         <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + STAT[exoTab][j] + `</p> -->
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
+                        <input type="number" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
                         <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + STAT[exoTab][j + 1] + `</p> -->
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
+                        <input type="number" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
@@ -134,13 +134,7 @@ function programmes(numProgramme) {
 
 
     f1.innerHTML +=
-        `<div class="ticket0">   
-            <div class="bouchonNav orange">
-                <div class="nav2">
-                    <p class="taille fw-9">GauMuscu</p>
-                    <i class="fa-solid fa-bars taille"></i>
-                </div>
-            </div>
+        `<div class="ticket0">
 
             <div class="container-fluid" id="ficheResultat">
 
@@ -259,7 +253,7 @@ function ficheInitialisation(numProg) {
     ficheResultat.innerHTML =
         `<p class="text-center taille" > `
         + PROGRAMME[numProg][0] + ` : `
-        + today.toLocaleDateString("en-US") +
+        + today.toLocaleDateString("en-US", { hour12: false }) +
         `</p >
         <div class="col-6" style="display: none">`;
 }
@@ -274,15 +268,10 @@ function ticket1Up_Down() {
         ticket1.classList.remove("ticket1_Down");
         ticket1.classList.add("ticket1_Up");
         ticket1.style.transition = "margin-top 1s";
-
-        page2.style.zIndex = "1050";
-
     } else {
         ticket1.classList.remove("ticket1_Up");
         ticket1.classList.add("ticket1_Down");
         ticket1.style.transition = "margin-top 1s";
-
-        page2.style.zIndex = "1000";
     }
 }
 
@@ -399,11 +388,11 @@ function addSerie() {
                 <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + newSerieNum + `)">` + newSerieNum + `</div>
 
                 <div class="caseTab_4_Mid">
-                    <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + STAT[exo][STAT[exo].length - 2] + `">
+                    <input type="number" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + STAT[exo][STAT[exo].length - 2] + `">
                 </div>
 
                 <div class="caseTab_4_Mid">
-                    <input class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + STAT[exo][STAT[exo].length - 1] + `">
+                    <input type="number" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + STAT[exo][STAT[exo].length - 1] + `">
                 </div>
 
                 <div class="caseTab_4_SE">
@@ -602,11 +591,11 @@ function addExo(numExo) {
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
+                        <input type="number" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
-                        <input class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
+                        <input type="number" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
