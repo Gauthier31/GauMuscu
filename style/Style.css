@@ -295,7 +295,7 @@ section {
 }
 
 .detail4_Up {
-    height: 48vh;
+    height: 48svh;
 }
 
 .detail4_Down {
@@ -303,7 +303,7 @@ section {
 }
 
 .detail5 {
-    height: 40vh;
+    height: 40svh;
     overflow-y: scroll;
     margin-bottom: 10%;
 }
@@ -721,7 +721,7 @@ select {
 
 .ticket0 {
     width: 100vw;
-    height: 91vh;
+    height: 91svh;
     overflow-y: hidden;
 
     position: fixed;
@@ -745,7 +745,7 @@ select {
 }
 
 .ticket1_Down {
-    margin-top: 85vh;
+    margin-top: 85svh;
 }
 
 .ticket2 {
@@ -755,7 +755,7 @@ select {
 }
 
 .ticket2_Up {
-    margin-top: -45vh;
+    margin-top: -45svh;
 }
 
 .ticket2_Down {
@@ -1235,7 +1235,7 @@ audio {
 }
 
 .bodyNutri {
-    height: 50vh;
+    height: 50svh;
     overflow-y: scroll;
 }
 
@@ -1282,7 +1282,7 @@ tbody {
     position: absolute;
     top: 0;
 
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     overflow-y: scroll;
     padding-bottom: 200px;
