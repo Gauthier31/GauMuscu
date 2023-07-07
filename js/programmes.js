@@ -74,7 +74,7 @@ function programmes(numProgramme) {
                     <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[PROGRAMME[numProg][i]]['nom'] + `</p>
                 </div>
 
-                <div class="exoBody">
+                
                     <div class="card-img-bloc2">
                         <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[PROGRAMME[numProg][i]]['nom'] + EXO[PROGRAMME[numProg][i]]['formatImg'] + `"
                                 alt="` + EXO[PROGRAMME[numProg][i]]['nom'] + `" 
@@ -83,7 +83,7 @@ function programmes(numProgramme) {
                     <hr class="hr-orange" />
 
                     <div class="tableStat">
-                        <div class="lineTabHead taille2">
+                        <div class="lineTabHead taille1">
                             <div class="caseTab_4_SE fw-9">Serie</div>
                             <div class="caseTab_4_Mid fw-9">Rep</div>
                             <div class="caseTab_4_Mid fw-9">Kilos</div>
@@ -105,7 +105,6 @@ function programmes(numProgramme) {
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                </div>
             </div>`;
 
 
@@ -134,99 +133,92 @@ function programmes(numProgramme) {
 
 
     f1.innerHTML +=
-        `<div class="ticket0">
+        `<div class="container-fluid" id="ficheResultat">
 
-            <div class="container-fluid" id="ficheResultat">
-
-                <div class="row g-5" id="listExo">
-                </div>
-
+            <div class="row g-5" id="listExo">
             </div>
-                
-            <div id="ticket1" class="ticket1 ticket1_Down">
-                <div class="bloc-tiret" onclick="ticket1Up_Down()">
-                    <div class="tiret"></div>
-                </div>
 
-                <div class="detail3">
+        </div>
+            
+        <div id="ticket1" class="ticket1 ticket1_Down">
+            <div class="bloc-tiret" onclick="ticket1Up_Down()">
+                <div class="tiret"></div>
+            </div>
 
-                    <div class="bouchon4">
-                        <div id="bouchon4">
-                        
-                            <div class="none" id="Info_Exo0" >
-                                <div class="exoHead">
-                                    <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
-                                </div>
-                
-                                <div class="exoBody">
-                                    <div class="card-img-bloc2">
-                                        <img class="imgExo mx-auto d-block" />
-                                    </div>
-                                    <hr class="hr-orange" />
-                
-                                    <div class="tableStat" id="0_statModule">
-                                        <div class="lineTabHead taille1">
-                                            <div class="caseTab_4_SE fw-9">Serie</div>
-                                            <div class="caseTab_4_Mid fw-9">Rep</div>
-                                            <div class="caseTab_4_Mid fw-9">Kilos</div>
-                                            <div class="caseTab_4_SE fw-9">
-                                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                    <i class="fa-solid fa-pen btn-i"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                
-                                        <div class="detail6" id="0_statModule">
-                                        </div>
-                                    </div>
-                
-                                    <button onclick="addSerie()" class="btn btn-module3">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div >
+            <div class="detail3 bouchon4">
 
-                            ` + listExoInfo + `
-
-                        </div>
-
-                        <div id="exoFooter" class="exoFooter">
-                            <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
-                            
-                            <div class="temps">
-                                <p id="temps" class="taille fw-9">00:00,0</p>
-                                <p id="temps.1" class="temps1">00:00,00</p>
-                                <p id="temps.2" class="temps1">00:00,00</p>
-                            </div>
-
-                            <button class="btn btn-warning btn-module2" onclick="serieSuivant()">Suivant</button>
-                        </div>
-
-                        <div class="bouchon3"></div>
+                <div id="bouchon4">
                     
-                    </div> 
+                    <div class="none" id="Info_Exo0" >
+                        <div class="exoHead">
+                            <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
+                        </div>
+            
+                        
+                            <div class="card-img-bloc2">
+                                <img class="imgExo mx-auto d-block" />
+                            </div>
+                            <hr class="hr-orange" />
+            
+                            <div class="tableStat" id="0_statModule">
+                                <div class="lineTabHead taille1">
+                                    <div class="caseTab_4_SE fw-9">Serie</div>
+                                    <div class="caseTab_4_Mid fw-9">Rep</div>
+                                    <div class="caseTab_4_Mid fw-9">Kilos</div>
+                                    <div class="caseTab_4_SE fw-9">
+                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <i class="fa-solid fa-pen btn-i"></i>
+                                        </button>
+                                    </div>
+                                </div>
+            
+                                <div class="detail6" id="0_statModule">
+                                </div>
+                            </div>
+            
+                            <button onclick="addSerie()" class="btn btn-module3">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                    </div >
+
+                    ` + listExoInfo + `
+
+                   </div>
+
+                <div id="exoFooter" class="exoFooter">
+                    <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
+                     
+                    <div class="temps">
+                        <p id="temps" class="taille fw-9">00:00,0</p>
+                        <p id="temps.1" class="temps1">00:00,00</p>
+                        <p id="temps.2" class="temps1">00:00,00</p>
+                    </div>
+
+                    <button class="btn btn-warning btn-module2" onclick="serieSuivant()">Suivant</button>
+                </div>
+
+                <div class="bouchon3"></div>
                 
+            </div>
+        </div>
+
+
+        <div id="ticket2" class="ticket2 ticket2_Down">
+            <div class="bloc-tiret" onclick="ticket2Up_Down()">
+                <div class="tiret"></div>
+            </div>
+
+            <div class="detail4_Up">
+                <div id="detail4">
+                    ` + listExo + `
+                </div>
+
+                <div class="div-btn">
+                    <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                 </div>
             </div>
 
-
-            <div id="ticket2" class="ticket2 ticket2_Down">
-                <div class="bloc-tiret" onclick="ticket2Up_Down()">
-                    <div class="tiret"></div>
-                </div>
-
-                <div class="detail4_Up">
-                    <div id="detail4">
-                        ` + listExo + `
-                    </div>
-
-                    <div class="div-btn">
-                        <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
-                    </div>
-                </div>
-
-            </div>
-        </div> `;
+        </div>`;
 
     // On affiche et color
     document.getElementById("Info_Exo" + PROGRAMME[numProg][1]).classList.remove("none");
@@ -617,7 +609,6 @@ function addExo(numExo) {
                         <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[idExo]['nom'] + `</p>
                     </div>
 
-                    <div class="exoBody">
                         <div class="card-img-bloc2">
                             <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[idExo]['nom'] + `.jpg"
                                         alt="` + EXO[idExo]['nom'] + `"
@@ -642,7 +633,6 @@ function addExo(numExo) {
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
-                    </div>
                 </div > `;
 
 
