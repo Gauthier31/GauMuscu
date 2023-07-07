@@ -204,7 +204,7 @@ section {
 
 .sectionTitre {
     position: sticky;
-    top: 0;
+    top: -50px;
     z-index: 15;
     box-shadow: 0 0.1em 5rem rgba(0, 0, 0, 0.5) !important;
 }
