@@ -868,7 +868,6 @@ select {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 3rem;
 }
 
 
@@ -922,7 +921,7 @@ select {
 /* ------- tab ------ */
 
 .tableStat {
-    margin: 2rem 0;
+    margin-bottom: 4rem;
 }
 
 .lineTab,
