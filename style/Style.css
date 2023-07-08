@@ -310,7 +310,7 @@ section {
 
 .detail6 {
     overflow-y: scroll;
-    height: 200px;
+    height: 400px;
     padding-bottom: 70px;
 }
 
@@ -395,7 +395,7 @@ section {
     height: 10px !important;
     opacity: 1;
     border-radius: 5px;
-    /*margin: -20px 0 20px 0;*/
+    margin: 0;
 }
 
 select {
@@ -737,6 +737,7 @@ select {
 .ticket1 {
     background-color: rgb(255, 255, 255);
     z-index: 1055;
+    height: 92svh;
 }
 
 .ticket1_Up {
@@ -786,7 +787,11 @@ select {
     flex-wrap: nowrap;
 
     width: 100%;
-    margin: 3rem 0;
+    margin: 1rem 0;
+}
+
+.end {
+    padding: 0 4%;
 }
 
 /* --------------- ticket 2 ---------------- */
@@ -921,7 +926,7 @@ select {
 /* ------- tab ------ */
 
 .tableStat {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .lineTab,
@@ -935,7 +940,7 @@ select {
 }
 
 .lineTab {
-    padding: 2% 5%;
+    padding: 0 3%;
     border-bottom: 1px solid rgb(0 0 0 / 20%);
     border-radius: 100px;
     height: 100px;

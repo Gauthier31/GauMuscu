@@ -99,12 +99,6 @@ function programmes(numProgramme) {
                         ` + tab + `
                         </div>
                     </div>
-
-                    <div class="div-btn">
-                        <button onclick="addSerie()" class="btn btn-module3">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
             </div>`;
 
 
@@ -145,49 +139,55 @@ function programmes(numProgramme) {
                 <div class="tiret"></div>
             </div>
 
-            <div class="detail3 bouchon4">
-
-                <div id="bouchon4">
+            <div class="detail3 bouchon4" id="bouchon4">
                     
-                    <div class="none" id="Info_Exo0" >
-                        <div class="exoHead">
-                            <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
-                        </div>
+                <div class="none" id="Info_Exo0" >
+                    <div class="exoHead">
+                        <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
+                    </div>
             
                         
-                            <div class="card-img-bloc2">
-                                <img class="imgExo mx-auto d-block" />
-                            </div>
-                            <hr class="hr-orange" />
+                        <div class="card-img-bloc2">
+                            <img class="imgExo mx-auto d-block" />
+                        </div>
+                        <hr class="hr-orange" />
             
-                            <div class="tableStat" id="0_statModule">
-                                <div class="lineTabHead taille1">
-                                    <div class="caseTab_4_SE fw-9">Serie</div>
-                                    <div class="caseTab_4_Mid fw-9">Rep</div>
-                                    <div class="caseTab_4_Mid fw-9">Kilos</div>
-                                    <div class="caseTab_4_SE fw-9">
-                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            <i class="fa-solid fa-pen btn-i"></i>
-                                        </button>
-                                    </div>
-                                </div>
-            
-                                <div class="detail6" id="0_statModule">
+                        <div class="tableStat" id="0_statModule">
+                            <div class="lineTabHead taille1">
+                                <div class="caseTab_4_SE fw-9">Serie</div>
+                                <div class="caseTab_4_Mid fw-9">Rep</div>
+                                <div class="caseTab_4_Mid fw-9">Kilos</div>
+                                <div class="caseTab_4_SE fw-9">
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <i class="fa-solid fa-pen btn-i"></i>
+                                    </button>
                                 </div>
                             </div>
             
-                            <button onclick="addSerie()" class="btn btn-module3">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                    </div >
+                            <div class="detail6" id="0_statModule">
+                            </div>
+                        </div>
+            
+                        <button onclick="addSerie()" class="btn btn-module3">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                </div >
 
-                    ` + listExoInfo + `
+                ` + listExoInfo + `
 
-                   </div>
+                
+            </div>
+                  
+            <div class="end">
+                <div class="div-btn">
+                    <button onclick="addSerie()" class="btn btn-module3">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div> 
 
                 <div id="exoFooter" class="exoFooter">
                     <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
-                     
+                    
                     <div class="temps">
                         <p id="temps" class="taille fw-9">00:00,0</p>
                         <p id="temps.1" class="temps1">00:00,00</p>
@@ -198,7 +198,6 @@ function programmes(numProgramme) {
                 </div>
 
                 <div class="bouchon3"></div>
-                
             </div>
         </div>
 
@@ -259,11 +258,11 @@ function ticket1Up_Down() {
 
         ticket1.classList.remove("ticket1_Down");
         ticket1.classList.add("ticket1_Up");
-        ticket1.style.transition = "margin-top 1s";
+        ticket1.style.transition = "margin-top 0.5s";
     } else {
         ticket1.classList.remove("ticket1_Up");
         ticket1.classList.add("ticket1_Down");
-        ticket1.style.transition = "margin-top 1s";
+        ticket1.style.transition = "margin-top 0.5s";
     }
 }
 
@@ -275,12 +274,12 @@ function ticket2Up_Down() {
 
         ticket2.classList.remove("ticket2_Down");
         ticket2.classList.add("ticket2_Up");
-        ticket2.style.transition = "margin-top 0.75s";
+        ticket2.style.transition = "margin-top 0.5s";
     } else {
 
         ticket2.classList.remove("ticket2_Up");
         ticket2.classList.add("ticket2_Down");
-        ticket2.style.transition = "margin-top 0.75s";
+        ticket2.style.transition = "margin-top 0.5s";
     }
 }
 
@@ -626,12 +625,6 @@ function addExo(numExo) {
                             <div class="detail6" id="` + EXO[numExo]['id'] + `_statModule">
                                 ` + tab + `
                             </div>
-                        </div>
-
-                        <div class="div-btn">
-                            <button onclick="addSerie()" class="btn btn-module3">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
                         </div>
                 </div > `;
 
