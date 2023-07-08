@@ -760,7 +760,7 @@ select {
 }
 
 .ticket2_Down {
-    margin-top: -150px;
+    margin-top: -120px;
 }
 
 .bloc-tiret {
@@ -792,6 +792,9 @@ select {
 }
 
 .end {
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
     padding: 4%;
     padding-bottom: 0;
     background-color: white;
