@@ -288,14 +288,14 @@ section {
 .detail4_Down {
     overflow-y: scroll;
     margin: 0% 2%;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 
     border-radius: 5em;
     border: 3px solid black;
 }
 
 .detail4_Up {
-    height: 48svh;
+    height: 47svh;
 }
 
 .detail4_Down {
@@ -311,7 +311,7 @@ section {
 .detail6 {
     overflow-y: scroll;
     height: 400px;
-    padding-bottom: 70px;
+    padding-bottom: 100px;
 }
 
 .img-muscle {
@@ -752,10 +752,11 @@ select {
     background-color: rgb(220, 220, 220);
     z-index: 1060;
     position: relative;
+    padding-bottom: 200px;
 }
 
 .ticket2_Up {
-    margin-top: -45svh;
+    margin-top: -55svh;
 }
 
 .ticket2_Down {
@@ -791,7 +792,11 @@ select {
 }
 
 .end {
+    position: absolute;
+    bottom: 0;
     padding: 0 4%;
+    width: -webkit-fill-available;
+    background-color: white;
 }
 
 /* --------------- ticket 2 ---------------- */
@@ -858,7 +863,7 @@ select {
 .serieActu {
     background-color: rgb(255, 193, 7, 0.75);
     font-size: 2.5em !important;
-    height: 130px !important;
+    height: 120px !important;
     transition: background-color 0.5s, font-size 0.5s, heigth 0.5s;
 }
 

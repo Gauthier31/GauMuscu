@@ -141,7 +141,7 @@ function programmes(numProgramme) {
 
             <div class="detail3 bouchon4" id="bouchon4">
                     
-                <div class="none" id="Info_Exo0" >
+                    <div class="none" id="Info_Exo0" >
                     <div class="exoHead">
                         <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
                     </div>
