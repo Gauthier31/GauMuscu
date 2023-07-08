@@ -384,10 +384,10 @@ section {
 /* ------------- Modal Exo ----------------- */
 
 .imgExo {
-    max-height: 100%;
+    height: 400px;
     min-height: 75%;
     max-width: 100%;
-    width: auto;
+    width: -webkit-fill-available;
 }
 
 .hr-orange {
