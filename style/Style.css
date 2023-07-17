@@ -160,6 +160,7 @@ header {
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    margin: 0;
 }
 
 .center-h-v {
@@ -234,7 +235,7 @@ section {
 }
 
 .card-img-bloc2 {
-    height: 450px;
+    height: 370px;
 
     display: flex;
     align-items: center;
@@ -288,7 +289,6 @@ section {
 .detail4_Down {
     overflow-y: scroll;
     margin: 0% 2%;
-    padding-bottom: 50px;
 
     border-radius: 5em;
     border: 3px solid black;
@@ -310,8 +310,8 @@ section {
 
 .detail6 {
     overflow-y: scroll;
-    height: 400px;
-    padding-bottom: 100px;
+    height: 420px;
+    padding-bottom: 300px;
 }
 
 .img-muscle {
@@ -381,13 +381,70 @@ section {
     background-color: rgb(0, 0, 0, 0);
 }
 
+/* ------------- List Programmes V2 ----------------- */
+
+.prog {
+    border-radius: 50px;
+
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.progTitre {
+    font-size: 3rem;
+    border-radius: 3rem 3rem 0 0;
+    box-shadow: -20px -20px 60px #ffffff;
+    padding: 1rem 3rem;
+}
+
+.progExos {
+    width: inherit;
+    overflow-x: scroll;
+    display: flex;
+    border-radius: 0 0 3rem 3rem;
+    box-shadow: inset 20px 20px 60px #bebebe,
+        inset -20px -20px 60px #ffffff;
+}
+
+.progExo {
+    width: 350px;
+    margin: 2rem 1rem 0 1rem;
+}
+
+.progExoBloc {
+    width: inherit;
+}
+
+.progExoBlocImage {
+    background-color: white;
+    border-radius: 3rem;
+    height: 250px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progExoImage {
+    max-height: 100%;
+    min-height: 75%;
+    max-width: 100%;
+    width: auto;
+    padding: 3%;
+}
+
+.progExoTitre {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
 /* ------------- Modal Exo ----------------- */
 
 .imgExo {
-    height: 400px;
+    height: 350px;
     min-height: 75%;
     max-width: 100%;
-    width: -webkit-fill-available;
 }
 
 .hr-orange {
@@ -522,7 +579,7 @@ select {
 }
 
 
-/* ----------- id: Section ----------------- */
+/* ----------- Section ----------------- */
 
 .bouchon1 {
     height: 800px;
@@ -634,10 +691,6 @@ select {
 
 /* -------------- Liste Exo -------------------*/
 
-#accueil {
-    padding: 0 3%;
-}
-
 .pageTitre {
     position: sticky;
     vertical-align: middle;
@@ -652,7 +705,7 @@ select {
 
 .ligneExo {
     height: 250px;
-    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     text-align: center;
     align-items: center;
@@ -685,6 +738,8 @@ select {
     margin-bottom: -5px;
     width: 500px;
     padding: 0% 4%;
+    max-height: 180px;
+    overflow-y: hidden;
 }
 
 .ligneDescription {
@@ -764,6 +819,10 @@ select {
 }
 
 .bloc-tiret {
+    height: 70px;
+}
+
+.bloc-tiret2 {
     height: 150px;
 }
 
@@ -865,7 +924,7 @@ select {
     background-color: rgb(255, 193, 7, 0.75);
     font-size: 2.5em !important;
     height: 120px !important;
-    transition: background-color 0.5s, font-size 0.5s, heigth 0.5s;
+    transition: background-color 0.5s, heigth 0.5s;
 }
 
 .div-info-btn {
@@ -879,6 +938,7 @@ select {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 2rem 0;
 }
 
 
@@ -1088,116 +1148,14 @@ input {
     vertical-align: bottom;
 }
 
+/* --------------- position ------------- */
+
 .absolute {
     position: absolute;
 }
 
 .relative {
     position: relative;
-}
-
-
-
-/* ------------ Musique ----------------- */
-
-.offcanvas-start {
-    width: 60%;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    background-color: rgb(240, 240, 240);
-    z-index: 1100;
-}
-
-.offcanvas-header {
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-}
-
-.btn-canvas {
-    position: absolute;
-    right: 10%;
-    top: 50px;
-}
-
-audio {
-    width: 100%;
-    font-size: 3em;
-}
-
-.musicImg {
-    width: 450px;
-    height: 400px;
-    background-color: rgb(60, 60, 60);
-}
-
-.musicPlayeurBloc,
-.musicImgBloc {
-    width: 100%;
-    padding: 2% 5%;
-    display: flex;
-    justify-content: center;
-}
-
-.p-null {
-    margin: 0;
-}
-
-.musicPlayeur {
-    width: 100%;
-    height: 75px;
-    padding: 2%;
-    border-radius: 50px;
-    background-color: rgb(60, 60, 60);
-}
-
-.musicTitre {
-    width: 100%;
-    text-align: center;
-}
-
-.ligne-list-music {
-    height: 200px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.ligne-img-bloc-music {
-    float: left;
-    height: 200px;
-    width: 200px;
-    margin-right: -5%;
-    border-radius: 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ligne-img-music {
-    height: 100%;
-    max-width: 100%;
-    width: auto;
-    padding: 5%;
-    border-radius: 50px;
-}
-
-.musicBlocTxt {
-    width: 250px;
-    align-items: center;
-    text-align: center;
-}
-
-
-.triangle3 {
-    width: 0;
-    height: 0;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-left: 50px solid #ffc107;
-
-    display: inline-block;
-    transform: translate(-15%, 0%);
 }
 
 /* ----------- Page Nutrition ----------- */
@@ -1327,5 +1285,3 @@ tbody {
     text-decoration: none;
     color: rgb(0, 0, 0) !important;
 }
-
-/* --------------- position ------------- */

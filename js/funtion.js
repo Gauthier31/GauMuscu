@@ -35,7 +35,6 @@ pagination(1);
 
 getProgramme();
 getNutrition();
-getMusique();
 putStat();
 
 // Affichage masquage des blocs de sections
@@ -113,35 +112,34 @@ function getExercice(idExo) {
 
 ///////////////////////////////// Met en place les programmes /////////////////////////////////////////////
 function getProgramme() {
-
     let prog = document.getElementById("prog");
 
     for (i = 1; i < PROGRAMME.length; i++) {
-        txt = "";
+        listExo = "";
         for (j = 1; j < PROGRAMME[i].length; j++) {
 
-            txt +=
-                `<li class="list-group-item taille2">` + j + `. ` + EXO[PROGRAMME[i][j]]['nom']
-                + `</li>`;
+            listExo +=
+                `<div class="progExo">
+                    <div class="progExoBloc">
+                        <div class="progExoBlocImage">
+                            <img class="progExoImage" src="document/exo/` + EXO[j]['nom'] + EXO[j]['formatImg'] + `" 
+                                onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
+                        </div>
+                    </div>
+                    <div class="progExoTitre">` + EXO[PROGRAMME[i][j]]['nom'] + `</div>
+                </div>`;
 
         }
 
         prog.innerHTML +=
-            `<div class="col-12 col-lg-4 col-xl-3 tousProg '` + PROGRAMME[i][0].toUpperCase() + `'">
-                    <ol class="list-group" id="prog` + i + `">
-                    <li class="list-group-item taille list-titre-bloc">
-                        <p class="list-titre depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + `</p>
-
-                        <button class="bloc-i" id="progBtn` + i + `" onClick="progCollapse(this)"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#progList` + i + `"
-                        aria-controls="progList` + i + `" aria-expanded="false">
-
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                    </li>
-                    <div class="list-exo collapse" id="progList` + i + `">` + txt + `</div>   
-                    </ol>
-                </div>`;
+            `<div class="prog">
+                <div class="progTitre">
+                    <p class="depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + `</p>
+                </div>
+                <div class="progExos">
+                ` + listExo + `
+                </div>
+            </div>`;
     }
 }
 
@@ -180,31 +178,6 @@ function getNutrition() {
     }
 }
 
-///////////////////////////////////////// Mets en place les musiques //////////////////////////////////////
-function getMusique() {
-    const listMusique = document.getElementById("listMusique");
-
-    for (let i = 0; i < BD_Musique.length; i++) {
-
-        listMusique.innerHTML +=
-            `<div class="ligne-list-music" id="musique` + i + `">
-                    <div class="ligne-img-bloc-music">
-                        <img class="ligne-img-music" src="document/musique/cover/` + BD_Musique[i][0] + `.jpg"/>
-                    </div>
-
-                    <div class="musicBlocTxt">
-                        <p class="taille4 fw-9 p-null">` + BD_Musique[i][1] + `</p>
-                        <p class="taille5 fw-6 p-null">` + BD_Musique[i][0] + `</p>
-                    </div>
-
-                    <div class="triangle3" onclick="lancementMusique(` + i + `)"></div>
-                </div>`;
-    }
-}
-
-function setMusique() {
-
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function putStat() {

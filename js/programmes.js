@@ -203,7 +203,7 @@ function programmes(numProgramme) {
 
 
         <div id="ticket2" class="ticket2 ticket2_Down">
-            <div class="bloc-tiret" onclick="ticket2Up_Down()">
+            <div class="bloc-tiret2" onclick="ticket2Up_Down()">
                 <div class="tiret"></div>
             </div>
 
@@ -240,11 +240,12 @@ function ficheInitialisation(numProg) {
 
     // Date de créa
     var today = new Date();
-
     ficheResultat.innerHTML =
         `<p class="text-center taille" > `
         + PROGRAMME[numProg][0] + ` : `
-        + today.toLocaleDateString("en-US", { hour12: false }) +
+        + today.toLocaleDateString("en-US")
+        + ` <br/> `
+        + today.getHours() + `h` + today.getMinutes() +
         `</p >
         <div class="col-6" style="display: none">`;
 }
@@ -489,8 +490,6 @@ function clear() {
     btn.innerHTML = "Arret";
     btn.value = "Arret";
 }
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
