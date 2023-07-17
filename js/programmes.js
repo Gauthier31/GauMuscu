@@ -50,12 +50,12 @@ function programmes(numProgramme) {
 
                     <div class="caseTab_4_Mid">
                         <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + STAT[exoTab][j] + `</p> -->
-                        <input type="number" pattern="\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
+                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
                         <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + STAT[exoTab][j + 1] + `</p> -->
-                        <input type="number" pattern="\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
+                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
@@ -380,11 +380,11 @@ function addSerie() {
                 <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + newSerieNum + `)">` + newSerieNum + `</div>
 
                 <div class="caseTab_4_Mid">
-                    <input type="number" pattern="\d*" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + STAT[exo][STAT[exo].length - 2] + `">
+                    <input type="number" pattern="\\d*" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + STAT[exo][STAT[exo].length - 2] + `">
                 </div>
 
                 <div class="caseTab_4_Mid">
-                    <input type="number" pattern="\d*" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + STAT[exo][STAT[exo].length - 1] + `">
+                    <input type="number" pattern="\\d*" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + STAT[exo][STAT[exo].length - 1] + `">
                 </div>
 
                 <div class="caseTab_4_SE">
@@ -581,11 +581,11 @@ function addExo(numExo) {
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
-                        <input type="number" pattern="\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
+                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
-                        <input type="number" pattern="\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
+                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
