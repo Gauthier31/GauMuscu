@@ -465,6 +465,10 @@ select {
     text-align: center;
 }
 
+#modal-title {
+    height: 3svh;
+}
+
 .modal-dialog {
     max-width: 900px;
 }
@@ -843,7 +847,6 @@ select {
 
 .exoHead {
     border-bottom: 2px solid black;
-    height: 3svh;
 }
 
 .exoFooter {
