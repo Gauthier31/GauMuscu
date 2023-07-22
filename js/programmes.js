@@ -179,7 +179,7 @@ function programmes(numProgramme) {
             </div>
                   
             <div class="end">
-                <div class="div-btn">
+                <div class="div-btn2">
                     <button onclick="addSerie()" class="btn btn-module3">
                         <i class="fa-solid fa-plus"></i>
                     </button>
@@ -212,7 +212,7 @@ function programmes(numProgramme) {
                     ` + listExo + `
                 </div>
 
-                <div class="div-btn">
+                <div class="div-btn2">
                     <button onClick="page('ajoutExo')" class="btn btn-ticket2 taille1">Ajouter un exercice</button>
                 </div>
             </div>

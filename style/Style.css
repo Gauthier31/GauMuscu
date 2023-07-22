@@ -812,7 +812,7 @@ select {
 }
 
 .ticket2 {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(220, 220, 220);
     z-index: 1060;
     position: relative;
     padding-bottom: 200px;
@@ -943,6 +943,12 @@ select {
 }
 
 .div-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.div-btn2 {
     width: 100%;
     display: flex;
     justify-content: center;
