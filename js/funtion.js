@@ -134,7 +134,7 @@ function getProgramme() {
         prog.innerHTML +=
             `<div class="prog">
                 <div class="progTitre">
-                    <p class="depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + `</p>
+                    <p class="depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + ` --></p>
                 </div>
                 <div class="progExos">
                 ` + listExo + `
