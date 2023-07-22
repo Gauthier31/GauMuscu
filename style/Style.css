@@ -34,8 +34,9 @@ body {
 nav {
     width: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: -5px;
     z-index: 1030;
+    height: 8svh;
 }
 
 nav>ul {
@@ -295,7 +296,7 @@ section {
 }
 
 .detail4_Up {
-    height: 47svh;
+    height: 50svh;
 }
 
 .detail4_Down {
@@ -756,11 +757,13 @@ select {
 
 
 /* ----------- Page Exo du prog ---------------*/
+/*
 #blocFicheResultat {
     padding: 0;
     height: 2120px;
     overflow: hidden;
 }
+*/
 
 #ficheResultat {
     padding: 10% 3%;
@@ -776,7 +779,7 @@ select {
 
 .ticket0 {
     width: 100vw;
-    height: 92svh;
+    height: 93svh;
     overflow-y: hidden;
 
     position: fixed;
@@ -801,7 +804,7 @@ select {
 }
 
 .ticket1_Down {
-    margin-top: 85svh;
+    margin-top: 86svh;
 }
 
 .ticket2 {
@@ -812,19 +815,19 @@ select {
 }
 
 .ticket2_Up {
-    margin-top: -55svh;
+    margin-top: -58svh;
 }
 
 .ticket2_Down {
-    margin-top: -120px;
+    margin-top: -6svh;
 }
 
 .bloc-tiret {
-    height: 70px;
+    height: 3svh;
 }
 
 .bloc-tiret2 {
-    height: 150px;
+    height: 7svh;
 }
 
 .tiret {
@@ -840,6 +843,7 @@ select {
 
 .exoHead {
     border-bottom: 2px solid black;
+    height: 3svh;
 }
 
 .exoFooter {
@@ -913,12 +917,12 @@ select {
 
 
 .exoActu {
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200, 0.5);
     transition: background-color 0.75s;
 }
 
 .exoFini {
-    background-color: rgb(200, 200, 200, 0.5);
+    background-color: rgb(200, 200, 200);
 }
 
 .serieActu {
