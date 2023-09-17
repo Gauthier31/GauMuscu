@@ -95,7 +95,7 @@ function programmes(numProgramme) {
                                 -->
                             </div>
                         </div>
-                        <div class="detail6" id="` + EXO[PROGRAMME[numProg][i]]['id'] + `_statModule">
+                        <div class="detail3" id="` + EXO[PROGRAMME[numProg][i]]['id'] + `_statModule">
                         ` + tab + `
                         </div>
                     </div>
@@ -139,7 +139,7 @@ function programmes(numProgramme) {
                 <div class="tiret"></div>
             </div>
 
-            <div class="detail3 bouchon4" id="bouchon4">
+            <div class="detail bouchon4" id="bouchon4">
                     
                     <div class="none" id="Info_Exo0" >
                     <div class="exoHead">
@@ -164,7 +164,7 @@ function programmes(numProgramme) {
                                 </div>
                             </div>
             
-                            <div class="detail6" id="0_statModule">
+                            <div class="detail3" id="0_statModule">
                             </div>
                         </div>
             
@@ -207,8 +207,8 @@ function programmes(numProgramme) {
                 <div class="tiret"></div>
             </div>
 
-            <div class="detail4_Up">
-                <div id="detail4">
+            <div class="detail2_Up">
+                <div id="detail3">
                     ` + listExo + `
                 </div>
 
@@ -244,7 +244,7 @@ function ficheInitialisation(numProg) {
         `<p class="text-center taille" > `
         + PROGRAMME[numProg][0] + ` : `
         + today.toLocaleDateString("en-US")
-        + ` <br/> `
+        + ` - `
         + today.getHours() + `h` + today.getMinutes() +
         `</p >
         <div class="col-6" style="display: none">`;
@@ -621,7 +621,7 @@ function addExo(numExo) {
                                 <div class="caseTab_4_Mid fw-9">Kilos</div>
                             </div>
 
-                            <div class="detail6" id="` + EXO[numExo]['id'] + `_statModule">
+                            <div class="detail3" id="` + EXO[numExo]['id'] + `_statModule">
                                 ` + tab + `
                             </div>
                         </div>
@@ -631,9 +631,9 @@ function addExo(numExo) {
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            // On l'ajoute dans le detail4
-            const detail4 = document.getElementById("detail4");
-            detail4.innerHTML +=
+            // On l'ajoute dans le detail3
+            const detail3 = document.getElementById("detail3");
+            detail3.innerHTML +=
                 `<div class="ligne-list-exo" id="Lancement_Exo` + idExo + `" >
             
                     <div class="crossX" onClick="deleteExo(` + idExo + `)">

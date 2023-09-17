@@ -13,13 +13,6 @@ body {
     margin: 0 !important;
 }
 
-.noPhone {
-    display: flex;
-    justify-content: center;
-
-    line-height: 500px;
-}
-
 /*
 @media screen and (orientation: landscape) {
 
@@ -60,8 +53,6 @@ nav>ul>li>i {
     width: 40px !important;
 }
 
-
-
 /* -------------- Header ------------------*/
 header {
     background-size: cover;
@@ -78,7 +69,7 @@ header {
     width: 350px;
 
     position: absolute;
-    top: 60%;
+    top: 45%;
     left: 30%;
     transform: translate(-50%, -50%);
 
@@ -98,7 +89,7 @@ header {
     font-size: 100px;
 
     position: absolute;
-    top: 55%;
+    top: 40%;
     left: 67%;
     transform: translate(-50%, -50%);
 
@@ -164,15 +155,7 @@ header {
     margin: 0;
 }
 
-.center-h-v {
-    position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-}
-
 /* -------------- Liste ---------------------*/
-
 .type {
     border: solid;
     border-radius: 50px;
@@ -254,14 +237,6 @@ section {
     margin: auto;
 }
 
-.card-img-top {
-    max-height: 100%;
-    min-height: 80%;
-    width: auto;
-    max-width: 100%;
-    padding: 5% 0 5% 0;
-}
-
 .cardDescription {
     margin: 1em 0.5em 1em 0.5em;
     height: 150px;
@@ -269,25 +244,13 @@ section {
     overflow: hidden;
 }
 
-
 .detail {
-    height: 280px;
-    overflow-y: scroll;
-    font-size: 1em;
-}
-
-.detail2 {
-    height: 1100px;
-    overflow-y: scroll;
-}
-
-.detail3 {
     overflow-y: scroll;
 }
 
 
-.detail4_Up,
-.detail4_Down {
+.detail2_Up,
+.detail2_Down {
     overflow-y: scroll;
     margin: 0% 2%;
 
@@ -295,45 +258,21 @@ section {
     border: 3px solid black;
 }
 
-.detail4_Up {
+.detail2_Up {
     height: 50svh;
 }
 
-.detail4_Down {
+.detail2_Down {
     height: 0px;
 }
 
-.detail5 {
-    height: 40svh;
-    overflow-y: scroll;
-    margin-bottom: 10%;
-}
-
-.detail6 {
+.detail3 {
     overflow-y: scroll;
     height: 420px;
-    padding-bottom: 300px;
-}
-
-.img-muscle {
-    max-width: 400px;
-    max-height: 400px;
-    float: right;
-    border: solid;
+    padding-bottom: 200px;
 }
 
 /* -------------- btn cards -------------------*/
-
-.btn-prog {
-    border-top-right-radius: 45px;
-    width: 250px;
-    height: 89px;
-    font-size: 1em;
-    position: absolute;
-    right: 0;
-    transform: translate(0%, -10%);
-}
-
 .div-btnInfoCard {
     width: 100%;
     display: flex;
@@ -457,31 +396,11 @@ section {
     margin: 0;
 }
 
-select {
-    border: none;
-    height: 140px;
-    background-image: linear-gradient(white, grey, white);
-    width: 50px;
-    text-align: center;
-}
-
 #titre-modal {
     height: 4svh;
 }
 
-.modal-dialog {
-    max-width: 900px;
-}
-
-.modal-footer {
-    justify-content: center;
-    font-size: 2.5em;
-    height: 300px;
-}
-
-.espaceB {
-    margin-bottom: 1em;
-}
+/* - - - - - - - - - - - - - - - - - - - - -  */
 
 .espaceH {
     margin-top: 1em;
@@ -588,7 +507,7 @@ select {
 /* ----------- Section ----------------- */
 
 .bouchon1 {
-    height: 800px;
+    height: 650px;
     z-index: -2;
 }
 
@@ -812,7 +731,7 @@ select {
 }
 
 .ticket2 {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(240, 240, 240);
     z-index: 1060;
     position: relative;
     padding-bottom: 200px;

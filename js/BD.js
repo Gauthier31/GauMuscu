@@ -1,336 +1,3 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// tableau
-// épaules, bras, pectoraux, abdominaux, jambes, dos
-const EXO2 = [
-
-    // Bouchon
-    [0, "titre", "petiteImage", "", "-tousExo",
-        "description"],
-
-    [1, "Développé couché avec haltères", "pectoraux.jpg", "pectoraux-dos-bras-tousExo",
-        "description"],
-
-    [2, "Développé incliné avec haltères", "pectoraux.jpg", "pectoraux-épaules-bras-tousExo",
-        "description"],
-
-    [3, "Dips", "pectoraux.jpg", "pectoraux-épaules-bras-tousExo",
-        "description"],
-
-    [4, "Pull over", "pectoraux.jpg", "pectoraux-épaules-bras-tousExo",
-        "description"],
-
-    [5, "Écartés à la machine", "pectoraux.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [6, "Écartés à la poulie haute", "pectoraux.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [7, "Développé assis à la machine convergente", "pectoraux.jpg", "pectoraux-dos-bras-tousExo",
-        "description"],
-
-    /////////////////////////////////////////////////////////////////////////////////
-
-    [8, "Leg Press", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [9, "Leg Extension", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [10, "Leg Curl", "ischio.jpg", "jambes-tousExo",
-        "description"],
-
-    [11, "Adducteurs", "adducteur.jpg", "jambes-tousExo",
-        "description"],
-
-    [12, "Abduction", "adducteur.jpg", "jambes-tousExo",
-        "description"],
-
-    [13, "Presse à mollets", "mollet.jpg", "jambes-tousExo",
-        "description"],
-
-    /////////////////////////////////////////////////////////////////////////////////
-
-    [14, "Traction", "dorseaux.jpg", "dos-bras-épaules-tousExo",
-        "description"],
-
-    [15, "Traction prise large", "dorseaux.jpg", "dos-bras-épaules-tousExo",
-        "description"],
-
-    [16, "Traction prise serré", "dorseaux.jpg", "dos-bras-épaules-tousExo",
-        "description"],
-
-    [17, "Élévation latéral avec haltère", "deltoide.jpg", "épaules-tousExo",
-        "description"],
-
-    [18, "Shoulder press", "deltoide.jpg", "épaules-bras-tousExo",
-        "description"],
-
-    [19, "Tirage horizontal", "dorseaux.jpg", "dos-bras-tousExo",
-        "description"],
-
-    [20, "Élévation latéral avec poulie", "deltoide.jpg", "épaules-tousExo",
-        "description"],
-
-    /////////////////////////////////////////////////////////////////////////////////
-
-    [21, "Squat", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [22, "Soulevé de terre", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [23, "Fente avec haltère", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [24, "Fente surelevé avec haltère", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [25, "Hip Thrust", "ischio.jpg", "jambes-tousExo",
-        "description"],
-
-    [26, "Low row", "dorseaux.jpg", "dos-épaules-tousExo",
-        "description"],
-
-    [27, "Soulevé de terre roumain", "dorseaux.jpg", "dos-épaules-tousExo",
-        "description"],
-
-
-    [28, "Tapis de course", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [29, "Escalier", "quadriceps.jpg", "jambes-tousExo",
-        "description"],
-
-    [30, "Tirage vertical", "dorseaux.jpg", "dos-bras-épaules-tousExo",
-        "description"],
-
-    /////////////////////////////////////////////////////////////////////////////////
-
-    [31, "Curl haltere", "bicep.jpg", "bras-tousExo",
-        "description"],
-
-    [32, "Curl haltere marteau", "bicep.jpg", "bras-tousExo",
-        "description"],
-
-    [33, "Triceps", "tricep.jpg", "bras-tousExo",
-        "description"],
-
-    /////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////
-
-    [34, "Abdominal rollout on knees", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [35, "Abdominal crunch", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [36, "Abduction leg lying, split (gauche - droite)", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [37, "Abdominal knees up, low handle", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [38, "Abdominal straight legs", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [39, "Fente, alterné", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [40, "Squat", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [41, "Squat, sumo", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [42, "Air plane", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [43, "Arch chop", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [44, "Arm extension", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [45, "Arnold press seated", "defautExo.jpg", "épaules-tousExo",
-        "description"],
-
-    [46, "Back extension, machine - ground", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [47, "Balance, standing", "defautExo.jpg", "abdominaux-jambes-tousExo",
-        "description"],
-
-    [48, "Balance, V+sit", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [49, "Bench press, assited", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [50, "Bench press, inclined assited", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [51, "Bench arl pullover", "defautExo.jpg", "pectoraux-bras-tousExo",
-        "description"],
-
-    [52, "Bent over row", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [53, "Bent over row, split (gauche - droite)", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [54, "Bent over row, standing", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [55, "Bicep curl, machine", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [56, "Bicep curl, poulie basse", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [57, "Bicep curl, poulie haute", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [58, "Bicep curl, suplinated (poulie)", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [59, "Bird dog", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [60, "Bird dog, standing (gauche - droite)", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [61, "Bottom up press", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [62, "Box jumps", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [63, "Bulgarian split squat (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [64, "Burpees", "defautExo.jpg", "cardio-abdominaux-jambes-tousExo",
-        "description"],
-
-    [65, "Burpees, jump up", "defautExo.jpg", "cardio-abdominaux-jambes-tousExo",
-        "description"],
-
-    [66, "Burpees, jump up push up", "defautExo.jpg", "cardio-abdominaux-jambes-pectoraux-tousExo",
-        "description"],
-
-    [67, "Butterfly", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [68, "Calf raise", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [69, "Calves", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [70, "Chest press, suspension", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [71, "Chest press, lower grip 2 mains", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [72, "Chest press, lower grip split (gauche - droite)", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [73, "Chest press, upper grip 2 mains", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [74, "Chest press, upper grip split (gauche - droite)", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [75, "Chest press, wide grip", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [76, "Chest press, small grip", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    [77, "Child's pose", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [78, "Chin up, narrow grip", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [79, "Chin up", "defautExo.jpg", "bras-dos-tousExo",
-        "description"],
-
-    [80, "Crunch, machine", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [81, "Crunch, sol", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [82, "Crunch, bras extended", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [83, "Crunch, diagonal alterned", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [84, "Crunch, toe touch", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [85, "Deadlift", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [86, "Deadlift, sumo stance", "defautExo.jpg", "dos-fessiers-tousExo",
-        "description"],
-
-    [87, "Dips, machine", "defautExo.jpg", "bras-pectoraux-tousExo",
-        "description"],
-
-    [88, "Dips, chaise", "defautExo.jpg", "bras-pectoraux-tousExo",
-        "description"],
-
-    [89, "Diverging lat pull down, 2 mains", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [90, "Elbow, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [91, "Donkey kick, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [92, "Glute kickback, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [93, "Glutes", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [94, "Glutes raise, alterné", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [95, "Goblet squat, split (gauche - droite)", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [96, "Goblet squat", "defautExo.jpg", "jambes-tousExo",
-        "description"],
-
-    [97, "Goodmorning", "defautExo.jpg", "dos-jambes-tousExo",
-        "description"],
-
-    [98, "Hip trust, (haltère - machine)", "defautExo.jpg", "fessiers-jambes-tousExo",
-        "description"],
-
-    [99, "Reverse crunch", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    [100, "Reverse curl", "defautExo.jpg", "bras-tousExo",
-        "description"],
-
-    [101, "Reverse fly", "defautExo.jpg", "pectoraux-tousExo",
-        "description"],
-
-    "jpg", [102, "Reverse fly, horizontal grip", "defautExo.jpg", "dos-tousExo",
-        "description"],
-
-    [103, "Russian twist", "defautExo.jpg", "abdominaux-tousExo",
-        "description"],
-
-    /////////////////////////////////////////////////////////////////////////////////
-];
-
 const EXO = [
     {
         id: "0",
@@ -345,7 +12,7 @@ const EXO = [
         nom: "Développé couché avec haltères",
         formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
-        listMuscle: "pectoraux-dos-bras-tousExo",
+        listMuscle: "pectoraux-tousExo",
         description: "description"
     },
     {
@@ -353,7 +20,7 @@ const EXO = [
         nom: "Développé incliné avec haltères",
         formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
-        listMuscle: "pectoraux-épaules-bras-tousExo",
+        listMuscle: "pectoraux-tousExo",
         description: "description"
     },
     {
@@ -369,7 +36,7 @@ const EXO = [
         nom: "Pull over",
         formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
-        listMuscle: "pectoraux-épaules-bras-tousExo",
+        listMuscle: "dos-épaules-tousExo",
         description: "description"
     },
     {
@@ -393,7 +60,7 @@ const EXO = [
         nom: "Développé assis à la machine convergente",
         formatImg: ".jpg",
         muscleImg: "pectoraux.jpg",
-        listMuscle: "pectoraux-dos-bras-tousExo",
+        listMuscle: "pectoraux-tousExo",
         description: "description"
     },
     {
@@ -449,7 +116,7 @@ const EXO = [
         nom: "Traction",
         formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
-        listMuscle: "dos-bras-épaules-tousExo",
+        listMuscle: "dos-bras-tousExo",
         description: "description"
     },
     {
@@ -457,7 +124,7 @@ const EXO = [
         nom: "Traction prise large",
         formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
-        listMuscle: "dos-bras-épaules-tousExo",
+        listMuscle: "dos-bras-tousExo",
         description: "description"
     },
     {
@@ -465,7 +132,7 @@ const EXO = [
         nom: "Traction prise serré",
         formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
-        listMuscle: "dos-bras-épaules-tousExo",
+        listMuscle: "dos-bras-tousExo",
         description: "description"
     },
     {
@@ -481,7 +148,7 @@ const EXO = [
         nom: "Shoulder press",
         formatImg: ".jpg",
         muscleImg: "deltoide.jpg",
-        listMuscle: "épaules-bras-tousExo",
+        listMuscle: "épaules-tousExo",
         description: "description"
     },
     {
@@ -489,7 +156,7 @@ const EXO = [
         nom: "Tirage horizontal",
         formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
-        listMuscle: "dos-bras-tousExo",
+        listMuscle: "dos-tousExo",
         description: "description"
     },
     {
@@ -553,7 +220,7 @@ const EXO = [
         nom: "Soulevé de terre roumain",
         formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
-        listMuscle: "dos-épaules-tousExo",
+        listMuscle: "dos-tousExo",
         description: "description"
     },
     {
@@ -577,7 +244,7 @@ const EXO = [
         nom: "Tirage vertical",
         formatImg: ".jpg",
         muscleImg: "dorseaux.jpg",
-        listMuscle: "dos-bras-épaules-tousExo",
+        listMuscle: "dos-bras-tousExo",
         description: "description"
     },
     {
@@ -625,7 +292,7 @@ const EXO = [
         nom: "Abduction leg lying, split (gauche - droite)",
         formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
-        listMuscle: "jambes-tousExo",
+        listMuscle: "abdominaux-tousExo",
         description: "description"
     },
     {
@@ -721,7 +388,7 @@ const EXO = [
         nom: "Balance, V+sit",
         formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
-        listMuscle: "abdominaux-tousExo",
+        listMuscle: "abdominaux-jambes-tousExo",
         description: "description"
     },
     {
@@ -1253,7 +920,7 @@ const PROGRAMME = [
     ["Programme par defaut"],
 
     // Push Gauthier
-    ["Push V2", 1, 2, 6, 3, 33],
+    ["Push V2", 1, 2, 3, 6, 33],
     // Leg Gauthier
     ["Leg V2", 8, 9, 10, 24, 13],
     // Pull Gauthier
@@ -1266,8 +933,8 @@ const PROGRAMME = [
     // Pull Gauthier
     ["Pull V1 (Dos, Épaules)", 14, 18, 19, 20],
 
-    // Jambe Juliette
-    ["Jambe (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],
+    // Jambes Juliette
+    ["Jambes (Juliette)", 21, 22, 24, 8, 25, 9, 10, 11],
 
 ];
 

@@ -1,32 +1,13 @@
 console.log(window.screen.width);
 
-/*
-setInterval(function () {
-    if (window.screen.width >= 500) {
-        document.getElementById("body").innerHTML =
-            `<div class="noPhone">
-                <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
-            </div>`;
-    } else {
-
-    }
-}, 5000)
-
-if (window.screen.width >= 500) {
-    document.getElementById("body").innerHTML =
-        `<div class="noPhone">
-            <h1 class="taille">Cette application n'est disponible que sur téléphone désolé ._.</h1>
-        </div>`;
-} else {
-*/
 const LIMIT_EXO = 20;
 var TableauFiltre = [];
 var typeExo = "tousExo";
 
 // Ajoute tous les id dans tableau
-for (let i = 0; i < EXO.length; i++) {
-    TableauFiltre.push(EXO[i]['id']);
-}
+EXO.forEach(exo => {
+    TableauFiltre.push(exo['id']);
+});
 
 document.getElementById('tousExo').classList.add("typeActive");
 
@@ -42,40 +23,6 @@ page("accueil");
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// Affiche la liste des exo ///////////////////////////////////////////////
-function getListExercice() {
-    let ligneExo = document.getElementById("ligneExo");
-
-    for (i = 1; i < EXO.length; i++) {
-
-        ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-        const tabStyle = EXO[i]['listMuscle'].split("-");
-
-        // catégorie
-        let classList = "";
-        for (j = 0; j < tabStyle.length - 1; j++) {
-            classList += tabStyle[j] + " ";
-        }
-        classList += tabStyle[j];
-
-        ligneExo.innerHTML +=
-            `<div class="ligneExo tousExo none ' ` + classList.toUpperCase() + ` ` + EXO[i]['nom'].toUpperCase() + ` ''" id="ligneExo` + EXO[i][0] + `">
-                    <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + EXO[i]['nom'] + EXO[i]['formatImg'] + `" 
-                            onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
-                    </div>
-        
-                    <div>
-                        <p class="taille1 fw-9 ligneTitre">` + EXO[i]["nom"] + `</p>
-                        <div class="taille3 fw-6 opacity-50">
-                            ` + classList + `
-                        </div>
-                    </div>
-                    
-                    <div class="triangle1" onclick="addExo(` + i + `)"></div>
-                </div>`
-    }
-}
-
 function getExercice(idExo) {
     let ligneExo = document.getElementById("ligneExo");
 
@@ -85,14 +32,15 @@ function getExercice(idExo) {
 
     // catégorie
     let classList = "";
-    for (j = 0; j < tabStyle.length - 1; j++) {
-        classList += tabStyle[j] + " ";
+    for (j = 0; j < tabStyle.length - 2; j++) {
+        classList += tabStyle[j] + ", ";
     }
+    classList += tabStyle[j];
 
     // 
     ligneExo.innerHTML +=
-        `<div class="ligneExo tousExo ' ` + classList.toUpperCase() + ` ` + EXO[idExo]['nom'].toUpperCase()
-        + ` ''" id="ligneExo` + EXO[idExo]['id'] + `">
+        `<div class="ligneExo tousExo '` + classList.toUpperCase() + ` ` + EXO[idExo]['nom'].toUpperCase()
+        + `''" id="ligneExo` + EXO[idExo]['id'] + `">
             
                     <div class="ligne-img-bloc">
                         <img class="ligne-img-left" src="document/exo/` + EXO[idExo]['nom'] + `.jpg" 
@@ -116,19 +64,18 @@ function getProgramme() {
 
     for (i = 1; i < PROGRAMME.length; i++) {
         listExo = "";
-        for (j = 1; j < PROGRAMME[i].length; j++) {
 
+        for (j = 1; j < PROGRAMME[i].length; j++) {
             listExo +=
                 `<div class="progExo">
                     <div class="progExoBloc">
                         <div class="progExoBlocImage">
-                            <img class="progExoImage" src="document/exo/` + EXO[j]['nom'] + EXO[j]['formatImg'] + `" 
+                            <img class="progExoImage" src="document/exo/` + EXO[PROGRAMME[i][j]]['nom'] + EXO[PROGRAMME[i][j]]['formatImg'] + `" 
                                 onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                         </div>
                     </div>
                     <div class="progExoTitre">` + EXO[PROGRAMME[i][j]]['nom'] + `</div>
                 </div>`;
-
         }
 
         prog.innerHTML +=

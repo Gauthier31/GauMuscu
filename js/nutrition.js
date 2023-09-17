@@ -20,15 +20,16 @@ function nutrition(identifiantNutri) {
                     </thead>
                     <tbody>`;
 
-    for (let i = 0; i < NUTRITION[idNutri]['apport'].length; i++) {
+    NUTRITION[idNutri].forEach(nutri => {
         table1 += `
                 <tr>
-                    <td class="center">` + NUTRITION[idNutri]['apport'][0]["Kcal"] + `Kcal</td>
-                    <td class="center">` + NUTRITION[idNutri]['apport'][0]["prot"] + `g</td>
-                    <td class="center">` + NUTRITION[idNutri]['apport'][0]["glucides"] + `g</td>
-                    <td class="center">` + NUTRITION[idNutri]['apport'][0]["lipides"] + `g</td>
+                    <td class="center">` + nutri[0]["Kcal"] + `Kcal</td>
+                    <td class="center">` + nutri[0]["prot"] + `g</td>
+                    <td class="center">` + nutri[0]["glucides"] + `g</td>
+                    <td class="center">` + nutri[0]["lipides"] + `g</td>
                 </tr>`;
-    }
+    });
+
     table1 += "</tbody></table>";
 
     // Mise en plave du tableau des ingrédients
@@ -41,13 +42,14 @@ function nutrition(identifiantNutri) {
                     </thead>
                     <tbody>`;
 
-    for (let i = 0; i < NUTRITION[idNutri]['ingredient'].length; i++) {
+    NUTRITION[idNutri]['ingredient'].forEach(nutri => {
         table2 += `
-                <tr>
-                    <td>` + NUTRITION[idNutri]['ingredient'][i][0] + `</td>
-                    <td>` + NUTRITION[idNutri]['ingredient'][i][1] + `</td>
-                </tr>`;
-    }
+        <tr>
+            <td>` + nutri[0] + `</td>
+            <td>` + nutri[1] + `</td>
+        </tr>`;
+    });
+
     table2 += "</tbody></table>";
 
     f2.innerHTML = `
