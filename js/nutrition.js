@@ -20,15 +20,13 @@ function nutrition(identifiantNutri) {
                     </thead>
                     <tbody>`;
 
-    NUTRITION[idNutri].forEach(nutri => {
-        table1 += `
+    table1 += `
                 <tr>
-                    <td class="center">` + nutri[0]["Kcal"] + `Kcal</td>
-                    <td class="center">` + nutri[0]["prot"] + `g</td>
-                    <td class="center">` + nutri[0]["glucides"] + `g</td>
-                    <td class="center">` + nutri[0]["lipides"] + `g</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["Kcal"] + `Kcal</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["prot"] + `g</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["glucides"] + `g</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["lipides"] + `g</td>
                 </tr>`;
-    });
 
     table1 += "</tbody></table>";
 
@@ -42,7 +40,7 @@ function nutrition(identifiantNutri) {
                     </thead>
                     <tbody>`;
 
-    NUTRITION[idNutri]['ingredient'].forEach(nutri => {
+    NUTRITIONS[idNutri]['ingredient'].forEach(nutri => {
         table2 += `
         <tr>
             <td>` + nutri[0] + `</td>
@@ -53,18 +51,18 @@ function nutrition(identifiantNutri) {
     table2 += "</tbody></table>";
 
     f2.innerHTML = `
-                <img class="imgNutri" src="document/nutrition/` + NUTRITION[idNutri]['titre'] + `.jpg"
+                <img class="imgNutri" src="document/nutrition/` + NUTRITIONS[idNutri]['titre'] + `.jpg"
                     onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
 
                 <div class="infoNutri">
                     <div class="nutriBlocTitre taille0">
-                        <p class="fw-9"> ` + NUTRITION[idNutri]['titre'] + ` </p>
+                        <p class="fw-9"> ` + NUTRITIONS[idNutri]['titre'] + ` </p>
                         <i class="fa-solid fa-angle-left" onClick="gestionPage(1)"></i>
                         <div class="bouchon5"></div>
                     </div>
 
                     <div class="nutriBlocText">
-                        <p class="taille descriptionNutri"> ` + NUTRITION[idNutri]["description"] + ` </p>
+                        <p class="taille descriptionNutri"> ` + NUTRITIONS[idNutri]["description"] + ` </p>
                         <p class="taille"><u><i>Total des apports nutritionnels :</i></u></p>
                         ` + table1 + `
                         <p class="taille"><u><i>Liste des ingrédients :</i></u></p>

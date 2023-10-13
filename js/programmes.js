@@ -2,7 +2,7 @@
 var exo;                // num exo 
 var numExo = 1;         // enieme exo du programme
 var serie = 1;          // num serie 
-var numProg = -1         // Numéro du programme
+var numProg = -1        // Numéro du programme
 var newSerieNum = 0;    // Numéro de la série suivant en fonction de l'exo
 
 var totalTemps = 0;     // temps en sec
@@ -32,16 +32,19 @@ function programmes(numProgramme) {
     let exoTab;
     let serieTab;
 
-    for (i = 1; i < PROGRAMME[numProg].length; i++) {
+    console.log(PROGRAMMES)
+
+    for (i = 1; i < PROGRAMMES[numProg].length; i++) {
 
         let tab = "";
 
-
         // On mets en place les lignes du tableau de l'exo
-        for (j = 1; j < STAT[PROGRAMME[numProg][i]].length; j += 2) {
+        for (j = 0; j < EXOS[PROGRAMMES[numProg][i]]["stat"].length; j += 1) {
 
-            exoTab = PROGRAMME[numProg][i];
-            serieTab = (j + 1) / 2;
+            exoTab = PROGRAMMES[numProg][i];
+            serieTab = j + 1;
+
+            stat = EXOS[PROGRAMMES[numProg][i]]["stat"]
 
             tab +=
                 `<div class="lineTab taille3" id="exo` + exoTab + `serie` + serieTab + `">
@@ -49,13 +52,11 @@ function programmes(numProgramme) {
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
-                        <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Repetition">` + STAT[exoTab][j] + `</p> -->
-                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
+                        <input type="number" pattern="\\d*" onkeyup="changeValue(this)" class="input" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + stat[j][0] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
-                        <!-- <p class="valeurTab" id="exo` + exoTab + `serie` + serieTab + `-Poids">` + STAT[exoTab][j + 1] + `</p> -->
-                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
+                        <input type="number" pattern="\\d*" onkeyup="changeValue(this)" class="input" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + stat[j][1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
@@ -69,15 +70,15 @@ function programmes(numProgramme) {
 
 
         listExoInfo +=
-            `<div class="none" id="Info_Exo` + PROGRAMME[numProg][i] + `">
+            `<div class="none" id="Info_Exo` + PROGRAMMES[numProg][i] + `">
                 <div class="exoHead">
-                    <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[PROGRAMME[numProg][i]]['nom'] + `</p>
+                    <p class="modal-title taille fw-9 depasse">` + EXOS[PROGRAMMES[numProg][i]]['nom'] + `</p>
                 </div>
 
                 
                     <div class="card-img-bloc2">
-                        <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[PROGRAMME[numProg][i]]['nom'] + EXO[PROGRAMME[numProg][i]]['formatImg'] + `"
-                                alt="` + EXO[PROGRAMME[numProg][i]]['nom'] + `" 
+                        <img class="imgExo mx-auto d-block" src="document/exo/` + EXOS[PROGRAMMES[numProg][i]]['nom'] + EXOS[PROGRAMMES[numProg][i]]['formatImg'] + `"
+                                alt="` + EXOS[PROGRAMMES[numProg][i]]['nom'] + `" 
                                 onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
                     <hr class="hr-orange" />
@@ -87,15 +88,9 @@ function programmes(numProgramme) {
                             <div class="caseTab_4_SE fw-9">Serie</div>
                             <div class="caseTab_4_Mid fw-9">Rep</div>
                             <div class="caseTab_4_Mid fw-9">Kilos</div>
-                            <div class="caseTab_4_SE fw-9">
-                                <!--
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    <i class="fa-solid fa-pen btn-i"></i>
-                                </button>
-                                -->
-                            </div>
+                            <div class="caseTab_4_SE fw-9"></div>
                         </div>
-                        <div class="detail3" id="` + EXO[PROGRAMME[numProg][i]]['id'] + `_statModule">
+                        <div class="detail3" id="` + EXOS[PROGRAMMES[numProg][i]]['id'] + `_statModule">
                         ` + tab + `
                         </div>
                     </div>
@@ -105,18 +100,18 @@ function programmes(numProgramme) {
 
 
         listExo +=
-            `<div class="ligne-list-exo" id="Lancement_Exo` + PROGRAMME[numProg][i] + `">
+            `<div class="ligne-list-exo" id="Lancement_Exo` + PROGRAMMES[numProg][i] + `">
 
-                <div class="crossX" onClick="deleteExo(` + PROGRAMME[numProg][i] + `)">
+                <div class="crossX" onClick="deleteExo(` + PROGRAMMES[numProg][i] + `)">
                     <i class="fa-regular fa-circle-xmark"></i>
                 </div>
 
                 <div class="ligne-img-bloc2">
-                    <img class="ligne-img-left2" src="document/exo/` + EXO[PROGRAMME[numProg][i]]['nom'] + EXO[PROGRAMME[numProg][i]]['formatImg'] + `"
+                    <img class="ligne-img-left2" src="document/exo/` + EXOS[PROGRAMMES[numProg][i]]['nom'] + EXOS[PROGRAMMES[numProg][i]]['formatImg'] + `"
                     onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                 </div>
 
-                <div class="taille1 fw-9 txt-center">` + EXO[PROGRAMME[numProg][i]]['nom'] + `</div>
+                <div class="taille1 fw-9 txt-center">` + EXOS[PROGRAMMES[numProg][i]]['nom'] + `</div>
 
                 <div class="triangle1" onclick="exoSuivant(` + i + `)"></div>
             </div>`;
@@ -143,7 +138,7 @@ function programmes(numProgramme) {
                     
                     <div class="none" id="Info_Exo0" >
                     <div class="exoHead">
-                        <p class="modal-title taille fw-9 depasse" id="titre-modal">NULL</p>
+                        <p class="modal-title taille fw-9 depasse">NULL</p>
                     </div>
             
                         
@@ -175,7 +170,6 @@ function programmes(numProgramme) {
 
                 ` + listExoInfo + `
 
-                
             </div>
                   
             <div class="end">
@@ -189,9 +183,10 @@ function programmes(numProgramme) {
                     <button class="btn btn-dark btn-module2" onclick="stop()" id="btn-MA" value="Marche">Marche</button>
                     
                     <div class="temps">
-                        <p id="temps" class="taille fw-9">00:00,0</p>
-                        <p id="temps.1" class="temps1">00:00,00</p>
-                        <p id="temps.2" class="temps1">00:00,00</p>
+                        <div>
+                            <p id="temps" class="taille fw-9">00:00,0</p>
+                            <p id="tempsReposExo" class="taille1 fw-6">0:00</p>
+                        </div>
                     </div>
 
                     <button class="btn btn-warning btn-module2" onclick="serieSuivant()">Suivant</button>
@@ -220,11 +215,11 @@ function programmes(numProgramme) {
         </div>`;
 
     // On affiche et color
-    document.getElementById("Info_Exo" + PROGRAMME[numProg][1]).classList.remove("none");
-    document.getElementById("Info_Exo" + PROGRAMME[numProg][1]).classList.add("block");
-    document.getElementById("Lancement_Exo" + PROGRAMME[numProg][1]).classList.add("exoActu");
+    document.getElementById("Info_Exo" + PROGRAMMES[numProg][1]).classList.remove("none");
+    document.getElementById("Info_Exo" + PROGRAMMES[numProg][1]).classList.add("block");
+    document.getElementById("Lancement_Exo" + PROGRAMMES[numProg][1]).classList.add("exoActu");
 
-    exo = PROGRAMME[numProg][1];
+    exo = PROGRAMMES[numProg][1];
     // serie = 1 // On le sait déja
 
     // On colorie la premiere série du premier exo
@@ -242,7 +237,7 @@ function ficheInitialisation(numProg) {
     var today = new Date();
     ficheResultat.innerHTML =
         `<p class="text-center taille" > `
-        + PROGRAMME[numProg][0] + ` : `
+        + PROGRAMMES[numProg][0] + ` : `
         + today.toLocaleDateString("en-US")
         + ` - `
         + today.getHours() + `h` + today.getMinutes() +
@@ -292,7 +287,7 @@ function exoSuivant(numExoNext) {
     try {
 
         numExo = numExoNext;                         // Numéro de la case dans la tableau stat
-        exoNext = PROGRAMME[numProg][numExoNext];    // Numéro de l'exercice
+        exoNext = PROGRAMMES[numProg][numExoNext];    // Numéro de l'exercice
 
         // On est jamais sur de rien
         document.getElementById('Info_Exo0').classList.remove("visibility_none");
@@ -329,8 +324,6 @@ function serieSuivant() {
 
     document.getElementById("btn-MA").innerHTML = "Arret";
     document.getElementById("btn-MA").value = "Arret";
-
-    document.getElementById("temps.1").innerHTML = dateActu();
 }
 
 // On enleve et affiche l'exo actuel dans ticket2
@@ -357,6 +350,8 @@ function colorSerie(numSerie) {
         document.getElementById("exo" + exo + "serie" + numSerie).classList.add("serieActu");
 
         serie = numSerie;
+        document.getElementById("tempsReposExo").innerHTML = EXOS[exo]["stat"][serie - 1][2]
+
     } catch (err) {
         console.log(err);
 
@@ -371,8 +366,9 @@ function addSerie() {
     var tab = document.getElementById(exo + "_statModule");
 
     // calcul du num de la nouvelle série
-    newSerieNum = (STAT[exo].length + 1) / 2;
-    STAT[exo].push(STAT[exo].length - 2, STAT[exo].length - 1);
+    newSerieNum = EXOS[exo]["stat"].length;
+    newSerieTab = EXOS[exo]["stat"][EXOS[exo]["stat"].length - 1];
+    EXOS[exo]["stat"].push(newSerieTab);
 
     tab.innerHTML +=
         `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `">
@@ -380,11 +376,11 @@ function addSerie() {
                 <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + newSerieNum + `)">` + newSerieNum + `</div>
 
                 <div class="caseTab_4_Mid">
-                    <input type="number" pattern="\\d*" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + STAT[exo][STAT[exo].length - 2] + `">
+                    <input type="number" pattern="\\d*" onkeyup="changeValue(this)" class="input" id="exo` + exo + `serie` + newSerieNum + `-Repetition" value="` + newSerieTab[0] + `">
                 </div>
 
                 <div class="caseTab_4_Mid">
-                    <input type="number" pattern="\\d*" class="input2" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + STAT[exo][STAT[exo].length - 1] + `">
+                    <input type="number" pattern="\\d*" onkeyup="changeValue(this)" class="input" id="exo` + exo + `serie` + newSerieNum + `-Poids" value="` + newSerieTab[1] + `">
                 </div>
 
                 <div class="caseTab_4_SE">
@@ -461,7 +457,6 @@ function stop() {
         // Stop chrono
     } else {
         clearInterval(boucle);
-        document.getElementById("temps.2").innerHTML = dateActu();
 
         total = t2 - t1;
 
@@ -508,7 +503,7 @@ function fiche(exoActu, serieActu) {
 
         listExo.innerHTML +=
             `<div class="col-6" id="colExo` + exoActu + `">
-                <p class="taille2 txtExo depasse">` + EXO[exoActu]['nom'] + `</p>
+                <p class="taille2 txtExo depasse">` + EXOS[exoActu]['nom'] + `</p>
                 <hr class="hr-orange" />
 
                 <div class="lineMiniTabHead">
@@ -560,20 +555,17 @@ function addExo(numExo) {
 
         gestionPage(2);
         // Si exo déja pas comprise dans le tableau alors on l'ajoute
-        if (!PROGRAMME[numProg].includes(numExo)) {
-
-            const count = PROGRAMME[numProg].push(numExo);
-
+        if (!PROGRAMMES[numProg].includes(numExo)) {
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
 
             let tab = "";
 
             // On mets en place les lignes du tableau
-            for (j = 1; j < STAT[numExo].length; j += 2) {
+            for (j = 0; j < EXOS[numExo]["stat"].length; j += 1) {
 
                 exoTab = numExo;
-                serieTab = (j + 1) / 2;
+                serieTab = j + 1;
 
                 tab +=
                     `<div class="lineTab taille2" id="exo` + exoTab + `serie` + serieTab + `" >
@@ -581,11 +573,11 @@ function addExo(numExo) {
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
                     <div class="caseTab_4_Mid">
-                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + STAT[exoTab][j] + `">
+                        <input type="number" pattern="\\d*" onkeyup="changeValue(this)" class="input" id="exo` + exoTab + `serie` + serieTab + `-Repetition" value="` + EXOS[numExo]["stat"][j][0] + `">
                     </div>
 
                     <div class="caseTab_4_Mid">
-                        <input type="number" pattern="\\d*" class="input2" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + STAT[exoTab][j + 1] + `">
+                        <input type="number" pattern="\\d*" onkeyup="changeValue(this)" class="input" id="exo` + exoTab + `serie` + serieTab + `-Poids" value="` + EXOS[numExo]["stat"][j][1] + `">
                     </div>
 
                     <div class="caseTab_4_SE">
@@ -597,31 +589,31 @@ function addExo(numExo) {
                 </div > `;
             }
 
-            let idExo = PROGRAMME[numProg][PROGRAMME[numProg].length - 1];
+            let idExo = PROGRAMMES[numProg][PROGRAMMES[numProg].length - 1];
 
             // On l'ajoute dans le body du ticket1
             const bouchon4 = document.getElementById("bouchon4");
             bouchon4.innerHTML +=
                 `<div class="none" id="Info_Exo` + idExo + `" >
                     <div class="exoHead">
-                        <p class="modal-title taille fw-9 depasse" id="titre-modal">` + EXO[idExo]['nom'] + `</p>
+                        <p class="modal-title taille fw-9 depasse">` + EXOS[idExo]['nom'] + `</p>
                     </div>
 
                         <div class="card-img-bloc2">
-                            <img class="imgExo mx-auto d-block" src="document/exo/` + EXO[idExo]['nom'] + `.jpg"
-                                        alt="` + EXO[idExo]['nom'] + `"
-                                        onerror="this.onerror=null; this.src='document/exo/` + EXO[idExo]['nom'] + `.gif'" />
+                            <img class="imgExo mx-auto d-block" src="document/exo/` + EXOS[idExo]['nom'] + `.jpg"
+                                        alt="` + EXOS[idExo]['nom'] + `"
+                                        onerror="this.onerror=null; this.src='document/exo/` + EXOS[idExo]['nom'] + `.gif'" />
                         </div>
                         <hr class="hr-orange" />
 
-                        <div class="tableStat" id="` + EXO[idExo]['id'] + `_statModule">
+                        <div class="tableStat" id="` + EXOS[idExo]['id'] + `_statModule">
                             <div class="lineTabHead taille1">
                                 <div class="caseTab_4_SE fw-9">Serie</div>
                                 <div class="caseTab_4_Mid fw-9">Rep</div>
                                 <div class="caseTab_4_Mid fw-9">Kilos</div>
                             </div>
 
-                            <div class="detail3" id="` + EXO[numExo]['id'] + `_statModule">
+                            <div class="detail3" id="` + EXOS[numExo]['id'] + `_statModule">
                                 ` + tab + `
                             </div>
                         </div>
@@ -641,21 +633,21 @@ function addExo(numExo) {
                     </div>
 
                     <div class="ligne-img-bloc2">
-                        <img class="ligne-img-left2" src="document/exo/` + EXO[numExo]['nom'] + `.jpg"
-                        onerror="this.onerror=null; this.src='document/exo/` + EXO[numExo]['nom'] + `.gif'" />
+                        <img class="ligne-img-left2" src="document/exo/` + EXOS[numExo]['nom'] + `.jpg"
+                        onerror="this.onerror=null; this.src='document/exo/` + EXOS[numExo]['nom'] + `.gif'" />
                     </div>
 
-                    <div class="taille1 fw-9 txt-center">` + EXO[numExo]['nom'] + `</div>
-                    <div class="triangle1" onclick="exoSuivant(` + (PROGRAMME[numProg].length - 1) + `)"></div>
+                    <div class="taille1 fw-9 txt-center">` + EXOS[numExo]['nom'] + `</div>
+                    <div class="triangle1" onclick="exoSuivant(` + (PROGRAMMES[numProg].length - 1) + `)"></div>
                 </div > `;
 
-            exoSuivant(PROGRAMME[numProg].length - 1);
+            exoSuivant(PROGRAMMES[numProg].length - 1);
         } else {
-            exoSuivant(PROGRAMME[numProg].indexOf(numExo));
+            exoSuivant(PROGRAMMES[numProg].indexOf(numExo));
         }
 
     } else {
-        const count = PROGRAMME[0].push(numExo);
+        PROGRAMMES[0].push(numExo)
         programmes(0);
     }
 }

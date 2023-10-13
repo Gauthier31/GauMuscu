@@ -1,3 +1,9 @@
+/*
+Orange : #ffc107
+
+
+*/
+
 /* ----------------------------------------- */
 * {
     padding: 0;
@@ -396,16 +402,6 @@ section {
     margin: 0;
 }
 
-#titre-modal {
-    height: 4svh;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - -  */
-
-.espaceH {
-    margin-top: 1em;
-}
-
 .espace {
     margin: 2rem 0;
 }
@@ -425,6 +421,7 @@ section {
 
 .btn-module3 {
     width: 600px;
+    height: 50px;
     line-height: 40px;
     border-radius: 20px;
     font-size: 2.5em;
@@ -467,15 +464,8 @@ section {
 .temps {
     width: 300px;
     text-align: center;
-}
-
-.temps1,
-.temps2 {
-    width: 140px;
-    display: inline-block;
-    font-size: 2em;
-    opacity: 0.8;
-    margin: 1%;
+    align-items: center;
+    display: grid;
 }
 
 /* ------------- Background ---------------- */
@@ -680,13 +670,6 @@ section {
 
 
 /* ----------- Page Exo du prog ---------------*/
-/*
-#blocFicheResultat {
-    padding: 0;
-    height: 2120px;
-    overflow: hidden;
-}
-*/
 
 #ficheResultat {
     padding: 10% 3%;
@@ -964,12 +947,7 @@ section {
     width: 12%;
 }
 
-input {
-    background-color: rgba(0, 0, 0, 0);
-    width: 100px;
-}
-
-.input2 {
+.input {
     border: none;
     background-color: rgba(0, 0, 0, 0);
     width: 100%;

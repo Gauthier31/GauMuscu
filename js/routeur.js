@@ -26,7 +26,6 @@ function page(rout) {
     gestionPage(ROUTEUR[i][1]);
 
     for (let j = 2; j < ROUTEUR[i].length; j++) {
-        console.log(ROUTEUR[i][j]);
         document.getElementById(ROUTEUR[i][j]).classList.remove("none");
     }
 }
@@ -40,7 +39,6 @@ function page(val) {
 
     // Si on est pas sur la page 1
     if (page[0].className == "page none") {
-        console.log("go page 1");
         gestionPage(1);
     }
 

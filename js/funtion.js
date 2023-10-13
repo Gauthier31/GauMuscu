@@ -5,7 +5,7 @@ var TableauFiltre = [];
 var typeExo = "tousExo";
 
 // Ajoute tous les id dans tableau
-EXO.forEach(exo => {
+EXOS.forEach(exo => {
     TableauFiltre.push(exo['id']);
 });
 
@@ -16,7 +16,6 @@ pagination(1);
 
 getProgramme();
 getNutrition();
-putStat();
 
 // Affichage masquage des blocs de sections
 page("accueil");
@@ -28,7 +27,7 @@ function getExercice(idExo) {
 
 
     ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-    const tabStyle = EXO[idExo]['listMuscle'].split("-");
+    const tabStyle = EXOS[idExo]['listMuscle'].split("-");
 
     // catégorie
     let classList = "";
@@ -39,16 +38,16 @@ function getExercice(idExo) {
 
     // 
     ligneExo.innerHTML +=
-        `<div class="ligneExo tousExo '` + classList.toUpperCase() + ` ` + EXO[idExo]['nom'].toUpperCase()
-        + `''" id="ligneExo` + EXO[idExo]['id'] + `">
+        `<div class="ligneExo tousExo '` + classList.toUpperCase() + ` ` + EXOS[idExo]['nom'].toUpperCase()
+        + `''" id="ligneExo` + EXOS[idExo]['id'] + `">
             
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + EXO[idExo]['nom'] + `.jpg" 
+                        <img class="ligne-img-left" src="document/exo/` + EXOS[idExo]['nom'] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
                     <div>
-                        <p class="taille1 fw-9 ligneTitre">` + EXO[idExo]['nom'] + `</p>
+                        <p class="taille1 fw-9 ligneTitre">` + EXOS[idExo]['nom'] + `</p>
                         <div class="taille3 fw-6 opacity-50">
                             ` + classList + `
                         </div>
@@ -62,26 +61,26 @@ function getExercice(idExo) {
 function getProgramme() {
     let prog = document.getElementById("prog");
 
-    for (i = 1; i < PROGRAMME.length; i++) {
+    for (i = 1; i < PROGRAMMES.length; i++) {
         listExo = "";
 
-        for (j = 1; j < PROGRAMME[i].length; j++) {
+        for (j = 1; j < PROGRAMMES[i].length; j++) {
             listExo +=
                 `<div class="progExo">
                     <div class="progExoBloc">
                         <div class="progExoBlocImage">
-                            <img class="progExoImage" src="document/exo/` + EXO[PROGRAMME[i][j]]['nom'] + EXO[PROGRAMME[i][j]]['formatImg'] + `" 
+                            <img class="progExoImage" src="document/exo/` + EXOS[PROGRAMMES[i][j]]['nom'] + EXOS[PROGRAMMES[i][j]]['formatImg'] + `" 
                                 onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                         </div>
                     </div>
-                    <div class="progExoTitre">` + EXO[PROGRAMME[i][j]]['nom'] + `</div>
+                    <div class="progExoTitre">` + EXOS[PROGRAMMES[i][j]]['nom'] + `</div>
                 </div>`;
         }
 
         prog.innerHTML +=
-            `<div class="prog">
+            `<div class="prog tousProg '` + PROGRAMMES[i][0].toUpperCase() + `'">
                 <div class="progTitre">
-                    <p class="depasse" onclick="programmes(` + i + `)">` + PROGRAMME[i][0] + ` --></p>
+                    <p class="depasse" onclick="programmes(` + i + `)">` + PROGRAMMES[i][0] + `</p>
                 </div>
                 <div class="progExos">
                 ` + listExo + `
@@ -95,43 +94,27 @@ function getNutrition() {
     let nutri = document.getElementById("cardsNutrition");
     var i;
 
-    for (i = 1; i < NUTRITION.length; i++) {
+    for (i = 1; i < NUTRITIONS.length; i++) {
 
         nutri.innerHTML +=
-            `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITION[i]["titre"].toUpperCase() + `'" id="Nutrition` + NUTRITION[i][0] + `">
+            `<div class="col-6 col-lg-4 col-xl-3 taille3 fw-9 tousNutri '` + NUTRITIONS[i]["titre"].toUpperCase() + `'" id="Nutrition` + NUTRITIONS[i][0] + `">
                     <div class="card" onClick="nutrition(` + i + `)">
 
                         <div class="card-img-bloc">
-                            <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITION[i]["titre"] + `.jpg"
-                                        onerror="this.onerror=null; this.src='document/exo/` + NUTRITION[i]["titre"] + `.gif'">
+                            <img class="card-img" mx-auto d-block" src="document/nutrition/` + NUTRITIONS[i]["titre"] + `.jpg"
+                                        onerror="this.onerror=null; this.src='document/exo/` + NUTRITIONS[i]["titre"] + `.gif'">
                         </div>
 
                         <div class="card-body">
-                            <p class="taille4 fw-9 depasse m-2">` + NUTRITION[i]["titre"] + `</p>
+                            <p class="taille4 fw-9 depasse m-2">` + NUTRITIONS[i]["titre"] + `</p>
 
-                            <p class="cardDescription taille5">` + NUTRITION[i]["description"] + `</p>
-
-                            <!--
-                            <div class="div-btnInfoCard">
-                                <button type="button" class="btn btn-warning taille6 btnInfoCard" onClick="nutrition(` + i + `)">
-                                    En savoir plus
-                                </button>
-                            </div>
-                            -->
-
+                            <p class="cardDescription taille5">` + NUTRITIONS[i]["description"] + `</p>
                         </div>
                     </div>
                 </div > `;
     }
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-function putStat() {
-    for (let i = STAT.length; i < EXO.length; i++) {
-        STAT.push([i, 0, 0]);
-    }
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// Filtre les cards //////////////////////////////////////////
@@ -154,9 +137,9 @@ function filtreExo() {
 
     TableauFiltre = [0];
 
-    for (let i = 1; i < EXO.length; i++) {
-        if (EXO[i]['nom'].toLowerCase().includes(recherche.toLowerCase())
-            && EXO[i]['listMuscle'].includes(typeExo)) {
+    for (let i = 1; i < EXOS.length; i++) {
+        if (EXOS[i]['nom'].toLowerCase().includes(recherche.toLowerCase())
+            && EXOS[i]['listMuscle'].includes(typeExo)) {
             TableauFiltre.push(i);
         }
     }
@@ -288,3 +271,4 @@ function pagination(numPage) {
     document.getElementsByClassName("pagi-liActive")[0].classList.remove("pagi-liActive");
     document.getElementById("pagi" + numPage).classList.add("pagi-liActive");
 }
+
