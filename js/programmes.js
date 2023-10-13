@@ -32,8 +32,6 @@ function programmes(numProgramme) {
     let exoTab;
     let serieTab;
 
-    console.log(PROGRAMMES)
-
     for (i = 1; i < PROGRAMMES[numProg].length; i++) {
 
         let tab = "";
@@ -147,7 +145,7 @@ function programmes(numProgramme) {
                         </div>
                         <hr class="hr-orange" />
             
-                        <div class="tableStat" id="0_statModule">
+                        <div class="tableStat">
                             <div class="lineTabHead taille1">
                                 <div class="caseTab_4_SE fw-9">Serie</div>
                                 <div class="caseTab_4_Mid fw-9">Rep</div>
@@ -366,9 +364,9 @@ function addSerie() {
     var tab = document.getElementById(exo + "_statModule");
 
     // calcul du num de la nouvelle série
-    newSerieNum = EXOS[exo]["stat"].length;
     newSerieTab = EXOS[exo]["stat"][EXOS[exo]["stat"].length - 1];
     EXOS[exo]["stat"].push(newSerieTab);
+    newSerieNum = EXOS[exo]["stat"].length;
 
     tab.innerHTML +=
         `<div class="lineTab taille2" id="exo` + exo + `serie` + newSerieNum + `">
@@ -558,7 +556,7 @@ function addExo(numExo) {
         if (!PROGRAMMES[numProg].includes(numExo)) {
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
-
+            PROGRAMMES[numProg].push(numExo)
             let tab = "";
 
             // On mets en place les lignes du tableau
@@ -606,7 +604,7 @@ function addExo(numExo) {
                         </div>
                         <hr class="hr-orange" />
 
-                        <div class="tableStat" id="` + EXOS[idExo]['id'] + `_statModule">
+                        <div class="tableStat">
                             <div class="lineTabHead taille1">
                                 <div class="caseTab_4_SE fw-9">Serie</div>
                                 <div class="caseTab_4_Mid fw-9">Rep</div>
@@ -638,7 +636,7 @@ function addExo(numExo) {
                     </div>
 
                     <div class="taille1 fw-9 txt-center">` + EXOS[numExo]['nom'] + `</div>
-                    <div class="triangle1" onclick="exoSuivant(` + (PROGRAMMES[numProg].length - 1) + `)"></div>
+                    <div class="triangle1" onclick="exoSuivant(` + (PROGRAMMES[numProg].length) + `)"></div>
                 </div > `;
 
             exoSuivant(PROGRAMMES[numProg].length - 1);
