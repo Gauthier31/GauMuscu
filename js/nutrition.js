@@ -9,36 +9,38 @@ function nutrition(identifiantNutri) {
     let idNutri = identifiantNutri;
 
     // Mise en plave du tableau des apports journaliers
-    let table1 = `<table class="tableRound">
-                    <thead class="fw-9">
-                        <tr>
-                            <th>Calories</th>
-                            <th>Protéines</th>
-                            <th>Glucides</th>
-                            <th>Lipides</th>
-                        </tr>
-                    </thead>
-                    <tbody>`;
+    let table1 = `<div class="tabOverflow">
+                    <table class="tableRound">
+                        <thead class="fw-9">
+                            <tr>
+                                <th>Calories</th>
+                                <th>Protéines</th>
+                                <th>Glucides</th>
+                                <th>Lipides</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
 
     table1 += `
                 <tr>
-                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["Kcal"] + `Kcal</td>
-                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["prot"] + `g</td>
-                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["glucides"] + `g</td>
-                    <td class="center">` + NUTRITIONS[idNutri]["apport"]["lipides"] + `g</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"][0]["Kcal"] + `Kcal</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"][0]["prot"] + `g</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"][0]["glucides"] + `g</td>
+                    <td class="center">` + NUTRITIONS[idNutri]["apport"][0]["lipides"] + `g</td>
                 </tr>`;
 
-    table1 += "</tbody></table>";
+    table1 += "</tbody></table></div>";
 
     // Mise en plave du tableau des ingrédients
-    let table2 = `<table class="tableRound">
-                    <thead class="fw-9">
-                        <tr>
-                            <th>Ingrédient</th>
-                            <th>Quantité</th>
-                        </tr>
-                    </thead>
-                    <tbody>`;
+    let table2 = `<div class="tabOverflow">
+                    <table class="tableRound">
+                        <thead class="fw-9">
+                            <tr>
+                                <th>Ingrédient</th>
+                                <th>Quantité</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
 
     NUTRITIONS[idNutri]['ingredient'].forEach(nutri => {
         table2 += `
@@ -48,16 +50,16 @@ function nutrition(identifiantNutri) {
         </tr>`;
     });
 
-    table2 += "</tbody></table>";
+    table2 += "</tbody></table></div>";
 
     f2.innerHTML = `
                 <img class="imgNutri" src="document/nutrition/` + NUTRITIONS[idNutri]['titre'] + `.jpg"
                     onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
 
                 <div class="infoNutri">
-                    <div class="nutriBlocTitre taille0">
-                        <p class="fw-9"> ` + NUTRITIONS[idNutri]['titre'] + ` </p>
-                        <i class="fa-solid fa-angle-left" onClick="gestionPage(1)"></i>
+                    <div class="nutriTitreBloc taille0">
+                        <p class="fw-9 nutriTitreTxt"> ` + NUTRITIONS[idNutri]['titre'] + ` </p>
+                        <i class="fa-solid fa-angle-right" onClick="gestionPage(1)"></i>
                         <div class="bouchon5"></div>
                     </div>
 

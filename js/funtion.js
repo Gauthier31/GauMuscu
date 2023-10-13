@@ -1,5 +1,5 @@
 console.log(window.screen.width);
-
+console.log("leght exo", EXOS.length)
 const LIMIT_EXO = 20;
 var TableauFiltre = [];
 var typeExo = "tousExo";

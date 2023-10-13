@@ -1077,6 +1077,7 @@ section {
 }
 
 .imgNutri {
+    height: calc(100svw / 1.5);
     width: 100vw;
     position: sticky;
     top: 0;
@@ -1087,10 +1088,10 @@ section {
     position: relative;
 
     z-index: 1010;
-    min-height: 91svh;
+    min-height: 92svh;
 }
 
-.nutriBlocTitre {
+.nutriTitreBloc {
     border-top-right-radius: 7rem;
     background-color: rgb(240, 240, 240);
     padding: 2% 5%;
@@ -1099,14 +1100,24 @@ section {
     top: 0;
     z-index: 1020;
 
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.nutriTitreTxt {
+    width: 800px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
 .nutriBlocText {
     background-color: rgb(240, 240, 240);
-    padding: 5%;
+    padding: 0 5%;
+    height: 83svh;
+    overflow: scroll;
 }
 
 .bodyNutri {
@@ -1116,6 +1127,7 @@ section {
 
 .descriptionNutri {
     margin-bottom: 5rem;
+    text-align: justify;
 }
 
 .descriptionNutri::first-letter {
@@ -1149,6 +1161,11 @@ tbody {
 
 .center {
     text-align: center;
+}
+
+.tabOverflow {
+    width: 100%;
+    overflow-y: scroll;
 }
 
 /* ----------- Page ----------- */
