@@ -35,7 +35,7 @@ nav {
     position: fixed;
     bottom: -5px;
     z-index: 1030;
-    height: 8svh;
+    height: 8dvh;
 }
 
 nav>ul {
@@ -43,7 +43,7 @@ nav>ul {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 8svh;
+    height: 8dvh;
 }
 
 nav>ul>li {
@@ -265,7 +265,7 @@ section {
 }
 
 .detail2_Up {
-    height: 50svh;
+    height: 50dvh;
 }
 
 .detail2_Down {
@@ -685,7 +685,7 @@ section {
 
 .ticket0 {
     width: 100vw;
-    height: 93svh;
+    height: 93dvh;
     overflow-y: hidden;
 
     position: fixed;
@@ -702,7 +702,7 @@ section {
 .ticket1 {
     background-color: rgb(255, 255, 255);
     z-index: 1055;
-    height: 92svh;
+    height: 92dvh;
 }
 
 .ticket1_Up {
@@ -710,7 +710,7 @@ section {
 }
 
 .ticket1_Down {
-    margin-top: 83svh;
+    margin-top: 83dvh;
 }
 
 .ticket2 {
@@ -721,19 +721,19 @@ section {
 }
 
 .ticket2_Up {
-    margin-top: -58svh;
+    margin-top: -58dvh;
 }
 
 .ticket2_Down {
-    margin-top: -6svh;
+    margin-top: -6dvh;
 }
 
 .bloc-tiret {
-    height: 5svh;
+    height: 5dvh;
 }
 
 .bloc-tiret2 {
-    height: 7svh;
+    height: 7dvh;
 }
 
 .tiret {
@@ -1072,7 +1072,7 @@ section {
 /* ----------- Page Nutrition ----------- */
 #infoNutrition {
     padding: 0;
-    height: 100svh;
+    height: 100dvh;
     overflow: auto;
 }
 
@@ -1088,7 +1088,7 @@ section {
     position: relative;
 
     z-index: 1010;
-    min-height: 92svh;
+    min-height: 92dvh;
 }
 
 .nutriTitreBloc {
@@ -1116,12 +1116,12 @@ section {
 .nutriBlocText {
     background-color: rgb(240, 240, 240);
     padding: 0 5%;
-    height: 83svh;
+    height: 82dvh;
     overflow: scroll;
 }
 
 .bodyNutri {
-    height: 50svh;
+    height: 50dvh;
     overflow-y: scroll;
 }
 
@@ -1174,7 +1174,7 @@ tbody {
     position: absolute;
     top: 0;
 
-    height: 92svh;
+    height: 92dvh;
     width: 100vw;
     overflow-y: scroll;
 }
