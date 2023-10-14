@@ -9,11 +9,11 @@ const NUTRITIONS = [
             glucides: 0,
             lipides: 0,
         }],
-        instruction: [{
-            "étape1": "",
-            "étape2": "",
-            "étape3": ""
-        }],
+        instruction: [
+            "",
+            "",
+            ""
+        ],
         ingredient: [""]
     },
     {
@@ -26,16 +26,16 @@ const NUTRITIONS = [
             glucides: 150,
             lipides: 50,
         }],
-        instruction: [{
-            "étape1": "",
-            "étape2": "",
-            "étape3": ""
-        }],
+        instruction: [
+            "Dans un mixeur, ajoutez une banane, 200 ml de lait, 80 g de flocons d'avoine, 1 grande cuillère de beurre de cacahuète, 1 petite cuillère de sirop d'agave, 300 ml d'eau, et 30 g de protéines en poudre.",
+            "Mixez le tout pendant environ 1 minute jusqu'à obtenir un mélange homogène.",
+            "Ce shaker est à prendre chaque matin."
+        ],
         ingredient: [
             ["Banane", "1"],
             ["Lait", "200ml"],
             ["Flocon d'avoine", "80g"],
-            ["Grande cuillère de beurre de cacacuète", "1"],
+            ["Grande cuillère de beurre de cacahuète", "1"],
             ["Petite cuillère de sirop d'agave", "1"],
             ["Eau", "300ml"],
             ["Protéines en poudres", "30g"],
@@ -52,11 +52,11 @@ const NUTRITIONS = [
             glucides: 60,
             lipides: 30,
         }],
-        instruction: [{
-            "étape1": "",
-            "étape2": "",
-            "étape3": ""
-        }],
+        instruction: [
+            "Préparez des œufs brouillés avec du poulet grillé (200g) dans une poêle antiadhésive.",
+            "Servez les œufs brouillés avec du riz brun (150g) et des légumes cuits à la vapeur (150g).",
+            "Ajoutez une cuillère à soupe d'huile d'olive pour plus de saveur."
+        ],
         ingredient: [
             ["Poulet grillé", "200g"],
             ["Riz brun", "150g"],
@@ -74,11 +74,10 @@ const NUTRITIONS = [
             glucides: 40,
             lipides: 15,
         }],
-        instruction: [{
-            "étape1": "",
-            "étape2": "",
-            "étape3": ""
-        }],
+        instruction: [
+            "Prenez un yaourt grec (150g).",
+            "Ajoutez des morceaux de fruits rouges (100g) et saupoudrez de 20g d'amandes hachées.",
+        ],
         ingredient: [
             ["Yaourt grec", "150g"],
             ["Fruits rouges", "100g"],
@@ -95,11 +94,11 @@ const NUTRITIONS = [
             glucides: 50,
             lipides: 25,
         }],
-        instruction: [{
-            "étape1": "",
-            "étape2": "",
-            "étape3": ""
-        }],
+        instruction: [
+            "Faites cuire une portion de saumon au four (150g).",
+            "Servez le saumon avec du quinoa (150g) et des légumes verts cuits à la vapeur (150g).",
+            "Ajoutez une cuillère à soupe d'huile d'olive pour plus de saveur."
+        ],
         ingredient: [
             ["Saumon cuit au four", "150g"],
             ["Quinoa", "150g"],
@@ -117,11 +116,10 @@ const NUTRITIONS = [
             glucides: 30,
             lipides: 10,
         }],
-        instruction: [{
-            "étape1": "",
-            "étape2": "",
-            "étape3": ""
-        }],
+        instruction: [
+            "Dans un bol, servez 150g de cottage cheese.",
+            "Servez-le avec 2 tranches de pain complet et ajoutez une cuillère à café de miel pour plus de saveur."
+        ],
         ingredient: [
             ["Cottage cheese", "150g"],
             ["Pain complet", "2 tranches"],

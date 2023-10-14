@@ -52,6 +52,13 @@ function nutrition(identifiantNutri) {
 
     table2 += "</tbody></table></div>";
 
+    // Mis en place des étapes
+    let table3 = ""
+
+    NUTRITIONS[idNutri]['instruction'].forEach(etape => {
+        table3 += `<li>` + etape + `</li>`;
+    });
+
     f2.innerHTML = `
                 <img class="imgNutri" src="document/nutrition/` + NUTRITIONS[idNutri]['titre'] + `.jpg"
                     onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
@@ -64,11 +71,13 @@ function nutrition(identifiantNutri) {
                     </div>
 
                     <div class="nutriBlocText">
-                        <p class="taille descriptionNutri"> ` + NUTRITIONS[idNutri]["description"] + ` </p>
+                        <p class="taille1 descriptionNutri"> ` + NUTRITIONS[idNutri]["description"] + ` </p>
                         <p class="taille"><u><i>Total des apports nutritionnels :</i></u></p>
                         ` + table1 + `
                         <p class="taille"><u><i>Liste des ingrédients :</i></u></p>
                         ` + table2 + `
+                        <p class="taille"><u><i>Liste des étapes :</i></u></p>
+                        <ul class='taille1 listeEtape'>` + table3 + `</ul>
                     </div>
                 </div>
     `;
