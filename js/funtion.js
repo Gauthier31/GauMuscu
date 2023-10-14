@@ -1,5 +1,5 @@
 console.log(window.screen.width);
-console.log("leght exo", EXOS.length)
+console.log("lenght exo", EXOS.length)
 const LIMIT_EXO = 20;
 var TableauFiltre = [];
 var typeExo = "tousExo";
@@ -27,7 +27,8 @@ function getExercice(idExo) {
 
 
     ////////////////////////////////// Mets en place les class de style ///////////////////////////////////////
-    const tabStyle = EXOS[idExo]['listMuscle'].split("-");
+    let exoAdd = EXOS.filter(EXOS => EXOS['id'] === idExo)[0]
+    const tabStyle = exoAdd['listMuscle'].split("-");
 
     // catégorie
     let classList = "";
@@ -38,16 +39,16 @@ function getExercice(idExo) {
 
     // 
     ligneExo.innerHTML +=
-        `<div class="ligneExo tousExo '` + classList.toUpperCase() + ` ` + EXOS[idExo]['nom'].toUpperCase()
-        + `''" id="ligneExo` + EXOS[idExo]['id'] + `">
+        `<div class="ligneExo tousExo '` + classList.toUpperCase() + ` ` + exoAdd['nom'].toUpperCase()
+        + `''" id="ligneExo` + exoAdd['id'] + `">
             
                     <div class="ligne-img-bloc">
-                        <img class="ligne-img-left" src="document/exo/` + EXOS[idExo]['nom'] + `.jpg" 
+                        <img class="ligne-img-left" src="document/exo/` + exoAdd['nom'] + `.jpg" 
                             onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                     </div>
         
                     <div>
-                        <p class="taille1 fw-9 ligneTitre">` + EXOS[idExo]['nom'] + `</p>
+                        <p class="taille1 fw-9 ligneTitre">` + exoAdd['nom'] + `</p>
                         <div class="taille3 fw-6 opacity-50">
                             ` + classList + `
                         </div>
