@@ -66,15 +66,17 @@ function getProgramme() {
         listExo = "";
 
         for (j = 1; j < PROGRAMMES[i].length; j++) {
+
+            let exoAdd = EXOS.filter((EXOS) => EXOS['id'] === PROGRAMMES[i][j])[0]
             listExo +=
                 `<div class="progExo">
                     <div class="progExoBloc">
                         <div class="progExoBlocImage">
-                            <img class="progExoImage" src="document/exo/` + EXOS[PROGRAMMES[i][j]]['nom'] + EXOS[PROGRAMMES[i][j]]['formatImg'] + `" 
+                            <img class="progExoImage" src="document/exo/` + exoAdd['nom'] + exoAdd['formatImg'] + `" 
                                 onerror="this.onerror=null; this.src='document/exo/defautExo.jpg'"/>
                         </div>
                     </div>
-                    <div class="progExoTitre">` + EXOS[PROGRAMMES[i][j]]['nom'] + `</div>
+                    <div class="progExoTitre">` + exoAdd['nom'] + `</div>
                 </div>`;
         }
 
