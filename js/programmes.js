@@ -46,7 +46,7 @@ function programmes(numProgramme) {
             stat = exoAdd["stat"]
 
             tab +=
-                `<div class="lineTab taille3" id="exo` + exoTab + `serie` + serieTab + `">
+                `<div class="lineTab taille1" id="exo` + exoTab + `serie` + serieTab + `">
                 
                     <div class="caseTab_4_SE fw-9" onclick="colorSerie(` + serieTab + `)">` + serieTab + `</div>
 
@@ -561,7 +561,6 @@ function addExo(numExo) {
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
             PROGRAMMES[numProg].push(numExo)
-            console.log(PROGRAMMES[numProg])
             let tab = "";
 
             // On mets en place les lignes du tableau

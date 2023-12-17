@@ -708,8 +708,8 @@ const EXOS = [
     }, {
         id: 61,
         nom: "Bottom up press",
-        formatImg: ".jpg",
-        muscleImg: "defautExo.jpg",
+        formatImg: ".gif",
+        muscleImg: "épaules.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description",
         stat: [
@@ -728,12 +728,12 @@ const EXOS = [
     }, {
         id: 63,
         nom: "Bulgarian split squat (gauche - droite)",
-        formatImg: ".jpg",
-        muscleImg: "defautExo.jpg",
-        listMuscle: "fessiers-jambes-tousExo",
+        formatImg: ".gif",
+        muscleImg: "fessiers.jpg, jambes.jpg",
+        listMuscle: "fessiers-tousExo, jambes-tousExo",
         description: "description",
         stat: [
-            [0, 0, "03:00"],
+            [0, 0, "03:00"]
         ]
     }, {
         id: 64,
@@ -777,7 +777,7 @@ const EXOS = [
         ]
     }, {
         id: 68,
-        nom: "Calf raise",
+        nom: "Élévation des mollets",
         formatImg: ".jpg",
         muscleImg: "defautExo.jpg",
         listMuscle: "jambes-tousExo",
@@ -1560,7 +1560,7 @@ const EXOS = [
     }, {
         id: 146,
         nom: "Bird dog",
-        formatImg: ".jpg",
+        formatImg: ".gif",
         muscleImg: "abdominaux.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description",
@@ -1580,7 +1580,7 @@ const EXOS = [
     }, {
         id: 148,
         nom: "Bottom up press",
-        formatImg: ".jpg",
+        formatImg: ".gif",
         muscleImg: "abdominaux.jpg",
         listMuscle: "abdominaux-tousExo",
         description: "description",
@@ -1590,7 +1590,7 @@ const EXOS = [
     }, {
         id: 149,
         nom: "Box jumps",
-        formatImg: ".jpg",
+        formatImg: ".gif",
         muscleImg: "jambes.jpg",
         listMuscle: "jambes-tousExo",
         description: "description",
@@ -1610,7 +1610,7 @@ const EXOS = [
     }, {
         id: 151,
         nom: "Bulgarian split squat (gauche - droite)",
-        formatImg: ".jpg",
+        formatImg: ".gif",
         muscleImg: "fessiers.jpg, jambes.jpg",
         listMuscle: "fessiers-tousExo, jambes-tousExo",
         description: "description",
@@ -3221,8 +3221,28 @@ const EXOS = [
         id: 311,
         nom: "Quick feet in place",
         formatImg: ".jpg",
-        muscleImg: "cardio.jpg",
+        muscleImg: "defautMuscle.jpg",
         listMuscle: "cardio-tousExo",
+        description: "description",
+        stat: [
+            [0, 0, "03:00"]
+        ]
+    }, {
+        id: 312,
+        nom: "Étirement",
+        formatImg: ".jpg",
+        muscleImg: "defautMuscle.jpg",
+        listMuscle: "échauffement-tousExo",
+        description: "description",
+        stat: [
+            [0, 0, "03:00"]
+        ]
+    }, {
+        id: 313,
+        nom: "Échauffement",
+        formatImg: ".jpg",
+        muscleImg: "defautMuscle.jpg",
+        listMuscle: "échauffement-tousExo",
         description: "description",
         stat: [
             [0, 0, "03:00"]

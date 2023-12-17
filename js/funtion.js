@@ -1,5 +1,8 @@
-console.log(window.screen.width);
-console.log("lenght exo", EXOS.length)
+// Attacher un gestionnaire d'événement à l'événement resize
+window.addEventListener("resize", obtenirTailleEcran);
+// Appeler la fonction une fois au chargement initial de la page
+obtenirTailleEcran();
+
 const LIMIT_EXO = 20;
 var TableauFiltre = [];
 var typeExo = "tousExo";
@@ -275,3 +278,18 @@ function pagination(numPage) {
     document.getElementById("pagi" + numPage).classList.add("pagi-liActive");
 }
 
+////////////////////////////////////// Observeur /////////////////////////////////////
+// Fonction pour récupérer la taille de l'écran
+function obtenirTailleEcran() {
+
+    console.log(window.screen.width, window.screen.height)
+
+    // Si format est Horizontal
+    if (window.screen.width > window.screen.height) {
+        document.getElementById("pageErr").style.display = "block";
+
+        // Si format est Vertical
+    } else {
+        document.getElementById("pageErr").style.display = "none";
+    }
+}

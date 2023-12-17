@@ -1,8 +1,6 @@
-/*
-Orange : #ffc107
-
-
-*/
+:root {
+    --orange: #FBAB00;
+}
 
 /* ----------------------------------------- */
 * {
@@ -12,7 +10,7 @@ Orange : #ffc107
 }
 
 body {
-    background-color: #ffb907;
+    background-color: var(--orange);
     overflow-x: hidden;
 
     padding: 0 !important;
@@ -64,7 +62,7 @@ header {
     background-size: cover;
     width: calc(100%);
     height: 800px;
-    color: #ffc107;
+    color: var(--orange);
 
     position: fixed;
     top: 0;
@@ -395,7 +393,7 @@ section {
 }
 
 .hr-orange {
-    color: #ffc107;
+    color: var(--orange);
     height: 10px !important;
     opacity: 1;
     border-radius: 5px;
@@ -473,7 +471,7 @@ section {
 .orange,
 .btn-warning,
 .bg-warning {
-    background-color: #ffc107 !important;
+    background-color: var(--orange) !important;
     color: black !important;
 }
 
@@ -815,7 +813,7 @@ section {
     height: 0;
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
-    border-left: 80px solid #ffc107;
+    border-left: 80px solid var(--orange);
 
     display: inline-block;
 }
@@ -832,7 +830,7 @@ section {
 
 .serieActu {
     background-color: rgb(255, 193, 7, 0.75);
-    font-size: 2.5em !important;
+    font-size: 4em !important;
     height: 120px !important;
     transition: background-color 0.5s, heigth 0.5s;
 }
@@ -861,7 +859,7 @@ section {
 .btn-ticket2 {
     width: 600px;
     border-radius: 20px;
-    background-color: #ffc107;
+    background-color: var(--orange);
 }
 
 /* ----------- Page résultat ---------------*/
@@ -979,8 +977,8 @@ section {
 
 .btn-search {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107;
+    background-color: var(--orange);
+    border-color: var(--orange);
 }
 
 /* -------------------------------------------------- */
@@ -1158,7 +1156,7 @@ td {
 }
 
 thead {
-    background-color: rgba(255, 193, 7);
+    background-color: var(--orange);
 }
 
 tbody {
@@ -1194,6 +1192,15 @@ tbody {
     z-index: 1000;
 }
 
+#pageErr {
+    z-index: 2000;
+}
+
+.err {
+    margin: auto;
+    text-align: center;
+}
+
 #pagination {
     width: 390px;
     overflow-x: scroll;
@@ -1211,7 +1218,7 @@ tbody {
 }
 
 .pagi-liActive {
-    background-color: #ffc107;
+    background-color: var(--orange);
 }
 
 .pagi-a {
